@@ -1,5 +1,5 @@
 ---
-description: "Typed calendar and CRM methods on a customer: book and find meetings, free slots, contacts, notes, tasks and deals, with the app picked from what the customer connected."
+description: "Typed calendar and CRM methods on a customer: book and find meetings, free slots, contacts, notes, tasks, and deals, with the app picked from what the customer connected."
 ---
 
 # Calendar and CRM
@@ -45,7 +45,7 @@ Every method takes the [request options](errors-and-options.md#request-options) 
 | `calendar.freeSlots(window)` | scheduling/availability | `start_time`, `end_time` (required), `timezone`, `slot_minutes`. Answers `{ busy, free, slots }`: `busy` from the calendar, `free` the gaps, `slots` the gaps cut into `slot_minutes` pieces (left out without `slot_minutes`). |
 | `calendar.book(meeting)` | scheduling/meeting create | `title` and `start_time` (required), plus `end_time` or `duration_minutes`. Optional: `timezone`, `description`, `attendee_email`, `attendee_name`, `location`, `calendar_id`, `event_type_id`, `status`. |
 | `calendar.get(id)` | get | The meeting id. |
-| `calendar.find(filters, page?)` | search | `start_time`, `end_time` (required), `query` (matches the title, description and attendee email). `page_size` only: a search answers one page. |
+| `calendar.find(filters, page?)` | search | `start_time`, `end_time` (required), `query` (matches the title, description, and attendee email). `page_size` only: a search answers one page. |
 | `calendar.list(page?)` | list | `page_size`, `cursor`. |
 | `calendar.reschedule(id, times)` | update | `start_time`, plus `end_time` or `duration_minutes`. |
 | `calendar.cancel(id)` | delete | The meeting id. Answers `{ id, provider, deleted: true }`. |
@@ -73,7 +73,7 @@ await customer.calendar.cancel(booked.id, { idempotencyKey: "cancel_123" });
 | ----- | ---------- | ------- |
 | `crm.contacts` | crm/contact | `create`, `get`, `find({ email, phone, first_name, last_name })`, `list`, `update`, `delete` |
 | `crm.notes` | crm/note | `add({ body, parent_id, parent_type, title?, created_at? })`, `update`, `delete`. `created_at` defaults to now. |
-| `crm.tasks` | crm/task | `add({ subject, due_date, status, … })` (`status` is the app's own value, for example HubSpot's `NOT_STARTED`, `IN_PROGRESS`, `WAITING`, `COMPLETED` or `DEFERRED`), `get`, `list`, `update`, `delete` |
+| `crm.tasks` | crm/task | `add({ subject, due_date, status, … })` (`status` is the app's own value, for example HubSpot's `NOT_STARTED`, `IN_PROGRESS`, `WAITING`, `COMPLETED`, or `DEFERRED`), `get`, `list`, `update`, `delete` |
 | `crm.deals` | crm/opportunity and crm/stage | `create({ name, amount, stage, … })`, `get`, `list`, `update`, `moveStage(id, stage)`, `delete`, `stages()` |
 
 ```typescript
@@ -90,7 +90,7 @@ await customer.crm.tasks.add({ subject: "Call back", due_date: "2026-11-05T09:00
 
 ## The catalog
 
-Which categories and entities exist, the fields each takes, and which apps a customer connected:
+These calls list the categories and entities that exist, the fields each takes, and the apps a customer connected:
 
 ```typescript
 const categories = await fastn.catalog.categories();                   // [{ slug: "crm", entities: [{ slug: "contact", operations, createFields }] }]
@@ -106,4 +106,4 @@ const providers = await customer.catalog.providers("crm", "contact");  // [{ con
 | `fastn.catalog.providers(category, entity)` | The apps mapped to the entity. |
 | `customer.catalog.providers(category, entity)` | The same list with `connected` for this customer. |
 
-What the typed methods do not cover is one call away: `customer.records({ category, entity })` takes any entity in the catalog (see [Unified records](unified-records.md)), and `customer.runAction(…)` runs an app's own action (see [Direct app actions](app-actions.md)).
+For what the typed methods do not cover, `customer.records({ category, entity })` takes any entity in the catalog (see [Unified records](unified-records.md)), and `customer.runAction(…)` runs an app's own action (see [Direct app actions](app-actions.md)).

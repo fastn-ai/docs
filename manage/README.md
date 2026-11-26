@@ -1,12 +1,24 @@
 ---
 description: Organization settings, access, credentials and billing.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Settings
 
 **Settings** at the bottom of the left rail.
 
-**Its menu is role-scoped, so you will not see every page below.** An Owner or Admin sees People, General, Billing, Roles and Audit log, plus everything a Developer sees: Environments, Secrets, Configs, Database, Workflow tags and Trash. API keys and the MCP server moved to **Embed → API keys and MCP**, and Your API moved to **Build → Connect your product**.
+**Its menu is role-scoped, so you might not see every page below.** An Owner or Admin sees People, General, Billing, Roles and Audit log, plus everything a Developer sees: Environments, Secrets, Configs, Database, Workflow tags and Trash.
 
 The table follows the Settings menu order: People, General, Billing, Roles, Audit log, Environments, Secrets, Configs, Database, Workflow tags, Trash.
 
@@ -24,7 +36,7 @@ The table follows the Settings menu order: People, General, Billing, Roles, Audi
 | [Workflow tags](workflow-tags.md)       | The labels and categories workflows are filtered and grouped by. |
 | [Trash](trash.md)                       | Deleted connectors, actions and workflows.                     |
 
-Some pages that used to be here have moved into the sidebar: **API keys and MCP** is under **Embed** ([API keys and MCP](api-keys.md)), **Connect your product** is under **Build** ([Connect your product](saas-connectors.md)), and **Customers** is under **Operate** ([Customers](../operate/customers.md)). Their old Settings addresses redirect.
+Some pages that used to be here have moved into the sidebar: **API keys** and **MCP server** are under **Embed** ([API keys](api-keys.md)), **Connect your product** is under **Build** ([Connect your product](saas-connectors.md)), and **Customers** is under **Operate** ([Customers](../operate/customers.md)). Their old Settings addresses redirect.
 
 Your own account is separate from the organization:
 
@@ -39,5 +51,5 @@ The Settings menu itself changes by role, so the first answer to "why can't I se
 | People, General, Billing, Roles, Audit log | Owner and Admin. Absent from a Developer's menu. The audit log is also enforced by role at the API layer on `/api/v1/audit-log`. |
 | Environments, Secrets, Configs, Database, Trash | Owner, Admin and Developer.                    |
 | Workflow tags            | Developer or above.                                                    |
-| API keys and MCP         | Not in Settings: under **Embed**. See [API keys and MCP](api-keys.md). |
+| API keys, MCP server     | Not in Settings: both are under **Embed**. See [API keys](api-keys.md) and [fastn MCP server](../build/mcp-gateway/README.md). |
 | Everything else          | Per the permission matrix in [Roles](roles.md).                        |

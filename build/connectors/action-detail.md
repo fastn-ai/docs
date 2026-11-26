@@ -1,10 +1,24 @@
 ---
-description: "A connector's actions: the action list, the action editor and its seven tabs, mocks, versions and proposing an update."
+description: "A connector's actions: the action list, the action editor and its seven tabs, mocks, versions, and proposing an update."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Actions
 
-An **action** is one operation a connector can perform, such as *Create Contact* or *List Owners*. Under the hood it is one HTTP request (method, URL, headers, body) plus two schemas: the input it accepts and the output it returns. Workflows, Build with AI and your AI tool (over MCP) call actions; they never call the vendor's API directly.
+An **action** is one operation a connector can perform, such as *Create Contact* or *List Owners*. Technically, it is one HTTP request (method, URL, headers, body) plus two schemas: the input it accepts and the output it returns. Workflows, the fastn agent, and your AI tool (over MCP) call actions; they never call the vendor's API directly.
+
+<figure><img src="../../.gitbook/assets/screens/action-editor.webp" alt="The action editor for HubSpot Add List Members: name and description fields, method PUT and the URL with an input.listId placeholder, a Run button, tabs Params, Headers, Auth, Body, Input schema, Output schema and Mocks, and a footer with v1.2, New version, Read-only owned by platform and Propose an update"><figcaption>A platform-owned action opens read-only; <strong>Propose an update</strong> suggests a change.</figcaption></figure>
 
 ### The action list
 
@@ -22,14 +36,14 @@ The top of the editor holds:
 | Element | Meaning |
 | --- | --- |
 | **Name** | The action's display name. |
-| **Description** | What the action does and how to call it. Build with AI reads this, so it should say which inputs matter. |
-| **Method** | `GET`, `POST`, `PUT`, `PATCH` or `DELETE`. |
+| **Description** | What the action does and how to call it. The fastn agent and your AI tool read this, so it should say which inputs matter. |
+| **Method** | `GET`, `POST`, `PUT`, `PATCH`, or `DELETE`. |
 | **URL** | The endpoint. Parts in double braces are filled in when the action runs: `{{input.<field>}}` takes a value from the action's input. |
-| **Run** | Opens the run panel to call the action once, live or with a mock. See [Running an action](#running-an-action). |
+| **Run** | Opens the run panel to call the action once, live or with a mock. See [Run an action](#run-an-action). |
 
 #### Placeholders
 
-Anywhere in the URL, headers, query parameters or body, values in double braces are filled in at run time:
+Anywhere in the URL, headers, query parameters, or body, values in double braces are filled in at run time:
 
 * `{{input.<field>}}`: a field from the action's input, as defined in **Input schema**.
 * `{{auth.<field>}}`: a field from the connection's credential, for example in an `Authorization: Bearer {{auth.token}}` header. Which field names are available depends on the connector's auth method.
@@ -41,7 +55,7 @@ Anywhere in the URL, headers, query parameters or body, values in double braces 
 | **Params** | Query parameters (**Query Parameters**, **+ Add**). Each one is a key and a value; the value can be a placeholder. |
 | **Headers** | Request headers (**Request Headers**, **+ Add**), as **KEY** / **VALUE** pairs. |
 | **Auth** | How this request is authorized. **Auth type** shows the auth that actually runs, which is the connector's auth method, for example *OAuth 2.0 (from connector)*, with a note such as *OAuth 2.0, from the connector*. Below it, **Stored action setting** is a dropdown (`Basic Auth`, `Bearer Token`, `JWT Bearer`, `AWS Signature`, `OAuth 1.0`, `OAuth 2.0`, `API Key`, or *None (use connector)*) that is saved with the action but, as its help text says, *Not used at run time. Requests are signed with the connector's auth method.* The *No auth* panel appears only when the connector has no auth method. |
-| **Body** | **Body type**: `JSON`, `Form Data`, `Raw`, `GraphQL` or `Form URL Encoded`, and the body itself. |
+| **Body** | **Body type**: `JSON`, `Form Data`, `Raw`, `GraphQL`, or `Form URL Encoded`, and the body itself. |
 | **Input schema** | The inputs the action accepts. See below. |
 | **Output schema** | The shape of the response the action returns. Same editor as the input schema. |
 | **Mocks** | Canned responses used in mock mode. See below. |
@@ -57,7 +71,7 @@ Switch between **Form** and **JSON**. In Form view each field is one row:
 | Key | The field name used in placeholders, for example `email`. |
 | Label | A readable name, for example *Email*. |
 | Description | What the field is for. |
-| Type | `string`, `number`, `boolean`, `object` or `array`. |
+| Type | `string`, `number`, `boolean`, `object`, or `array`. |
 | **Required** / **Optional** | Whether the caller must send it. |
 | **⋮** (More options) | **Enum values**: limit the field to a fixed list of values. |
 | **+** | Adds a nested field (*Convert to object and add nested field* on a non-object field). |
@@ -65,7 +79,7 @@ Switch between **Form** and **JSON**. In Form view each field is one row:
 
 **Add** (top right) adds a top-level field. The count (for example *1 field*) shows how many top-level fields there are.
 
-The **Output schema** tab (*Define the expected output structure for this action.*) uses the same editor. Workflows and Build with AI read it to know which fields a response contains.
+The **Output schema** tab (*Define the expected output structure for this action.*) uses the same editor. Workflows and the fastn agent read it to know which fields a response contains.
 
 #### Mocks
 
@@ -75,10 +89,10 @@ A mock is a stored response for this action. When a workflow runs in mock mode, 
 
 * **+ Add custom** adds a scenario you write yourself.
 * **Generate with AI** has the AI write scenarios for the action. Generated scenarios are replaced when you generate again.
-* Each scenario shows its source (`CUSTOM` for hand-written ones), its name and a description. The bin icon deletes it.
+* Each scenario shows its source (`CUSTOM` for hand-written ones), its name, and a description. The bin icon deletes it.
 * With none saved, the tab reads *No mock scenarios yet.*
 
-### Running an action
+### Run an action
 
 **Run** opens a panel titled with the method and the action's name.
 

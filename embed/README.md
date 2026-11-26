@@ -2,6 +2,18 @@
 description: >-
   Put the integrations widget inside your product, scoped to each customer, with
   an iframe, the SDK or a share link.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Embed
@@ -53,7 +65,7 @@ No code. In **Embed → Widget → Embed**, pick a customer and create a share l
 
 ## Before you go live
 
-Mint tokens per customer on your backend, brand the OAuth consent screen with your own OAuth app, and test as a real customer. The full list is in [Embedding in production](embedding/production-checklist.md).
+Mint tokens per customer on your backend, brand the OAuth consent screen with your own OAuth app, and test as a real customer. The full list is in the [Go-live checklist](embedding/production-checklist.md).
 
 ## Example prompts
 
@@ -67,8 +79,8 @@ Your AI tool can set up the customer-facing side too:
 
 ## Questions?
 
-* Who can see what: [Customers and tenancy](../tutorials/developer/understanding-tenancy.md).
-* Keys and headers: [API keys and MCP](../manage/api-keys.md).
+* Who can see what: [Customers and isolation](../tutorials/developer/understanding-tenancy.md).
+* Keys and headers: [API keys](../manage/api-keys.md).
 * What your customers see: [Using integrations in the widget](../tutorials/end-user/README.md).
 
 ## Works with
@@ -95,6 +107,8 @@ Two pages cover it:
 ### The preview
 
 The preview renders the widget at **Mobile**, **Tablet** and **Desktop** widths, with **Tablet** selected by default. The customer selector at the top right, defaulting to **View as admin**, renders the widget as any one of your customers, so you can see their actual connection states rather than a mock-up.
+
+A **Preview language** switch, defaulting to **English**, shows the widget as a customer whose page is set to that language would see it. It lists the common languages plus every language you translated. A view picker (**Saved configs**, **Custom pages**) opens on the UI that is live for customers; pick another to get **Use for customers**, or **Review draft** for a draft. Viewing as a customer, the picker shows the live UI with a **Live** badge.
 
 **Preview** opens the widget on its own page in a new tab, away from the builder panel, at `/widgets/hub` (it carries the customer picked in the selector). Use it to see the widget at full size, or to check it without the configuration panel beside it.
 

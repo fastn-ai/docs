@@ -1,0 +1,41 @@
+---
+description: "WebCrawlerAPI crawls websites and scrapes pages into Markdown or text. Run crawl jobs, read results and manage feeds."
+hidden: true
+---
+
+# WebCrawlerAPI
+
+<img src="../../.gitbook/assets/connectors/lg/webcrawlerapi.png" alt="WebCrawlerAPI logo">
+
+| | |
+| --- | --- |
+| **Category** | [Search and web](README.md) |
+| **Website** | [webcrawlerapi.com](https://webcrawlerapi.com) |
+| **Authentication** | Access token |
+| **Slug** | `webcrawlerapi` |
+
+## Setup
+
+Your customers enter their access token for WebCrawlerAPI when they connect. Nothing else needs setting up.
+
+## Use it
+
+Add WebCrawlerAPI from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.webcrawlerapi.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+
+## Actions
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Cancel Crawl Job</td><td><code>cancelCrawlJob</code></td><td>Cancels a running crawl job. Pages that have not started are marked canceled and are not charged.</td></tr><tr><td>Create Feed</td><td><code>createFeed</code></td><td>Creates a scheduled feed that periodically crawls a website and detects new, changed, unavailable or erroring pages, delivering updates via RSS, JSON Feed or a webhook POST. Charged per page crawled on each run; at most 100 feeds per organization.</td></tr><tr><td>Delete Feed</td><td><code>deleteFeed</code></td><td>Permanently cancels a feed. This cannot be undone; historical runs and detected changes stay readable through the RSS and JSON endpoints for 30 days.</td></tr><tr><td>Get Agent Job</td><td><code>getAgentJob</code></td><td>Returns the status, spend and, once finished, the extracted data of an agent run.</td></tr><tr><td>Get Crawl Job</td><td><code>getCrawlJob</code></td><td>Returns a crawl job's status (new, in_progress, done or error), its configuration, webhook delivery status and the list of crawled page items with their content URLs, titles, status codes, costs and errors.</td></tr><tr><td>Get Crawl Job Markdown Content</td><td><code>getCrawlJobMarkdownContent</code></td><td>Downloads the combined Markdown of every successfully crawled page of a completed Markdown crawl job directly as text (text/markdown), each page separated by a '---- url: &lt;page_url&gt; ----' block.</td></tr><tr><td>Get Crawl Job Markdown Link</td><td><code>getCrawlJobMarkdownLink</code></td><td>Returns a stable URL to a single combined Markdown file containing every successfully crawled page of a completed Markdown crawl job, each page separated by a '---- url: &lt;page_url&gt; ----' block.</td></tr><tr><td>Get Crawl Job URLs</td><td><code>getCrawlJobUrls</code></td><td>Returns every URL discovered by a completed crawl job as a flat list plus path-based clusters showing how many URLs sit under each site section. Only available once the job has completed.</td></tr><tr><td>Get Feed</td><td><code>getFeed</code></td><td>Returns a feed's configuration, status, next and last run times, webhook delivery status and its recent run history with page counts and costs.</td></tr><tr><td>Get Feed JSON</td><td><code>getFeedJson</code></td><td>Returns the changes detected by a feed in JSON Feed 1.1 format, one item per new, changed, unavailable or erroring page with a WebCrawlerAPI extension carrying the change type, page status code, content URL and size. Paginated, newest first.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 14 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Feed RSS</td><td><code>getFeedRss</code></td><td>Returns the changes detected by a feed as an Atom 1.0 XML document (RFC 5005 paginated), one entry per new, changed, unavailable or erroring page, newest first.</td></tr><tr><td>Get Organization Balance</td><td><code>getOrganizationBalance</code></td><td>Returns the organization's current spendable balance in USD, combining prepaid credits and subscription credits.</td></tr><tr><td>Get Organization Usage</td><td><code>getOrganizationUsage</code></td><td>Returns aggregated usage statistics for the organization over a date range (default: the last 30 days): total cost in USD and number of requests, optionally with a per-day breakdown. The range may not exceed one year.</td></tr><tr><td>Get Scrape Result</td><td><code>getScrapeResult</code></td><td>Returns the status of an asynchronous scrape job and, once it is done, the scraped content in the requested formats. While the job is still running only the status is returned.</td></tr><tr><td>List Agent Jobs</td><td><code>listAgentJobs</code></td><td>Returns a paginated list of the organization's agent runs with their status, model, spend and success flag, plus the total count.</td></tr><tr><td>List Feeds</td><td><code>listFeeds</code></td><td>Lists every feed of the organization (active, paused and canceled), newest first, with each feed's configuration, status and run times.</td></tr><tr><td>Pause Feed</td><td><code>pauseFeed</code></td><td>Temporarily stops a feed from running its scheduled crawls; scheduled runs are skipped until the feed is resumed.</td></tr><tr><td>Resend Feed Webhook</td><td><code>resendFeedWebhook</code></td><td>Re-sends the webhook notification for a feed's latest completed run to the feed's configured webhook URL and reports the delivery status code.</td></tr><tr><td>Resume Feed</td><td><code>resumeFeed</code></td><td>Resumes a paused feed so scheduled crawls continue; the next run is scheduled from the current time. Canceled feeds cannot be resumed.</td></tr><tr><td>Run Agent</td><td><code>runAgent</code></td><td>Starts an AI agent that browses the given seed URLs, optionally follows relevant links, and extracts data according to a natural-language prompt and optional JSON Schema, within a USD spending cap. Runs asynchronously; poll Get Agent Job for the result.</td></tr><tr><td>Run Feed Now</td><td><code>runFeedNow</code></td><td>Triggers an immediate extra run of an active feed outside its regular schedule. Limited to one forced run per hour per feed and charged like a scheduled run; the organization needs a balance of at least $0.01.</td></tr><tr><td>Scrape Page</td><td><code>scrapePage</code></td><td>Scrapes a single web page synchronously and returns its content as Markdown, cleaned text, raw HTML and/or a list of links, optionally with structured data extracted by an LLM prompt. A failed scrape Charged per page (plus tokens when a prompt is used).</td></tr><tr><td>Start Async Scrape</td><td><code>startAsyncScrape</code></td><td>Queues a single-page scrape and returns a job id immediately instead of waiting for the result; retrieve the content later with Get Scrape Result. Accepts the same options as Scrape Page. Charged per page.</td></tr><tr><td>Start Crawl Job</td><td><code>startCrawlJob</code></td><td>Starts an asynchronous crawl of a website from a seed URL, following links up to the page limit and depth you set and producing Markdown, cleaned text, HTML or link output for every page. Returns the job id; poll Get Crawl Job or supply a webhook URL to be notified when it finishes. Charged per page crawled.</td></tr></tbody></table>
+
+</details>
+
+## Events
+
+Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
+
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Feed Changes Detected</td><td><code>feed.changes_detected</code></td><td>Fired after each scheduled or forced run of a WebCrawlerAPI change-monitoring feed when new, changed, unavailable or erroring pages were detected on the monitored website. Subscribing creates a feed for the URL you provide with the fastn webhook URL as its webhook_url; unsubscribing cancels that feed. The payload is the JSON Feed 1.1 document of the run: each item carries the page url, title, a summary, tags and a _webcrawlerapi object with change_type (new, changed, unavailable or error), page_status_code and content_url. Deliveries are unsigned.</td></tr></tbody></table>

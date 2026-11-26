@@ -1,5 +1,17 @@
 ---
 description: Add fastn to Bolt as a custom MCP connector, sign in, and use your fastn tools from Bolt's chat.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Bolt
@@ -20,7 +32,7 @@ In bolt.new, click **+** in the chat box, then **Connectors** → **Manage conne
 {% step %}
 #### Enter fastn's URL
 
-Enter **Name** `fastn` and **URL** `https://mcp.fastn.dev/fastn-workspace`, leave **Transport Type** on **HTTP**, set **Authentication** to **MCP OAuth** and click **Add MCP server**.
+Enter **Name** `fastn` and **URL** `https://mcp.fastn.dev/fastn-workspace`, leave **Transport Type** on **HTTP**, set **Authentication** to **MCP OAuth**, and click **Add MCP server**.
 
 <figure><img src="../../.gitbook/assets/mcp-bolt-add-server.webp" alt="Bolt's New MCP server form with Name fastn, URL https://mcp.fastn.dev/fastn-workspace, Transport Type HTTP, Authentication MCP OAuth, an Automatically enable for new projects toggle, and Cancel and Add MCP server buttons"><figcaption>Turn on <strong>Automatically enable for new projects</strong> to skip step 4 in new projects.</figcaption></figure>
 {% endstep %}
@@ -28,7 +40,7 @@ Enter **Name** `fastn` and **URL** `https://mcp.fastn.dev/fastn-workspace`, leav
 {% step %}
 #### Choose Fastn Workspace and authorize
 
-fastn opens in a new tab. Sign in if asked. On **Choose what Bolt can reach**, search for **Fastn Workspace**, tick it and click **Authorize Bolt**.
+fastn opens in a new tab. Sign in if asked. On **Choose what Bolt can reach**, search for **Fastn Workspace**, tick it, and click **Authorize Bolt**.
 
 <figure><img src="../../.gitbook/assets/mcp-bolt-consent.webp" alt="fastn's page titled Choose what Bolt can reach, with the search box set to Fastn Workspace, Fastn Workspace ticked with 212 of 212 tools, Gateway Tools ticked, 215 tools selected and an Authorize Bolt button"><figcaption>Tick <strong>Fastn Workspace</strong>. If you leave it unticked, Bolt gets no fastn tools.</figcaption></figure>
 
@@ -52,10 +64,10 @@ Ask for the outcome in one sentence. To check the connection first, ask *Using t
 
 <figure><img src="../../.gitbook/assets/mcp-bolt-answer.webp" alt="Bolt's chat answering Using the fastn connector, who am I in fastn? with Used Fastn fastnPlatform whoami and a reply naming the signed-in user, role, workspace, plan and environment"><figcaption>Bolt shows which fastn tool it used above the answer.</figcaption></figure>
 
-From here Bolt works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here Bolt works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Troubleshooting
 
-* **Bolt lists only connection, skill and feedback.** **Fastn Workspace** wasn't ticked when you authorized. Remove fastn under **Connectors (MCP)**, add it again and tick **Fastn Workspace**.
+* **Bolt lists only connection, skill, and feedback.** **Fastn Workspace** wasn't ticked when you authorized. Remove fastn under **Connectors (MCP)**, add it again, and tick **Fastn Workspace**.
 * **Bolt doesn't use fastn.** Check fastn is switched on under **+** → **Connectors** in this project, then name it in your message, for example *Using the fastn connector, …*.
 * **fastn shows Checking or needs sign-in.** Open fastn under **Connectors (MCP)** and connect it again.

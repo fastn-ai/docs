@@ -1,8 +1,20 @@
 ---
 description: Minting and refreshing embed tokens from your backend, and the session cap.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
-# Tokens
+# Token API
 
 An embed token identifies one of your customers to the widget. The dashboard shows a live 8-hour token so you can try things immediately. Mint your own from your backend for production.
 
@@ -45,7 +57,7 @@ Read the token as `response.data.token`. `expiresIn` is 28800 seconds: eight hou
 
 #### Signed headers or not: your key decides
 
-Your API key's **Verify caller identity (HMAC)** setting (see [API keys](../../manage/api-keys.md)) decides how you name the customer:
+Your API key's **Verify caller identity (HMAC)** setting (see [Verify caller identity](../../manage/identity-verification.md)) decides how you name the customer:
 
 | Your API key | Name the customer with |
 | --- | --- |

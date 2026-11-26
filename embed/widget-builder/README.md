@@ -1,5 +1,17 @@
 ---
 description: Integrations, layout, style and features of the panel your customers see.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Widget builder
@@ -18,28 +30,30 @@ Opening **Widget** takes you straight into the builder; there is no widget list 
 
 Below the tabs, the **INTEGRATIONS** panel lists what appears in the widget, with a count. This panel *is* the widget list: the offer your customers browse. Everything else on this screen is presentation.
 
-An integration that moves data between two systems shows both logos and a direction marker, such as `Dynamics 365 F&O → BigCommerce B2B  outbound →`. A status dot marks each one **draft** or **active**.
+<figure><img src="../../.gitbook/assets/screens/widget-builder.webp" alt="The Widget builder: Layout, Style, Features and Embed tabs on the left with Integrations (3) listing Linear + Confluence and Akeneo PIM, Custom pages (0), and Save and publish; on the right a Live preview at Tablet size with language English, Default widget and View as admin, showing the Integrations widget with Connect buttons"><figcaption>The builder on the left, a live preview of what your customer sees on the right.</figcaption></figure>
 
-### Add Integrations
+An integration that moves data between two apps shows both logos and a direction marker, such as `Dynamics 365 F&O → BigCommerce B2B  outbound →`. A status dot marks each one **draft** or **active**.
+
+### Add integrations
 
 **Add** opens the **Add Integrations** dialog, with two tabs:
 
 | Tab         | What it offers                                                    |
 | ----------- | ------------------------------------------------------------------- |
-| **Apps**    | **Select connectors**: individual systems from your catalog.      |
+| **Apps**    | **Select connectors**: individual apps from your catalog.      |
 | **Unified** | Unified API categories rather than one connector at a time.        |
 
 On the **Apps** tab, **Scope:** offers **Organization level** (the default, captioned "Shared connections") or **User level** ("Per-customer connections"). The choice is recorded on each integration you create (it sets the integration's sync direction and agent context); it does not share or separate connections. Which customer's connections an integration uses comes from the embed token the widget runs with.
 
-### Edit Integration
+### Edit integration
 
 The pencil on a row opens **Edit Integration**, where most of the configuration lives: the configuration template, activation mode, customer visibility, the connectors and their per-connector overrides, the workflows that auto-bind to every connected customer, triggers, and the callbacks that run a workflow when a customer activates or changes something.
 
-It has a page of its own: [Edit Integration](edit-integration.md).
+It has a page of its own: [Edit integration](edit-integration.md).
 
 ### In this section
 
-* [Edit Integration](edit-integration.md)
+* [Edit integration](edit-integration.md)
 * [Layout](layout.md)
 * [Style](style.md)
 * [Features](features.md)

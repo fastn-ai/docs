@@ -1,13 +1,32 @@
 ---
-description: "The Create a connector dialog field by field: identity, protocol, visibility and every authentication type, plus Request connector."
+description: "The Create a connector dialog field by field: identity, protocol, visibility, and every authentication type, plus Request connector."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
-# Creating a connector
+# Create a connector
+**Create connector → From scratch** (top right of the catalog) opens the **Create a connector** dialog. It has three sections: **Identity**, **Connection**, and **Authentication**. You add actions after the connector exists. The dialog footer says so: *You can add operations after it is created.* The **+** at the top of the connector rail on a detail page opens a separate create dialog. Its footer stays blank once you enter a name, and its **Protocol** list offers only `REST` and `MCP` for most users.
 
-**Create connector → From scratch** (top right of the catalog) opens the **Create a connector** dialog. It has three sections: **Identity**, **Connection** and **Authentication**. You add actions after the connector exists. The dialog footer says so: *You can add operations after it is created.* The **+** at the top of the connector rail on a detail page opens a separate create dialog. Its footer stays blank once you enter a name, and its **Protocol** list offers only `REST` and `MCP` for most users.
+<figure><img src="../../.gitbook/assets/screens/create-connector-menu.webp" alt="The Create connector menu with four items: From scratch, Build with fastn agent (On paid plans. Upgrade to use it.), Build in your AI tool and Import from file"><figcaption>The four ways to create a connector.</figcaption></figure>
+
+### Before you start
+
+* **Who this is for:** an Owner, Admin, Developer or Operator. Viewers cannot create connectors.
+* **The app's API details**: its base URL, how it authenticates, and for OAuth, a client ID and secret from an OAuth app you registered with the vendor.
+* **Check the [catalog](the-catalogue.md) first.** If fastn already has the app, connect to it instead.
 
 {% hint style="info" %}
-You rarely need to build a connector by hand. Describe the app to [Build with AI](../agent/README.md) (**Create connector → Build with AI**) and give it the vendor's API docs or an OpenAPI file. It creates the connector, its actions and its auth method, then tests them.
+You rarely need to build a connector by hand. Describe the app to [the fastn agent](../agent/README.md) (**Create connector → Build with fastn agent**, on paid plans) or to your AI tool (**Create connector → Build in your AI tool**, every plan), and give it the vendor's API docs or an OpenAPI file. It creates the connector, its actions, and its auth method, then tests them.
 {% endhint %}
 
 ### Identity
@@ -15,14 +34,14 @@ You rarely need to build a connector by hand. Describe the app to [Build with AI
 | Field | Required | Notes |
 | --- | --- | --- |
 | **Name** | Yes | What people see on the card and in the widget. Placeholder: `Salesforce`. |
-| **Slug** | Yes | The identifier used in API paths and in workflow code. *Derived from the name. Edit it to override.* In this dialog, use a lowercase letter followed by lowercase letters and digits only, for example `acmecrm`. The form blocks capital letters, spaces and underscores before you submit, so a slug derived from a two-word name (such as `acmeCrm` from *Acme CRM*) has to be edited to all lowercase. Hyphens pass the form but are rejected by the API with *Request validation failed*. |
-| **Description** | No | Shown on the card. Build with AI also reads it to decide what the connector is for, so describe what the app does and which parts of its API the connector covers. |
+| **Slug** | Yes | The identifier used in API paths and in workflow code. *Derived from the name. Edit it to override.* In this dialog, use a lowercase letter followed by lowercase letters and digits only, for example `acmecrm`. The form blocks capital letters, spaces, and underscores before you submit, so a slug derived from a two-word name (such as `acmeCrm` from *Acme CRM*) has to be edited to all lowercase. Hyphens pass the form but are rejected by the API with *Request validation failed*. |
+| **Description** | No | Shown on the card. The fastn agent also reads it to decide what the connector is for, so describe what the app does and which parts of its API the connector covers. |
 
 ### Connection
 
 | Field | Notes |
 | --- | --- |
-| **Protocol** | How fastn talks to the app: `REST` (default), `MCP`, `FTP`, `Database` or `REDIS`. The choice changes the rest of the dialog; see below. |
+| **Protocol** | How fastn talks to the app: `REST` (default), `MCP`, `FTP`, `Database`, or `REDIS`. The choice changes the rest of the dialog; see below. |
 | **Visibility** | Always `Private`: *Only your organization can see it. Publishing to the customer catalog is done by a platform admin.* |
 | **Domain** | Optional. The vendor's domain, for example `salesforce.com`. Used to find the connector's icon. |
 | **Icon URL** | Optional. An image URL to use as the icon instead. |
@@ -33,15 +52,15 @@ What each protocol adds:
 | --- | --- | --- |
 | **REST** | None. | Shown. |
 | **MCP** | **MCP Server URL**: the address of the MCP server the connector talks to. | Shown. |
-| **FTP** | **Transfer Protocol**: `SFTP`, `FTP` or `FTPS`. A **Connection Fields** list shows what users enter when they connect: **Host**, **Port**, **Username**, and either **Password** or **SSH Private Key (PEM)**. | Replaced by Connection Fields. |
-| **Database** | **Connection Fields**: **Database Type** (`postgres`, `mysql`, `mssql`, `redshift` or `mongodb`), **Host**, **Port**, **Database**, **Username**, **Password**, **SSL Mode** (`disable`, `prefer`, `require` or `verify-full`), and for SQL Server: **SQL Server Sign-in** (`sql` for a SQL login, or `azure-ad-password` for a Microsoft Entra ID account), **Azure Tenant ID** (required with `azure-ad-password`) and **Azure Client ID** (optional). | Replaced by Connection Fields. |
-| **REDIS** | **Connection Fields**: **Host**, **Port**, **Password**, **TLS** (default off) and **Database** (a number from 0 to 15, default 0). | Replaced by Connection Fields. |
+| **FTP** | **Transfer Protocol**: `SFTP`, `FTP`, or `FTPS`. A **Connection Fields** list shows what users enter when they connect: **Host**, **Port**, **Username**, and either **Password** or **SSH Private Key (PEM)**. | Replaced by Connection Fields. |
+| **Database** | **Connection Fields**: **Database Type** (`postgres`, `mysql`, `mssql`, `redshift`, or `mongodb`), **Host**, **Port**, **Database**, **Username**, **Password**, **SSL Mode** (`disable`, `prefer`, `require`, or `verify-full`), and for SQL Server: **SQL Server Sign-in** (`sql` for a SQL login, or `azure-ad-password` for a Microsoft Entra ID account), **Azure Tenant ID** (required with `azure-ad-password`), and **Azure Client ID** (optional). | Replaced by Connection Fields. |
+| **REDIS** | **Connection Fields**: **Host**, **Port**, **Password**, **TLS** (default off), and **Database** (a number from 0 to 15, default 0). | Replaced by Connection Fields. |
 
-For FTP, Database and REDIS the dialog notes that the host, port and credentials are entered when someone adds a connection, not here.
+For FTP, Database, and REDIS the dialog notes that the host, port, and credentials are entered when someone adds a connection, not here.
 
 ### Authentication
 
-> How your customers authorise this connector. The first one is the default unless you say otherwise.
+> How your customers authorize this connector. The first one is the default unless you say otherwise.
 
 Each method is one block. **Add method** adds another block, so one connector can offer, for example, both OAuth and an API key. Each block has:
 
@@ -56,11 +75,11 @@ Each method is one block. **Add method** adds another block, so one connector ca
 | **Basic Auth** | `BASIC` | A Configuration with `username` and `password`. |
 | **Digest Auth** | `DIGEST` | A Configuration with `username` and `password`. |
 | **Bearer Token** | `BEARER` | A Configuration with `bearerToken` and a hidden `expires_in`. |
-| **API Key** | `API_KEY` | A Configuration with `apiKeyName` (the header name, default `Api-Token`, hidden from users), `apiKeyValue` (the key) and a hidden `expires_in`. |
+| **API Key** | `API_KEY` | A Configuration with `apiKeyName` (the header name, default `Api-Token`, hidden from users), `apiKeyValue` (the key), and a hidden `expires_in`. |
 | **OAuth 2.0** (default) | `OAUTH_2` | **Use Dynamic Client Registration (DCR)** (RFC 7591), and **Additional OAuth Config**, a list of extra key/value settings sent with the OAuth flow. The OAuth app itself (client ID and secret) is added afterwards as an [auth provider](auth-methods.md). |
 | **Custom** | `INPUT` | An empty Configuration. You define every field the user must enter, for example an account subdomain plus a token. |
 
-The **Stored as** value is the type saved with the auth method, for example in an exported bundle. The **Auth** column on the [Connections](../connections/README.md) page and the connector's header line show readable labels instead, such as *OAuth 2.0*, *API key* or *Custom*.
+The **Stored as** value is the type saved with the auth method, for example in an exported bundle. The **Auth** column on the [Connections](../connections/README.md) page and the connector's header line show readable labels instead, such as *OAuth 2.0*, *API key*, or *Custom*.
 
 #### The Configuration editor
 
@@ -102,9 +121,9 @@ This is the default Configuration for **API Key**:
 
 Change `apiKeyName`'s `default` to the header the vendor expects, for example `X-API-Key`.
 
-### Saving
+### Save the connector
 
-The footer reads *Give it a name to continue.* until **Name** is filled in. **Create connector** then creates the connector as a private connector owned by your workspace, with version `v1.0` in **Test**. Its card is badged `Custom`. Add actions from the connector's detail page; see [Editing, publishing and deleting](editing-and-deleting.md#add-an-action).
+The footer reads *Give it a name to continue.* until **Name** is filled in. **Create connector** then creates the connector as a private connector owned by your workspace, with version `v1.0` in **Test**. Its card is badged `Custom`. Add actions from the connector's detail page; see [Edit, publish, and delete](editing-and-deleting.md#add-an-action).
 
 ### Request a connector
 

@@ -1,5 +1,17 @@
 ---
 description: Add fastn to Claude as a custom connector, then build integrations from a Claude chat.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Claude
@@ -16,7 +28,7 @@ Add fastn to Claude once, sign in, then ask for the integration in a chat. This 
 {% step %}
 #### Open Add to Claude from fastn
 
-In fastn, click **Connect AI tools** in the top bar (or open **Embed → API keys and MCP** → **MCP server**) and click **Add to Claude**. You need the **Developer** role or above. Claude opens the **Add custom connector** form with the name and URL already filled in.
+In fastn, click **Connect your AI tool** in the top bar (or open **Embed → MCP server**) and click **Add to Claude**. You need the **Developer** role or above. Claude opens the **Add custom connector** form with the name and URL already filled in.
 
 <figure><img src="../../.gitbook/assets/mcp-claude-add-custom-connector.webp" alt="Claude's Add custom connector form opened from a link, with the warning This connector was suggested by an external link, the name Fastn, the URL https://mcp.fastn.dev/fastn-workspace, Connects to mcp.fastn.dev, and Cancel and Continue buttons"><figcaption>Claude warns that the connector came from a link. Check the URL is <code>https://mcp.fastn.dev/fastn-workspace</code>, then click <strong>Continue</strong>.</figcaption></figure>
 
@@ -64,11 +76,11 @@ Back in Claude, a *Connected to fastn* notice appears and the connector lists fa
 
 2. Ask for the outcome in one sentence. To check the connection first, ask *What can fastn do for me?* or *List my workflows*.
 
-<figure><img src="../../.gitbook/assets/mcp-claude-prompt.png" alt="A Claude message reading: Using fastn, save invoice emails from Gmail to a Google Sheet. Test it, then add it to my widget."><figcaption>Name the systems, what starts it and what moves.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/mcp-claude-prompt.png" alt="A Claude message reading: Using fastn, save invoice emails from Gmail to a Google Sheet. Test it, then add it to my widget."><figcaption>Name the apps, what starts it and what moves.</figcaption></figure>
 
-[Writing a good first message](../agent/README.md#writing-a-good-first-message) has more examples.
+[Write a good first message](../agent/README.md#write-a-good-first-message) has more examples.
 
-3. Each time Claude wants to use a fastn tool, it asks first: **Decline**, **Always allow** or **Allow once**.
+3. Each time Claude wants to use a fastn tool, it asks first: **Decline**, **Always allow**, or **Allow once**.
 
 <figure><img src="../../.gitbook/assets/mcp-claude-tool-approval.webp" alt="Claude asking Claude wants to use fastnPlatform__listWorkflows from Fastn, with the argument Sort status, and Decline, Always allow and Allow once buttons"><figcaption>The prompt names the tool and the connector it comes from.</figcaption></figure>
 
@@ -76,7 +88,7 @@ Back in Claude, a *Connected to fastn* notice appears and the connector lists fa
 
 <figure><img src="../../.gitbook/assets/mcp-claude-question-invoice.png" alt="Claude asking What counts as an invoice email?, with Subject or body mentions invoice marked recommended"><figcaption>A business question, with the recommended answer first.</figcaption></figure>
 
-From here Claude works through the same steps as every agent: see [Building from your AI agent](../building-from-your-ai-agent.md).
+From here Claude works through the same steps as every AI tool: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 ## Team and Enterprise plans
 
@@ -84,14 +96,14 @@ Only an organization owner can add a custom connector. Members see the note belo
 
 <figure><img src="../../.gitbook/assets/mcp-claude-team-owner-only.png" alt="Claude's Add custom connector option grayed out, with the note Ask an organization owner to add this for your team"><figcaption>What a Team or Enterprise member sees.</figcaption></figure>
 
-Owners can use **Add for the whole organization** on the second **Claude** tile, under **Other**, on fastn's MCP page instead of **Add to Claude**.
+Owners can use **Add for the whole organization** on the second **Claude** tile, under **Other**, on fastn's **MCP server** page instead of **Add to Claude**.
 
 If you belong to more than one Claude workspace (for example Personal and a Team), add fastn in the one you chat in. A connector only shows in the workspace it was added to.
 
 ## Troubleshooting
 
 * *A connector with this URL already exists in your organization.* Someone in your Claude organization already added fastn. Open **Customize** → **Connectors** and connect that one instead of adding another.
-* **fastn works on the wrong org.** Open the connector, click **Disconnect**, then **Connect** again and pick the workspace (the picker appears when you belong to more than one fastn org). If you chose **The org selected in fastn**, switch org in the fastn dashboard instead.
+* **fastn works on the wrong org.** Open the connector, click **Disconnect**, then **Connect** again, and pick the workspace (the picker appears when you belong to more than one fastn org). If you chose **The org selected in fastn**, switch org in the fastn dashboard instead.
 * **Claude Code or the Claude desktop config file.** These are set up separately: see [Claude Code](claude-code.md).
 
 {% hint style="info" %}

@@ -4,7 +4,7 @@ description: "Build an integration with the SDK from start to finish: set up onc
 
 # Build an integration, end to end
 
-This page walks through one complete integration in the order you build it. The example is a product that serves businesses which use a calendar and a CRM (a scheduling assistant, a sales tool, a support desk): it books meetings for a customer's calendar and keeps the customer's CRM up to date. Swap the apps and the fields for yours; the shape stays the same.
+Follow one complete integration in the order you build it. The example is a product that serves businesses that use a calendar and a CRM (a scheduling assistant, a sales tool, a support desk): it books meetings for a customer's calendar and keeps the customer's CRM up to date. Swap the apps and the fields for yours; the shape stays the same.
 
 Words used here: a **customer** is one business you serve. An **account** is one app a customer connected (its Google Calendar, its HubSpot). Your one **API key** runs every call.
 
@@ -19,7 +19,7 @@ Keep every fixed value in one place.
 | Value | Where it is used |
 | ----- | ---------------- |
 | Base URL `https://api.fastn.dev` | The client. It is the default. |
-| API key `fsk_live_…` | Every call. Create it on [Embed → API keys and MCP](../../manage/api-keys.md). It is a password: secret store only. |
+| API key `fsk_live_…` | Every call. Create it on [Embed → API keys](../../manage/api-keys.md). Treat it as a password and keep it in a secret store. |
 | Webhook secret `whsec_…` | Checking that an event really came from fastn (2.1). You get it once, when you register the webhook. |
 | Package `@fastn-ai/sdk` 0.5.1 or newer, Node.js 20 or newer | `npm install @fastn-ai/sdk` |
 
@@ -37,7 +37,7 @@ export const forCustomer = (customerRef: string) => fastn.customer(customerRef);
 
 Create one client when your app starts and reuse it: it caches the lookups it makes. `fastn.me()` tells you who the key is (`role`, `org.id`).
 
-### 1.3 Names, dates and ids
+### 1.3 Names, dates, and ids
 
 * Record fields are `snake_case`, the catalog's own names (`start_time`, `first_name`, `parent_id`). Options and setup arguments are `camelCase` (`idempotencyKey`, `connectionName`).
 * Dates go in as ISO 8601 with a zone (`2026-11-03T15:00:00Z`) or as a JavaScript `Date`; they come back as ISO 8601 strings, in whatever zone the app reports.
@@ -63,7 +63,7 @@ const hook = await fastn.webhooks.create({
 // hook.id = esub_…   hook.secret = whsec_… (shown once: store it now)
 ```
 
-Every event is a `POST` with a JSON body and three headers: `x-fastn-event-id`, `x-fastn-timestamp` and `x-fastn-signature`. Check the signature with the SDK before you trust the body; reply `200` first and do the work after:
+Every event is a `POST` with a JSON body and three headers: `x-fastn-event-id`, `x-fastn-timestamp`, and `x-fastn-signature`. Check the signature with the SDK before you trust the body; reply `200` first and do the work after:
 
 ```typescript
 import express from "express";
@@ -87,7 +87,7 @@ A delivery that does not get a `2xx` is retried with growing gaps for 24 hours. 
 
 ### 2.2 Register your return page
 
-When a customer finishes a setup link, the browser is sent to a page of yours. Register that address once in the dashboard, under **Widget › Embed › Setup links › Pages to send people back to**. The first address is the default; a link can pick another registered one with `redirectUrl` (3.2). An address that is not on the list is refused with `400 SETUP_LINK_REDIRECT_NOT_ALLOWED`.
+When a customer finishes a setup link, the browser is sent to a page of yours. Register that address once in the dashboard, under Embed → Widget → **Embed** tab → **Setup links** → **Pages to send people back to** (the panel appears once you pick a customer). The first address is the default; a link can pick another registered one with `redirectUrl` (3.2). An address that is not on the list is refused with `400 SETUP_LINK_REDIRECT_NOT_ALLOWED`.
 
 ---
 
@@ -148,7 +148,7 @@ await customer.remove();                               // the customer and every
 
 ## 4. During a call
 
-Every typed method takes the request options last: `idempotencyKey` (makes a write safe to retry), `correlationId` (your id for the request, to trace it later), `provider` and `connectionId` (when the customer has more than one app or account), `timeoutMs`, `retries`. See [Errors, retries and options](errors-and-options.md).
+Every typed method takes the request options last: `idempotencyKey` (makes a write safe to retry), `correlationId` (your id for the request, to trace it later), `provider` and `connectionId` (when the customer has more than one app or account), `timeoutMs`, `retries`. See [Errors, retries, and options](errors-and-options.md).
 
 ### 4.1 Check free time
 
@@ -204,19 +204,19 @@ Every record answer is `{ id, provider, data, warnings? }`; `warnings` lists a f
 
 ---
 
-## 5. Retries, tracing and limits
+## 5. Retries, tracing, and limits
 
 | Topic | What to do |
 | ----- | ---------- |
 | Retry keys | Pass `idempotencyKey` on every write. The same key with the same input returns the first answer instead of creating a second record; the same key with different input is `422`; a key whose first run is still going is `409 IDEMPOTENCY_IN_PROGRESS` (wait a moment, send the same call again). |
 | Your call id | Pass `correlationId` on the calls of one conversation. `customer.callLog(correlationId)` then lists every app call fastn made for it. |
-| What the SDK retries | Reads (`GET`), and the writes fastn de-duplicates (unified create, update and delete, and workflow execute) when they carry an `idempotencyKey`, on `429`, `502`, `503`, `504` and network errors, twice by default. A `502 UNIFIED_PROVIDER_ERROR` whose `providerStatus` is `400`, `401`, `403`, `405`, `413`, `415` or `422` is the app's final refusal and is never retried. Everything else is thrown to you. |
+| What the SDK retries | Reads (`GET`), and the writes fastn de-duplicates (unified create, update, and delete, and workflow execute) when they carry an `idempotencyKey`, on `429`, `502`, `503`, `504`, and network errors, twice by default. A `502 UNIFIED_PROVIDER_ERROR` whose `providerStatus` is `400`, `401`, `403`, `405`, `413`, `415`, or `422` is the app's final refusal and is never retried. Everything else is thrown to you. |
 | Rate limits | `429` carries `Retry-After`; the SDK waits for it. |
 | Slow apps | Set `timeoutMs` per call when a provider is known to be slow; the default is 60 seconds. |
 
 ---
 
-## 6. Errors you will meet
+## 6. Errors to handle
 
 | Error | Means | Do |
 | ----- | ----- | -- |
@@ -228,6 +228,6 @@ Every record answer is `{ id, provider, data, warnings? }`; `warnings` lists a f
 | `400 SETUP_LINK_REDIRECT_NOT_ALLOWED` | `redirectUrl` is not registered. | Register it in the dashboard first (2.2). |
 | `404 CONNECTION_NOT_FOUND` | The account id is not one of this customer's. | Read `customer.connections()`. |
 | `400 UNIFIED_PROVIDER_REJECTED`, `401 UNIFIED_PROVIDER_AUTH_FAILED`, `404 UNIFIED_PROVIDER_NOT_FOUND`, `429 UNIFIED_PROVIDER_RATE_LIMITED` | The app refused the request. | `e.body.providerStatus` and `e.body.providerError` say why. |
-| `502 UNIFIED_PROVIDER_ERROR` | The app failed (a 5xx, a timeout or no answer). | Retry later. |
+| `502 UNIFIED_PROVIDER_ERROR` | The app failed (a 5xx, a timeout, or no answer). | Retry later. |
 
-Every failure is a `FastnApiError` with `status`, `code`, `message` and `requestId` (quote it when you ask for help), or a `FastnNetworkError`. The full list is on [Errors, retries and options](errors-and-options.md).
+Every failure is a `FastnApiError` with `status`, `code`, `message`, and `requestId` (quote it when you ask for help), or a `FastnNetworkError`. The full list is on [Errors, retries, and options](errors-and-options.md).

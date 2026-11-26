@@ -1,12 +1,24 @@
 ---
 description: Who can see and change things in this organization.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # People
 
 **Settings → People**
 
-<figure><img src="../.gitbook/assets/settings-people.jpg" alt="The People list with four rows, names and addresses obscured, three Admins and one Owner, all Active with no extra Access, under the chips Everyone 4, Owner 1 and Admin 3, each row ending in Change role and a delete control"><figcaption>Change role is greyed out on every Owner row and on your own.</figcaption></figure>
+<figure><img src="../.gitbook/assets/settings-people.jpg" alt="The People list with four rows, names and addresses obscured, three Admins and one Owner, all Active with no extra Access, under the chips Everyone 4, Owner 1 and Admin 3, each row ending in Change role and a delete control"><figcaption>Change role is grayed out on every Owner row and on your own.</figcaption></figure>
 
 | Column     | Notes                                                            |
 | ---------- | ------------------------------------------------------------------ |
@@ -20,13 +32,13 @@ description: Who can see and change things in this organization.
 
 Each row carries a checkbox. Selecting rows opens a bar with **Change role…** (apply one role to everyone selected), **Deactivate** and **Clear**.
 
-### Inviting someone
+### Invite someone
 
 **Invite someone** sends an invitation to an email address with a role attached. Until they accept, they appear with status **Invited**, and their row carries **Resend invite** in case the email never arrived.
 
 If you have set up [domain joining](general.md), people on that domain can request access instead of waiting for an invite, and the role you configured there is preselected when you invite them.
 
-### Changing a role
+### Change a role
 
 **Change role** on any row. What you may assign is bounded by your own role. You cannot grant more than you hold.
 
@@ -35,7 +47,7 @@ If you have set up [domain joining](general.md), people on that domain can reque
 * **Every Owner row.** An owner's role changes through **Transfer Ownership**, not here. The current Owner finds it in an Admin's panel; the Admin becomes the owner and you become an admin.
 * **Your own row.** Another owner or admin has to change your role.
 
-### Removing someone
+### Remove someone
 
 The trash icon removes a person from the organization. You cannot remove yourself, and you cannot remove the organization's only owner (transfer ownership first). Their audit-log history stays, so *who did what* remains answerable after they leave.
 

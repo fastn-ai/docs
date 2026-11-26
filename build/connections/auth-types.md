@@ -1,5 +1,17 @@
 ---
 description: "The values in the Auth column and on a connection's detail page, and what each one means for keeping the connection working."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Auth types

@@ -32,6 +32,7 @@ Operation: `listEnvironments`
 | `data[].slug` | `string` | 'live' for the built-in default environment |
 | `data[].isDefault` | `boolean` | The org's production environment. Deploying here also moves the workflow's live code pointer, and /promote requires workflows.deploy_prod rather than deploy_test |
 | `data[].isDeletable` | `boolean` | false for the built-in Live environment |
+| `data[].isSandbox` | `boolean` | A testing (sandbox) environment, chosen at create. false for Live and every production stage |
 | `data[].requiresReview` | `boolean` | When true, deploys must go through /promote and a merged GitHub PR |
 | `data[].createdAt` | `string` |  |
 
@@ -41,7 +42,7 @@ Operation: `listEnvironments`
 POST /v1/environments
 ```
 
-Creates a custom (non-default, deletable) environment for the caller's org. The slug is lowercased; every character outside [a-z0-9-] is replaced with '-' one-for-one (hyphens are preserved and runs are NOT collapsed, so 'a  b' becomes 'a--b'); then leading and trailing hyphens are stripped, which is why 'live!' normalizes to 'live' and is rejected as reserved. 'test' and 'live' are both reserved and rejected with 400: 'test' has no row at all, and 'live' is the built-in production environment seeded at org creation, which this route would otherwise create with custom-env flags.
+Creates a custom (non-default, deletable) environment for the caller's org. The slug is lowercased; every character outside [a-z0-9-] is replaced with '-' one-for-one (hyphens are preserved and runs are NOT collapsed, so 'a  b' becomes 'a--b'); then leading and trailing hyphens are stripped, which is why 'live!' normalizes to 'live' and is rejected as reserved. 'test' and 'live' are both reserved and rejected with 400: 'test' has no row at all, and 'live' is the built-in production environment seeded at org creation, which this route would otherwise create with custom-env flags. isSandbox marks a testing environment (fixed after create); every environment is otherwise production. Each kind counts against the plan: Launch allows 1 production (the built-in Live) and 1 sandbox, Scale and Enterprise are unlimited, and a create past the limit is refused with 403 ENVIRONMENT_LIMIT_REACHED.
 
 Operation: `createEnvironment`
 
@@ -51,11 +52,13 @@ Operation: `createEnvironment`
 | --- | --- | --- | --- |
 | `name` | `string` | Yes |  |
 | `slug` | `string` | Yes |  |
+| `isSandbox` | `boolean` | No | A testing (sandbox) environment rather than a production one: connections made in it are sandbox connections (free up to the plan's allowance, deleted after 7 days, never customer connections). Default false (production). |
 
 **Responses**
 
 * `201`: Created
-* `400`: Missing name/slug, or a reserved slug
+* `400`: Missing name/slug, a reserved slug, or isSandbox not a boolean
+* `403`: The plan's limit for this kind of environment is reached. Code: ENVIRONMENT_LIMIT_REACHED, with dimension (production_environments or sandbox_environments) and limit.
 * `409`: An environment with that slug already exists in this org
 
 **Response fields**
@@ -68,8 +71,128 @@ Operation: `createEnvironment`
 | `data.slug` | `string` | 'live' for the built-in default environment |
 | `data.isDefault` | `boolean` | The org's production environment. Deploying here also moves the workflow's live code pointer, and /promote requires workflows.deploy_prod rather than deploy_test |
 | `data.isDeletable` | `boolean` | false for the built-in Live environment |
+| `data.isSandbox` | `boolean` | A testing (sandbox) environment, chosen at create. false for Live and every production stage |
 | `data.requiresReview` | `boolean` | When true, deploys must go through /promote and a merged GitHub PR |
 | `data.createdAt` | `string` |  |
+
+### List connections restricted to environments
+
+```http
+GET /v1/environments/connections
+```
+
+Connections this org has limited to some environments (requires workflows.read). A connection not listed may be used in every environment. A workflow run that resolves a listed connection in an environment outside envSlugs is refused before the request leaves, with CONNECTION_ENV_FORBIDDEN in its error. MCP connectors, whose credential never leaves the connector service, are not checked.
+
+Operation: `listConnectionEnvironments`
+
+**Responses**
+
+* `200`: Restricted connections
+
+**Response fields**
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `data` | `object[]` |  |
+| `data[].connectionId` | `string` |  |
+| `data[].envSlugs` | `string[]` |  |
+| `data[].updatedAt` | `string` |  |
+
+### Restrict a connection to environments
+
+```http
+PUT /v1/environments/connections/{connectionId}
+```
+
+Sets which environments may use this connection (requires workflows.deploy_prod). envSlugs null lifts the restriction, so every environment may use it again. Each slug must be test or one of the org's environments. Only this org's connections (ucl:&lt;this org>:...) can be restricted. Applies to new runs within 30 seconds. Refused for an API key pinned to an environment (403 ENV_NOT_PERMITTED).
+
+Operation: `setConnectionEnvironments`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `connectionId` | path | string | Yes |  |
+
+**Request body**
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `envSlugs` | `string[]` | Yes | The environments that may use this connection. null: every environment (the default). |
+
+**Responses**
+
+* `200`: Stored
+* `400`: Invalid body, or an unknown environment (UNKNOWN_ENVIRONMENT)
+* `403`: Missing workflows.deploy_prod, or an environment-pinned API key (ENV_NOT_PERMITTED)
+* `404`: Not one of this org's connections (CONNECTION_NOT_FOUND)
+
+### Read the environment guardrails
+
+```http
+GET /v1/environments/guardrails
+```
+
+The org's switches that keep Staging and Test from reaching Live (requires workflows.read). All off until set: liveOwnSecrets (a Live run reads only secrets saved for Live, never an All environments one), liveReservedRuns (concurrent runs only Live may use: runs outside Live may not take the part of the instant and queued limits Live has not used, and Live still gets the whole limit; the reserve is capped at each limit), separateData (fastn.state and fastn.files keep a separate copy per environment; Live keeps the existing data, other environments, test included, start empty). Also returns the run limits the reserve is held against and the secrets Live would stop reading.
+
+Operation: `getEnvironmentGuardrails`
+
+**Responses**
+
+* `200`: The guardrails
+
+**Response fields**
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `data` | `object` |  |
+| `data.liveEnvironment` | `string` | Slug of the org's default (Live) environment; null for an org with none. |
+| `data.liveOwnSecrets` | `boolean` |  |
+| `data.liveReservedRuns` | `integer` |  |
+| `data.separateData` | `boolean` |  |
+| `data.runLimits` | `object` |  |
+| `data.runLimits.instant` | `integer` | instant_concurrent_flows; -1 is unlimited |
+| `data.runLimits.queued` | `integer` | concurrent_flows (standard and long runs); -1 is unlimited |
+| `data.secretsLiveWouldLose` | `string[]` | All environments secrets with no copy saved for Live: what Live stops reading while liveOwnSecrets is on (first 200 names). |
+
+### Change the environment guardrails
+
+```http
+PUT /v1/environments/guardrails
+```
+
+Changes any of liveOwnSecrets, liveReservedRuns and separateData; a field left out keeps its value (requires workflows.deploy_prod, the permission a Live deploy needs). Every workflow pod applies a change within 30 seconds. Turning separateData on gives every environment but Live empty state and files, and turning it off again returns them to Live's. Check secretsLiveWouldLose from GET before turning liveOwnSecrets on: a Live run that reads one of them fails with Secret not found. Refused for an API key pinned to an environment (403 ENV_NOT_PERMITTED), and with 409 NO_LIVE_ENVIRONMENT for an org with no default environment.
+
+Operation: `setEnvironmentGuardrails`
+
+**Request body**
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `liveOwnSecrets` | `boolean` | No | Live reads only secrets saved for Live, never an All environments one. |
+| `liveReservedRuns` | `integer` | No | Concurrent runs only Live may use, out of the plan's limit. 0 or null: no reserve. |
+| `separateData` | `boolean` | No | Workflow state and files are kept apart per environment. Live keeps the existing data. |
+
+**Responses**
+
+* `200`: The guardrails as stored
+* `400`: No field given, an unknown field, or a value out of range
+* `403`: Missing workflows.deploy_prod, or an environment-pinned API key (ENV_NOT_PERMITTED)
+* `409`: The org has no default (Live) environment (NO_LIVE_ENVIRONMENT)
+
+**Response fields**
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `data` | `object` |  |
+| `data.liveEnvironment` | `string` | Slug of the org's default (Live) environment; null for an org with none. |
+| `data.liveOwnSecrets` | `boolean` |  |
+| `data.liveReservedRuns` | `integer` |  |
+| `data.separateData` | `boolean` |  |
+| `data.runLimits` | `object` |  |
+| `data.runLimits.instant` | `integer` | instant_concurrent_flows; -1 is unlimited |
+| `data.runLimits.queued` | `integer` | concurrent_flows (standard and long runs); -1 is unlimited |
+| `data.secretsLiveWouldLose` | `string[]` | All environments secrets with no copy saved for Live: what Live stops reading while liveOwnSecrets is on (first 200 names). |
 
 ### Toggle review gating for an environment
 
@@ -109,6 +232,7 @@ Operation: `setEnvironmentReviewRequirement`
 | `data.slug` | `string` | 'live' for the built-in default environment |
 | `data.isDefault` | `boolean` | The org's production environment. Deploying here also moves the workflow's live code pointer, and /promote requires workflows.deploy_prod rather than deploy_test |
 | `data.isDeletable` | `boolean` | false for the built-in Live environment |
+| `data.isSandbox` | `boolean` | A testing (sandbox) environment, chosen at create. false for Live and every production stage |
 | `data.requiresReview` | `boolean` | When true, deploys must go through /promote and a merged GitHub PR |
 | `data.createdAt` | `string` |  |
 

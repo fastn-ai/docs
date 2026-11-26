@@ -1,12 +1,24 @@
 ---
 description: Deployment stages, and the GitHub review gate in front of them.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Environments and GitHub
 
 **Settings → Environments** - in your dashboard, `/settings/environments`. Visible to **developer** and above.
 
-<figure><img src="../.gitbook/assets/settings-environments.jpg" alt="The Environments page: a GitHub card reading No repository connected beside a Connect GitHub button, and a single table row, Live, slug live, Default, Requires review off, Protected"><figcaption>What an organization looks like before anyone adds a stage: one built-in Live target and no review gate in front of it.</figcaption></figure>
+<figure><img src="../.gitbook/assets/screens/settings-environments.webp" alt="Settings, Environments: a New environment button, a GitHub card reading No repository connected with Connect GitHub, and Guardrails with three switches: live uses only live secrets, Runs kept for live, and Separate data per environment"><figcaption>Test and Live are built in. Guardrails are off until you turn them on.</figcaption></figure>
 
 > Test and Live are built in. Add a named environment here when you want another stage, such as staging or review.
 
@@ -36,7 +48,7 @@ In trigger routes and in the `x-fastn-env` header, `test` is not a deployed envi
 
 ### GitHub
 
-A **GitHub** panel sits above the table, explaining what connecting a repository buys you:
+A **GitHub** panel sits above the table, explaining what connecting a repository does:
 
 > Connect a repository and promoting to a reviewed environment opens a pull request instead of deploying straight away.
 
@@ -62,7 +74,7 @@ Pull requests that are still open appear in an **Awaiting review** card, where y
 5. Promote from staging to live once it has run against real traffic.
 
 {% hint style="success" %}
-The repository plus **Requires review** is the single change that turns fastn from a place where anyone can push to production into one with a real approval trail. If you have more than a couple of people building, do it.
+A connected repository plus **Requires review** puts a pull request and an approval trail in front of every promotion to that environment. If more than a couple of people build workflows, set up both.
 {% endhint %}
 
 Publishing and deploying are both recorded in the [audit log](audit-log.md).

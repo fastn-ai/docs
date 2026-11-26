@@ -1,10 +1,22 @@
 ---
 description: "The Auth tab: a connector's authentication methods, the default method, and the OAuth apps (auth providers) behind them."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Auth methods and providers
 
-An **auth method** is one way a customer can prove who they are to the app: sign in with OAuth, paste an API key, enter a username and password. An **auth provider** is the OAuth app (a client ID and client secret registered with the vendor) that an OAuth method uses to send people to the vendor's consent screen.
+An **auth method** is one way a customer can prove who they are to the app: sign in with OAuth, paste an API key, or enter a username and password. An **auth provider** is the OAuth app (a client ID and client secret registered with the vendor) that an OAuth method uses to send people to the vendor's consent screen.
 
 ### The Auth tab
 
@@ -19,7 +31,7 @@ One row per method. Each row shows:
   * Keys and tokens: *Your customers paste a key they generate themselves.*
 * for OAuth methods, how many providers it has, for example *1 provider*.
 
-The method types, and the fields each one asks for, are listed in [Creating a connector → Authentication](creating-a-connector.md#authentication). Each type is stored as a value such as `OAUTH_2`, `API_KEY`, `BEARER`, `BASIC`, `DIGEST`, `INPUT` or `NO_AUTH`. The header line and the [Connections](../connections/README.md) page show readable labels instead, for example *OAuth 2.0*, *API key* or *Custom*.
+The method types, and the fields each one asks for, are listed in [Creating a connector → Authentication](creating-a-connector.md#authentication). Each type is stored as a value such as `OAUTH_2`, `API_KEY`, `BEARER`, `BASIC`, `DIGEST`, `INPUT`, or `NO_AUTH`. The header line and the [Connections](../connections/README.md) page show readable labels instead, for example *OAuth 2.0*, *API key*, or *Custom*.
 
 ### Auth providers
 
@@ -29,22 +41,22 @@ The method types, and the fields each one asks for, are listed in [Creating a co
 | --- | --- |
 | **Name** | The provider's name, for example *HubSpot OAuth*. |
 | **Client ID** | The OAuth client ID registered with the vendor. The client secret is never shown. |
-| **Preferred** | **Preferred app** marks a default provider. Your own app and the community app can both show it; the connect dialog shows which one it will use. |
+| **Preferred** | **Preferred app** marks a default provider. Your own app and the community app can both show it; the connect dialog shows which one it uses. |
 | **Used By** | Which connections use this provider. |
 | **Actions** | What you can do with it. *Community - read-only* means the provider belongs to fastn's shared catalog and cannot be changed from your workspace. |
 
 The **‹** arrow returns to the method list.
 
-#### Using your own OAuth app
+#### Use your own OAuth app
 
-Every fastn-managed OAuth connector ships with a **community app** (shown as "[Connector] OAuth"). It works out of the box but is read-only and shared across fastn customers. A connector your workspace built has no community app, so it has no provider until you create one. An **auth provider** is a set of OAuth credentials that fastn uses when your customers sign in to a connector. Creating your own provider lets you:
+Every fastn-managed OAuth connector ships with a **community app** (shown as "[Connector] OAuth"). It works without any setup but is read-only and shared across fastn customers. A connector your workspace built has no community app, so it has no provider until you create one. Creating your own provider lets you:
 
 * Show your own app name and logo on the service's consent screen when sign-in goes through your app (see Step 6).
 * Control exactly which scopes are requested.
 * Use your own API rate limits instead of shared ones.
 * Rotate or revoke credentials without contacting fastn.
 
-You need a role that can create connectors in your fastn workspace (Owner, Admin, Developer or Operator) to follow these steps. On a fastn-managed connector, your workspace also needs custom OAuth apps allowed. This is on by default; if fastn has turned it off for your workspace, you can view the providers but not add your own.
+You need a role that can create connectors in your fastn workspace (Owner, Admin, Developer, or Operator) to follow these steps. On a fastn-managed connector, your workspace also needs custom OAuth apps allowed. This is on by default; if fastn has turned it off for your workspace, you can view the providers but not add your own.
 
 **Before you begin**
 
@@ -72,15 +84,15 @@ Start in **Integrations**, then open the connector you want to configure.
 
 Authentication settings live on the connector's **Auth** tab, not on the connector list.
 
-1. On the connector page, click the **Auth** tab. The other tabs are **Overview**, **Connections**, **Version pins** and **Webhook config**.
-2. Under **Authentication methods**, you will see **OAuth 2.0** marked **Default**. On a fastn-managed connector it shows "1 provider" on the right: the community app.
+1. On the connector page, click the **Auth** tab. The other tabs are **Overview**, **Connections**, **Version pins**, and **Webhook config**.
+2. Under **Authentication methods**, **OAuth 2.0** is marked **Default**. On a fastn-managed connector it shows "1 provider" on the right: the community app.
 3. Click **Manage providers** at the top right of the panel. The button reads **Add provider** when the connector has no providers yet, and **View providers** when you can't add one.
 
-<figure><img src="../../.gitbook/assets/own-oauth-app-2-auth-tab.webp" alt="The HubSpot connector's Auth tab: Authentication methods lists OAuth 2.0 marked Default with 1 provider, and a Manage providers button at the top right"><figcaption>The <strong>Auth</strong> tab, with <strong>Manage providers</strong> at the top right.</figcaption></figure>
+<figure><img src="../../.gitbook/assets/screens/connector-detail-auth.webp" alt="The HubSpot connector's Auth tab: Authentication methods, How your customers prove who they are, one OAuth 2.0 method marked Default with 1 provider, and a Manage providers button"><figcaption>The Auth tab lists each method; <strong>Manage providers</strong> is where your own OAuth app goes.</figcaption></figure>
 
 **Step 3: Review existing providers**
 
-The **Auth Providers** page lists every set of OAuth credentials for this connector, with columns for **Name**, **Client ID**, **Preferred**, **Used By** and **Actions**.
+The **Auth Providers** page lists every set of OAuth credentials for this connector, with columns for **Name**, **Client ID**, **Preferred**, **Used By**, and **Actions**.
 
 * **[Connector] OAuth** is the community app. It carries the **Preferred app** badge and the label "Community - read-only", so you cannot edit or delete it.
 * Your own providers appear below it once created, with **Edit** and **Delete** actions.
@@ -91,7 +103,7 @@ Click **+ Create Provider** at the top right to add your own.
 
 The **New Auth Provider** dialog opens. Fill in the top section first.
 
-1. **Name**: a label your team will recognize, for example *My Company [Connector] App*.
+1. **Name**: a label your team recognizes, for example *My Company [Connector] App*.
 2. **Description** (optional): a note such as "Production credentials".
 3. **Client ID**: paste the Client ID from your developer app on the service you are connecting.
 4. **Client Secret**: paste the Client Secret from the same app. Treat it like a password.
@@ -103,7 +115,7 @@ Scroll down in the dialog to continue. The **Create** button stays disabled unti
 
 **Step 5: Set the endpoints and grant types**
 
-Scroll to the lower half of the dialog. The grey placeholders in the fields are examples only; replace them with the endpoints published in the service's OAuth documentation.
+Scroll to the lower half of the dialog. The gray placeholders in the fields are examples only; replace them with the endpoints published in the service's OAuth documentation.
 
 | Field | What to enter |
 | --- | --- |
@@ -124,7 +136,7 @@ After you click **Create**, your provider appears in the list under the communit
 
 1. In your provider's row, click **Use this app** in the **Preferred** column. Your app gets the **Preferred app** badge. The community app keeps its own badge, so both rows show it.
 2. Check the Client ID in the row matches the one in your developer app.
-3. Open the **Connections** tab and create a test connection. The connect dialog shows the provider it will use; if it isn't your app, pick yours under **⋯** → **Change provider**. The service's consent screen should then show your app's name. If it still shows the community app, contact fastn.
+3. Open the **Connections** tab and create a test connection. The connect dialog shows the provider it uses; if it isn't your app, pick yours under **⋯** → **Change provider**. The service's consent screen should then show your app's name. If it still shows the community app, contact fastn.
 
 To change credentials later, click **Edit** on your provider's row. **Delete** is available only when no active connection uses the provider.
 
@@ -132,7 +144,7 @@ To change credentials later, click **Edit** on your provider's row. **Delete** i
 
 | Symptom | Likely cause | Fix |
 | --- | --- | --- |
-| **Create** button is greyed out | A required field is empty | Fill **Name**, **Client ID** and **Client Secret**, then retry |
+| **Create** button is grayed out | A required field is empty | Fill **Name**, **Client ID**, and **Client Secret**, then retry |
 | The service shows a redirect URI error | fastn's callback URL is not registered in your developer app | Add the exact callback URL in the app's OAuth settings on the service. Some services, such as Airtable, expect it with a trailing slash (`https://oauth.live.fastn.ai/`). If the error persists with the URL registered exactly, contact fastn |
 | The service shows an invalid scope error | A scope in fastn is not enabled on the developer app | Make the scope lists match in both places |
 | Consent screen still shows the community app | Both apps show **Preferred app**, and the connect dialog picked the community app | For a test connection in the dashboard, pick your app under **⋯** → **Change provider**. Customers connecting in the widget can't choose, so if they keep getting the community app, contact fastn |

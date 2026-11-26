@@ -1,0 +1,39 @@
+---
+description: "Klenty is a sales engagement platform. Manage prospects, lists, cadences and tags, and read call and email engagement reports."
+hidden: true
+---
+
+# Klenty
+
+<img src="../../.gitbook/assets/connectors/lg/klenty.png" alt="Klenty logo">
+
+| | |
+| --- | --- |
+| **Category** | [CRM and sales](README.md) |
+| **Website** | [klenty.com](https://klenty.com) |
+| **Authentication** | Username and API key |
+| **Slug** | `klenty` |
+
+## Setup
+
+Your customers enter their username and api key for Klenty when they connect. Nothing else needs setting up.
+
+## Use it
+
+Add Klenty from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.klenty.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+
+## Actions
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add Custom Field Value</td><td><code>addCustomFieldValue</code></td><td>Set custom field values on an EXISTING prospect, identified by email in the URL path. Uses Klenty's Update Prospect endpoint; the prospect must already exist.</td></tr><tr><td>Add Prospect To List</td><td><code>addProspectToList</code></td><td>Assign an existing prospect to a Klenty list, identified by email in the URL path. Verified live on 2026-09-14: a prospect on list "default" sent List="fastn-e2e" moves to that list and the change persists on a subsequent Get Prospect. Sending an existing prospect through Create Prospect instead is rejected with K01205005 "Prospect already exists in Klenty.", so this is the correct action for changing the list of a prospect that already exists. The target list must already exist in the account.</td></tr><tr><td>Add Tags To Prospect</td><td><code>addTagsToProspect</code></td><td>Set the tags on an existing prospect, identified by email in the URL path. Tags are pipe-separated (Tag1|Tag2). IMPORTANT: this REPLACES the prospect's entire tag set rather than appending to it — it uses Klenty's Update Prospect endpoint, which overwrites the Tags field. Verified live: a prospect tagged "tagX,tagY" sent Tags="newTag" ends up tagged only "newTag". To add a tag while keeping the existing ones, read the prospect first with Get Prospect and send the full combined list. The prospect must already exist.</td></tr><tr><td>Add Webhook</td><td><code>addWebhook</code></td><td>Create a webhook subscription for a Klenty event.</td></tr><tr><td>Bulk Create Prospects</td><td><code>bulkCreateProspects</code></td><td>Create up to 100 prospects in one call. Pass a JSON array string of prospect objects (same fields as Create Prospect).</td></tr><tr><td>Create Prospect</td><td><code>createProspect</code></td><td>Create a new prospect. Only Email is required; all other fields are optional. CustomFields is an array of {key,value} objects. This does NOT upsert: verified live, an email that already exists is rejected with HTTP 200 carrying error K01205005 "Prospect already exists in Klenty." Use Update Prospect to change an existing prospect, and Add Prospect To List to move one between lists. Klenty exposes no delete-prospect endpoint, so prospects created here cannot be removed via the API.</td></tr><tr><td>Delete Webhook</td><td><code>deleteWebhook</code></td><td>Delete a webhook subscription by id.</td></tr><tr><td>Get All Webhooks</td><td><code>getAllWebhooks</code></td><td>Get all webhook subscriptions configured for the user.</td></tr><tr><td>Get Call Completion Report</td><td><code>getCallCompletion</code></td><td>Retrieve call completion records for the account over a date range. Klenty rejects any range wider than the last 30 days with error K2002, and answers HTTP 200 with status false and error K2003 when no call records match.</td></tr><tr><td>Get Company Cadences</td><td><code>getCompanyCadences</code></td><td>Get all company/team cadences (sequences). Uses the Company API Key.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 20 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Get Email Engagements Report</td><td><code>getEmailEngagements</code></td><td>Get aggregate email engagement metrics for a cadence within a date range.</td></tr><tr><td>Get Lists</td><td><code>getLists</code></td><td>Get all prospect lists in the Klenty account.</td></tr><tr><td>Get Prospect</td><td><code>getProspect</code></td><td>Get full details of a single prospect by email address. Pass customFields=true to include custom field values.</td></tr><tr><td>Get Prospect Status By Email</td><td><code>getProspectStatusByEmail</code></td><td>Get the cadence status and prospect status for a prospect by email.</td></tr><tr><td>Get Prospect Status By Id</td><td><code>getProspectStatusById</code></td><td>Get the cadence status and prospect status for a prospect by Klenty prospect id.</td></tr><tr><td>Get Step Wise Engagements Report</td><td><code>getStepWiseEngagements</code></td><td>Get per-step engagement metrics for a cadence within a date range.</td></tr><tr><td>Get User Cadences</td><td><code>getUserCadences</code></td><td>Get the cadences owned by a specific user, filtered by owner email (username query param).</td></tr><tr><td>List Prospects By Created Date</td><td><code>listProspectsByCreatedDate</code></td><td>Get prospects created within a date range. Dates MUST be yyyy/mm/dd (slash-separated); yyyy-mm-dd is rejected by Klenty with K06101027 'Invalid startDate in payload'.</td></tr><tr><td>List Prospects By List</td><td><code>listProspectsByList</code></td><td>Get prospects belonging to a specific Klenty list, with pagination.</td></tr><tr><td>List Prospects By Updated Date</td><td><code>listProspectsByUpdatedDate</code></td><td>Get prospects last updated within a date range. Dates MUST be yyyy/mm/dd (slash-separated); yyyy-mm-dd is rejected by Klenty with K06101027 'Invalid startDate in payload'.</td></tr><tr><td>Mark Do Not Contact</td><td><code>markDoNotContact</code></td><td>Change a prospect's status to Do Not Contact.</td></tr><tr><td>Remove Tags From Prospect</td><td><code>removeTagsFromProspect</code></td><td>Remove one or more tags from a prospect by email.</td></tr><tr><td>Resume Cadence</td><td><code>resumeCadence</code></td><td>Resume a paused cadence for a prospect by email. ACCOUNT PREREQUISITE: the Klenty user must have a connected sending email account, otherwise Klenty Always inspect response.errors; a 200 does not mean the cadence resumed. Endpoint matches Klenty's documented</td></tr><tr><td>Revert Do Not Contact</td><td><code>revertDoNotContact</code></td><td>Revert a prospect's status from Do Not Contact.</td></tr><tr><td>Start Cadence</td><td><code>startCadence</code></td><td>Add a prospect to a cadence (start the cadence) by email and cadence name.</td></tr><tr><td>Stop Cadence</td><td><code>stopCadence</code></td><td>Stop a cadence for a prospect by email and cadence name.</td></tr><tr><td>Stop Mails</td><td><code>stopMails</code></td><td>Stop all scheduled mails for a prospect by email.</td></tr><tr><td>Unsubscribe Prospect</td><td><code>unsubscribeProspect</code></td><td>Unsubscribe a prospect by email.</td></tr><tr><td>Update Prospect</td><td><code>updateProspect</code></td><td>Update an existing prospect by email. Only prospectEmail is required; include any fields to change. Fields not sent are left unchanged.</td></tr><tr><td>Update Webhook</td><td><code>updateWebhook</code></td><td>Update an existing webhook subscription.</td></tr></tbody></table>
+
+</details>
+
+## Events
+
+Klenty has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

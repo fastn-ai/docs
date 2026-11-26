@@ -1,12 +1,24 @@
 ---
 description: "Labels and categories: how to create them, attach them to workflows, and what happens when you delete one."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Workflow tags
 
 **Settings → Workflow tags**. Developer or above.
 
-Once an organization holds more than a handful of workflows, the list stops being scannable. Tags are how you cut it back down. There are two kinds, and they behave differently on purpose.
+Once an organization holds more than a handful of workflows, the list gets hard to scan. Tags let you filter and group it. There are two kinds, and they behave differently on purpose.
 
 | | Labels | Categories |
 | --- | ------ | ---------- |
@@ -17,13 +29,13 @@ Once an organization holds more than a handful of workflows, the list stops bein
 
 A label is a tag you filter by, so a workflow can carry several: a sync can be both `Dev` and `Billing`. A category is where a workflow *lives*, so it only gets one, the way a file sits in one folder.
 
-## Creating one
+## Create a tag
 
 Tags are created here and nowhere else. The page is the registry; workflows only attach what already exists.
 
 1. Pick a color from the swatch to the left of the field.
 2. Type the name.
-3. **Add**.
+3. Select **Add**.
 
 Each row then shows how many workflows use that tag, reading **Not used yet** until something does. That count is the thing to check before deleting one.
 
@@ -33,13 +45,13 @@ Each row then shows how many workflows use that tag, reading **Not used yet** un
 
 ### When a panel is full
 
-The name field is replaced by a line saying so, rather than being greyed out. Delete a tag to make room.
+The name field is replaced by a line saying so, rather than being grayed out. Delete a tag to make room.
 
-Changing plan never deletes a tag. If a new plan allows fewer than you already have, **you keep all of them** and simply cannot add another until you delete down to the new number. The panel says how many that is.
+Changing plan never deletes a tag. If a new plan allows fewer than you already have, **you keep all of them** and cannot add another until you delete down to the new number. The panel says how many that is.
 
 A full registry also affects workflows arriving from a prebuilt integration. Their tags are recreated by name in your organization, so when there is no room left the workflow lands without that label, or uncategorized. For a category, the result says which one it could not create.
 
-## Attaching one to a workflow
+## Attach a tag to a workflow
 
 Tags are attached from the workflow itself, on **Workflows**, not from this page. Each workflow's panel carries two controls:
 
@@ -48,26 +60,26 @@ Tags are attached from the workflow itself, on **Workflows**, not from this page
 
 Both are available when you create a workflow and when you edit an existing one. Both are disabled for roles that cannot manage workflows, so a read-only role sees the tags but cannot change them.
 
-## Using them on the list
+## Use tags on the list
 
 Two controls sit above the list:
 
 * **Labels** filters it. Pick several and a workflow has to carry all of them to show, so the filter narrows rather than widens.
 * **Group by category** switches the flat list into one group per category.
 
-### Uncategorised
+### Uncategorized
 
-Every workflow without a category falls into **Uncategorised**. It is not a category you create or can delete, it is where everything starts, and an organization that has never defined a category shows a single Uncategorised group holding everything.
+Every workflow without a category falls into **Uncategorized**. It is not a category you create or can delete, it is where everything starts, and an organization that has never defined a category shows a single Uncategorized group holding everything.
 
-## Deleting one
+## Delete a tag
 
 Deleting a tag never deletes the workflows carrying it.
 
 * Delete a **label** and it comes off the workflows that had it.
-* Delete a **category** and its workflows fall back to **Uncategorised**.
+* Delete a **category** and its workflows fall back to **Uncategorized**.
 
 {% hint style="warning" %}
-Deleting is the only way to make room once a panel is full. Check the usage count on the row first: a category showing **3 workflows** will drop those three into Uncategorised, and nothing records which category they used to be in.
+Deleting is the only way to make room once a panel is full. Check the usage count on the row first: a category showing **3 workflows** drops those three into Uncategorized, and nothing records which category they used to be in.
 {% endhint %}
 
 ## Who can change them

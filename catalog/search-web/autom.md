@@ -1,0 +1,39 @@
+---
+description: "Autom returns structured search results. Run Google, Bing and Brave searches, including images and jobs, and check usage and stats."
+hidden: true
+---
+
+# Autom
+
+<img src="../../.gitbook/assets/connectors/lg/autom.png" alt="Autom logo">
+
+| | |
+| --- | --- |
+| **Category** | [Search and web](README.md) |
+| **Website** | [autom.dev](https://autom.dev) |
+| **Authentication** | API key |
+| **Slug** | `autom` |
+
+## Setup
+
+Your customers enter their API key for Autom when they connect. Nothing else needs setting up.
+
+## Use it
+
+Add Autom from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.autom.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+
+## Actions
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Bing Search</td><td><code>bingSearch</code></td><td>Queries Bing Search and returns structured organic results (title, link, domain, snippet, position) with pagination info and localisation by location, GPS coordinates, market or country. Costs 1 credit per call. Known vendor defect (verified 2026-09-16): sending the documented page parameter, with any value, makes Autom return HTTP 500 Internal Error; omit page until Autom fixes it.</td></tr><tr><td>Brave Search</td><td><code>braveSearch</code></td><td>Queries Brave Search and returns structured organic results (title, link, domain, snippet, position) with pagination. Costs 1 credit per call.</td></tr><tr><td>Find Google Countries</td><td><code>findGoogleCountries</code></td><td>Looks up Google country codes by a case-insensitive search string matched against country code or name. Free Finder endpoint (no credits). Use the returned country_code as the gl parameter of search actions.</td></tr><tr><td>Find Google Languages</td><td><code>findGoogleLanguages</code></td><td>Looks up Google language codes whose names contain a case-insensitive search string. Free Finder endpoint (no credits). Use the returned language_code as the hl parameter of search actions.</td></tr><tr><td>Find Google Locations</td><td><code>findGoogleLocations</code></td><td>Finds supported Google locations (cities, regions, countries) matching a query, ordered by reach, with location id, canonical name, country code, GPS coordinates and target type. Free Finder endpoint (no credits). Use the canonical_name as the location parameter of search actions.</td></tr><tr><td>Get Job</td><td><code>getJob</code></td><td>Retrieves the result of an asynchronous request started with is_async=true on any search action. Polling is always free; the job is billed only when it completes successfully. Returns the job status while pending and the endpoint's normal response body once finished. Note: the live route is /v1/jobs/{job_id} (the docs' unversioned /jobs path</td></tr><tr><td>Get Stats</td><td><code>getStats</code></td><td>Returns a platform-wide infrastructure health snapshot (operational, degraded or down), success rate and average response time over the last hour for an API engine or a specific endpoint path. Not account-scoped and free of credits. Provide at least one of engine or path. API Stats is enabled per account: HTTP 403 means it is not active on your account and support must activate it.</td></tr><tr><td>Get Usage</td><td><code>getUsage</code></td><td>Returns your remaining API quota, extra credits, billing period, rate limits, account and API key details. Free: never consumes credits. The subscription object reports the combined API quota (subscription allowance plus remaining top-ups).</td></tr><tr><td>Google Images Search</td><td><code>googleImagesSearch</code></td><td>Searches Google Images and returns image results with image URL, source page link, title, domain, position and dimensions. Supports country, language and Google domain selection. Costs 1 credit per call. Known vendor defect (verified 2026-09-16): sending the documented page parameter, with any value, makes Autom return HTTP 500 Internal Error; omit page until Autom fixes it.</td></tr><tr><td>Google Jobs Search</td><td><code>googleJobsSearch</code></td><td>Scrapes Google Jobs and returns structured job listings (title, company, location, source, extensions, share link, job id) with token-based pagination. Supports remote-only filtering, search radius, encoded filter chips and localisation. Costs 1 credit per call.</td></tr></tbody></table>
+
+<details>
+
+<summary>View 7 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Google Maps Search</td><td><code>googleMapsSearch</code></td><td>Searches Google Maps (experimental endpoint) and returns place results with feature id, coordinates, title, address, website and phone number. Supports pagination, language, country and a map-centre hint. Costs 1 credit per call.</td></tr><tr><td>Google News Search</td><td><code>googleNewsSearch</code></td><td>Searches Google News and returns structured news results (date, title, link, domain, source, snippet, position) with pagination and country/language localisation. Costs 1 credit per call.</td></tr><tr><td>Google Search</td><td><code>googleSearch</code></td><td>Scrapes Google Search results for a query and returns structured SERP data: organic results (title, link, domain, snippet, position), knowledge graph and pagination. Supports advanced operators (site:, inurl:, intitle:), time filters (tbs), localisation by country, language and location. Costs 1 credit per call. Pass is_async=true to receive a job_id and fetch the result with Get Job.</td></tr><tr><td>Google Search Autocomplete</td><td><code>googleSearchAutocomplete</code></td><td>Returns Google Search autocomplete suggestions for a query, optionally at a given cursor position and localised by country and language. Costs 1 credit per call.</td></tr><tr><td>Google Search Light</td><td><code>googleSearchLight</code></td><td>Fast, cost-efficient Google Search that returns organic results only (title, link, source, snippet, position) with optional country and language localisation. Costs 1 credit per call.</td></tr><tr><td>Google Shopping Search</td><td><code>googleShoppingSearch</code></td><td>Searches Google Shopping and returns structured product listings with price, rating, rating count, merchant, image and product id, with pagination and localisation by country, language and location. Costs 1 credit per call.</td></tr><tr><td>Google Videos Search</td><td><code>googleVideosSearch</code></td><td>Searches Google Videos and returns structured video results (title, link, channel, duration, date, snippet, video id, position) with pagination and localisation. The page number is required by Autom. Costs 1 credit per call.</td></tr></tbody></table>
+
+</details>
+
+## Events
+
+Autom has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

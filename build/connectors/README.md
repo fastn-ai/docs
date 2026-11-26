@@ -1,12 +1,24 @@
 ---
-description: "What a connector is, how it relates to actions, auth methods, connections and webhooks, and where each part lives in the app."
+description: "What a connector is, how it relates to actions, auth methods, connections, and webhooks, and where each part lives in the app."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Connectors
 
-**Integrations → Connectors** · `/integrations?tab=connectors`
+**Build → Integrations → Connectors** · `/integrations?tab=connectors`
 
-A **connector** is fastn's bridge to one external app, such as HubSpot, Jira or Stripe. The page describes it in one line:
+A **connector** is fastn's bridge to one external app, such as HubSpot, Jira, or Stripe. The page describes it in one line:
 
 > A connector is fastn's bridge to one app: it handles sign-in and exposes the app's actions and events. Sign in to one to create a connection.
 
@@ -17,7 +29,7 @@ A connector is a **definition**. It holds no credentials. Credentials live on a 
 | Part | What it is | Where you see it |
 | --- | --- | --- |
 | **Actions** | One operation the app can perform, such as *Create Contact* or *List Owners*. Each action is an HTTP request with an input schema and an output schema. | The action list on the connector's detail page. See [Actions](action-detail.md). |
-| **Auth methods** | How a customer proves who they are to the app: OAuth 2.0, API key, bearer token, basic auth and so on. A connector can offer several; one is the default. | The **Auth** tab. See [Auth methods and providers](auth-methods.md). |
+| **Auth methods** | How a customer proves who they are to the app: such as OAuth 2.0, API key, bearer token, or basic auth. A connector can offer several; one is the default. | The **Auth** tab. See [Auth methods and providers](auth-methods.md). |
 | **Auth providers** | For OAuth methods, the OAuth app (client ID and secret) that fastn uses to send people to the app's consent screen. | **Auth → View providers**. |
 | **Webhook config** | Instructions for subscribing to the app's events on behalf of each customer, so an [app event trigger](../triggers/app-events.md) can fire. | The **Webhook config** tab. See [Webhook config](webhook-config.md). |
 | **Versions** | Every change to a connector produces a version. Versions live in **Test** until they are published to **Live**. | **Overview → Versions**, and the **Version pins** tab. |
@@ -27,8 +39,8 @@ A connector is a **definition**. It holds no credentials. Credentials live on a 
 
 Every card carries a badge that says who maintains it.
 
-* **managed**: built and maintained by fastn. The card reads *Managed by Fastn*. You can view every part of it, connect to it, export its actions and run them, but you cannot edit, delete or publish it. To suggest a change to one of its actions, use **Propose an update**. fastn reviews it, and vendor changes reach you as proposals under [Pending updates](../connector-updates.md).
-* **Custom**: created in your workspace from the **Create connector** menu (**From scratch**, **Build with AI**, **Build from Claude or any MCP client**, or **Import from file**). People whose role cannot create connectors see an **Import** button instead of the menu. Your workspace owns it, so you can edit it, add actions, set up its webhook config, publish versions and delete it.
+* **managed**: built and maintained by fastn. The card reads *Managed by Fastn*. You can view every part of it, connect to it, export its actions, and run them, but you cannot edit, delete, or publish it. To suggest a change to one of its actions, use **Propose an update**. fastn reviews it, and vendor changes reach you as proposals under [Pending updates](../connector-updates.md).
+* **Custom**: created in your workspace from the **Create connector** menu (**From scratch**, **Build with fastn agent**, **Build in your AI tool**, or **Import from file**; on Launch, **Build with fastn agent** reads *On paid plans. Upgrade to use it.*). People whose role cannot create connectors see an **Import** button instead of the menu. Your workspace owns it, so you can edit it, add actions, set up its webhook config, publish versions, and delete it.
 
 When a connector has at least one active connection, its badge changes to **Connected**. If it has connections but none of them is active, the badge reads **Inactive**.
 
@@ -44,13 +56,13 @@ Find the app in the [catalog](the-catalogue.md). If it is not there, [request it
 {% step %}
 #### Connect
 
-**Connect** opens a dialog that asks for the credential the default auth method needs (an API key, or an OAuth sign-in). The result is a connection. See [Connect a system](connect-a-system.md).
+**Connect** opens a dialog that asks for the credential the default auth method needs (an API key, or an OAuth sign-in). The result is a connection. See [Connect an app](connect-an-app.md).
 {% endstep %}
 
 {% step %}
 #### Use the actions
 
-Workflows, **Build with AI** and your AI tool (over MCP) call the connector's actions through that connection. The connection decides whose account the call runs as.
+Workflows, the fastn agent, and your AI tool (over MCP) call the connector's actions through that connection. The connection decides whose account the call runs as.
 {% endstep %}
 
 {% step %}
@@ -66,12 +78,12 @@ If the connector has a webhook config, fastn runs its subscription code for each
 
 ### In this section
 
-* [The catalog](the-catalogue.md): searching, filtering and reading the connector cards.
-* [Creating a connector](creating-a-connector.md): the Create connector dialog, every protocol and auth type, and Request connector.
-* [Inside a connector](inside-a-connector.md): the detail page, its Overview, Connections and Version pins tabs, and versions.
+* [The catalog](the-catalogue.md): searching, filtering, and reading the connector cards.
+* [Create a connector](creating-a-connector.md): the Create connector dialog, every protocol and auth type, and Request connector.
+* [Inside a connector](inside-a-connector.md): the detail page, its Overview, Connections, and Version pins tabs, and versions.
 * [Auth methods and providers](auth-methods.md): the Auth tab and the OAuth apps behind it.
 * [Actions](action-detail.md): the action list and the action editor with its seven tabs.
 * [Webhook config](webhook-config.md): how fastn subscribes to an app's events.
-* [Editing, publishing and deleting](editing-and-deleting.md): what you can change on a connector your workspace owns.
-* [Importing and exporting](importing-and-exporting.md): moving connectors and actions in and out as JSON.
-* [Connect a system](connect-a-system.md): making a connection, step by step.
+* [Edit, publish, and delete](editing-and-deleting.md): what you can change on a connector your workspace owns.
+* [Import and export](importing-and-exporting.md): moving connectors and actions in and out as JSON.
+* [Connect an app](connect-an-app.md): making a connection, step by step.

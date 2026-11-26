@@ -1,16 +1,37 @@
 ---
 description: >-
-  Connect Claude, ChatGPT, Cursor or another AI client to your integrations from
-  the widget, with no fastn account.
+  Connect Claude, ChatGPT, Cursor, or another AI client to your integrations from
+  the widget, with no separate account.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Connect Claude and other AI clients
 
-Everything you can do in the integrations widget (see your connections, run an action against a connected app, check what synced) you can also do from an AI client such as Claude, ChatGPT or Cursor. The client connects over MCP (the Model Context Protocol) and sees your integrations as tools it can use.
+Everything you can do in the integrations widget (see your connections, run an action against a connected app, check what synced) you can also do from an AI client such as Claude, ChatGPT, or Cursor. The client connects over MCP (the Model Context Protocol) and sees your integrations as tools it can use.
 
-You don't need a fastn account. The connection is scoped to your organization only.
+You don't need a separate account for this. The connection is scoped to your organization only.
+
+## Before you start
+
+* Access to the integrations widget in the product you use, with **Generate MCP URL** in its **⋯** menu.
+* An AI client that can add a custom MCP connector or server.
 
 ## Connect your AI client
+
+{% hint style="warning" %}
+Treat the URL like a password while it is valid: don't paste it into chats, tickets, or documents.
+{% endhint %}
 
 {% stepper %}
 {% step %}
@@ -24,7 +45,7 @@ Open the integrations widget in the product you use. In the widget header, open 
 
 * **Claude:** add a custom connector in Claude's connector settings, give it a name such as *Integrations*, paste the URL, then connect it.
 * **Claude Code:** run `claude mcp add --transport http integrations <the URL you copied>`.
-* **ChatGPT, Cursor and other clients:** add a custom MCP connector or server and paste the URL.
+* **ChatGPT, Cursor, and other clients:** add a custom MCP connector or server and paste the URL.
 
 The exact menus belong to each client and can change; check the client's own help if you can't find where to add a custom connector.
 {% endstep %}
@@ -52,13 +73,9 @@ The product you use decides whether to offer it. If it isn't in the **⋯** menu
 
 * **It reaches only your organization's connections.** It can't see any other customer of the same product.
 * **It acts as you.** Anything the client calls runs against your connected apps, including changes such as creating or updating records. Review what you ask it to do.
-* **It can be turned off.** The provider of the product can disconnect any AI client from their side at any time. To disconnect yours, ask them.
+* **It can be turned off.** The product's team can disconnect any AI client from their side at any time. To disconnect yours, ask the product's support team.
 
-{% hint style="warning" %}
-Treat the URL like a password while it is valid: don't paste it into chats, tickets or documents.
-{% endhint %}
-
-## What you can do next
+## Next steps
 
 * [Extend a pre-built integration](extending-a-prebuilt-integration.md): change what an integration does, from inside the widget
 * [Get alerted](getting-alerted.md): be told when something breaks

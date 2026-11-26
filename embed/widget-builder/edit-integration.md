@@ -1,10 +1,22 @@
 ---
 description: "Every field in the Edit Integration dialog: connectors, workflows, callbacks and per-connector overrides."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
-# Edit Integration
+# Edit integration
 
-**Embed → Widget → INTEGRATIONS → pencil on a row**
+**Embed → Widget**, then the pencil on a row of the **INTEGRATIONS** panel
 
 Each row in the INTEGRATIONS panel carries a status dot, a **pencil** and a **trash**. The pencil opens **Edit Integration**, and this dialog is where most of an integration's behavior is configured. The trash deletes the integration.
 
@@ -21,7 +33,7 @@ Each row in the INTEGRATIONS panel carries a status dot, a **pencil** and a **tr
 
 ## Status
 
-**Widget enabled** is a switch: *Globally visible to customers. Disabling hides the widget without affecting existing installations.* Customers who already activated it keep running; new ones simply do not see it.
+**Widget enabled** is a switch: *Globally visible to customers. Disabling hides the widget without affecting existing installations.* Customers who already activated it keep running; new ones do not see it.
 
 A draft integration shows a **Draft.** notice here: new customers do not see it until it is published, and customers already running it keep it.
 
@@ -34,7 +46,7 @@ How many times one customer may activate this integration.
 | **Single activation** | *Each customer has one connected instance.* |
 | **Multi-connection** | *Customers can activate it more than once, each time with its own set of connections.* |
 
-Pick **Multi-connection** when one customer legitimately has several accounts on the same system, such as two TikTok Shop storefronts.
+Pick **Multi-connection** when one customer legitimately has several accounts on the same app, such as two TikTok Shop storefronts.
 
 ## Customer visibility
 
@@ -47,7 +59,7 @@ Pick **Multi-connection** when one customer legitimately has several accounts on
 
 ## Connectors
 
-The systems this integration connects. Search the catalog and add them; each selected connector becomes a chip carrying a **gear** and an **X**.
+The apps this integration connects. Search the catalog and add them; each selected connector becomes a chip carrying a **gear** and an **X**.
 
 ### Per-connector settings
 
@@ -115,6 +127,10 @@ A callback marked **background** does not hold up the customer. The widget compl
 {% endhint %}
 
 [Widget callbacks](../../reference/widget-callbacks.md) lists what each workflow receives in `ctx.input` and what it can return.
+
+## Localization
+
+The integration's text in other languages. Pick a language from the list, or enter its code under **Other code**, then translate the text customers see. The widget builder's **Preview language** switch shows the result.
 
 ## Saving
 

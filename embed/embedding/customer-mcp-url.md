@@ -1,10 +1,22 @@
 ---
 description: "Create a one-time URL from your backend that connects a customer's AI client to fastn."
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Customer MCP URL
 
-A customer MCP URL connects a customer's AI client, such as Claude or Cursor, to fastn as that customer, with no fastn account. Your customer can [generate one in the widget](../../tutorials/end-user/connecting-claude.md). This page is for creating one from your own product, for example behind a "Connect Claude" button in your settings.
+A customer MCP URL connects a customer's AI client, such as Claude or Cursor, to fastn as that customer, with no fastn account. Your customer can [generate one in the widget](../../tutorials/end-user/connecting-claude.md). You can also create one from your own product, for example behind a "Connect Claude" button in your settings.
 
 ## Create the URL
 
@@ -52,7 +64,7 @@ Your call has already returned `201` by the time the customer pastes the URL, so
 
 ## What the client can reach
 
-The client connects to the Fastn Workspace tools and acts as that customer and that user, with the `end_user` role.
+The client connects to the fastn MCP server's workspace tools and acts as that customer and that user, with the `end_user` role.
 
 * It stays inside that customer, and it cannot see your other customers.
 * It acts as one person. It uses that user's connections, so a connection another person at the customer made for themselves is not available to it.

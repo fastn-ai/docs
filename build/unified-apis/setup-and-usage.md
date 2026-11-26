@@ -1,24 +1,36 @@
 ---
 description: Set up a Unified API in fastn, copy its request, authenticate with your fastn API key, and run it against your customers' connections.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
-# How to Set Up and Use fastn's Unified API
+# Set up and use a unified API
 
-## 1. Log in to fastn
+## 1. Sign in to fastn
 
-Go to [app.fastn.dev](https://app.fastn.dev/) and log in to your fastn account.
+Go to [app.fastn.dev](https://app.fastn.dev/) and sign in to your fastn account.
 
 ## 2. Open Unified APIs
 
 From the dashboard, go to **Integrations** and open the **Unified APIs** tab.
 
-## 3. Select a Unified API
+## 3. Select a unified API
 
-Choose the Unified API you want to use. For this guide, we'll use **Project Management** as an example.
+Choose the unified API you want to use. This guide uses **Project Management** as an example.
 
 Click **Project Management** to view the available endpoints and their request details.
 
-## 4. Copy the API Request
+## 4. Copy the API request
 
 Find the endpoint you want to use in the **API** section. Each row is labeled by its HTTP method and operation (for example **POST Create**, **GET List**, **GET Get**, **POST Search**, **PATCH Update**, **DELETE Delete**), followed by its path. To create a ticket, use the **Create** row of the ticket entity.
 
@@ -44,23 +56,25 @@ curl -X POST '<api-base>/v1/unified/<category>/<entity>' \
   }'
 ```
 
-Replace the placeholder values with the appropriate values for your request. The fields required and supported depend on the endpoint and the connected project management application.
+Replace the placeholder values with the appropriate values for your request. The fields required and supported depend on the endpoint and the connected project management app.
 
-## 5. Generate Your fastn API Key
+## 5. Create your fastn API key
 
-To authenticate your requests, you'll need a **fastn API key**.
+To authenticate your requests, you need a **fastn API key**.
 
-Follow the [fastn API Keys documentation](../../manage/api-keys.md) to create one.
+Create one under **Embed → API keys**; see [API keys](../../manage/api-keys.md).
+
+{% hint style="warning" %}
+Keep this key secure. Do not expose it in frontend code or public repositories.
+{% endhint %}
 
 Replace `YOUR_FASTN_API_KEY` in the cURL request with your actual key.
 
-Keep this key secure. Do not expose it in frontend code or public repositories.
+## 6. Make requests using your customers' connections
 
-## 6. Make Requests Using Your Customers' Connections
+If your product needs to run unified API requests on behalf of your customers, include the `x-org-id` header in the request.
 
-If your SaaS application needs to execute Unified API requests on behalf of your customers, include the `x-org-id` header in the request.
-
-Your **API key authenticates your SaaS application with fastn**, while the `x-org-id` header identifies your customer whose connections should be used for the request. This works only with API-key authentication, using a key that can act for more than one customer (not a key pinned to a single customer).
+Your **API key authenticates your product with fastn**, while the `x-org-id` header identifies your customer whose connections should be used for the request. This works only with API-key authentication, using a key that can act for more than one customer (not a key pinned to a single customer).
 
 Add the following header:
 
@@ -68,11 +82,11 @@ Add the following header:
 -H 'x-org-id: YOUR_CUSTOMER_ORG_ID'
 ```
 
-Use the **same organization ID discussed in the** [**fastn embedding guide**](../../embed/embedding/README.md). This is the organization ID you already use when setting up the embedded fastn experience.
+Use the same customer ID you send as `x-org-id` when you [embed the widget](../../embed/embedding/README.md).
 
-Make sure the customer has connected and authorized the relevant application in fastn before sending requests that rely on that connection.
+Make sure the customer has connected and authorized the relevant app in fastn before sending requests that rely on that connection.
 
-## 7. You're Ready to Make API Requests
+## 7. Make API requests
 
 Once you have your fastn API key and have configured the appropriate `x-org-id` header, you can start making requests through fastn's Unified API.
 

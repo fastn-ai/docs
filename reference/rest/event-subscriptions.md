@@ -160,7 +160,7 @@ Operation: `deleteEventSubscription`
 GET /v1/event-subscriptions/{id}/deliveries
 ```
 
-Recent deliveries to this endpoint with status (pending, delivered, dead), attempts and the last error. Owner, admin or developer of the partner org (not a customer workspace).
+Recent deliveries to this endpoint with status (pending, delivered, dead), attempts and the last error. A sample sent from the test route, or a workflow Test-panel run, carries `test: true`. Owner, admin or developer of the partner org (not a customer workspace).
 
 Operation: `listEventDeliveries`
 
@@ -204,7 +204,7 @@ Operation: `rotateEventSubscriptionSecret`
 POST /v1/event-subscriptions/{id}/test
 ```
 
-Queues one signed endpoint.test event to the endpoint. Owner, admin or developer of the partner org (not a customer workspace).
+Queues one signed endpoint.test event to the endpoint. With `type`, a sample of that account or setup-link event instead (connection.connected, connection.revoked, connection.expired, setup_link.completed, setup_link.expired), with placeholder ids and `test: true`, so its handling can be tried without changing a real connection. Owner, admin or developer of the partner org (not a customer workspace).
 
 Operation: `testEventSubscription`
 
@@ -214,7 +214,16 @@ Operation: `testEventSubscription`
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes | esub_ id |
 
+**Request body**
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `type` | `string` | No | Absent or endpoint.test: the plain test event. Any other: a sample of that type. One of: `endpoint.test`, `connection.connected`, `connection.revoked`, `connection.expired`, `setup_link.completed`, `setup_link.expired`. |
+| `app` | `string` | No | App slug the sample names |
+| `metadata` | `object` | No | Metadata the sample carries, as a setup link's would (an object) |
+
 **Responses**
 
 * `202`: { data: { eventId } }
+* `400`: A sample of a type the test cannot send, or one the subscription does not receive. A body that does not ask for a sample (not JSON, or no type) sends endpoint.test.
 * `404`: Not found

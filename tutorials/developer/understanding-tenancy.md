@@ -1,14 +1,25 @@
 ---
 description: How the embed token scopes the widget to one customer, and to one person at that customer
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
-# Understanding Tenancy
-
+# Customers and isolation
 Every widget session in fastn is scoped twice: to one **customer** (a company using your product), and to one **person** at that customer. Both come from the embed token your backend mints. Nothing in the iframe URL changes either of them.
 
 ### The customer
 
-The customer is named when your backend mints the token, by the `x-org-id` header (or `orgId` in the body). Either value can be your own id for the customer (the external reference you registered it under) or fastn's id for it (see [Finding Your Org Identifier](finding-your-org-identifier.md)). A token always belongs to exactly one customer, and the widget shows that customer's integrations and connections only.
+The customer is named when your backend mints the token, by the `x-org-id` header (or `orgId` in the body). Either value can be your own id for the customer (the external reference you registered it under) or fastn's id for it (see [Find your org identifier](finding-your-org-identifier.md)). A token always belongs to exactly one customer, and the widget shows that customer's integrations and connections only.
 
 A token minted without a customer is refused (`400`, code `EMBED_TOKEN_REQUIRES_END_ORG_ID`) unless you explicitly ask for an organization-level token with `allowOrgLevel: true`. That kind of token is for previewing your own organization only; never hand one to a customer.
 
@@ -17,7 +28,7 @@ A token minted without a customer is refused (`400`, code `EMBED_TOKEN_REQUIRES_
 Within a customer, per-user isolation keys on the **user id**:
 
 * send `userId` in the token request body, or
-* send `x-user-id` on the token request, attested with an identity hash when the API key has identity verification turned on (see [API keys](../../manage/api-keys.md)).
+* send `x-user-id` on the token request, attested with an identity hash when the API key has identity verification turned on (see [Verify caller identity](../../manage/identity-verification.md)).
 
 `userEmail` and `userName` are for display only; they do not decide whose session it is. If you send no user id at all, each token gets a random `embed_usr…` id, so nothing a person does carries over to their next session. Send a stable id from your own user table.
 
@@ -37,4 +48,4 @@ The customer and the user are inside the token, put there when your backend mint
 2. Mint a token for that customer and that user.
 3. Hand only the token to the browser.
 
-See [Generating Embed Tokens](generating-embed-tokens.md) for the full request.
+See [Generate embed tokens](generating-embed-tokens.md) for the full request.

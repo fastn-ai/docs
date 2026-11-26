@@ -1,10 +1,22 @@
 ---
-description: Programmatic access to your workspace.
+description: Create, rotate and revoke the fsk_ keys your backend uses to call fastn.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # API keys
 
-**Embed → API keys and MCP → API keys** · `/access`
+**Embed → API keys** · `/api-keys`
 
 | Column        | Notes                                              |
 | ------------- | ---------------------------------------------------- |
@@ -14,30 +26,34 @@ description: Programmatic access to your workspace.
 | **Scope**     | The permissions it carries.                        |
 | **Last used** | Timestamp, or Never.                               |
 
+<figure><img src="../.gitbook/assets/screens/api-keys.webp" alt="Embed, API keys: a Create key button, filters All, Live and Test, and one key row: name UCL, key fsk_live_ masked, mode Live, All environments (legacy), scope Connectors only, last used 13h ago, with Rotate"><figcaption>Keys are masked after creation. <strong>Rotate</strong> issues a new secret for the same key.</figcaption></figure>
+
 **Search keys** narrows the list, and the filters are **All** / **Live** / **Test**.
 
 **Rotate** issues a new secret for the same key. The **…** menu holds **Edit**, **Identity verification** and **Revoke**; **Identity verification** is hidden on a key pinned to exactly one customer, because that key already is the customer. Revoking is how an active key ends. Once a key is revoked or expired, its row offers **Delete** (a trash icon) instead, which removes it permanently.
 
-### Creating a key
+### Create a key
 
-<figure><img src="../.gitbook/assets/create-api-key.jpg" alt="The Create an API key dialog with a Name field, Mode cards Test selected and Live carrying a warning, Permissions set to Viewer, and a line saying the key reads test data and expires in 90 days"><figcaption>The dialog spells out that Test is a separate credential, not a sandbox.</figcaption></figure>
+<figure><img src="../.gitbook/assets/create-api-key.jpg" alt="The Create an API key dialog with a Name field, Mode cards Test selected and Live carrying a warning, Permissions set to Viewer, and a line saying the key reads test data and expires in 90 days"><figcaption>The Create an API key dialog, with Test selected.</figcaption></figure>
 
 The dialog runs in three sections: **Identity**, **Access** and **Limits**.
 
 #### Quick steps
 
-1. Go to **Embed** → **API keys and MCP** → **API keys** (`/access`).
+1. Go to **Embed** → **API keys** (`/api-keys`).
 2. Click **Create key**. The **Create an API key** dialog opens.
 3. In the dialog:
     * **Name**: give it something identifiable.
     * **Mode**: select **Live** for production use or **Test** for dev use. A live key also needs an **Environment**.
     * Set permissions, customers, allowed IP addresses, rate limit and expiry as needed.
-    * Optionally turn on **Verify caller identity (HMAC)**.
+    * Optionally turn on **Verify caller identity (HMAC)**. See [Verify caller identity](identity-verification.md).
 4. Click **Create key**.
+
+   A dialog shows the new key. This is the only time the key is shown, so copy it somewhere safe. If you turned on HMAC, the dialog also shows the identity-verification secret.
 
 #### Identity
 
-**Name \***: shown in the audit log beside everything this key does. Name it after the system that will hold it, not after a person.
+**Name \***: shown in the audit log beside everything this key does. Name it after the service that will hold it, not after a person.
 
 **Mode**: **Test** or **Live**, defaulting to **Test**.
 
@@ -49,7 +65,7 @@ The dialog runs in three sections: **Identity**, **Access** and **Limits**.
 A live key is pinned to its environment: it runs what is deployed there, can also run the latest published version by sending `x-fastn-env: test`, and is refused (403) for any other environment. To run a workflow from your code, use a key for the environment it is deployed to.
 
 {% hint style="danger" %}
-Neither mode is a sandbox. A Test key reaches the same live connections as a Live key and causes the same real writes. It is a separate credential, not a safe one.
+Neither mode is a sandbox. A Test key reaches the same live connections as a Live key and causes the same real writes in your customers' systems. It is a separate credential, not a safe one. To test without touching real systems, run the workflow with **Fully Mock** in the editor instead.
 {% endhint %}
 
 #### Access
@@ -72,17 +88,17 @@ For every preset except **Admin**, the **What it can touch** matrix below shows 
 | **Customers**   | create                                                           |
 | **Unified API** | read, execute, customize                                         |
 
+`write` on Connectors has no effect on an API key: the only route that checks it is reserved for fastn platform admins. Use `create` and `update` to let a key change connectors.
+
 {% hint style="warning" %}
-`decrypt` on Connections and `read` on Secrets are the two boxes worth arguing about before you tick them. A key holding either can read credentials, and a key is easier to leak than a person.
+`decrypt` on Connections and `read` on Secrets are the two permissions to weigh most carefully before you tick them. A key holding either can read credentials, and a key is easier to leak than a person.
 {% endhint %}
 
 **Customers it can reach**: **Every customer**, or **Only the ones I pick**. Narrowing it is not optional everywhere: the form notes that picking specific customers is *Required for keys used in an embed session.*
 
-That note covers a key used directly as one customer's widget session. The backend key that registers customers and gets embed tokens should reach **Every customer**, because a key limited to specific customers is refused for any customer it doesn't list (see [Embed the widget](../getting-started/onboarding/embed-the-widget.md)).
+That note covers a key used directly as one customer's widget session. The backend key that registers customers and gets embed tokens should reach **Every customer**, because a key limited to specific customers is refused for any customer it doesn't list (see [Set up and add the widget](../getting-started/onboarding/embed-the-widget.md)).
 
-**Verify caller identity (HMAC)** *(optional)*: turning it on asks callers to send a signed `x-identity-hmac` header, so a caller cannot change the `x-org-id` or `x-user-id` it claims to be. Pick **Enforce** (reject a missing or invalid hash) or **Monitor only** (log mismatches, let calls through). Left off, the key trusts the headers. The option is not offered on a key that reaches exactly one customer.
-
-The signing secret is shown once at creation and cannot be shown again. If you lose it, open **Identity verification** on the key's **…** menu: you can switch the mode between **Off**, **Monitor only** and **Enforce**, or tick **Rotate the secret** to mint a new one (also shown once; the previous secret keeps validating until the next rotation). Turning verification off deletes the stored secret.
+**Verify caller identity (HMAC)** *(optional)*: callers must send a signed `x-identity-hmac` header, so a caller cannot change the `x-org-id` or `x-user-id` it claims to be. Pick **Enforce** (reject a missing or invalid hash) or **Monitor only** (log mismatches, let calls through). Left off, the key trusts the headers. The option is not offered on a key that reaches exactly one customer. The secret, the hash and the headers are covered in [Verify caller identity](identity-verification.md).
 
 **Resource scope** *(optional)*: narrows the key to particular resources rather than everything its permissions would otherwise cover.
 
@@ -94,56 +110,14 @@ The signing secret is shown once at creation and cannot be shown again. If you l
 | **Rate limit** *(optional)*| A ceiling per minute for this key.                                              |
 | **Expires \***             | **In 30 days**, **In 90 days** (the default), **In a year**, **Never**, or **On a specific date**. |
 
-The dialog keeps a live summary sentence at the bottom describing what you have built, so you can read back the whole key before committing:
+The dialog keeps a live summary sentence at the bottom describing what you have built, so you can read back the whole key before you create it. For a Test key on the Viewer preset, reaching every customer from any address with the default expiry, it reads:
 
 > This key can read on test data for every customer, from any address, and expires in 90 days.
-
-### Identity hash
-
-When a key has identity verification turned on, each customer-specific request carries an identity hash that confirms the `x-org-id` and `x-user-id` you're sending are ones your backend actually authorized.
-
-#### 1. Get your identity-verification secret
-
-Once you create an API key with HMAC enabled the following dialog will appear. It contains the secret and code snippets to generate the HMAC key.
-
-<figure><img src="../.gitbook/assets/api-key-identity-secret.webp" alt="The dialog shown after creating a key with HMAC enabled: the new key, the identity-verification secret, both blanked out here, and How to use code tabs for Node, Python and Go"><figcaption>The key and the secret are shown once. They are blanked out in this screenshot.</figcaption></figure>
-
-**Safety precautions:**
-
-* The secret cannot be shown again. If it is lost, rotate it from **Identity verification** on the key's **…** menu.
-* Never ship this secret to the client. It only ever lives on your backend. If it appears in frontend code, anyone can forge a valid hash for any org or user.
-
-#### 2. Compute the hash
-
-The hash is an HMAC-SHA256 of the org ID and user ID, newline-joined, signed with your secret:
-
-```js
-const crypto = require("crypto");
-const IDV_SECRET = process.env.IDV_SECRET;
-
-function identityHash(orgId = '', userId = '') {
-  return crypto.createHmac("sha256", IDV_SECRET)
-    .update(`${orgId}\n${userId}`)
-    .digest("hex");
-}
-```
-
-#### 3. Send it alongside the identity headers
-
-Attach the result as `x-identity-hmac`, sent together with the plaintext `x-org-id` and `x-user-id`.
-
-```
-x-org-id: <org-id>
-x-user-id: <user-id>
-x-identity-hmac: <identityHash(orgId, userId)>
-```
-
-The plaintext headers tell the gateway which identity is being claimed; the hash proves your backend authorized that specific claim. What happens to a bad call depends on the key's mode: **Enforce** rejects a call whose hash is missing or doesn't match what the gateway recomputes from the plaintext values; **Monitor only** logs the mismatch and lets the call through; **Off** does not check.
 
 ### Using a key
 
 ```bash
-curl -X POST https://YOUR_FASTN_HOST/api/v1/workflows/WORKFLOW_ID/execute \
+curl -X POST https://api.fastn.dev/api/v1/workflows/WORKFLOW_ID/execute \
   -H "Authorization: Bearer fsk_live_<your-key>" \
   -H "Content-Type: application/json" \
   -d '{ "input": { "key": "value" } }'
@@ -158,27 +132,15 @@ With a test key, add the `X-fastn-Test-Mode` header. Without it the call is refu
 
 `x-fastn-env` is optional: a test key always runs against `test`, so you never need to send it.
 
-#### Which header carries the key
+Every key starts `fsk_live_` or `fsk_test_`. The platform API reads it from `Authorization: Bearer fsk_…` or `X-API-Key: fsk_…`; webhook URLs accept other headers too. See [Which header carries the key](../reference/api.md#which-header-carries-the-key) in the HTTP API reference.
 
-Every key starts `fsk_live_` or `fsk_test_`. The header it goes in depends on what you call:
+### Recommended practices
 
-| You call | Send the key as |
-| -------- | --------------- |
-| The platform API, `https://api.fastn.dev/api/v1/…` (a workflow's `/execute`, `/embed/token`, every other route) | `Authorization: Bearer fsk_…` or `X-API-Key: fsk_…` |
-| A [webhook trigger](../build/triggers/webhooks.md)'s URL | `X-API-Key: fsk_…`, `Authorization: Bearer fsk_…` or `x-fastn-access-key: fsk_…` |
-| A [connector's webhook URL](../build/connectors/webhook-config.md), with **Require API key** on | `X-API-Key: fsk_…` or `x-fastn-access-key: fsk_…` |
-
-`X-API-Key` works on all three. `x-fastn-access-key` on the platform API, or `Authorization` on a connector's webhook URL, is answered `401`. No endpoint reads `x-fastn-api-key`.
-
-Full detail in the [HTTP API reference](../reference/api.md).
-
-### Practice worth keeping
-
-* One key per consuming system, so revoking one does not take down four things.
+* One key per consuming service, so revoking one does not break other services.
 * Rotate on a schedule, and when anyone with access leaves.
-* Never in client-side code. Browser-facing widgets use short-lived embed tokens minted by your backend. See [Embedding the widget](../embed/embedding/README.md).
+* Never in client-side code. Browser-facing widgets use short-lived embed tokens minted by your backend. See [Embed in your product](../embed/embedding/README.md).
 * Check **Last used** before revoking. A key showing Never is either unused or misconfigured; either way, find out which.
-* Set an expiry rather than **Never**, and turn on HMAC verification for any key a customer's browser session depends on.
+* Set an expiry rather than **Never**, and turn on [identity verification](identity-verification.md) for any key that acts for more than one customer.
 
 {% hint style="info" %}
 **API keys per customer** is one of the limits listed under [Billing](billing.md). Check there if key creation starts refusing.

@@ -50,7 +50,7 @@ Operation: `storeConnections`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
-| `x-user-id` | header | string | No | End-user identifier the partner's backend authorized for this request. May accompany x-org-id or stand alone; covered by x-identity-hmac when the key enforces identity verification. |
+| `x-user-id` | header | string | No | User identifier the partner's backend authorized for this request. May accompany x-org-id or stand alone; covered by x-identity-hmac when the key enforces identity verification. |
 | `x-identity-hmac` | header | string | No | Hex HMAC-SHA256 of "{x-org-id}\n{x-user-id}" (the header values exactly as sent, newline-joined; an absent header is the empty string) signed with the API key's identity-verification secret. Required when the key's idv mode is 'required' (missing/invalid = 401); logged-only under 'optional'; ignored when 'off'. |
 
 **Request body**
@@ -68,6 +68,8 @@ Operation: `storeConnections`
 | `userName` | `string` | No |  |
 | `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
 | `authProvider` | `string` | No |  |
+| `environmentId` | `string` | No | Optional, wenv_*. The workflow environment to make this connection in. A sandbox environment makes a sandbox connection: held to the plan's sandbox_connections allowance (Launch 3, Scale 20) instead of customer_connections, never counted as a customer connection, deleted after 7 days. A production environment, or none, makes an ordinary connection. Not together with environment. |
+| `environment` | `string` | No | Optional. "sandbox" makes a sandbox connection in the workspace's first sandbox environment, creating one named "Sandbox" (slug sandbox, or sandbox-2 when that is taken) when it has none, held to the plan's sandbox_environments limit. A credential pinned to a production environment is refused with 403 ENV_NOT_PERMITTED. Not together with environmentId (400 ENVIRONMENT_AMBIGUOUS). One of: `sandbox`. |
 
 **Responses**
 
@@ -102,6 +104,27 @@ Operation: `getConnectionByName`
 * `200`: Connection
 * `404`: Not found
 
+### Whether a new connection may be a sandbox one
+
+```http
+GET /v1/connections/sandbox-allowance
+```
+
+For a new connection made now at the caller's address, or for the customer named by orgId: allowed is false when the customer's tier turns the sandbox off; available is whether a sandbox connect would go through (the tier's per-customer number and the plan's allowance, read as the connect reads them); limit is the lower of the two, -1 for unlimited. The dashboard's Connect dialog opens on Sandbox only when available is true. Requires connections.read.
+
+Operation: `getSandboxConnectionAllowance`
+
+**Parameters**
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+
+**Responses**
+
+* `200`: { data: { allowed, available, limit } }
+* `403`: orgId outside the caller's scope
+
 ### Get a connection
 
 ```http
@@ -129,7 +152,7 @@ Operation: `getConnection`
 PUT /v1/connections/{id}
 ```
 
-Renames a connection, reconnects it with new credentials, or makes it the connector's default (isDefault: true). For a managed connection only those three are supported (400 otherwise). 409 when the new name is already used at the same address. Requires connections.create.
+Renames a connection, reconnects it with new credentials, or makes it the connector's default (isDefault: true). For a managed connection only those three are supported (400 otherwise). 409 when the new name is already used at the same address. Requires connections.create. For a customer (embed) session, deleting or renaming a connection one of its active setups uses (a setup pinning it, or for a ucl: id a setup of a widget listing its connector) asks the partner: the widget filter may refuse with 404 WIDGET_NOT_FOUND, 403 ACTION_NOT_ALLOWED (the action is in hideActions) or 424 WIDGET_FILTER_FAILED, and the access workflow with 403 ACTION_NOT_ALLOWED and its message or 424 ACCESS_CHECK_FAILED. A delete is a disconnect (canDisconnect), a rename a configure (canConfigure). Each body carries action.
 
 Operation: `updateConnection`
 
@@ -162,7 +185,7 @@ Operation: `updateConnection`
 DELETE /v1/connections/{id}
 ```
 
-The disconnect endpoint. Takes the connection id from GET /api/v1/connections, not a connector id.
+The disconnect endpoint. Takes the connection id from GET /api/v1/connections, not a connector id. For a customer (embed) session, deleting or renaming a connection one of its active setups uses (a setup pinning it, or for a ucl: id a setup of a widget listing its connector) asks the partner: the widget filter may refuse with 404 WIDGET_NOT_FOUND, 403 ACTION_NOT_ALLOWED (the action is in hideActions) or 424 WIDGET_FILTER_FAILED, and the access workflow with 403 ACTION_NOT_ALLOWED and its message or 424 ACCESS_CHECK_FAILED. A delete is a disconnect (canDisconnect), a rename a configure (canConfigure). Each body carries action.
 
 Operation: `deleteConnections`
 
@@ -175,7 +198,9 @@ Operation: `deleteConnections`
 **Responses**
 
 * `200`: Deleted
-* `404`: Connection not found (or outside the caller's scope)
+* `403`: ACTION_NOT_ALLOWED (disconnect): the partner's widget filter or access workflow refused a customer's delete
+* `404`: Connection not found (or outside the caller's scope), or WIDGET_NOT_FOUND
+* `424`: WIDGET_FILTER_FAILED or ACCESS_CHECK_FAILED: the partner's widget filter or access workflow failed (fail closed)
 
 ### Make a connection the default
 
@@ -191,7 +216,7 @@ Operation: `setDefaultConnection`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `id` | path | string | Yes | Connection id, as returned by the connections list. id names its customer by the customer's own id (orgId) in its customer segment, and is accepted the same way. |
+| `id` | path | string | Yes | Connection id, as returned by the connections list. A ucl: id names its customer by the customer's own id (orgId) in its customer segment, and is accepted the same way. |
 
 **Responses**
 
@@ -229,7 +254,7 @@ Operation: `refreshConnection`
 POST /v1/connect-links
 ```
 
-Returns a dashboard URL where a user connects, reconnects or fixes the credentials of one connector without signing in; connectionName preselects a connection. Lifetime defaults to CONNECT_LINK_DEFAULT_TTL_MINUTES (20) and can be set per link with expiresInMinutes up to CONNECT_LINK_MAX_TTL_MINUTES (default and ceiling 7 days = 10080; a deployment may set it lower, never higher); the response carries expiresAt. The connection is made at the caller's own workspace and customer. Requires connections.create.
+Returns a dashboard URL where a user connects, reconnects or fixes the credentials of one connector without signing in; connectionName names an existing connection to show on the page, to reconnect or fix it; when no connection has that name it is only the suggested name for a new one, which the person may change, so omit it for a new connection. Lifetime defaults to CONNECT_LINK_DEFAULT_TTL_MINUTES (20) and can be set per link with expiresInMinutes up to CONNECT_LINK_MAX_TTL_MINUTES (default and ceiling 7 days = 10080; a deployment may set it lower, never higher); the response carries expiresAt. The connection is made at the caller's own workspace and customer. The page always offers Production and Sandbox (testing) for a new connection, with Sandbox selected, which creates the workspace's sandbox environment on connect when it has none; environment: "sandbox" is the same as leaving it out. A customer whose tier has no sandbox gets a page that offers Production only, and asking for Sandbox is refused (403 SANDBOX_NOT_IN_TIER). A link minted by a credential pinned to an environment connects there and offers no choice. In a client that shows MCP App panels the page opens inline; the [fastn panel] note in the result says whether to give the user the link. Requires connections.create.
 
 Operation: `createConnectLink`
 
@@ -240,11 +265,13 @@ Operation: `createConnectLink`
 | `connectorId` | `string` | Yes |  |
 | `connectionName` | `string` | No |  |
 | `expiresInMinutes` | `integer` | No |  |
+| `environment` | `string` | No | Optional. The link's page offers Production and Sandbox (testing) with Sandbox selected; the person can still choose Production. "sandbox" is accepted and is the same as leaving it out. Refused (403 ENV_NOT_PERMITTED) for a credential pinned to an environment, whose links connect in that environment and offer no choice, and (403 SANDBOX_NOT_IN_TIER) for a customer whose tier has no sandbox, whose links offer Production only. One of: `sandbox`. |
 
 **Responses**
 
 * `200`: { data: { connectUrl, expiresAt } }
 * `400`: Validation error, or expiresInMinutes above the deployment max (CONNECT_LINK_TTL_TOO_LONG)
+* `403`: environment set by a credential pinned to an environment (ENV_NOT_PERMITTED), or expiresInMinutes set by a customer (CONNECT_LINK_PARTNER_ONLY_FIELD)
 
 ## Oauth
 
@@ -254,7 +281,7 @@ Operation: `createConnectLink`
 POST /v1/oauth/initiate
 ```
 
-Starts an OAuth connect (or reconnect, with connectionId) for a connector and returns the provider authorization URL to open in a browser. connectionName (optional, max 64) names a NEW account; a name another active account of this connector already uses is refused with 409 CONNECTION_NAME_TAKEN, and without it the auto name (default, connection-1, ...) is kept. setupLinkId (optional) is sent by the setup page so the connection.connected event carries that link's metadata. Requires connections.create.
+Starts an OAuth connect (or reconnect, with connectionId) for a connector and returns the provider authorization URL to open in a browser. environmentId (optional, wenv_*) makes a NEW connection in that environment: a sandbox one makes a sandbox connection (sandbox_connections allowance instead of customer_connections, deleted after 7 days). environment: "sandbox" (optional, instead of environmentId) does the same in the workspace's first sandbox environment, creating one named Sandbox when it has none; the environment and the allowance are settled here, before the redirect, so a refusal never reaches the provider. connectionName (optional, max 64) names a NEW account; a name another active account of this connector already uses is refused with 409 CONNECTION_NAME_TAKEN, and without it the auto name (default, connection-1, ...) is kept. setupLinkId (optional) is sent by the setup page so the connection.connected event carries that link's metadata. Requires connections.create.
 
 Operation: `initiateOauthConnection`
 
@@ -265,8 +292,10 @@ Operation: `initiateOauthConnection`
 | `connectorId` | `string` | Yes |  |
 | `authMethodId` | `string` | No |  |
 | `authProviderId` | `string` | No |  |
-| `connectionName` | `string` | Yes |  |
+| `connectionName` | `string` | No |  |
 | `connectionId` | `string` | No |  |
+| `environmentId` | `string` | No | Optional, wenv_*. The workflow environment to make this connection in. A sandbox environment makes a sandbox connection: held to the plan's sandbox_connections allowance (Launch 3, Scale 20) instead of customer_connections, never counted as a customer connection, deleted after 7 days. A production environment, or none, makes an ordinary connection. Not together with environment. Ignored on a reconnect. |
+| `environment` | `string` | No | Optional. "sandbox" makes a sandbox connection in the workspace's first sandbox environment, creating one named "Sandbox" (slug sandbox, or sandbox-2 when that is taken) when it has none, held to the plan's sandbox_environments limit. A credential pinned to a production environment is refused with 403 ENV_NOT_PERMITTED. Not together with environmentId (400 ENVIRONMENT_AMBIGUOUS). Ignored on a reconnect. Checked at initiate, before the redirect to the provider. One of: `sandbox`. |
 | `setupLinkId` | `string` | No |  |
 | `scopes` | `string[]` | No |  |
 | `oauthProxyUrl` | `string` | No |  |
@@ -281,7 +310,7 @@ Operation: `initiateOauthConnection`
 
 * `200`: { data: { flowId, authorizationUrl } }
 * `400`: Validation error or connector has no OAuth method
-* `403`: The partner's customers already have as many app connections as its plan includes: { error: "quota_exceeded", code, dimension: "customer_connections", current, limit, limitSource, message }. Not checked for a reconnect (connectionId)
+* `403`: The partner's customers already have as many app connections as its plan includes: { error: "quota_exceeded", code, dimension: "customer_connections", current, limit, limitSource, message }; for a sandbox connect, the sandbox_connections allowance is used up (same body, dimension "sandbox_connections"), the plan allows no sandbox environment (ENVIRONMENT_LIMIT_REACHED), or the credential is pinned to another environment (ENV_NOT_PERMITTED). Not checked for a reconnect (connectionId)
 * `404`: Not found
 * `502`: The connector service could not be read to name the connection or count the partner's customer connections; nothing was started
 
@@ -363,7 +392,7 @@ Operation: `deleteSaasConnector`
 * `200`: Deleted
 * `404`: Not found
 
-### List end customers' scoped connections for a registered SaaS connector
+### List customers' scoped connections for a registered SaaS connector
 
 ```http
 GET /v1/saas-connectors/{connectorId}/connections

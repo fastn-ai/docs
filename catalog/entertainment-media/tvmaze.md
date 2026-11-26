@@ -1,0 +1,39 @@
+---
+description: "TVmaze is a TV show database. Search shows and people, and get episodes and TV and streaming schedules."
+hidden: true
+---
+
+# TVmaze
+
+<img src="../../.gitbook/assets/connectors/lg/tvmaze.png" alt="TVmaze logo">
+
+| | |
+| --- | --- |
+| **Category** | [Entertainment and media](README.md) |
+| **Website** | [tvmaze.com](https://tvmaze.com) |
+| **Authentication** | No sign-in needed |
+| **Slug** | `tvmaze` |
+
+## Setup
+
+TVmaze needs no sign-in, so there is nothing to set up. Add it and use its actions.
+
+## Use it
+
+Add TVmaze from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.tvmaze.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+
+## Actions
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Find Single Show</td><td><code>singleSearchShow</code></td><td>Returns the single best-matching show for a name, optionally embedding episodes, cast or other resources. Docs: https://www.tvmaze.com/api</td></tr><tr><td>Get Alternate List</td><td><code>getAlternateList</code></td><td>Returns one alternate episode list by id. Docs: https://www.tvmaze.com/api</td></tr><tr><td>Get Episode</td><td><code>getEpisode</code></td><td>Returns one episode by id; embed=show adds the show. Docs: https://www.tvmaze.com/api</td></tr><tr><td>Get Episode by Number</td><td><code>getEpisodeByNumber</code></td><td>Returns one episode of a show by season and episode number. Docs: https://www.tvmaze.com/api</td></tr><tr><td>Get Full Future Schedule</td><td><code>getFullSchedule</code></td><td>Returns every future episode known to TVmaze (broadcast and web). The response is very large (several MB) and refreshed every 24 hours. Docs: https://www.tvmaze.com/api</td></tr><tr><td>Get Person</td><td><code>getPerson</code></td><td>Returns a person's information: name, country, birthday, deathday, gender and image. Docs: https://www.tvmaze.com/api</td></tr><tr><td>Get Show</td><td><code>getShow</code></td><td>Returns a show's main information: name, type, language, genres, status, runtime, premiere/end dates, network, schedule, rating, external ids, image and summary. Docs: https://www.tvmaze.com/api</td></tr><tr><td>Get TV Schedule</td><td><code>getSchedule</code></td><td>Returns the TV episodes airing on a date in a country (broadcast and cable). Docs: https://www.tvmaze.com/api</td></tr><tr><td>Get Web/Streaming Schedule</td><td><code>getWebSchedule</code></td><td>Returns the web and streaming episodes released on a date, optionally for one country (empty country = global services only). Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Alternate Episodes</td><td><code>listAlternateEpisodes</code></td><td>Returns the episodes of an alternate list in that list's order; embed=episodes adds the episode details. Docs: https://www.tvmaze.com/api</td></tr></tbody></table>
+
+<details>
+
+<summary>View 21 more actions</summary>
+
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>List Episode Guest Cast</td><td><code>listEpisodeGuestCast</code></td><td>Returns the guest cast of an episode. Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Episode Guest Crew</td><td><code>listEpisodeGuestCrew</code></td><td>Returns the guest crew of an episode (e.g. writers, directors). Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Episodes by Date</td><td><code>listEpisodesByDate</code></td><td>Returns the episodes of a show that aired on a date. Docs: https://www.tvmaze.com/api</td></tr><tr><td>List People</td><td><code>listPeople</code></td><td>Returns the full people index, 1000 people per page sorted by id; page 0 is the first page. A 404 means there are no more pages. Docs: https://www.tvmaze.com/api</td></tr><tr><td>List People Updates</td><td><code>listPeopleUpdates</code></td><td>Returns a map of person id to last-updated Unix timestamp; since=day|week|month limits to recent changes. Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Person Cast Credits</td><td><code>listPersonCastCredits</code></td><td>Returns the shows and characters a person has played. Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Person Crew Credits</td><td><code>listPersonCrewCredits</code></td><td>Returns the shows a person worked on as crew, with crew type. Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Person Guest Cast Credits</td><td><code>listPersonGuestCastCredits</code></td><td>Returns the episodes a person appeared in as guest cast. Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Season Episodes</td><td><code>listSeasonEpisodes</code></td><td>Returns the episodes of one season (by season id). Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Show AKAs</td><td><code>listShowAkas</code></td><td>Returns the alternative names (AKAs) of a show per country. Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Show Alternate Episode Lists</td><td><code>listShowAlternateLists</code></td><td>Returns the alternate episode orders of a show (DVD order, story order, broadcast order...). Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Show Cast</td><td><code>listShowCast</code></td><td>Returns the main cast of a show: person and character pairs. Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Show Crew</td><td><code>listShowCrew</code></td><td>Returns the main crew of a show with their crew type (creator, producer...). Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Show Episodes</td><td><code>listShowEpisodes</code></td><td>Returns all episodes of a show in airing order; specials=1 includes specials. Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Show Images</td><td><code>listShowImages</code></td><td>Returns all images of a show (posters, banners, backgrounds) with resolutions. Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Show Seasons</td><td><code>listShowSeasons</code></td><td>Returns the seasons of a show with episode counts, premiere/end dates and networks. Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Show Updates</td><td><code>listShowUpdates</code></td><td>Returns a map of show id to last-updated Unix timestamp; since=day|week|month limits to recent changes. Docs: https://www.tvmaze.com/api</td></tr><tr><td>List Shows</td><td><code>listShows</code></td><td>Returns the full show index, 250 shows per page sorted by id; page 0 is the first page. A 404 means there are no more pages. Docs: https://www.tvmaze.com/api</td></tr><tr><td>Look Up Show by External ID</td><td><code>lookupShow</code></td><td>Finds a show by its TVRage, TheTVDB or IMDb id (give exactly one). Docs: https://www.tvmaze.com/api</td></tr><tr><td>Search People</td><td><code>searchPeople</code></td><td>Searches people (actors, crew) by name. Docs: https://www.tvmaze.com/api</td></tr><tr><td>Search Shows</td><td><code>searchShows</code></td><td>Fuzzy-searches shows by name and returns up to 10 matches with a relevance score. Docs: https://www.tvmaze.com/api</td></tr></tbody></table>
+
+</details>
+
+## Events
+
+TVmaze has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

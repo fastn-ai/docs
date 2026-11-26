@@ -2,11 +2,23 @@
 description: >-
   What to check before your customers see the widget: tokens, tenancy, hosts,
   OAuth branding, share links and the problems real deployments hit.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
-# Embedding in production
+# Go-live checklist
 
-The [iframe](iframe.md) is one HTML tag, and a first run takes minutes. Going live for real customers takes a few more decisions. This page collects them, along with the problems teams have actually hit when embedding fastn in production.
+The [iframe](iframe.md) is one HTML tag, and a first run takes minutes. Going live for real customers takes a few more decisions, listed below with the problems teams have hit when embedding fastn in production.
 
 ## Before you go live
 
@@ -20,7 +32,7 @@ Never ship the dashboard's sample snippet: it contains a live token in the URL, 
 {% step %}
 ### Scope every token to exactly one customer
 
-A token must identify one customer. If an API key covers several customers and you don't say which one, the widget cannot know whose connections to show. Name the customer on every mint. Register it first, from your backend with an **Admin** key or under **Operate → Customers**, then name it in `x-org-id`. See [Tokens](token-api.md) and [Customers and tenancy](../../tutorials/developer/understanding-tenancy.md).
+A token must identify one customer. If an API key covers several customers and you don't say which one, the widget cannot know whose connections to show. Name the customer on every mint. Register it first, from your backend with an **Admin** key or under **Operate → Customers**, then name it in `x-org-id`. See [Token API](token-api.md) and [Customers and isolation](../../tutorials/developer/understanding-tenancy.md).
 {% endstep %}
 
 {% step %}
@@ -55,8 +67,8 @@ Customers only see what you have saved and published in the widget builder. Use 
 | The widget shows your admin integrations, or the wrong customer's | The token was minted without a customer, or with a key shared across customers | Mint one token per customer, from your backend, every session |
 | The embed worked last month and is now blank | The snippet points at a retired host | Use `https://api.fastn.dev` for every embed and token call |
 | Customers are confused by "fastn.ai" on the Google or HubSpot login | No custom OAuth app is registered for that connector | Register your own OAuth app on the connector's **Auth** tab |
-| A customer needs integrations before you have shipped the embed | Your engineering team has not added the iframe yet | Send a [shareable link](README.md) from **Embed > Widget > Embed** for a pilot. Treat the link as a secret, set an expiry, and revoke it when the pilot ends |
-| A connection needs two logins (for example HubSpot, then an app ID and API key for the second system) | The integration uses two connectors | Tell customers up front that the widget asks for both, in order |
+| A customer needs integrations before you have shipped the embed | Your engineering team has not added the iframe yet | Send a [shareable link](README.md) from **Embed → Widget → Embed** for a pilot. Treat the link as a secret, set an expiry, and revoke it when the pilot ends |
+| A connection needs two logins (for example HubSpot, then an app ID and API key for the second app) | The integration uses two connectors | Tell customers up front that the widget asks for both, in order |
 | Events from the source app never arrive | The source app has no API to register webhooks, so registration is manual | Show customers where to copy the webhook URL in the widget and where to paste it in the source app |
 | You need a layout the iframe cannot do | The iframe has one general-purpose design, styled through the widget builder | Use the [SDK](sdk.md) for events, theming and modal mode, or build your own UI on the headless package |
 

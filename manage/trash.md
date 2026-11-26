@@ -1,5 +1,17 @@
 ---
 description: Deleted connectors, actions and workflows, kept until you remove them.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Trash

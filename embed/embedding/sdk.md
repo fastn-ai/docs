@@ -1,5 +1,17 @@
 ---
 description: The SDK mounts the same iframe and adds events, token refresh, theming and modal mode.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # SDK
