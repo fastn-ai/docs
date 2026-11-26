@@ -16,11 +16,15 @@ layout:
 
 # Auth types
 
-The **Auth** column on the [Connections](README.md) page, and **Auth method** on a connection's detail page, show the type of auth method the connection was made with, as a display label. The stored value (what the API returns) is in the second column.
+**Operate → Connections** · [Open in Fastn](https://app.fastn.dev/connections)
+
+A connection's auth type is how the account proved who it was when the connection was made, for example by signing in with OAuth or by pasting an API key. It tells you what can break the connection later and how to fix it.
+
+The auth type shows in the **Auth** column on the [Connections](README.md) page, and as **Auth method** on a connection's [detail page](inside-a-connection.md), as a display label. The second column below is the stored value, which is what the API returns.
 
 | Shown as | Stored value | What the user gave | What keeps it working |
 | --- | --- | --- | --- |
-| **OAuth 2.0** | `OAUTH_2` | Signed in to the app and approved access. | The access token expires, and fastn renews it with the refresh token. If renewal fails, the connection becomes `Expired`. |
+| **OAuth 2.0** | `OAUTH_2` | Signed in to the app and approved access. | The access token expires, and Fastn renews it with the refresh token. If renewal fails, the connection becomes `Expired`. |
 | **API key** | `API_KEY` | An API key. | The key staying valid in the app. Deleting or rotating it there breaks the connection. |
 | **Bearer token** | `BEARER` | A token, for example a personal access token. | The token staying valid in the app, including any expiry date the app sets. |
 | **Basic auth** | `BASIC` | A username and password. | The password not changing. |
@@ -33,6 +37,8 @@ The **Auth** column on the [Connections](README.md) page, and **Auth method** on
 
 The detail page adds a plain-language note under the value, for example *Your customer signed in and approved access.* for **OAuth 2.0**.
 
-For OAuth connections, check the **Token and activity** panel on the [detail page](inside-a-connection.md) to see when the token expires and when fastn last renewed it.
+For an OAuth connection, check the **Token and activity** panel on the [detail page](inside-a-connection.md#token-and-activity) to see when the token expires and when Fastn last renewed it.
 
-The full list of methods, and the fields each one asks for, is in [Creating a connector → Authentication](../connectors/creating-a-connector.md#authentication).
+After a key, token or password changes in the app, [Reconnect](inside-a-connection.md#reconnect) the connection with the new value.
+
+The full list of methods, and the fields each one asks for, is in [Create a connector → Authentication](../connectors/creating-a-connector.md#authentication).
