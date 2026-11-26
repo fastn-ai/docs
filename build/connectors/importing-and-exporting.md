@@ -15,7 +15,16 @@ layout:
 ---
 
 # Import and export
-Connectors and actions can be saved to JSON files and loaded into another workspace. Use this to copy a connector between environments, to keep a copy under version control, or to share a connector definition with someone.
+
+**Build → Integrations → Connectors** · [Open in Fastn](https://app.fastn.dev/integrations)
+
+You can save connectors and actions to JSON files and load them into another workspace. Use this to:
+
+* **Copy a connector:** copy it between environments.
+* **Version control:** keep a copy of the connector's definition in your repository.
+* **Share a definition:** give the file to someone else to import.
+
+A file holds definitions only. Connections and their credentials are never exported.
 
 ### Export actions
 
@@ -62,8 +71,6 @@ The file looks like this (shortened):
 | `stage` | `test` or `live`. |
 | `version` | The action's version. |
 
-An action export holds definitions only: no credentials and no connections.
-
 ### Export connectors
 
 Connectors your workspace owns (badged `Custom`) have a **⋯** menu on their catalog card with **Select**, **Edit**, **Export**, and **Delete**.
@@ -93,13 +100,17 @@ Connectors your workspace owns (badged `Custom`) have a **⋯** menu on their ca
 
 A single-connector `<slug>-bundle.json` is flat: `connector`, `actions`, `webhookConfigs`, `authProviders`, and `appRegistrations` sit at the top level, with no `connectors` array.
 
-Each entry carries the connector's definition, its actions, its webhook configs, its auth providers, and its app registrations. Connections are never included. If the connector has its own OAuth app, open the file and check the `authProviders` entries before sharing it. Managed connectors do not have this menu; to copy one of their actions, use [Export actions](#export-actions).
+Each entry carries the connector's definition, its actions, its webhook configs, its auth providers, and its app registrations. Connections are never included. Managed connectors do not have this menu; to copy one of their actions, use [Export actions](#export-actions).
+
+{% hint style="warning" %}
+If the connector has its own OAuth app, the file carries it in `authProviders`. Open the file and check those entries before you share it.
+{% endhint %}
 
 ### Import
 
 **Create connector → Import from file** on the catalog page opens a file picker (if your role cannot create connectors, the page shows an **Import** button instead). Choose one `.json` file, such as a `connectors-bundle-<date>.json` from [Export connectors](#export-connectors). There is no form to fill in: the file is read and its connectors are created in your workspace as connectors you own.
 
-If a connector in the file already exists in your workspace, fastn asks first:
+If a connector in the file already exists in your workspace, Fastn asks first:
 
 > **Replace existing connector?**
 >

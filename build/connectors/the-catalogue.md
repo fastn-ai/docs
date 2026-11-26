@@ -16,16 +16,18 @@ layout:
 
 # The catalog
 
-`/integrations?tab=connectors` lists every connector your workspace can use: the ones fastn manages and the ones your workspace created.
+**Build → Integrations → Connectors** · [Open in Fastn](https://app.fastn.dev/integrations)
+
+The catalog lists every [connector](README.md) your workspace can use: the ones Fastn manages and the ones your workspace created. Start here when a workflow needs a new app: if the app is in the catalog, you can connect to it straight away, without building anything.
 
 <figure><img src="../../.gitbook/assets/screens/connectors-catalog.webp" alt="The Connectors page: Request connector and Create connector buttons, a Categories list starting with All connectors 1030, a search box with All, Featured, Connected and OAuth chips and an All Visibility filter, and connector cards badged managed with a Connect button"><figcaption>The connector catalog.</figcaption></figure>
 
 ### Page header
 
-| Button | What it does |
-| --- | --- |
-| **Request connector** | Asks fastn to build a connector you need. See [Request a connector](creating-a-connector.md#request-a-connector). |
-| **Create connector** | Opens a menu with every way to add a connector: **From scratch** opens the Create a connector dialog (see [Create a connector](creating-a-connector.md)); **Build with fastn agent** opens the [fastn agent](../agent/README.md) (on paid plans; on Launch it reads *On paid plans. Upgrade to use it.*); **Build in your AI tool** shows how to connect your AI tool to the [fastn MCP server](../mcp-gateway/README.md) and build one there; **Import from file** opens a file picker that accepts one `.json` connector file (see [Import and export](importing-and-exporting.md)). **Build with fastn agent** and **Build in your AI tool** show only where your role can use them. If your role cannot create connectors, you see an **Import** button instead of this menu. |
+Two buttons sit at the top right:
+
+* **Request connector:** asks Fastn to build a connector you need. See [Request a connector](creating-a-connector.md#request-a-connector).
+* **Create connector:** opens a menu with every way to add a connector: **From scratch**, **Build in your AI tool**, **Build with fastn agent** and **Import from file**. See [Ways to create a connector](creating-a-connector.md#ways-to-create-a-connector). If your role cannot create connectors, you see an **Import** button instead of this menu.
 
 ### Find a connector
 
@@ -33,7 +35,7 @@ layout:
 | --- | --- | --- |
 | **Categories** (left column) | Shows one category, such as *CRM & Sales* or *Communication*. Each category shows how many connectors it holds. **All connectors** clears the category. | `category=` (for example `crm-sales`) |
 | **Search connectors** | Searches the catalog by connector name. | `q=` |
-| **All / Featured / Connected / OAuth** | **All** shows everything. **Featured** shows connectors fastn marks as featured. **Connected** shows connectors with at least one active connection. **OAuth** shows connectors that offer an OAuth 2.0 method. | `view=featured`, `view=connected`, `view=oauth` |
+| **All / Featured / Connected / OAuth** | **All** shows everything. **Featured** shows connectors Fastn marks as featured. **Connected** shows connectors with at least one active connection. **OAuth** shows connectors that offer an OAuth 2.0 method. | `view=featured`, `view=connected`, `view=oauth` |
 | **All Visibility / Private / Public** | **Private** shows connectors only your workspace can see. **Public** shows connectors from the shared catalog. | `visibility=` |
 
 Filters combine. When you search, the category counts change to show how many matches each category holds.
@@ -53,11 +55,18 @@ The list is split into pages, with **Previous** and **Next** below it.
 Each card shows:
 
 * the connector's **icon** and **name**;
-* a **badge**: `managed` (maintained by fastn), `Custom` (created in your workspace), `Connected` (at least one active connection exists), or `Inactive` (it has connections, but none is active);
+* a **badge** (see below);
 * the **description**, cut to a few lines;
 * an **OAuth 2.0** chip if the connector offers OAuth;
 * who maintains it: *Managed by Fastn*, or *Managed by* your organization's name for a connector your workspace created;
 * a button at the bottom.
+
+The badge is one of:
+
+* **`managed`:** maintained by Fastn.
+* **`Custom`:** created in your workspace.
+* **`Connected`:** at least one active connection exists. It replaces `managed` or `Custom`.
+* **`Inactive`:** the connector has connections, but none is active.
 
 The button depends on whether you have connected:
 

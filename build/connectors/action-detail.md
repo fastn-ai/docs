@@ -16,7 +16,15 @@ layout:
 
 # Actions
 
-An **action** is one operation a connector can perform, such as *Create Contact* or *List Owners*. Technically, it is one HTTP request (method, URL, headers, body) plus two schemas: the input it accepts and the output it returns. Workflows, the fastn agent, and your AI tool (over MCP) call actions; they never call the vendor's API directly.
+**Build → Integrations → Connectors** → open a connector → select an action · [Open in Fastn](https://app.fastn.dev/integrations)
+
+An **action** is one operation a connector can perform, such as *Create Contact* or *List Owners*. Workflows, the Fastn agent, and your AI tool (over MCP) call actions; they never call the vendor's API directly. So when a workflow needs to do something new in an app, the connector needs an action for it.
+
+Each action is made of:
+
+* **A request:** one HTTP request (method, URL, headers, body).
+* **An input schema:** the input the action accepts.
+* **An output schema:** the output it returns.
 
 <figure><img src="../../.gitbook/assets/screens/action-editor.webp" alt="The action editor for HubSpot Add List Members: name and description fields, method PUT and the URL with an input.listId placeholder, a Run button, tabs Params, Headers, Auth, Body, Input schema, Output schema and Mocks, and a footer with v1.2, New version, Read-only owned by platform and Propose an update"><figcaption>A platform-owned action opens read-only; <strong>Propose an update</strong> suggests a change.</figcaption></figure>
 
@@ -36,7 +44,7 @@ The top of the editor holds:
 | Element | Meaning |
 | --- | --- |
 | **Name** | The action's display name. |
-| **Description** | What the action does and how to call it. The fastn agent and your AI tool read this, so it should say which inputs matter. |
+| **Description** | What the action does and how to call it. The Fastn agent and your AI tool read this, so it should say which inputs matter. |
 | **Method** | `GET`, `POST`, `PUT`, `PATCH`, or `DELETE`. |
 | **URL** | The endpoint. Parts in double braces are filled in when the action runs: `{{input.<field>}}` takes a value from the action's input. |
 | **Run** | Opens the run panel to call the action once, live or with a mock. See [Run an action](#run-an-action). |
@@ -79,7 +87,7 @@ Switch between **Form** and **JSON**. In Form view each field is one row:
 
 **Add** (top right) adds a top-level field. The count (for example *1 field*) shows how many top-level fields there are.
 
-The **Output schema** tab (*Define the expected output structure for this action.*) uses the same editor. Workflows and the fastn agent read it to know which fields a response contains.
+The **Output schema** tab (*Define the expected output structure for this action.*) uses the same editor. Workflows and the Fastn agent read it to know which fields a response contains.
 
 #### Mocks
 
@@ -87,8 +95,8 @@ The **Output schema** tab (*Define the expected output structure for this action
 
 A mock is a stored response for this action. When a workflow runs in mock mode, the action returns the mock instead of calling the vendor, so you can test a workflow without touching real data.
 
-* **+ Add custom** adds a scenario you write yourself.
-* **Generate with AI** has the AI write scenarios for the action. Generated scenarios are replaced when you generate again.
+* **+ Add custom:** adds a scenario you write yourself.
+* **Generate with AI:** has the AI write scenarios for the action. Generated scenarios are replaced when you generate again.
 * Each scenario shows its source (`CUSTOM` for hand-written ones), its name, and a description. The bin icon deletes it.
 * With none saved, the tab reads *No mock scenarios yet.*
 
@@ -124,7 +132,7 @@ The footer shows the action's version, for example `v1.2`, and **New version**. 
 
 ### Platform-owned actions and Propose an update
 
-Actions on a managed connector belong to fastn. Their footer reads *Read-only - owned by platform*, and you cannot save changes to them. You can still read every tab, run the action, and export it.
+Actions on a managed connector belong to Fastn. Their footer reads *Read-only - owned by platform*, and you cannot save changes to them. You can still read every tab, run the action, and export it.
 
 If an action is wrong or missing something, click **Propose an update**:
 
@@ -132,4 +140,4 @@ If an action is wrong or missing something, click **Propose an update**:
 2. Click **Propose an update** and add a note for the reviewer: why the update is needed and what changed.
 3. Click **Propose update**.
 
-fastn reviews the proposal. Nothing changes on the connector until it is accepted.
+Fastn reviews the proposal. Nothing changes on the connector until it is accepted.
