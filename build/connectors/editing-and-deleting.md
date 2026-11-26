@@ -33,9 +33,9 @@ On an owned connector:
 
 ### Edit a connector
 
-**⋯ → Edit** opens **Edit connector**. It has the same Identity, Connection, and Authentication sections as [Create a connector](creating-a-connector.md), plus **Credential verification**:
+**⋯ → Edit** opens **Edit connector**. It has the same Identity, Connection, and Authentication sections as [Create a connector](creating-a-connector.md), plus **Credential verification**.
 
-> Runs when someone connects, so a wrong API key is caught immediately instead of failing later in a workflow. Required before this connector can go live.
+**Credential verification** checks a credential each time someone connects to the connector. A wrong API key is caught at that moment, instead of failing later in a workflow. It doesn't affect publishing.
 
 | Field | Meaning |
 | --- | --- |
@@ -65,7 +65,7 @@ Every saved change goes to the connector's **Test** version. Customers keep runn
 2. Click **Publish to live** on the version.
 3. In **Publish to live?**, click **Publish**. The version becomes the one your customers run; anyone not pinned moves to it immediately.
 
-Customers pinned to another version (see [Version pins](inside-a-connector.md#version-pins)) stay on it. The Edit dialog also says [credential verification](#edit-a-connector) is *required before this connector can go live*. Publishing a test version without it is not blocked, so add a verification action before customers rely on the connector.
+Customers pinned to another version (see [Version pins](inside-a-connector.md#version-pins)) stay on it. Add a [verification action](#edit-a-connector) before customers rely on the connector, so a bad credential is caught when they connect.
 
 ### Restore a version
 
