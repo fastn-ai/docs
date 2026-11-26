@@ -220,7 +220,7 @@ const inWindow = await meetings.search({
 
 `search` takes the fields to match as one object. Which fields an app can search by depends on its mapping, for example `email` or `phone` for a CRM contact, and a time window plus `query` text for a meeting.
 
-Answer: `{ records: [ … ], hasMore, provider }`. No match gives `records: []`. `hasMore` is `false` when the app's search mapping has a cursor and it came back empty, and `null` (with a `warnings` entry) when the mapping declares no cursor, so fastn cannot tell whether results were cut off. A search answers one page: the route has no cursor, so narrow the filters or raise `page_size` to see more; `list` pages.
+Answer: `{ records: [ … ], hasMore, provider }`. No match gives `records: []`. `hasMore` is `false` when the app's search mapping has a cursor and it came back empty, and `null` (with a `warnings` entry) when the mapping declares no cursor, so Fastn cannot tell whether results were cut off. A search answers one page: the route has no cursor, so narrow the filters or raise `page_size` to see more; `list` pages.
 
 ---
 
@@ -256,7 +256,7 @@ Get `connectionId` from `customer.connections()` or the `connection.connected` e
 | `401 UNIFIED_PROVIDER_AUTH_FAILED` | The app refused the connection's credentials. The customer has to reconnect the app. |
 | `404 UNIFIED_PROVIDER_NOT_FOUND` | The app has no record with that id on a get, update, or delete, for example one that was deleted or archived. |
 | `429 UNIFIED_PROVIDER_RATE_LIMITED` | The app's own rate limit was hit. Retry later. |
-| `502 UNIFIED_PROVIDER_ERROR` | The app failed (a 5xx, a timeout, or no answer), or fastn's connector platform refused the call. |
+| `502 UNIFIED_PROVIDER_ERROR` | The app failed (a 5xx, a timeout, or no answer), or Fastn's connector platform refused the call. |
 
 For the `UNIFIED_PROVIDER_*` codes, what the app said is in `e.body.providerStatus` (its HTTP status) and `e.body.providerError` (its message), when the app answered.
 

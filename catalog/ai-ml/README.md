@@ -1,5 +1,5 @@
 ---
-description: "AI and ML connectors fastn manages, with their auth, actions and events."
+description: "AI and ML connectors Fastn manages, with their auth, actions and events."
 ---
 
 # AI and ML

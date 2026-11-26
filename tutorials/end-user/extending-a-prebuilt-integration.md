@@ -19,7 +19,7 @@ layout:
 
 # Extend a pre-built integration
 
-The integration your SaaS provider shipped is a starting point, not a fixed contract. Most of what it does, such as which fields move and which records qualify, is configuration you can change from inside the widget, without a fastn account and without filing a ticket.
+The integration your SaaS provider shipped is a starting point, not a fixed contract. Most of what it does, such as which fields move and which records qualify, is configuration you can change from inside the widget, without a Fastn account and without filing a ticket.
 
 Below is **what you can change and how to ask for it**. For the click-by-click tour of the dialog itself, see [Customize an integration](customizing-your-integrations.md).
 
@@ -35,10 +35,10 @@ Both change the same configuration. Neither needs a developer.
 ### What the assistant does
 
 {% hint style="info" %}
-Building new integrations through the assistant depends on your provider's fastn plan. Where it is not available, the assistant says *Building new integrations isn't available here. You can still ask questions and change your configuration.* Everything on this page still works.
+Building new integrations through the assistant depends on your provider's Fastn plan. Where it is not available, the assistant says *Building new integrations isn't available here. You can still ask questions and change your configuration.* Everything on this page still works.
 {% endhint %}
 
-fastn's agent reads the real schemas of both connected apps (the actual fields on your HubSpot account, not a generic template) and changes the configuration to match what you asked for.
+Fastn's agent reads the real schemas of both connected apps (the actual fields on your HubSpot account, not a generic template) and changes the configuration to match what you asked for.
 
 Requests that suit it well:
 
@@ -92,7 +92,7 @@ To see when the next run is due, check the schedule on the installation's **Trig
 * **No sparkle button in the widget** - the AI assistant is a widget section like any other (on by default), and your provider may have switched it off.
 * **The change saved but nothing happened** - confirm that a run has happened since you saved, then check that run in Insights.
 
-In all three cases the answer is the same: contact your SaaS provider's support team, not fastn. They own the widget you are looking at.
+In all three cases the answer is the same: contact your SaaS provider's support team, not Fastn. They own the widget you are looking at.
 
 ### Next steps
 

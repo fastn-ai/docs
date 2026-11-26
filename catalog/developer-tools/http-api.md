@@ -1,5 +1,5 @@
 ---
-description: "Make GET, POST, PUT, PATCH and DELETE requests to any web service that has no dedicated app in fastn."
+description: "Make GET, POST, PUT, PATCH and DELETE requests to any web service that has no dedicated app in Fastn."
 hidden: true
 ---
 

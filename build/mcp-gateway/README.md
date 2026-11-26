@@ -1,5 +1,5 @@
 ---
-description: Connect your AI tool to the fastn MCP server to build and manage integrations from a chat.
+description: Connect your AI tool to the Fastn MCP server to build and manage integrations from a chat.
 layout:
   width: default
   title:
@@ -14,24 +14,24 @@ layout:
     visible: true
 ---
 
-# fastn MCP server
+# Fastn MCP server
 
-Everything you build in fastn (connectors, actions, workflows) can be used from an AI client over the Model Context Protocol. The client sees your fastn workflows and the fastn platform tools, and reaches your connectors' actions through those platform tools, with the same customer scoping and the same permission model as everything else. Your AI tool can also build new integrations for you, right in the chat: see [Build from your AI tool](../building-from-your-ai-agent.md).
+Everything you build in Fastn (connectors, actions, workflows) can be used from an AI client over the Model Context Protocol. The client sees your Fastn workflows and the Fastn platform tools, and reaches your connectors' actions through those platform tools, with the same customer scoping and the same permission model as everything else. Your AI tool can also build new integrations for you, right in the chat: see [Build from your AI tool](../building-from-your-ai-agent.md).
 
 {% hint style="info" %}
-**Which MCP do I need?** To build and manage integrations from Claude, Cursor, or another AI tool, use the **fastn MCP server** (`https://mcp.fastn.dev/fastn-workspace`). To let your AI agent, or a customer's AI client, use a customer's connected apps, use **fastn Connect**, the MCP gateway. See [Architecture](../../getting-started/architecture.md#which-mcp-do-i-need).
+**Which MCP do I need?** To build and manage integrations from Claude, Cursor, or another AI tool, use the **Fastn MCP server** (`https://mcp.fastn.dev/fastn-workspace`). To let your AI agent, or a customer's AI client, use a customer's connected apps, use **Fastn Connect**, the MCP gateway. See [Architecture](../../getting-started/architecture.md#which-mcp-do-i-need).
 {% endhint %}
 
-Not sure fastn fits your use case? [Find out if fastn fits your use case](../../getting-started/plan-your-integration.md) shows how to ask your AI agent through this server.
+Not sure Fastn fits your use case? [Find out if Fastn fits your use case](../../getting-started/plan-your-integration.md) shows how to ask your AI agent through this server.
 
-fastn has two MCP addresses, for two different jobs:
+Fastn has two MCP addresses, for two different jobs:
 
-<figure><img src="../../.gitbook/assets/diagrams/mcp-server-and-gateway.svg" alt="Two MCP addresses. Your team, and your customers if you allow it, connect an AI tool to the fastn MCP server to build and manage integrations. Your AI agent connects to the fastn MCP gateway, fastn Connect, to use each customer's apps as tools with their own sign-in."><figcaption><p>The MCP server builds integrations. The MCP gateway lets AI agents use them.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/diagrams/mcp-server-and-gateway.svg" alt="Two MCP addresses. Your team, and your customers if you allow it, connect an AI tool to the Fastn MCP server to build and manage integrations. Your AI agent connects to the Fastn MCP gateway, Fastn Connect, to use each customer's apps as tools with their own sign-in."><figcaption><p>The MCP server builds integrations. The MCP gateway lets AI agents use them.</p></figcaption></figure>
 
 | Address | What it is for | Who connects |
 | --- | --- | --- |
-| `https://mcp.fastn.dev/fastn-workspace` | **fastn MCP server** (this page): build and manage integrations from a chat | Your team, from Claude, Cursor, or another AI tool. Your customers get their own one-time URL from the widget, if you allow it: see [Customer MCP URL](../../embed/embedding/customer-mcp-url.md) |
-| `https://mcp.fastn.dev/<your-org>` | **fastn Connect** (the MCP gateway): AI agents use each customer's connected apps as tools | Your AI agents |
+| `https://mcp.fastn.dev/fastn-workspace` | **Fastn MCP server** (this page): build and manage integrations from a chat | Your team, from Claude, Cursor, or another AI tool. Your customers get their own one-time URL from the widget, if you allow it: see [Customer MCP URL](../../embed/embedding/customer-mcp-url.md) |
+| `https://mcp.fastn.dev/<your-org>` | **Fastn Connect** (the MCP gateway): AI agents use each customer's connected apps as tools | Your AI agents |
 
 ### Open the connect dialog
 
@@ -47,15 +47,15 @@ https://mcp.fastn.dev/fastn-workspace
 
 ### How your AI tool connects
 
-You add fastn as an MCP server at that URL. The client sends you to fastn to sign in, so no API key is needed. The **MCP server** page names the method: OAuth 2.0 with dynamic client registration, so leave any Client ID and Client Secret fields empty. If you belong to more than one fastn org, fastn also asks which workspace the client works in; with one org it connects straight away.
+You add Fastn as an MCP server at that URL. The client sends you to Fastn to sign in, so no API key is needed. The **MCP server** page names the method: OAuth 2.0 with dynamic client registration, so leave any Client ID and Client Secret fields empty. If you belong to more than one Fastn org, Fastn also asks which workspace the client works in; with one org it connects straight away.
 
-| Client | Where you add fastn |
+| Client | Where you add Fastn |
 | --- | --- |
-| [Claude](claude.md) | **Settings** → **Connectors** → **Add custom connector**, or **Add to Claude** in fastn |
+| [Claude](claude.md) | **Settings** → **Connectors** → **Add custom connector**, or **Add to Claude** in Fastn |
 | [Claude Code](claude-code.md) | `claude mcp add --transport http fastn <URL>` |
 | [ChatGPT](chatgpt.md) | **Plugins** → **Add** → **Add custom MCP server** |
-| [Cursor](cursor.md) | **Add to Cursor** in fastn, or **Customize** → **MCPs** |
-| [VS Code](vscode.md) | **Install in VS Code** in fastn, or `.vscode/mcp.json` |
+| [Cursor](cursor.md) | **Add to Cursor** in Fastn, or **Customize** → **MCPs** |
+| [VS Code](vscode.md) | **Install in VS Code** in Fastn, or `.vscode/mcp.json` |
 | [GitHub Copilot](github-copilot.md) | VS Code, Visual Studio, JetBrains, Xcode, or Eclipse: the editor's `mcp.json` |
 | [Codex](codex.md) | `codex mcp add fastn --url <URL>` |
 | [Antigravity](antigravity.md) | `~/.gemini/config/mcp_config.json`, then **Customizations** → **Authenticate** |
@@ -66,11 +66,11 @@ You add fastn as an MCP server at that URL. The client sends you to fastn to sig
 
 #### Any other MCP client
 
-Any client that speaks Streamable HTTP and OAuth can add fastn the same way: give it the URL above and sign in when it asks.
+Any client that speaks Streamable HTTP and OAuth can add Fastn the same way: give it the URL above and sign in when it asks.
 
 ### Scope and permissions
 
-A client that signs in acts as you. Its fastn tools run in the workspace you signed in to (or picked, if you belong to more than one org), with your own role in that org, so it can do what you can do in the dashboard and nothing more. Picking **The org selected in fastn** makes it follow whichever org you switch to in the dashboard; picking a named org pins it there.
+A client that signs in acts as you. Its Fastn tools run in the workspace you signed in to (or picked, if you belong to more than one org), with your own role in that org, so it can do what you can do in the dashboard and nothing more. Picking **The org selected in Fastn** makes it follow whichever org you switch to in the dashboard; picking a named org pins it there.
 
 {% hint style="warning" %}
 An MCP client can change real things in your org, the same as you can. Review each tool call before you approve it, and sign the client out when you stop using it.
@@ -80,7 +80,7 @@ An MCP client can change real things in your org, the same as you can. Review ea
 
 Activity from the MCP server lands in the same places as everything else: runs appear in **Operate → Logs → [Executions](../../operate/executions.md)**, with the calling identity in the **Triggered by** column.
 
-An MCP client spends no fastn AI credits. The **By agent** breakdown in the credits popover in the top bar covers fastn's own agents, such as the fastn agent, not your AI tool.
+An MCP client spends no Fastn AI credits. The **By agent** breakdown in the credits popover in the top bar covers Fastn's own agents, such as the Fastn agent, not your AI tool.
 
 ### The A2A option
 

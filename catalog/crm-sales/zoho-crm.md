@@ -15,12 +15,12 @@ hidden: true
 | **Slug** | `zohoCrm` |
 
 ## Setup guide
-This guide shows you how to register your own Zoho CRM OAuth client in the Zoho API Console and add it to fastn, so your customers sign in to Zoho CRM through your app.
+This guide shows you how to register your own Zoho CRM OAuth client in the Zoho API Console and add it to Fastn, so your customers sign in to Zoho CRM through your app.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a Zoho account that can sign in to the Zoho API Console at https://api-console.zoho.com/.
-- Have fastn's redirect URL ready: `https://oauth.live.fastn.ai`
+- Have Fastn's redirect URL ready: `https://oauth.live.fastn.ai`
 
 ### Create your Zoho CRM app
 1. Go to the Zoho API Console at https://api-console.zoho.com/ and click **GET STARTED** (or **Add Client** if you already have clients).
@@ -33,7 +33,7 @@ This guide shows you how to register your own Zoho CRM OAuth client in the Zoho 
    - **Homepage URL**: your product's website.
    - **Authorized Redirect URIs**: enter `https://oauth.live.fastn.ai` exactly, with no trailing slash.
 
-<figure><img src="../../.gitbook/assets/connector-guides/zohoCrm/create-app.png" alt="The Create New Client form with the fastn redirect URI"><figcaption><p>The Create New Client form with the fastn redirect URI</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/connector-guides/zohoCrm/create-app.png" alt="The Create New Client form with the Fastn redirect URI"><figcaption><p>The Create New Client form with the Fastn redirect URI</p></figcaption></figure>
 
 4. Click **CREATE**. You can check or change the redirect URI later on the client's **Client Details** tab.
 
@@ -43,14 +43,14 @@ This guide shows you how to register your own Zoho CRM OAuth client in the Zoho 
 
 <figure><img src="../../.gitbook/assets/connector-guides/zohoCrm/credentials.png" alt="The Client Secret tab, where the Client ID and Client Secret are shown"><figcaption><p>The Client Secret tab, where the Client ID and Client Secret are shown</p></figcaption></figure>
 
-6. Note the scopes fastn requests for Zoho CRM. Zoho takes scopes on the sign-in request, so you add them in fastn in the next section:
+6. Note the scopes Fastn requests for Zoho CRM. Zoho takes scopes on the sign-in request, so you add them in Fastn in the next section:
    - `ZohoCRM.modules.ALL`
    - `ZohoCRM.settings.ALL`
    - `ZohoCRM.users.ALL`
    - `ZohoCRM.org.ALL`
 
-### Add your app to fastn
-1. In fastn, go to **Build → Integrations → Connectors** and open **Zoho CRM**.
+### Add your app to Fastn
+1. In Fastn, go to **Build → Integrations → Connectors** and open **Zoho CRM**.
 2. Open the **Auth** tab and click **Manage providers**.
 
 <figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
@@ -64,7 +64,7 @@ This guide shows you how to register your own Zoho CRM OAuth client in the Zoho 
 6. Save the provider, then choose **Use this app** so it becomes the Preferred app.
 7. In your widget, set the Zoho CRM connector's **Auth provider** setting to your app instead of **Use platform default**.
 
-Customers who connect without your own app sign in through fastn's shared Zoho CRM app.
+Customers who connect without your own app sign in through Fastn's shared Zoho CRM app.
 
 ## Actions
 

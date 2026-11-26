@@ -1,5 +1,5 @@
 ---
-description: "Maps and location connectors fastn manages, with their auth, actions and events."
+description: "Maps and location connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Maps and location

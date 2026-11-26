@@ -1,6 +1,6 @@
-# Send your product's events to fastn (Node.js)
+# Send your product's events to Fastn (Node.js)
 
-Posts an order event to a fastn webhook trigger, signed for one customer, so the trigger's workflows run with that customer's setup.
+Posts an order event to a Fastn webhook trigger, signed for one customer, so the trigger's workflows run with that customer's setup.
 
 ## Before you start
 

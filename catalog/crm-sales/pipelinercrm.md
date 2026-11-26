@@ -15,16 +15,16 @@ hidden: true
 | **Slug** | `pipelinercrm` |
 
 ## Setup guide
-This guide shows you where to find the API credentials fastn needs to connect to Pipeliner CRM (Coevera), and where to enter them.
+This guide shows you where to find the API credentials Fastn needs to connect to Pipeliner CRM (Coevera), and where to enter them.
 
 For Pipeliner CRM (Coevera)'s own setup steps, see [Authentication](https://developers.coevera.com/get-started/authentication/) in the Pipeliner CRM (Coevera) documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a Coevera account with administrator access to the team space you want to connect, because only an administrator can create an API application.
 
 ### Get your Pipeliner CRM (Coevera) credentials
-fastn asks for four values: **region**, **spaceId**, **username** and **password**. Coevera calls the username and password the API application's user name and password.
+Fastn asks for four values: **region**, **spaceId**, **username** and **password**. Coevera calls the username and password the API application's user name and password.
 
 1. Sign in to Coevera as an administrator and go to **Administration › Units, Users & Roles › Applications**.
 2. Create a new application for the integration.
@@ -35,9 +35,9 @@ fastn asks for four values: **region**, **spaceId**, **username** and **password
 7. Copy the space ID into **spaceId**.
 8. For **region**, use the data-center region at the start of the base URL host (for example, `eu-central` in `eu-central.api.coevera.com`). Coevera lists four regions: `us-east`, `eu-central`, `ca-central` and `ap-southeast`.
 
-If you later select **Generate New** under **Show Access**, both the user name and the password change and the old pair stops working right away. Update both values in fastn when that happens.
+If you later select **Generate New** under **Show Access**, both the user name and the password change and the old pair stops working right away. Update both values in Fastn when that happens.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter these values when they connect Pipeliner CRM (Coevera) in your widget. You can also enter them yourself under **Build → Integrations → Connectors → Pipeliner CRM (Coevera)**.
 
 ## Actions

@@ -18,7 +18,7 @@ layout:
 
 In this quickstart you mint an embed token from your backend, render the widget in your page, and connect an app as a customer would. It takes about ten minutes, and you can do all of it from a fresh account.
 
-<figure><img src="../../.gitbook/assets/diagrams/auth-flow.svg" alt="How authentication works: your backend mints an embed token from fastn with your API key, passes only the token to your frontend, which opens the widget; the customer signs in to their app and fastn saves the credential."><figcaption><p>Your API key stays on your backend. Only the short-lived token reaches the browser.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/diagrams/auth-flow.svg" alt="How authentication works: your backend mints an embed token from Fastn with your API key, passes only the token to your frontend, which opens the widget; the customer signs in to their app and Fastn saves the credential."><figcaption><p>Your API key stays on your backend. Only the short-lived token reaches the browser.</p></figcaption></figure>
 
 The finished code is in the runnable [embed-node](https://github.com/fastn-ai/docs/tree/main/examples/embed-node) example, with a Python backend in [token-server-python](https://github.com/fastn-ai/docs/tree/main/examples/token-server-python).
 
@@ -49,7 +49,7 @@ curl -X POST https://api.fastn.dev/api/v1/embed/token \
 
 ### Step 1: Generate a token from your backend
 
-Create a server-side function that calls the fastn token endpoint. Keep the API key in an environment variable, never in client code.
+Create a server-side function that calls the Fastn token endpoint. Keep the API key in an environment variable, never in client code.
 
 ```javascript
 // Server-side only
@@ -99,7 +99,7 @@ app.get("/api/fastn-token", async (req, res) => {
 
 ### Step 3: Render the iframe
 
-On your frontend, fetch a token and render the fastn iframe with it.
+On your frontend, fetch a token and render the Fastn iframe with it.
 
 ```javascript
 const { token } = await fetch("/api/fastn-token").then(r => r.json());
@@ -115,7 +115,7 @@ document.getElementById("integrations").appendChild(iframe);
 
 ### Step 4: Verify
 
-**You should see:** the fastn widget inside your page, listing the integration you added with a **Connect** button.
+**You should see:** the Fastn widget inside your page, listing the integration you added with a **Connect** button.
 
 Click **Connect** on one, complete the authentication popup, and confirm the app shows as **Connected**.
 

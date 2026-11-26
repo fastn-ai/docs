@@ -1,12 +1,12 @@
 ---
-description: How fastn protects your data and your customers' credentials, its certifications, and where to get the security documents your review needs.
+description: How Fastn protects your data and your customers' credentials, its certifications, and where to get the security documents your review needs.
 ---
 
 # Security and compliance
 
-This page is for your security, compliance and procurement reviewers. It covers how fastn keeps each of your customers' data apart, how credentials are protected, what fastn is certified for, and how to get the reports a vendor review asks for.
+This page is for your security, compliance and procurement reviewers. It covers how Fastn keeps each of your customers' data apart, how credentials are protected, what Fastn is certified for, and how to get the reports a vendor review asks for.
 
-The full security documentation, including the audit reports, is in the [fastn Trust Center](https://trust.fastn.ai).
+The full security documentation, including the audit reports, is in the [Fastn Trust Center](https://trust.fastn.ai).
 
 ## Certifications and compliance
 
@@ -19,7 +19,7 @@ The full security documentation, including the audit reports, is in the [fastn T
 | HIPAA | HIPAA-ready, with a [Business Associate Agreement](https://fastn.ai/hipaa-baa) for customers who need one |
 | CASA Tier 2 | Listed in the Trust Center |
 
-fastn's public endpoints score **A+** on Qualys SSL Labs, ImmuniWeb and CryptCheck.
+Fastn's public endpoints score **A+** on Qualys SSL Labs, ImmuniWeb and CryptCheck.
 
 ### Get the reports
 
@@ -34,7 +34,7 @@ Request the SOC 2 Type II report, the ISO/IEC 27001 certificate, the PCI DSS rep
 ## Credentials
 
 * **Encrypted and customer-scoped.** When a customer connects an app, its tokens and keys are encrypted at rest and stored under that customer only.
-* **Refreshed by fastn.** fastn refreshes OAuth tokens itself, so your code never handles a refresh token.
+* **Refreshed by Fastn.** Fastn refreshes OAuth tokens itself, so your code never handles a refresh token.
 * **Never shown back.** The dashboard and API do not return a connection's raw credentials to a caller that is not explicitly allowed to read them. Granting **decrypt** on Connections or **read** on Secrets to an API key is the only way to read them, and [API keys](../manage/api-keys.md) explains why to grant it rarely.
 * **Your own secrets** are encrypted the same way. See [Secrets](../manage/secrets.md).
 
@@ -48,13 +48,13 @@ Request the SOC 2 Type II report, the ISO/IEC 27001 certificate, the PCI DSS rep
 
 ## Encryption in transit
 
-All traffic to fastn's dashboard, API and widget uses HTTPS.
+All traffic to Fastn's dashboard, API and widget uses HTTPS.
 
 ## Reliability
 
 * **99.9% uptime SLA.** The terms are in the Service-Level Agreement in the [Trust Center](https://trust.fastn.ai).
 * **Monitoring and alerts** on every plan. You can also alert your own team on failures: see [Alerts](../operate/alerts.md).
-* **Backups** are taken as part of fastn's data security controls, with a recovery time objective of 24 to 48 hours.
+* **Backups** are taken as part of Fastn's data security controls, with a recovery time objective of 24 to 48 hours.
 
 ## Enterprise options
 
@@ -66,12 +66,12 @@ The Enterprise plan adds:
 * Private networking
 * Self-hosting
 
-[Contact fastn](https://fastn.ai/contact) to discuss them.
+[Contact Fastn](https://fastn.ai/contact) to discuss them.
 
 ## Privacy and your data
 
-* fastn processes personal data under its [Privacy Policy](https://fastn.ai/privacy). Vendors that process data for fastn are bound by data processing agreements.
-* Under GDPR you can ask to access, correct, delete, restrict or move your data, and under the CCPA to know what is collected and to have it deleted. Send requests to [dpo@fastn.ai](mailto:dpo@fastn.ai), fastn's Data Protection Officer.
+* Fastn processes personal data under its [Privacy Policy](https://fastn.ai/privacy). Vendors that process data for Fastn are bound by data processing agreements.
+* Under GDPR you can ask to access, correct, delete, restrict or move your data, and under the CCPA to know what is collected and to have it deleted. Send requests to [dpo@fastn.ai](mailto:dpo@fastn.ai), Fastn's Data Protection Officer.
 * **You can take your work with you.** Workflows are JavaScript files you can mirror to your own GitHub repository (see [Environments and GitHub](../manage/environments.md)), and connectors and actions export as JSON (see [Importing and exporting](../build/connectors/importing-and-exporting.md)).
 
 ## Billing

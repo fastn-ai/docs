@@ -1,10 +1,10 @@
 ---
-description: "Every other fastn API operation from the SDK: by area, by name with call(), for one customer, and with paginate()."
+description: "Every other Fastn API operation from the SDK: by area, by name with call(), for one customer, and with paginate()."
 ---
 
 # Any other operation
 
-The pages before this one cover the common tasks. The SDK also has a method for every other operation of the fastn API that your key can call.
+The pages before this one cover the common tasks. The SDK also has a method for every other operation of the Fastn API that your key can call.
 
 ## By area
 

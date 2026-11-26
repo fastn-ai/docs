@@ -1,5 +1,5 @@
 ---
-description: "Analytics and monitoring connectors fastn manages, with their auth, actions and events."
+description: "Analytics and monitoring connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Analytics and monitoring

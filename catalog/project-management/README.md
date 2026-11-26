@@ -1,5 +1,5 @@
 ---
-description: "Project management connectors fastn manages, with their auth, actions and events."
+description: "Project management connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Project management

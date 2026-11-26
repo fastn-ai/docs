@@ -1,5 +1,5 @@
 ---
-description: "Data and databases connectors fastn manages, with their auth, actions and events."
+description: "Data and databases connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Data and databases

@@ -54,7 +54,7 @@ Click a customer to open its page: its details, its tier, its customer admin and
 
 <figure><img src="../.gitbook/assets/screens/customers-create.webp" alt="The Create customer page: Customer Name (required), Slug (auto-generated), Admin Email (optional; leave blank and nobody is invited), Tier (No tier), External ID (your internal ID for this customer), the plan note, and Cancel and Create Customer buttons"><figcaption>Only the name is required. Leave <strong>Admin Email</strong> blank to invite nobody.</figcaption></figure>
 
-You can put your own ID for the customer in **External ID** when you create it. When you mint an [embed token](../embed/embedding/README.md) or send `x-org-id`, identify the customer this way: use fastn's customer id, or the External ID shown on the customer (your own id if you set one when creating the customer; otherwise it defaults to the slug). The token response names the customer by its External ID, as `orgId`.
+You can put your own ID for the customer in **External ID** when you create it. When you mint an [embed token](../embed/embedding/README.md) or send `x-org-id`, identify the customer this way: use Fastn's customer id, or the External ID shown on the customer (your own id if you set one when creating the customer; otherwise it defaults to the slug). The token response names the customer by its External ID, as `orgId`.
 
 ### Customers in connection IDs
 

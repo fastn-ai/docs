@@ -15,14 +15,14 @@ hidden: true
 | **Slug** | `emelia` |
 
 ## Setup guide
-This guide covers creating an Emelia API key and using it to connect Emelia to fastn.
+This guide covers creating an Emelia API key and using it to connect Emelia to Fastn.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need an Emelia account with access to the **API Keys & Webhooks** page in the Emelia app.
 
 ### Get your Emelia credentials
-fastn asks for one value, **emeliaKey**: your Emelia API key. fastn sends it as-is in the `Authorization` header, with no `Bearer` prefix.
+Fastn asks for one value, **emeliaKey**: your Emelia API key. Fastn sends it as-is in the `Authorization` header, with no `Bearer` prefix.
 
 1. Sign in to the Emelia app.
 2. Select your avatar in the top-right corner to open the **My Account** menu, then choose **API Keys & Webhooks**.
@@ -35,15 +35,15 @@ fastn asks for one value, **emeliaKey**: your Emelia API key. fastn sends it as-
 
 4. Copy the new key and store it somewhere safe. You can create more than one key, and disable or delete a key from the same page later.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers paste the API key into the **emeliaKey** field when they connect Emelia in your widget. You can also enter it yourself under Build → Integrations → Connectors → Emelia. After that, workflows call Emelia actions as `fastn.connector.emelia.<actionSlug>()`.
 
 ### Events
-fastn supports Emelia campaign activity events such as `MAIL_SENT`, `MAIL_REPLIED`, `OPENED`, `CLICKED`, `BOUNCED`, `UNSUBSCRIBED` and LinkedIn events such as `LINKEDIN_REPLIED`, `INVITED` and `ACCEPTED`. To run a workflow when one happens, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events and pick the event (see [App events](../../build/triggers/app-events.md)). Emelia sends events through webhooks. The **My Webhooks** section of the **API Keys & Webhooks** page lists the webhooks linked to your account.
+Fastn supports Emelia campaign activity events such as `MAIL_SENT`, `MAIL_REPLIED`, `OPENED`, `CLICKED`, `BOUNCED`, `UNSUBSCRIBED` and LinkedIn events such as `LINKEDIN_REPLIED`, `INVITED` and `ACCEPTED`. To run a workflow when one happens, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events and pick the event (see [App events](../../build/triggers/app-events.md)). Emelia sends events through webhooks. The **My Webhooks** section of the **API Keys & Webhooks** page lists the webhooks linked to your account.
 
 <figure><img src="../../.gitbook/assets/connector-guides/emelia/webhooks.png" alt="The My Webhooks section in Emelia"><figcaption><p>The My Webhooks section in Emelia</p></figcaption></figure>
 
-Contact fastn support to set up events for Emelia.
+Contact Fastn support to set up events for Emelia.
 
 ## Actions
 

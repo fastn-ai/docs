@@ -37,7 +37,7 @@ Selecting a role on the left shows its permission matrix, the count it holds out
 
 ### Platform Admin
 
-A seventh role, **Platform Admin**, is platform-level: held by fastn, not something you assign to someone inside your own organization. It does not appear on this screen.
+A seventh role, **Platform Admin**, is platform-level: held by Fastn, not something you assign to someone inside your own organization. It does not appear on this screen.
 
 ### Roles here are not API-key permissions
 

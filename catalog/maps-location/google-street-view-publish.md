@@ -16,7 +16,7 @@ hidden: true
 
 ## Setup
 
-Your customers sign in to Google Street View Publish through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
+Your customers sign in to Google Street View Publish through Fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 

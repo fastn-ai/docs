@@ -38,4 +38,4 @@ Add Short.io from **Build → Integrations → Connectors** and connect an accou
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Link Clicked</td><td><code>click</code></td><td>Fired for every click on any short link of the subscribed domain. Short.io delivers clicks to a single webhook URL configured per domain, so subscribing registers the fastn trigger URL as that domain's Webhook URL. Setting a domain Webhook URL requires a Short.io Pro plan.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Link Clicked</td><td><code>click</code></td><td>Fired for every click on any short link of the subscribed domain. Short.io delivers clicks to a single webhook URL configured per domain, so subscribing registers the Fastn trigger URL as that domain's Webhook URL. Setting a domain Webhook URL requires a Short.io Pro plan.</td></tr></tbody></table>

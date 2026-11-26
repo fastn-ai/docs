@@ -6,11 +6,11 @@ description: "1,000+ ready-made connectors for the apps your customers use, by c
 
 ## What is a connector?
 
-A **connector** is fastn's ready-made link to one app's API, such as HubSpot, Slack or Stripe. It already knows how to talk to that app, so you don't have to write the integration code yourself. Each connector defines three things:
+A **connector** is Fastn's ready-made link to one app's API, such as HubSpot, Slack or Stripe. It already knows how to talk to that app, so you don't have to write the integration code yourself. Each connector defines three things:
 
 * **Authentication**: how a customer signs in to the app, for example OAuth 2.0 or an API key.
-* **Actions**: what fastn can do in the app, such as create a contact, send a message or list invoices. Your workflows call actions.
-* **Events**: what the app can tell fastn about, such as a new deal or a paid invoice. Events start your workflows through [triggers](../build/triggers/README.md).
+* **Actions**: what Fastn can do in the app, such as create a contact, send a message or list invoices. Your workflows call actions.
+* **Events**: what the app can tell Fastn about, such as a new deal or a paid invoice. Events start your workflows through [triggers](../build/triggers/README.md).
 
 A connector is the definition. When one of your customers signs in to the app through it, that creates a **connection**: their own authorized account. One connector serves all your customers, each with their own connection. See [Core concepts](../getting-started/concepts.md).
 

@@ -1,5 +1,5 @@
 ---
-description: "Finance and payments connectors fastn manages, with their auth, actions and events."
+description: "Finance and payments connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Finance and payments

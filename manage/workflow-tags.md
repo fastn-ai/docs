@@ -40,7 +40,7 @@ Tags are created here and nowhere else. The page is the registry; workflows only
 Each row then shows how many workflows use that tag, reading **Not used yet** until something does. That count is the thing to check before deleting one.
 
 {% hint style="info" %}
-**The limit is per organization, not per workflow.** The whole organization shares one registry of labels and one of categories, and **how many of each you get comes from your plan**: 2 of each on Launch, 10 on Scale and 15 on Enterprise. [Billing and limits](billing.md) lists both, with your usage against them. The counter on each panel is the number that applies to you, including any override fastn has set for your account.
+**The limit is per organization, not per workflow.** The whole organization shares one registry of labels and one of categories, and **how many of each you get comes from your plan**: 2 of each on Launch, 10 on Scale and 15 on Enterprise. [Billing and limits](billing.md) lists both, with your usage against them. The counter on each panel is the number that applies to you, including any override Fastn has set for your account.
 {% endhint %}
 
 ### When a panel is full

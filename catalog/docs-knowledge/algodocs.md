@@ -30,7 +30,7 @@ Add AlgoDocs from **Build → Integrations → Connectors** and connect an accou
 
 <summary>View 1 more action</summary>
 
-<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Upload Local Document File</td><td><code>uploadLocalDocument</code></td><td>Uploads a document to an AlgoDocs extractor as a multipart file part. Returns the new document id, file size, MD5 checksum and upload timestamp; extraction is asynchronous, so poll Get Extracted Data By Document afterwards. LIMITATION: the fastn engine can only carry text multipart parts, so this route works for text-safe payloads (for example an ASCII-only PDF) but not for raw binary PDF, PNG or JPEG bytes. For binary files use Upload Document As Base64 or Upload Document From URL instead.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Upload Local Document File</td><td><code>uploadLocalDocument</code></td><td>Uploads a document to an AlgoDocs extractor as a multipart file part. Returns the new document id, file size, MD5 checksum and upload timestamp; extraction is asynchronous, so poll Get Extracted Data By Document afterwards. LIMITATION: the Fastn engine can only carry text multipart parts, so this route works for text-safe payloads (for example an ASCII-only PDF) but not for raw binary PDF, PNG or JPEG bytes. For binary files use Upload Document As Base64 or Upload Document From URL instead.</td></tr></tbody></table>
 
 </details>
 

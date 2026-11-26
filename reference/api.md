@@ -130,14 +130,14 @@ The same workflow serves all of your customers, and headers on the request say w
 
 | Header                          | Carries                                                       |
 | ------------------------------- | --------------------------------------------------------------- |
-| `x-org-id`                      | The customer this call acts for: your own id for it, or fastn's id for it. |
+| `x-org-id`                      | The customer this call acts for: your own id for it, or Fastn's id for it. |
 | `x-installation-id`             | Which installation of the integration the call belongs to.     |
 | `x-fastn-connections`           | The connections the installation uses.                         |
 | `x-fastn-installation-config`   | The configuration values that installation was set up with.    |
 
-**Naming the customer:** `x-org-id` is the one header that names a customer. Send your own id for the customer (the `orgId` you gave it when you created it) or fastn's id for it. It must be one of your customers, or the call returns `404 IDENTITY_ORG_NOT_FOUND`. A partner backend can sign it: send `x-user-id` too, with `x-identity-hmac` (see [Verify caller identity](../manage/identity-verification.md)). A key set to Enforce must send them on every call (`401 IDENTITY_HEADERS_REQUIRED`). On a key pinned to one customer, `x-org-id` naming any other customer is refused with `400 IDENTITY_HEADERS_CONFLICT`, and so is a request whose `x-org-id` and `?orgId=` name two different customers. On a key limited to some customers, a customer outside that list is refused with `403 API_KEY_SCOPE_MISMATCH`, and a key that covers several customers must name one in `x-org-id` (`400 API_KEY_SCOPE_AMBIGUOUS`). Leave `x-org-id` out to act as your own organization, although a key set to Enforce still needs a signed `x-user-id`.
+**Naming the customer:** `x-org-id` is the one header that names a customer. Send your own id for the customer (the `orgId` you gave it when you created it) or Fastn's id for it. It must be one of your customers, or the call returns `404 IDENTITY_ORG_NOT_FOUND`. A partner backend can sign it: send `x-user-id` too, with `x-identity-hmac` (see [Verify caller identity](../manage/identity-verification.md)). A key set to Enforce must send them on every call (`401 IDENTITY_HEADERS_REQUIRED`). On a key pinned to one customer, `x-org-id` naming any other customer is refused with `400 IDENTITY_HEADERS_CONFLICT`, and so is a request whose `x-org-id` and `?orgId=` name two different customers. On a key limited to some customers, a customer outside that list is refused with `403 API_KEY_SCOPE_MISMATCH`, and a key that covers several customers must name one in `x-org-id` (`400 API_KEY_SCOPE_AMBIGUOUS`). Leave `x-org-id` out to act as your own organization, although a key set to Enforce still needs a signed `x-user-id`.
 
-`x-fastn-connections` and `x-fastn-installation-config` are only read together with `x-installation-id`. On `/execute`, fastn reloads the named installation and overlays its stored connections and configuration on the headers, so callers name an installation; they cannot pick connections by sending them.
+`x-fastn-connections` and `x-fastn-installation-config` are only read together with `x-installation-id`. On `/execute`, Fastn reloads the named installation and overlays its stored connections and configuration on the headers, so callers name an installation; they cannot pick connections by sending them.
 
 Inside the workflow these arrive on `ctx.headers`. See [Workflow runtime API](workflow-runtime.md). The workflow editor's autocomplete lists the exact shapes; check there before you hard-code one.
 
@@ -154,7 +154,7 @@ POST /v1/unified/crm/account
 POST /v1/unified/crm/note
 ```
 
-fastn routes to whichever provider the customer authorized. Each endpoint on the Unified APIs page has a **Copy curl** button with the correct headers filled in.
+Fastn routes to whichever provider the customer authorized. Each endpoint on the Unified APIs page has a **Copy curl** button with the correct headers filled in.
 
 ---
 
@@ -164,10 +164,10 @@ A [webhook trigger](../build/triggers/README.md) gives you a public URL. Whether
 
 | Authentication setting            | Caller must send                      |
 | --------------------------------- | --------------------------------------- |
-| **API Key (x-api-key)**           | `x-api-key: <your-key>` (a fastn key, starting `fsk_`) or `Authorization: Bearer <your-key>`; `x-fastn-access-key: <your-key>` is still accepted |
+| **API Key (x-api-key)**           | `x-api-key: <your-key>` (a Fastn key, starting `fsk_`) or `Authorization: Bearer <your-key>`; `x-fastn-access-key: <your-key>` is still accepted |
 | **None (public)**                 | Nothing                               |
 
-`X-API-Key` and `Authorization: Bearer` count only when the value starts `fsk_`, the prefix every fastn key has, so a sender's own `x-api-key` or bearer token is not mistaken for one. Write the scheme as `Bearer`, here and on the platform API: `bearer fsk_…` in lowercase is not read. A connector's webhook URL (with **Require API key** on) takes `x-api-key` or `x-fastn-access-key` only, not `Authorization`.
+`X-API-Key` and `Authorization: Bearer` count only when the value starts `fsk_`, the prefix every Fastn key has, so a sender's own `x-api-key` or bearer token is not mistaken for one. Write the scheme as `Bearer`, here and on the platform API: `bearer fsk_…` in lowercase is not read. A connector's webhook URL (with **Require API key** on) takes `x-api-key` or `x-fastn-access-key` only, not `Authorization`.
 
 ---
 
@@ -184,11 +184,11 @@ POST /v1/embed/token
 | Header            | Value                    |
 | ----------------- | ------------------------ |
 | `Authorization`   | `Bearer <API key>` (or `X-API-Key: <API key>`) |
-| `x-org-id`        | The customer: fastn's id for it, or your own id for it |
+| `x-org-id`        | The customer: Fastn's id for it, or your own id for it |
 | `x-user-id`       | Optional. Your id for the user |
 | `x-identity-hmac` | Hex HMAC-SHA256 of `<x-org-id>\n<x-user-id>`, signed with the key's identity secret. Required when the key's **Verify caller identity** is set to Enforce |
 
-`x-org-id` names the customer the token is for, and with these headers the body can be empty. A key set to Enforce must send the signed headers: a request without them is `401 IDENTITY_HEADERS_REQUIRED`, even when the body names the customer. A key without identity verification can send `{"orgId": "…"}` in the body instead, with the same value; if you send both, they must name the same customer (`400 IDENTITY_ORG_MISMATCH`). A request that names no customer is refused with `400` `EMBED_TOKEN_REQUIRES_END_ORG_ID`. A key limited to a single customer names it with `orgId` in the body, set to fastn's id for it: with such a key your own id for the customer is `404 Tenant not found`.
+`x-org-id` names the customer the token is for, and with these headers the body can be empty. A key set to Enforce must send the signed headers: a request without them is `401 IDENTITY_HEADERS_REQUIRED`, even when the body names the customer. A key without identity verification can send `{"orgId": "…"}` in the body instead, with the same value; if you send both, they must name the same customer (`400 IDENTITY_ORG_MISMATCH`). A request that names no customer is refused with `400` `EMBED_TOKEN_REQUIRES_END_ORG_ID`. A key limited to a single customer names it with `orgId` in the body, set to Fastn's id for it: with such a key your own id for the customer is `404 Tenant not found`.
 
 ```json
 {

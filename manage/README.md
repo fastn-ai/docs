@@ -51,5 +51,5 @@ The Settings menu itself changes by role, so the first answer to "why can't I se
 | People, General, Billing, Roles, Audit log | Owner and Admin. Absent from a Developer's menu. The audit log is also enforced by role at the API layer on `/api/v1/audit-log`. |
 | Environments, Secrets, Configs, Database, Trash | Owner, Admin and Developer.                    |
 | Workflow tags            | Developer or above.                                                    |
-| API keys, MCP server     | Not in Settings: both are under **Embed**. See [API keys](api-keys.md) and [fastn MCP server](../build/mcp-gateway/README.md). |
+| API keys, MCP server     | Not in Settings: both are under **Embed**. See [API keys](api-keys.md) and [Fastn MCP server](../build/mcp-gateway/README.md). |
 | Everything else          | Per the permission matrix in [Roles](roles.md).                        |

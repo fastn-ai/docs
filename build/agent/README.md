@@ -1,5 +1,5 @@
 ---
-description: The fastn agent, the chat-driven builder that picks connectors, drafts workflows, and shows you the diff.
+description: The Fastn agent, the chat-driven builder that picks connectors, drafts workflows, and shows you the diff.
 layout:
   width: default
   title:
@@ -113,11 +113,11 @@ The agent updates code, mappings, and test cases together, so they do not drift 
 **Attach a file** accepts files such as an API spec, a sample payload, or a field-mapping spreadsheet. A real payload is the fastest way to get accurate mappings.
 
 {% hint style="info" %}
-Agent usage draws on the AI credits shown in the top bar (visible to Owners and Admins): click it for the balance, an org total, and the reset date. Quota resets at the start of each calendar month, UTC. The popover also breaks usage down **By agent**, listing each fastn agent that used credits in the period. Plan and quota detail live under [Billing](../../manage/billing.md), which is visible to Owners and Admins.
+Agent usage draws on the AI credits shown in the top bar (visible to Owners and Admins): click it for the balance, an org total, and the reset date. Quota resets at the start of each calendar month, UTC. The popover also breaks usage down **By agent**, listing each Fastn agent that used credits in the period. Plan and quota detail live under [Billing](../../manage/billing.md), which is visible to Owners and Admins.
 {% endhint %}
 
 {% hint style="warning" %}
-Building with the fastn agent needs the **Operator** role or above, and the fastn agent switched on for your organization; below that, the **Build with fastn agent** menu items and Home's prompt are not shown. Building with it needs a paid plan (Scale or Enterprise), unless fastn has turned building on for your organization. On Launch the agent still answers questions, and you build from your own AI tool through the [fastn MCP server](../mcp-gateway/README.md), which uses no AI credits. Access is by role, not by an individual permission, so a role below Operator cannot be granted it one permission at a time.
+Building with the Fastn agent needs the **Operator** role or above, and the Fastn agent switched on for your organization; below that, the **Build with fastn agent** menu items and Home's prompt are not shown. Building with it needs a paid plan (Scale or Enterprise), unless Fastn has turned building on for your organization. On Launch the agent still answers questions, and you build from your own AI tool through the [Fastn MCP server](../mcp-gateway/README.md), which uses no AI credits. Access is by role, not by an individual permission, so a role below Operator cannot be granted it one permission at a time.
 {% endhint %}
 
 ### In this section

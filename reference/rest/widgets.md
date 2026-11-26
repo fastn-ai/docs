@@ -25,7 +25,7 @@ Operation: `listWidgets`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `include` | query | string | No | inherited. One of: `inherited`. |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -274,7 +274,7 @@ Operation: `getWidgetInsights`
 | `from` | query | string | No | Start of a calendar window (YYYY-MM-DD, inclusive). Must be sent with `to`; overrides range/days. |
 | `to` | query | string | No | End of the window (YYYY-MM-DD, inclusive of the whole day). Must be sent with `from`. |
 | `tz` | query | string | No | IANA zone the window's days are in; UTC when omitted or unrecognised. |
-| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId. |
+| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or Fastn's id. Replaces orgId. |
 
 **Responses**
 
@@ -295,7 +295,7 @@ Operation: `getLiveWidgetInsights`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 | `range` | query | string | No | One of: `1d`, `7d`, `14d`, `30d`, `90d`. |
 
 **Responses**
@@ -585,7 +585,7 @@ Operation: `setWidgetActiveVersion`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
-| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId. |
+| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or Fastn's id. Replaces orgId. |
 
 **Request body**
 
@@ -669,7 +669,7 @@ Operation: `getWidgetDocs`
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
 | `lang` | query | string | No | Return the partner's translation of the doc in this language (de, pt-br falling back to pt) when one is saved, with lang set on the response. The x-fastn-lang header does the same. |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 | `include` | query | string | No | Also resolve a widget the caller's direct parent offers it, as GET /api/v1/widgets/{id} does One of: `inherited`. |
 
 **Responses**
@@ -723,7 +723,7 @@ Operation: `forkWidget`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Request body**
 
@@ -789,7 +789,7 @@ Operation: `listWidgetPreviewLinks`
 POST /v1/widgets/{id}/preview-links
 ```
 
-Returns a dashboard URL (previewUrl) where anyone holding it, with no fastn account and no sign-in, opens the widget and connects their own accounts to its apps, in the caller's own workspace (no customer). Hand it to the person setting the integration up: "your widget is created, check it out and connect your accounts here". What they connect becomes this workspace's own connections: shown by listConnections (sandbox set on a sandbox one) and usable by its workflows, probes and installations like any other, so they connect once on the page and you build on it. Give the link only to that person: whoever holds it can add a connection for the widget's apps to the workspace. It shows one widget as built and changes nothing about how it looks; to restyle or rearrange the hub, use openWidgetStudio instead. Connect offers Sandbox (testing), selected, and Production: a sandbox connection is free up to the plan's allowance and is deleted after 7 days; the workspace's sandbox environment is created on connect when it has none. A link minted by a credential pinned to an environment connects there and offers no choice. The link is a bearer link with its own identity: it never acts as the caller, sees only the connections made through it, for the widget's own apps as they are when it is used (not the apps only its workflows call), and can connect and disconnect those, nothing else: never a connection it did not make. Revoke it with DELETE .../preview-links/{linkId}. Lifetime defaults to 20 minutes, as a connect link's, and can be set per link with expiresInMinutes up to 10080 (7 days); the response carries linkId and expiresAt. In a client that shows MCP App panels the page opens inline; the [fastn panel] note in the result says whether to give the user the link.
+Returns a dashboard URL (previewUrl) where anyone holding it, with no Fastn account and no sign-in, opens the widget and connects their own accounts to its apps, in the caller's own workspace (no customer). Hand it to the person setting the integration up: "your widget is created, check it out and connect your accounts here". What they connect becomes this workspace's own connections: shown by listConnections (sandbox set on a sandbox one) and usable by its workflows, probes and installations like any other, so they connect once on the page and you build on it. Give the link only to that person: whoever holds it can add a connection for the widget's apps to the workspace. It shows one widget as built and changes nothing about how it looks; to restyle or rearrange the hub, use openWidgetStudio instead. Connect offers Sandbox (testing), selected, and Production: a sandbox connection is free up to the plan's allowance and is deleted after 7 days; the workspace's sandbox environment is created on connect when it has none. A link minted by a credential pinned to an environment connects there and offers no choice. The link is a bearer link with its own identity: it never acts as the caller, sees only the connections made through it, for the widget's own apps as they are when it is used (not the apps only its workflows call), and can connect and disconnect those, nothing else: never a connection it did not make. Revoke it with DELETE .../preview-links/{linkId}. Lifetime defaults to 20 minutes, as a connect link's, and can be set per link with expiresInMinutes up to 10080 (7 days); the response carries linkId and expiresAt. In a client that shows MCP App panels the page opens inline; the [Fastn panel] note in the result says whether to give the user the link.
 
 Operation: `createWidgetPreviewLink`
 
@@ -1148,7 +1148,7 @@ Operation: `loadUnifiedConfigFieldOptions`
 | `offset` | `integer` | No | Default: `0`. |
 | `limit` | `integer` | No | Page size, at most the server's option ceiling (UNIFIED_CONFIG_MAX_OPTIONS). Defaults to the whole result set. Default: `5000`. |
 | `query` | `string` | No | Case-insensitive substring filter over label then value, applied server-side to what the snippet returned. |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -1398,7 +1398,7 @@ Operation: `listEmbedIframeConfigVersions`
 GET /v1/embed/iframe-pages
 ```
 
-The partner's custom iframe pages (custom UIs built on fastn's UI library, hosted by fastn), each with its newest saved version, the version customers see (publishedVersion, null when never published), its URL and a ready iframe tag. Start here to find the page to change. Partner only. Requires widgets.read.
+The partner's custom iframe pages (custom UIs built on Fastn's UI library, hosted by Fastn), each with its newest saved version, the version customers see (publishedVersion, null when never published), its URL and a ready iframe tag. Start here to find the page to change. Partner only. Requires widgets.read.
 
 Operation: `listEmbedIframePages`
 
@@ -1413,7 +1413,7 @@ Operation: `listEmbedIframePages`
 POST /v1/embed/iframe-pages
 ```
 
-Saves a new custom iframe page as version 1 and returns its URL and an &lt;iframe> tag (replace EMBED_TOKEN with an embed token from the partner's backend, or use ?share=&lt;share link id>). A save is a draft: customers keep seeing publishedVersion (nothing, for a page never published) until a person publishes the draft. You cannot publish it. After saving, call openWidgetStudio({ iframePageId }) so the person sees the draft and publishes it. After the person opens the Studio, getEmbedIframePage returns lastRender: what broke when the draft ran. Its kind "console" entries are only what the page logged and do not make ok false. Omit html to start from fastn's default page, then change it. A page is one HTML document, hosted by fastn at /v1/embed/pages/&lt;id>. Before the page's own markup fastn adds the frame's session and the UI library as the global FastnUI: React (h = React.createElement, no JSX), the headless hooks (useWidgets, useConnections, useInstallations, ...) and ready-made screens (ConnectHub, AppGrid, AppCards, AppPage, InsightsView, AlertsPanel, WorkflowsPanel, ActivityPanel, InstallationsTable, ConnectDialog, ...). FastnUI.mount('#app', () => h(App), { theme }) renders inside the session and the partner's hub theme. Never guess a name, a prop or a hook's result: getEmbedPageLibrary lists every export and, for a topic, its props, parameters, results and types. The page may load scripts, styles and fonts from fastn, inline, and the CDNs cdn.jsdelivr.net, cdnjs.cloudflare.com and unpkg.com (pin an exact version in every URL, e.g. https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js), and fonts from Google Fonts; it may call only the fastn API, never another host. live marks the page every customer is served (the partner's live UI). A person chooses that, in Widget Studio (Use as my widget) or in the dashboard; do not change it with setEmbedLiveView unless the person asks you to. Names are unique per partner, case-insensitively. Partner only. Requires widgets.create.
+Saves a new custom iframe page as version 1 and returns its URL and an &lt;iframe> tag (replace EMBED_TOKEN with an embed token from the partner's backend, or use ?share=&lt;share link id>). A save is a draft: customers keep seeing publishedVersion (nothing, for a page never published) until a person publishes the draft. You cannot publish it. After saving, call openWidgetStudio({ iframePageId }) so the person sees the draft and publishes it. After the person opens the Studio, getEmbedIframePage returns lastRender: what broke when the draft ran. Its kind "console" entries are only what the page logged and do not make ok false. Omit html to start from Fastn's default page, then change it. A page is one HTML document, hosted by Fastn at /v1/embed/pages/&lt;id>. Before the page's own markup Fastn adds the frame's session and the UI library as the global FastnUI: React (h = React.createElement, no JSX), the headless hooks (useWidgets, useConnections, useInstallations, ...) and ready-made screens (ConnectHub, AppGrid, AppCards, AppPage, InsightsView, AlertsPanel, WorkflowsPanel, ActivityPanel, InstallationsTable, ConnectDialog, ...). FastnUI.mount('#app', () => h(App), { theme }) renders inside the session and the partner's hub theme. Never guess a name, a prop or a hook's result: getEmbedPageLibrary lists every export and, for a topic, its props, parameters, results and types. The page may load scripts, styles and fonts from Fastn, inline, and the CDNs cdn.jsdelivr.net, cdnjs.cloudflare.com and unpkg.com (pin an exact version in every URL, e.g. https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js), and fonts from Google Fonts; it may call only the Fastn API, never another host. live marks the page every customer is served (the partner's live UI). A person chooses that, in Widget Studio (Use as my widget) or in the dashboard; do not change it with setEmbedLiveView unless the person asks you to. Names are unique per partner, case-insensitively. Partner only. Requires widgets.create.
 
 Operation: `createEmbedIframePage`
 
@@ -1482,7 +1482,7 @@ Operation: `getEmbedIframePage`
 PATCH /v1/embed/iframe-pages/{id}
 ```
 
-Saves a new version. A save is a draft: customers keep seeing publishedVersion (nothing, for a page never published) until a person publishes the draft. You cannot publish it. After saving, call openWidgetStudio({ iframePageId }) so the person sees the draft and publishes it. After the person opens the Studio, getEmbedIframePage returns lastRender: what broke when the draft ran. Its kind "console" entries are only what the page logged and do not make ok false. Either html (the whole new page) or edits: exact replacements [{ find, replace }] applied in order, each find matching exactly once in the page (400 EMBED_IFRAME_PAGE_EDIT_NO_MATCH otherwise, with how many times it matched). Prefer edits for a small change to a large page. name renames. Pass baseVersion (the version you read) and a 409 EMBED_IFRAME_PAGE_STALE tells you someone else saved first; read again and reapply. The URL does not change. A page is one HTML document, hosted by fastn at /v1/embed/pages/&lt;id>. Before the page's own markup fastn adds the frame's session and the UI library as the global FastnUI: React (h = React.createElement, no JSX), the headless hooks (useWidgets, useConnections, useInstallations, ...) and ready-made screens (ConnectHub, AppGrid, AppCards, AppPage, InsightsView, AlertsPanel, WorkflowsPanel, ActivityPanel, InstallationsTable, ConnectDialog, ...). FastnUI.mount('#app', () => h(App), { theme }) renders inside the session and the partner's hub theme. Never guess a name, a prop or a hook's result: getEmbedPageLibrary lists every export and, for a topic, its props, parameters, results and types. The page may load scripts, styles and fonts from fastn, inline, and the CDNs cdn.jsdelivr.net, cdnjs.cloudflare.com and unpkg.com (pin an exact version in every URL, e.g. https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js), and fonts from Google Fonts; it may call only the fastn API, never another host. live marks the page every customer is served (the partner's live UI). A person chooses that, in Widget Studio (Use as my widget) or in the dashboard; do not change it with setEmbedLiveView unless the person asks you to. Requires widgets.update.
+Saves a new version. A save is a draft: customers keep seeing publishedVersion (nothing, for a page never published) until a person publishes the draft. You cannot publish it. After saving, call openWidgetStudio({ iframePageId }) so the person sees the draft and publishes it. After the person opens the Studio, getEmbedIframePage returns lastRender: what broke when the draft ran. Its kind "console" entries are only what the page logged and do not make ok false. Either html (the whole new page) or edits: exact replacements [{ find, replace }] applied in order, each find matching exactly once in the page (400 EMBED_IFRAME_PAGE_EDIT_NO_MATCH otherwise, with how many times it matched). Prefer edits for a small change to a large page. name renames. Pass baseVersion (the version you read) and a 409 EMBED_IFRAME_PAGE_STALE tells you someone else saved first; read again and reapply. The URL does not change. A page is one HTML document, hosted by Fastn at /v1/embed/pages/&lt;id>. Before the page's own markup Fastn adds the frame's session and the UI library as the global FastnUI: React (h = React.createElement, no JSX), the headless hooks (useWidgets, useConnections, useInstallations, ...) and ready-made screens (ConnectHub, AppGrid, AppCards, AppPage, InsightsView, AlertsPanel, WorkflowsPanel, ActivityPanel, InstallationsTable, ConnectDialog, ...). FastnUI.mount('#app', () => h(App), { theme }) renders inside the session and the partner's hub theme. Never guess a name, a prop or a hook's result: getEmbedPageLibrary lists every export and, for a topic, its props, parameters, results and types. The page may load scripts, styles and fonts from Fastn, inline, and the CDNs cdn.jsdelivr.net, cdnjs.cloudflare.com and unpkg.com (pin an exact version in every URL, e.g. https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js), and fonts from Google Fonts; it may call only the Fastn API, never another host. live marks the page every customer is served (the partner's live UI). A person chooses that, in Widget Studio (Use as my widget) or in the dashboard; do not change it with setEmbedLiveView unless the person asks you to. Requires widgets.update.
 
 Operation: `updateEmbedIframePage`
 
@@ -1517,7 +1517,7 @@ Operation: `updateEmbedIframePage`
 DELETE /v1/embed/iframe-pages/{id}
 ```
 
-Deletes the page and every version; its URL then answers 404 in every frame using it. Cannot be undone; to go back to fastn's default page but keep the history, use resetEmbedIframePage. Requires widgets.delete.
+Deletes the page and every version; its URL then answers 404 in every frame using it. Cannot be undone; to go back to Fastn's default page but keep the history, use resetEmbedIframePage. Requires widgets.delete.
 
 Operation: `deleteEmbedIframePage`
 
@@ -1538,7 +1538,7 @@ Operation: `deleteEmbedIframePage`
 POST /v1/embed/iframe-pages/{id}/reset
 ```
 
-Replaces the whole page with fastn's starter page, saved as a new version: everything written for it is gone from the draft. Only for when the person asks to start over; to fix or change a page use updateEmbedIframePage, and to undo a save use restoreEmbedIframePageVersion. A save is a draft: customers keep seeing publishedVersion (nothing, for a page never published) until a person publishes the draft. You cannot publish it. After saving, call openWidgetStudio({ iframePageId }) so the person sees the draft and publishes it. Earlier versions stay and can be restored. Requires widgets.update.
+Replaces the whole page with Fastn's starter page, saved as a new version: everything written for it is gone from the draft. Only for when the person asks to start over; to fix or change a page use updateEmbedIframePage, and to undo a save use restoreEmbedIframePageVersion. A save is a draft: customers keep seeing publishedVersion (nothing, for a page never published) until a person publishes the draft. You cannot publish it. After saving, call openWidgetStudio({ iframePageId }) so the person sees the draft and publishes it. Earlier versions stay and can be restored. Requires widgets.update.
 
 Operation: `resetEmbedIframePage`
 
@@ -1608,13 +1608,13 @@ Operation: `listEmbedIframePageVersions`
 GET /v1/embed/live-view
 ```
 
-The UI every one of the partner's customers is served in the embedded hub: one of its saved iframe configs or custom pages, or fastn's default hub. The list routes mark it with live: true. Partner only. Requires widgets.read.
+The UI every one of the partner's customers is served in the embedded hub: one of its saved iframe configs or custom pages, or Fastn's default hub. The list routes mark it with live: true. Partner only. Requires widgets.read.
 
 Operation: `getEmbedLiveView`
 
 **Responses**
 
-* `200`: { data: { chosen, viewId, kind, name } }: chosen false = never set, so frames still load what their URL names; viewId null = fastn's default hub
+* `200`: { data: { chosen, viewId, kind, name } }: chosen false = never set, so frames still load what their URL names; viewId null = Fastn's default hub
 * `403`: Not a partner org
 
 ### Choose the live UI
@@ -1623,7 +1623,7 @@ Operation: `getEmbedLiveView`
 PUT /v1/embed/live-view
 ```
 
-Chooses the UI every customer of this partner is served, immediately: viewId is one of the partner's iframe configs (eic_...) or custom pages (eip_...), or null for fastn's default hub. From then on a frame's URL no longer chooses: /v1/embed/iframe?config=&lt;other> and /v1/embed/pages/&lt;other> both serve this UI instead, and share links follow it. A custom page must have a published version first (a person publishes it from Widget Studio); customers are served that version, never a draft. Deleting the chosen UI puts customers back on fastn's default. This changes what every customer sees at once, so call it only when the person asked for exactly that. Partner only. Requires widgets.update.
+Chooses the UI every customer of this partner is served, immediately: viewId is one of the partner's iframe configs (eic_...) or custom pages (eip_...), or null for Fastn's default hub. From then on a frame's URL no longer chooses: /v1/embed/iframe?config=&lt;other> and /v1/embed/pages/&lt;other> both serve this UI instead, and share links follow it. A custom page must have a published version first (a person publishes it from Widget Studio); customers are served that version, never a draft. Deleting the chosen UI puts customers back on Fastn's default. This changes what every customer sees at once, so call it only when the person asked for exactly that. Partner only. Requires widgets.update.
 
 Operation: `setEmbedLiveView`
 
@@ -1635,7 +1635,7 @@ Operation: `setEmbedLiveView`
 
 **Responses**
 
-* `200`: { data: { chosen, viewId, kind, name } }: chosen false = never set, so frames still load what their URL names; viewId null = fastn's default hub
+* `200`: { data: { chosen, viewId, kind, name } }: chosen false = never set, so frames still load what their URL names; viewId null = Fastn's default hub
 * `400`: Validation error
 * `404`: No such config or page in this account (EMBED_LIVE_VIEW_NOT_FOUND)
 * `409`: EMBED_IFRAME_PAGE_NOT_PUBLISHED: the page has no published version yet
@@ -1654,7 +1654,7 @@ Operation: `createMcpConnectCode`
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -1687,7 +1687,7 @@ Operation: `listEmbedShareLinks`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 | `kind` | query | string | No | One of: `share`, `mcp`. |
 
 **Responses**
@@ -1712,7 +1712,7 @@ Operation: `createEmbedShareLink`
 | `expiresInDays` | `integer` | No |  |
 | `metadata` | `object` | No |  |
 | `env` | `string` | No | The environment the link's sessions run in, by slug: test, or a workflow environment of the workspace (live, staging). Customers there see the widget as deployed to it. Omitted is test, the widget as it is being edited. Held to the creator's own reach: a credential pinned to one environment can pin a link to that one or test only (403 ENV_NOT_PERMITTED). An unknown slug is 400 ENVIRONMENT_NOT_FOUND. |
-| `orgId` | `string` | Yes | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | Yes | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -1755,7 +1755,7 @@ Operation: `createEmbedToken`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its Fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 | `x-user-id` | header | string | No | User identifier the partner's backend authorized for this request. May accompany x-org-id or stand alone; covered by x-identity-hmac when the key enforces identity verification. |
 | `x-identity-hmac` | header | string | No | Hex HMAC-SHA256 of "{x-org-id}\n{x-user-id}" (the header values exactly as sent, newline-joined; an absent header is the empty string) signed with the API key's identity-verification secret. Required when the key's idv mode is 'required' (missing/invalid = 401); logged-only under 'optional'; ignored when 'off'. |
 
@@ -1772,7 +1772,7 @@ Operation: `createEmbedToken`
 | `roleOverride` | `string` | No |  |
 | `role` | `string` | No | One of: `end_user`. Default: `"end_user"`. |
 | `metadata` | `object` | No |  |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -1844,7 +1844,7 @@ Operation: `validateEmbedToken`
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `string` | Yes |  |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -1872,7 +1872,7 @@ Operation: `validateEmbedToken`
 POST /v1/embed/view-previews
 ```
 
-A key, valid for an hour, that lets this partner's frames show viewId (or fastn's default hub when omitted) although another UI is live: add &preview=&lt;key> to /v1/embed/iframe?config=&lt;id> or /v1/embed/pages/&lt;id>. For previewing in the dashboard; customers never get one. Partner only. Requires widgets.read.
+A key, valid for an hour, that lets this partner's frames show viewId (or Fastn's default hub when omitted) although another UI is live: add &preview=&lt;key> to /v1/embed/iframe?config=&lt;id> or /v1/embed/pages/&lt;id>. For previewing in the dashboard; customers never get one. Partner only. Requires widgets.read.
 
 Operation: `createEmbedViewPreview`
 
@@ -1913,7 +1913,7 @@ Operation: `createSetupLink`
 | `allowAdditionalConnection` | `boolean` | No |  |
 | `metadata` | `object` | No |  |
 | `redirectUrl` | `string` | No |  |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 

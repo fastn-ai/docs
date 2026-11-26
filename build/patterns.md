@@ -16,7 +16,7 @@ layout:
 
 # Common patterns
 
-You can describe any of these to [the fastn agent](agent/README.md) or [your AI tool](building-from-your-ai-agent.md) in a sentence. They are here so you know what to ask for, and what the result should look like.
+You can describe any of these to [the Fastn agent](agent/README.md) or [your AI tool](building-from-your-ai-agent.md) in a sentence. They are here so you know what to ask for, and what the result should look like.
 
 Every one of them ends up as JavaScript in a workflow's `<slug>.js`. The runtime surfaces they use, `fastn.state` (scopes `ORG` and `INVOCATION`), `fastn.db`, `fastn.secrets`, `fastn.envConfig`, `fastn.unified`, and `fastn.connector`, show up in the code editor's autocomplete and are documented in [Workflow runtime API](../reference/workflow-runtime.md); check the exact method signatures there before copying a snippet, since they are the authority and this page is a sketch.
 
@@ -157,7 +157,7 @@ If the failure is a timeout rather than a rejection, **Escalate on timeout** ret
 
 **The problem.** Customer A is on HubSpot, B on Salesforce, and C on Zoho, and the workflow has grown a branch per vendor for what is one operation.
 
-**The shape.** Call the [unified API](unified-apis/README.md) through `fastn.unified` instead of the individual connectors, and let fastn route to whichever provider that customer authorized. The unified `crm/contact` endpoint is the same call regardless of the stack underneath.
+**The shape.** Call the [unified API](unified-apis/README.md) through `fastn.unified` instead of the individual connectors, and let Fastn route to whichever provider that customer authorized. The unified `crm/contact` endpoint is the same call regardless of the stack underneath.
 
 Keep the vendor-specific parts on the direct connector: the two mix freely in one workflow. Watch the entity limits: not every unified entity supports every operation, so check which ones the category lists for the entity you need.
 

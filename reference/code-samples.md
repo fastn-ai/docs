@@ -43,7 +43,7 @@ Complete projects you can clone and run, in [fastn-ai/docs/examples](https://git
 | Create a customer MCP URL | curl | [Customer MCP URL](../embed/embedding/customer-mcp-url.md) |
 | Handle widget callbacks | JSON payloads | [Widget callbacks](widget-callbacks.md) |
 
-## Call fastn from your backend
+## Call Fastn from your backend
 
 | Task | Languages | Sample |
 | --- | --- | --- |
@@ -72,5 +72,5 @@ Complete projects you can clone and run, in [fastn-ai/docs/examples](https://git
 
 | Task | Languages | Sample |
 | --- | --- | --- |
-| Add the fastn MCP server to Claude Code | CLI, JSON | [Claude Code](../build/mcp-gateway/claude-code.md) |
+| Add the Fastn MCP server to Claude Code | CLI, JSON | [Claude Code](../build/mcp-gateway/claude-code.md) |
 | List and run your workspace's tools by name, for one customer | TypeScript | [SDK: workspace tools](sdk/workspace-tools.md) |

@@ -15,27 +15,27 @@ hidden: true
 | **Slug** | `lemlist` |
 
 ## Setup guide
-This guide shows you where to find the Lemlist API key that fastn uses to connect to a Lemlist account.
+This guide shows you where to find the Lemlist API key that Fastn uses to connect to a Lemlist account.
 
 For Lemlist's own setup steps, see [Authentication](https://developer.lemlist.com/api-reference/getting-started/authentication) in the Lemlist documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a Lemlist account with access to its settings, where API keys are generated.
 
 ### Get your Lemlist credentials
-fastn connects to Lemlist with HTTP Basic authentication, where the API key is the password. When you connect, you enter two values: `username` and `password`.
+Fastn connects to Lemlist with HTTP Basic authentication, where the API key is the password. When you connect, you enter two values: `username` and `password`.
 
 1. Sign in at app.lemlist.com.
 2. Click your profile picture in the bottom-left corner, then click **Settings**.
 3. Open the **Integrations** tab.
 4. Click **Generate a new API key**.
 5. Copy the key and store it somewhere safe. Lemlist shows it only once.
-6. In fastn, enter the values as follows:
+6. In Fastn, enter the values as follows:
    - **password**: the Lemlist API key you copied.
    - **username**: any non-empty value, such as `apikey`. Lemlist ignores it, but the field cannot be empty.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter these values when they connect Lemlist in your widget, or you enter them under **Build** > **Integrations** > **Connectors** > **Lemlist**.
 
 ## Actions

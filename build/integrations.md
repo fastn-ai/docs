@@ -31,6 +31,6 @@ An integration is a connector, a connection, the trigger that starts it, and the
 | [Workflows](workflows/README.md) | The code that moves and transforms data between apps | Reviewing what was built, changing logic, testing, and publishing |
 | [Triggers](triggers/README.md) | What starts a workflow: a webhook, a schedule, or an app event | Deciding when an integration runs |
 
-Most of the time you don't create these one by one. Describe the integration to [the fastn agent](agent/README.md) or [your AI tool](building-from-your-ai-agent.md), and fastn picks the connectors, writes the workflow, and sets the trigger. These pages are where you look at, adjust, and debug what was built.
+Most of the time you don't create these one by one. Describe the integration to [the Fastn agent](agent/README.md) or [your AI tool](building-from-your-ai-agent.md), and Fastn picks the connectors, writes the workflow, and sets the trigger. These pages are where you look at, adjust, and debug what was built.
 
 The connections your customers create live under [Operate → Connections](connections/README.md).

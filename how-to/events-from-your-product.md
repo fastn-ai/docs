@@ -16,9 +16,9 @@ layout:
 
 # Start an integration from your product's events
 
-When something happens in your product, such as a new order, an integration should run for that customer, for example adding the order to their HubSpot. Your backend sends the event to a webhook trigger, signed for that customer, and fastn runs the workflow with that customer's setup.
+When something happens in your product, such as a new order, an integration should run for that customer, for example adding the order to their HubSpot. Your backend sends the event to a webhook trigger, signed for that customer, and Fastn runs the workflow with that customer's setup.
 
-<figure><img src="../.gitbook/assets/diagrams/run-for-a-customer.svg" alt="Running an integration for one customer: your backend calls fastn with x-org-id, fastn loads that customer's setup, calls their apps, and returns the result or an execution id."><figcaption><p>The signed x-org-id tells fastn whose setup to use.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/diagrams/run-for-a-customer.svg" alt="Running an integration for one customer: your backend calls Fastn with x-org-id, Fastn loads that customer's setup, calls their apps, and returns the result or an execution id."><figcaption><p>The signed x-org-id tells Fastn whose setup to use.</p></figcaption></figure>
 
 ### Before you start
 
@@ -33,7 +33,7 @@ When something happens in your product, such as a new order, an integration shou
 3. Under **Advanced options**, set **Authentication** to API key.
 4. Click **Create trigger**, then copy its URL from the row menu (**Copy URL**).
 
-You can also ask the fastn agent to create it: *"Add a webhook trigger that runs the add-order-to-HubSpot workflow."*
+You can also ask the Fastn agent to create it: *"Add a webhook trigger that runs the add-order-to-HubSpot workflow."*
 
 ### 2. Send the event from your backend
 
@@ -71,7 +71,7 @@ The JSON body arrives in the workflow as `ctx.input`.
 
 **You should see:** the event in **Operate → Logs → Events** and the run in **Operate → Logs → Executions**.
 
-If a delivery fails, fastn retries it with the trigger's **Max attempts** and **Backoff strategy**. Deliveries that run out of retries wait in the dead-letter queue. The trigger's row counts them as **Dead-lettered**, and **Operate → Logs → Monitoring** lets you replay or delete them.
+If a delivery fails, Fastn retries it with the trigger's **Max attempts** and **Backoff strategy**. Deliveries that run out of retries wait in the dead-letter queue. The trigger's row counts them as **Dead-lettered**, and **Operate → Logs → Monitoring** lets you replay or delete them.
 
 ### Related
 

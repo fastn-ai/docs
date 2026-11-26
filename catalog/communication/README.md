@@ -1,5 +1,5 @@
 ---
-description: "Communication connectors fastn manages, with their auth, actions and events."
+description: "Communication connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Communication

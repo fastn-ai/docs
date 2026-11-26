@@ -15,10 +15,10 @@ hidden: true
 | **Slug** | `cin7core` |
 
 ## Setup guide
-This guide shows where you and your customers find the Cin7 Core values fastn asks for, and how to connect Cin7 Core in fastn.
+This guide shows where you and your customers find the Cin7 Core values Fastn asks for, and how to connect Cin7 Core in Fastn.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - Whoever connects needs a Cin7 Core account they can sign in to. Cin7 Core trial accounts can use the API too.
 - Each Cin7 Core company has its own Account ID. If you work with more than one company, use the Account ID of the company you want to connect.
 
@@ -28,7 +28,7 @@ This guide shows where you and your customers find the Cin7 Core values fastn as
 
 <figure><img src="../../.gitbook/assets/connector-guides/cin7core/api-page.png" alt="The Cin7 Core API page with its list of API applications"><figcaption><p>The Cin7 Core API page with its list of API applications</p></figcaption></figure>
 
-3. Click the **+** tab, type a **Name** for the new application, such as `fastn`, and click **Create**. You can have more than one API application on the same Cin7 Core account, and Cin7 Core applies API limits to each application separately, so a separate one for fastn keeps its usage apart from your other add-ons.
+3. Click the **+** tab, type a **Name** for the new application, such as `fastn`, and click **Create**. You can have more than one API application on the same Cin7 Core account, and Cin7 Core applies API limits to each application separately, so a separate one for Fastn keeps its usage apart from your other add-ons.
 
 <figure><img src="../../.gitbook/assets/connector-guides/cin7core/create-app.png" alt="Creating a new API application in Cin7 Core"><figcaption><p>Creating a new API application in Cin7 Core</p></figcaption></figure>
 
@@ -41,11 +41,11 @@ This guide shows where you and your customers find the Cin7 Core values fastn as
 
 Treat the Account ID and Application Key like a username and password. If a key is exposed, remove that API application in Cin7 Core and create a new one.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter these values when they connect Cin7 Core in your widget, or you enter them yourself under **Build** → **Integrations** → **Connectors** → **Cin7 Core**. After connecting, you can call actions from workflow code, for example `fastn.connector.cin7core.<actionSlug>()`.
 
 ### Events
-To run a workflow when something happens in Cin7 Core, such as a sale being created or a product being updated, add an App event trigger under **Build** → **Integrations** → **Triggers** → **Add trigger** → **App events** (see [App events](../../build/triggers/app-events.md)). Cin7 Core sends webhooks only when the Automation module is part of the Cin7 Core subscription; contact Cin7 support to add it. Contact fastn support to set up events for Cin7 Core.
+To run a workflow when something happens in Cin7 Core, such as a sale being created or a product being updated, add an App event trigger under **Build** → **Integrations** → **Triggers** → **Add trigger** → **App events** (see [App events](../../build/triggers/app-events.md)). Cin7 Core sends webhooks only when the Automation module is part of the Cin7 Core subscription; contact Cin7 support to add it. Contact Fastn support to set up events for Cin7 Core.
 
 ## Actions
 

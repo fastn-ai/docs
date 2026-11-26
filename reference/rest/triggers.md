@@ -90,7 +90,7 @@ Operation: `forkTrigger`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
-| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId. |
+| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or Fastn's id. Replaces orgId. |
 
 **Request body**
 
@@ -233,7 +233,7 @@ Operation: `receiveAppWebhook`
 POST /v1/triggers/{orgId}/webhooks/{triggerId}
 ```
 
-The public URL a webhook trigger hands out (its triggerUrl). Accepts any JSON or form body and dispatches it to the trigger's routes. A trigger with authMethod API_KEY requires a fastn API key header. Any other method is a 405.
+The public URL a webhook trigger hands out (its triggerUrl). Accepts any JSON or form body and dispatches it to the trigger's routes. A trigger with authMethod API_KEY requires a Fastn API key header. Any other method is a 405.
 
 Operation: `receiveWebhookTrigger`
 
@@ -256,7 +256,7 @@ Operation: `receiveWebhookTrigger`
 POST /v1/triggers/{orgId}/{connectorId}/events
 ```
 
-The ingest URL of a connector's app registration, which the provider posts events to; posting a synthetic event here fires the matching app-event triggers end to end. The registration's verification applies: a connector whose method needs a signature rejects an unsigned request with 401. The event type and account id are read from the body with the registration's extractors. triggerId restricts delivery to one trigger. Not authenticated by fastn credentials.
+The ingest URL of a connector's app registration, which the provider posts events to; posting a synthetic event here fires the matching app-event triggers end to end. The registration's verification applies: a connector whose method needs a signature rejects an unsigned request with 401. The event type and account id are read from the body with the registration's extractors. triggerId restricts delivery to one trigger. Not authenticated by Fastn credentials.
 
 Operation: `sendTestAppEvent`
 
@@ -297,8 +297,8 @@ Operation: `listSchedulers`
 | `search` | query | string | No |  |
 | `status` | query | string | No | One of: `ACTIVE`, `DISABLED`. |
 | `include_instances` | query | string | No | true also lists triggers created by installations (per-customer instances). One of: `true`, `false`. |
-| `orgId` | query | string | No | The customer whose triggers to list: the id you gave it at creation (orgId), or fastn's id. Must be a customer of the caller's org, otherwise 403. Replaces org_id. |
-| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer whose triggers to list: the id you gave it at creation (orgId), or Fastn's id. Must be a customer of the caller's org, otherwise 403. Replaces org_id. |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 | `include_customers` | query | string | No | true also lists every customer's schedulers: those you provisioned for a customer and those the customer made itself, never another partner's. Each row then carries customer ({ orgId, name }, null for your own) and isInstance. Add include_instances=true to also see schedulers a customer's setup (installation) created. Only for an owner, admin or developer listing its own org: 403 with org_id, from a customer-scoped caller, or from another role. Default false. One of: `true`, `false`. |
 
 **Responses**
@@ -368,7 +368,7 @@ Operation: `createScheduler`
 | `routes[].tenantResolver.field` | `string` | Yes |  |
 | `reenableAfterMinutes` | `integer` | No | Default: `30`. |
 | `runOnCreate` | `boolean` | No |  |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -594,7 +594,7 @@ Operation: `listAppEventTriggers`
 | `status` | query | string | No |  |
 | `connectorId` | query | string | No |  |
 | `include_instances` | query | string | No | One of: `true`, `false`. |
-| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -616,7 +616,7 @@ Operation: `createAppEventTrigger`
 | --- | --- | --- | --- |
 | `name` | `string` | Yes |  |
 | `status` | `string` | No | One of: `ACTIVE`, `DISABLED`. |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 | `installationId` | `string` | No |  |
 | `connectorId` | `string` | Yes |  |
 | `connectorName` | `string` | Yes |  |
@@ -882,8 +882,8 @@ Operation: `listWebhookTriggers`
 | `search` | query | string | No |  |
 | `status` | query | string | No | One of: `ACTIVE`, `DISABLED`. |
 | `include_instances` | query | string | No | true also lists triggers created by installations (per-customer instances). One of: `true`, `false`. |
-| `orgId` | query | string | No | The customer whose triggers to list: the id you gave it at creation (orgId), or fastn's id. Must be a customer of the caller's org, otherwise 403. Replaces org_id. |
-| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer whose triggers to list: the id you gave it at creation (orgId), or Fastn's id. Must be a customer of the caller's org, otherwise 403. Replaces org_id. |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -896,7 +896,7 @@ Operation: `listWebhookTriggers`
 POST /v1/webhooks
 ```
 
-Creates an inbound webhook trigger and returns its public triggerUrl, which is what you hand to the external app. routes bind it to workflows; a trigger created with no routes accepts events and delivers them nowhere, and a route pinned (env) to an environment the workflow is not deployed to dead-letters every event (the response carries a warning for either). authMethod API_KEY (default) makes callers send a fastn API key. orgId creates it for a customer of the caller's org. A custom id must be URL-safe; a taken id is a 409. Requires events.create.
+Creates an inbound webhook trigger and returns its public triggerUrl, which is what you hand to the external app. routes bind it to workflows; a trigger created with no routes accepts events and delivers them nowhere, and a route pinned (env) to an environment the workflow is not deployed to dead-letters every event (the response carries a warning for either). authMethod API_KEY (default) makes callers send a Fastn API key. orgId creates it for a customer of the caller's org. A custom id must be URL-safe; a taken id is a 409. Requires events.create.
 
 Operation: `createWebhookTrigger`
 
@@ -925,7 +925,7 @@ Operation: `createWebhookTrigger`
 | `routes[].tenantResolver` | `object` | No |  |
 | `routes[].tenantResolver.source` | `string` | Yes | One of: `header`, `body`. |
 | `routes[].tenantResolver.field` | `string` | Yes |  |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 

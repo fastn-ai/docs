@@ -1,5 +1,5 @@
 ---
-description: "How your backend, your frontend and fastn fit together to show the widget to one of your customers."
+description: "How your backend, your frontend and Fastn fit together to show the widget to one of your customers."
 layout:
   width: default
   title:
@@ -16,19 +16,19 @@ layout:
 
 # How embedding works
 
-fastn is embedded into your product as an iframe, directly or through the SDK. Your application renders the fastn widget, and your customers use it to connect their apps and configure integrations without leaving your product.
+Fastn is embedded into your product as an iframe, directly or through the SDK. Your application renders the Fastn widget, and your customers use it to connect their apps and configure integrations without leaving your product.
 
 ### How the pieces fit together
 
 There are three parts:
 
-**Your backend** generates a short-lived embed token by calling the fastn token endpoint with your API key. The token scopes the widget to a specific customer.
+**Your backend** generates a short-lived embed token by calling the Fastn token endpoint with your API key. The token scopes the widget to a specific customer.
 
-**Your frontend** renders the fastn iframe, passing the token in the URL. The iframe loads the widget your customers interact with.
+**Your frontend** renders the Fastn iframe, passing the token in the URL. The iframe loads the widget your customers interact with.
 
-**The fastn platform** validates the token, serves the widget, and handles the integration work: authentication with third-party apps, data sync, and workflow execution.
+**The Fastn platform** validates the token, serves the widget, and handles the integration work: authentication with third-party apps, data sync, and workflow execution.
 
-<figure><img src="../../.gitbook/assets/diagrams/auth-flow.svg" alt="How authentication works: your backend mints an embed token from fastn with your API key, passes only the token to your frontend, which opens the widget; the customer signs in to their app and fastn saves the credential."><figcaption><p>Your API key stays on your backend. Only the short-lived token reaches the browser.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/diagrams/auth-flow.svg" alt="How authentication works: your backend mints an embed token from Fastn with your API key, passes only the token to your frontend, which opens the widget; the customer signs in to their app and Fastn saves the credential."><figcaption><p>Your API key stays on your backend. Only the short-lived token reaches the browser.</p></figcaption></figure>
 
 ### Iframe or SDK
 
@@ -39,7 +39,7 @@ These tutorials use the iframe. The SDK wraps the same flow: your backend still 
 ### What you set up
 
 1. A server-side function that generates an embed token on each request (never hardcode tokens: they expire in 8 hours).
-2. A frontend component that renders the fastn iframe with the token.
+2. A frontend component that renders the Fastn iframe with the token.
 3. A user id for each person at your customer, sent when you mint the token, so each person's session is scoped to them (see [Customers and isolation](understanding-tenancy.md)).
 
 ### Why generate tokens server-side

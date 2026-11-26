@@ -1,5 +1,5 @@
 ---
-description: "Marketing connectors fastn manages, with their auth, actions and events."
+description: "Marketing connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Marketing

@@ -26,7 +26,7 @@ Operation: `listInstallations`
 | --- | --- | --- | --- | --- |
 | `target_type` | query | string | No | One of: `widget`, `workflow`, `trigger`, `connector_action`, `integration`, `agent`. |
 | `target_id` | query | string | No |  |
-| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 | `widget_id` | query | string | No |  |
 
 **Responses**
@@ -63,7 +63,7 @@ Operation: `createInstallation`
 | `rationale` | `object` | No |  |
 | `defer_config` | `boolean` | No |  |
 | `selected_trigger_categories` | `string[]` | No |  |
-| `org_id` | `string` | Yes | The customer: the id you gave it (its external ref), or its fastn id. |
+| `org_id` | `string` | Yes | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -409,7 +409,7 @@ Operation: `listConfigs`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `widget_id` | query | string | No |  |
-| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `org_id` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 | `lang` | query | string | No | Language code such as de, pt-br or zh-hans. |
 
 **Responses**
@@ -446,7 +446,7 @@ Operation: `createConfig`
 | `config.unified` | `object[]` | No |  |
 | `config.unifiedValues` | `object` | No |  |
 | `plan` | `object` | No |  |
-| `org_id` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `org_id` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -514,7 +514,7 @@ Operation: `updateConfig`
 | `plan` | `object` | No |  |
 | `form_values` | `object` | No |  |
 | `baseUpdatedAt` | `string` | No |  |
-| `org_id` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `org_id` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -746,7 +746,7 @@ Operation: `forkConfig`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
-| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId. |
+| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or Fastn's id. Replaces orgId. |
 
 **Request body**
 
@@ -914,7 +914,7 @@ Operation: `listConfigWorkflows`
 POST /v1/config-drafts
 ```
 
-Stores a finished configuration proposal (verbatim) for the user to review and returns a reviewUrl that opens the review page without signing in for 20 minutes. The draft expires after 24h. Poll getConfigDraft until status is approved, then use its configId. In a client that shows MCP App panels the review opens inline; the [fastn panel] note in the result says whether to give the user the link. 503 while the store is unavailable. Requires widgets.create.
+Stores a finished configuration proposal (verbatim) for the user to review and returns a reviewUrl that opens the review page without signing in for 20 minutes. The draft expires after 24h. Poll getConfigDraft until status is approved, then use its configId. In a client that shows MCP App panels the review opens inline; the [Fastn panel] note in the result says whether to give the user the link. 503 while the store is unavailable. Requires widgets.create.
 
 Operation: `createConfigDraft`
 
@@ -938,7 +938,7 @@ Operation: `createConfigDraft`
 POST /v1/config-drafts/propose
 ```
 
-Takes rough per-direction mappings plus the probe ids already run (POST /probes), and builds the enriched proposal server side: corrects field names against the probed fields, adds required target fields and option lists. Stores it as a draft and returns its reviewUrl like createConfigDraft. In a client that shows MCP App panels the review opens inline; the [fastn panel] note in the result says whether to give the user the link. Requires widgets.create.
+Takes rough per-direction mappings plus the probe ids already run (POST /probes), and builds the enriched proposal server side: corrects field names against the probed fields, adds required target fields and option lists. Stores it as a draft and returns its reviewUrl like createConfigDraft. In a client that shows MCP App panels the review opens inline; the [Fastn panel] note in the result says whether to give the user the link. Requires widgets.create.
 
 Operation: `proposeConfiguration`
 

@@ -15,12 +15,12 @@ hidden: true
 | **Slug** | `googleMerchantCenter` |
 
 ## Setup guide
-This guide shows how to create your own Google OAuth client for the Content API for Shopping and add it to fastn, so your customers sign in to Google Merchant Center through your app.
+This guide shows how to create your own Google OAuth client for the Content API for Shopping and add it to Fastn, so your customers sign in to Google Merchant Center through your app.
 
 For Google Merchant Center's own setup steps, see [Create access credentials](https://developers.google.com/workspace/guides/create-credentials) in the Google Merchant Center documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a Google Cloud project where you can enable APIs and create OAuth clients.
 - The people who connect need a Google Account that has access to a Merchant Center account. Google asks you to verify and claim your website URL in Merchant Center before using the API.
 
@@ -28,7 +28,7 @@ For Google Merchant Center's own setup steps, see [Create access credentials](ht
 1. In the Google Cloud console, open the **API Library**, select your project (or create one), find **Content API for Shopping** and click **Enable**.
 2. Go to **Menu > Google Auth platform > Branding**. If the platform is not configured yet, click **Get Started**, enter an **App name** and **User support email**, choose your **Audience**, add a contact **Email address**, accept the policy and click **Create**.
 3. If you chose **External** and the app is still in testing, go to **Audience**, click **Add users** under **Test users**, and add the Google Accounts that will connect.
-4. Go to **Data Access**, click **Add or Remove Scopes**, add the scope fastn requests, and click **Save**:
+4. Go to **Data Access**, click **Add or Remove Scopes**, add the scope Fastn requests, and click **Save**:
    - `https://www.googleapis.com/auth/content`
 5. Go to **Menu > Google Auth platform > Clients** and click **Create Client**.
 6. Set **Application type** to **Web application** and enter a **Name**.
@@ -36,8 +36,8 @@ For Google Merchant Center's own setup steps, see [Create access credentials](ht
 8. Click **Create**.
 9. Open the new client under **OAuth 2.0 Client IDs** and copy the client ID and client secret.
 
-### Add your app to fastn
-1. In fastn, go to **Build → Integrations → Connectors** and open **Google Merchant Center**.
+### Add your app to Fastn
+1. In Fastn, go to **Build → Integrations → Connectors** and open **Google Merchant Center**.
 2. Open the **Auth** tab and click **Manage providers**.
 
 <figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
@@ -50,7 +50,7 @@ For Google Merchant Center's own setup steps, see [Create access credentials](ht
 5. Save the provider, then choose **Use this app** so it becomes the Preferred app.
 6. In your widget, set the connector's **Auth provider** setting to your app instead of **Use platform default**.
 
-Customers who skip this sign in through fastn's shared app for Google Merchant Center.
+Customers who skip this sign in through Fastn's shared app for Google Merchant Center.
 
 ## Actions
 

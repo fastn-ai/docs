@@ -1,5 +1,5 @@
 ---
-description: "Security connectors fastn manages, with their auth, actions and events."
+description: "Security connectors Fastn manages, with their auth, actions and events."
 ---
 
 # Security

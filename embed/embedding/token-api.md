@@ -27,7 +27,7 @@ x-org-id: <customer id or your external reference>
 Content-Type: application/json
 ```
 
-`x-org-id` names one of your customers: your own id for it (the `orgId` you sent to `POST /api/v1/orgs`), or fastn's id for it. A value that is not one of your customers returns `404 IDENTITY_ORG_NOT_FOUND`. Your own organization's id names no customer, so the mint is refused with `400 EMBED_TOKEN_REQUIRES_END_ORG_ID`. If you created a customer without one, fastn stored its slug as the external reference at creation time.
+`x-org-id` names one of your customers: your own id for it (the `orgId` you sent to `POST /api/v1/orgs`), or Fastn's id for it. A value that is not one of your customers returns `404 IDENTITY_ORG_NOT_FOUND`. Your own organization's id names no customer, so the mint is refused with `400 EMBED_TOKEN_REQUIRES_END_ORG_ID`. If you created a customer without one, Fastn stored its slug as the external reference at creation time.
 
 ```json
 {
@@ -75,7 +75,7 @@ x-user-id: <your id for the user>
 x-identity-hmac: <hex HMAC-SHA256 of "<x-org-id>\n<x-user-id>", signed with the key's identity secret>
 ```
 
-A key limited to a single customer already acts as that customer, and cannot have identity verification turned on. Name the customer with `orgId` in the body, set to fastn's id for it (see [Find your org identifier](../../tutorials/developer/finding-your-org-identifier.md)): with such a key your own id for the customer is `404 Tenant not found`.
+A key limited to a single customer already acts as that customer, and cannot have identity verification turned on. Name the customer with `orgId` in the body, set to Fastn's id for it (see [Find your org identifier](../../tutorials/developer/finding-your-org-identifier.md)): with such a key your own id for the customer is `404 Tenant not found`.
 
 #### Body fields
 
@@ -83,7 +83,7 @@ All fields are optional; the customer must come from the header or the body.
 
 | Field | What it does |
 | --- | --- |
-| `orgId` | The customer: your own id for it, or fastn's id for it. Use it instead of the header on a key without enforced identity verification. If you also send `x-org-id`, the two must name the same customer, or the call fails with `400 IDENTITY_ORG_MISMATCH` |
+| `orgId` | The customer: your own id for it, or Fastn's id for it. Use it instead of the header on a key without enforced identity verification. If you also send `x-org-id`, the two must name the same customer, or the call fails with `400 IDENTITY_ORG_MISMATCH` |
 | `userId` | The person at your customer. Per-user isolation keys on this id (or on an attested `x-user-id`). Without it, each token gets a random `embed_usr…` id, so nothing carries over between sessions |
 | `userEmail`, `userName` | Display only |
 | `createIfMissing` | Register the customer named by `orgId` if it does not exist yet, then mint for it. Needs the `customers.create` permission. Leave out `x-org-id` for a customer that doesn't exist yet (it is refused with `404` first). With a key set to Enforce, send `x-user-id` and sign an empty org id, as in [Register with an enforcing key](integration-flow.md#register-with-an-enforcing-key) |

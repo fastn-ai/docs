@@ -15,12 +15,12 @@ hidden: true
 | **Slug** | `rootly` |
 
 ## Setup guide
-This guide covers how to create your own Rootly OAuth application and add it to fastn, and how to get a Rootly API key for the API key connection method.
+This guide covers how to create your own Rootly OAuth application and add it to Fastn, and how to get a Rootly API key for the API key connection method.
 
 For Rootly's own setup steps, see [OAuth 2.0 & OpenID Connect](https://docs.rootly.com/api-reference/oauth2) in the Rootly documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - To create an OAuth application, you need to be a team admin in Rootly.
 - To create an API key, you need access to **Organization Settings** in Rootly.
 
@@ -28,11 +28,11 @@ For Rootly's own setup steps, see [OAuth 2.0 & OpenID Connect](https://docs.root
 1. In Rootly, go to **Organization Settings → OAuth Applications** and create a new application.
 2. Choose the **Confidential** type, which uses the authorization code flow with a client secret, for a server-side integration.
 3. Give the application a name and add `https://oauth.live.fastn.ai` as a redirect URI. Enter it exactly, with no trailing slash.
-4. Add the scopes fastn requests: `openid`, `profile`, `email`, `ir.all`, `oc.all`, `ai.chat:read` and `ai.chat:write`.
+4. Add the scopes Fastn requests: `openid`, `profile`, `email`, `ir.all`, `oc.all`, `ai.chat:read` and `ai.chat:write`.
 5. Save the application and copy the client ID and client secret. Rootly shows a confidential client's secret only once, so store it right away.
 
-### Add your app to fastn
-1. In fastn, go to **Build → Integrations → Connectors** and open **Rootly**.
+### Add your app to Fastn
+1. In Fastn, go to **Build → Integrations → Connectors** and open **Rootly**.
 2. Open the **Auth** tab and select **Manage providers**.
 
 <figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
@@ -45,20 +45,20 @@ For Rootly's own setup steps, see [OAuth 2.0 & OpenID Connect](https://docs.root
 5. Create the provider, then choose **Use this app** so it becomes the Preferred app.
 6. In your widget, set the connector's **Auth provider** setting to your app instead of **Use platform default**.
 
-Customers who skip this sign in through fastn's shared app for Rootly.
+Customers who skip this sign in through Fastn's shared app for Rootly.
 
 ### Get your Rootly credentials
-If you connect with an API key instead of OAuth, fastn asks for one value, **token**:
+If you connect with an API key instead of OAuth, Fastn asks for one value, **token**:
 1. In Rootly, open the organization dropdown and go to **Organization Settings → API Keys**.
 2. Select **Generate New API Key** and choose the key type. A Global key acts with the role you assign to it, a Team key has Team Admin access to that team's resources, and a Personal key has the permissions of the user who created it. Rootly recommends Global or Team keys for production, because a Personal key stops working when its user leaves the organization.
 3. Set an expiry date. Rootly requires one, no more than five years ahead.
 4. Copy the key.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter this key when they connect Rootly in your widget, or you enter it under **Build → Integrations → Connectors → Rootly**.
 
 ### Events
-fastn supports Rootly events such as `incident.created`, `incident.resolved`, `alert.created`, `shift.started` and `audit_log.created`. To start a workflow from one, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events** (see [App events](../../build/triggers/app-events.md)). Contact fastn support to set up events for Rootly.
+Fastn supports Rootly events such as `incident.created`, `incident.resolved`, `alert.created`, `shift.started` and `audit_log.created`. To start a workflow from one, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events** (see [App events](../../build/triggers/app-events.md)). Contact Fastn support to set up events for Rootly.
 
 ## Actions
 

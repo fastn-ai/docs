@@ -15,12 +15,12 @@ hidden: true
 | **Slug** | `followUpBoss` |
 
 ## Setup guide
-This guide shows where to find the Follow Up Boss API key and registered system values that fastn needs, and how to start workflows from Follow Up Boss events.
+This guide shows where to find the Follow Up Boss API key and registered system values that Fastn needs, and how to start workflows from Follow Up Boss events.
 
 For Follow Up Boss's own setup steps, see [Authentication and authorization](https://docs.followupboss.com/reference/authentication) in the Follow Up Boss documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn to set up the connector.
+- You need the Owner, Admin or Developer role in Fastn to set up the connector.
 - You need a Follow Up Boss user account. The API key carries the same access as its user: agents see only their own contacts, admins see all people but cannot manage webhooks, and owners can do everything.
 - To use events, connect with the Follow Up Boss account owner's API key, because only the owner can manage webhooks.
 - You need a registered system. Register at [apps.followupboss.com/system-registration](https://apps.followupboss.com/system-registration) to get a system name and system key.
@@ -32,11 +32,11 @@ For Follow Up Boss's own setup steps, see [Authentication and authorization](htt
 4. Enter the system name you registered as **xSystem**. It is sent as the `X-System` header and is required for webhook calls.
 5. Enter the system key issued with the registration as **xSystemKey**. It is sent as the `X-System-Key` header, gives you the higher rate limit, and is the secret Follow Up Boss uses to sign webhook requests. Keep it private.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter these four values when they connect Follow Up Boss in your widget. You can also enter them yourself under Build → Integrations → Connectors → Follow Up Boss. Workflow code calls Follow Up Boss actions as `fastn.connector.followUpBoss.<actionSlug>()`.
 
 ### Events
-To run a workflow when something changes in Follow Up Boss, such as `peopleCreated`, `dealsUpdated` or `tasksCreated`, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events and pick the event. See [App events](../../build/triggers/app-events.md). On the Follow Up Boss side, webhooks can only be managed with the account owner's API key and a registered system, and each system can register two webhooks per event. Contact fastn support to set up events for Follow Up Boss.
+To run a workflow when something changes in Follow Up Boss, such as `peopleCreated`, `dealsUpdated` or `tasksCreated`, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events and pick the event. See [App events](../../build/triggers/app-events.md). On the Follow Up Boss side, webhooks can only be managed with the account owner's API key and a registered system, and each system can register two webhooks per event. Contact Fastn support to set up events for Follow Up Boss.
 
 ## Actions
 

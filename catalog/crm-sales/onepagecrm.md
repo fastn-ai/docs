@@ -15,11 +15,11 @@ hidden: true
 | **Slug** | `onepagecrm` |
 
 ## Setup guide
-This guide shows you where to find the OnePageCRM user ID and API key that fastn uses to connect to a OnePageCRM account, and how to start workflows from OnePageCRM events.
+This guide shows you where to find the OnePageCRM user ID and API key that Fastn uses to connect to a OnePageCRM account, and how to start workflows from OnePageCRM events.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
-- You need a OnePageCRM account you can sign in to. The user ID and API key belong to that user, so fastn acts as that user.
+- You need the Owner, Admin or Developer role in Fastn.
+- You need a OnePageCRM account you can sign in to. The user ID and API key belong to that user, so Fastn acts as that user.
 - To set up events, you need to be an administrator of the OnePageCRM account.
 
 ### Get your OnePageCRM credentials
@@ -32,18 +32,18 @@ This guide shows you where to find the OnePageCRM user ID and API key that fastn
 
 <figure><img src="../../.gitbook/assets/connector-guides/onepagecrm/configuration.png" alt="The Configuration tab with the Endpoint, User ID and API key fields"><figcaption><p>The Configuration tab with the Endpoint, User ID and API key fields</p></figcaption></figure>
 
-4. Copy the **User ID**. In fastn, enter it in the **username** field.
-5. Copy the **API key** from the same tab. In fastn, enter it in the **password** field. If you need a new key, click **Generate new API key**.
+4. Copy the **User ID**. In Fastn, enter it in the **username** field.
+5. Copy the **API key** from the same tab. In Fastn, enter it in the **password** field. If you need a new key, click **Generate new API key**.
 
 Keep the API key private. Anyone who has it can call the OnePageCRM API as you.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter these values when they connect OnePageCRM in your widget, or you enter them under **Build → Integrations → Connectors → OnePageCRM**. After the connection is saved, you can call OnePageCRM actions in workflow code as `fastn.connector.onepagecrm.<actionSlug>()`.
 
 ### Events
-fastn supports OnePageCRM events for contacts, companies, deals, actions, notes, calls and meetings. To start a workflow when one of these happens, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events**. See [App events](../../build/triggers/app-events.md).
+Fastn supports OnePageCRM events for contacts, companies, deals, actions, notes, calls and meetings. To start a workflow when one of these happens, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events**. See [App events](../../build/triggers/app-events.md).
 
-OnePageCRM sends events through its **Webhooks** app, which an account administrator turns on from the **Apps** page. Contact fastn support to set up events for OnePageCRM.
+OnePageCRM sends events through its **Webhooks** app, which an account administrator turns on from the **Apps** page. Contact Fastn support to set up events for OnePageCRM.
 
 ## Actions
 

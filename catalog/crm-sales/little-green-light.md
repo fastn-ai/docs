@@ -15,28 +15,28 @@ hidden: true
 | **Slug** | `littleGreenLight` |
 
 ## Setup guide
-This guide shows where your customers find the Little Green Light (LGL) API key that fastn uses to connect to their LGL account, and how they enter it.
+This guide shows where your customers find the Little Green Light (LGL) API key that Fastn uses to connect to their LGL account, and how they enter it.
 
 For Little Green Light's own setup steps, see [Generate an API key](https://api.littlegreenlight.com/api-docs/static.html) in the Little Green Light documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - Your customer needs a subscribing Little Green Light account and must sign in as an account administrator. Only administrators can create API keys.
 - If the account is still in LGL's 30-day free evaluation period, LGL has to turn on API access for it before a key can be created.
 
 ### Get your Little Green Light credentials
-fastn offers two ways to connect, and both use the same LGL API key. Pick one when you connect.
+Fastn offers two ways to connect, and both use the same LGL API key. Pick one when you connect.
 
 1. Sign in to Little Green Light as an account administrator.
 2. Go to **Settings > Integration settings** and open the **LGL API** link.
 3. If you don't see the **LGL API** link, API access isn't enabled on your account yet. Request it from that page's form, or email LGL support with what you plan to use the API for and which account you'll use.
 4. Create a new API key. If your integration isn't in LGL's list of services, choose the custom key option.
 5. Copy the key and store it somewhere safe.
-6. Enter the key in fastn based on the method you choose:
+6. Enter the key in Fastn based on the method you choose:
    - **API Key (Bearer token):** paste the key into **token**.
    - **API Key (HTTP Basic):** paste the key into **username** and leave **password** empty. LGL ignores the password.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter these values when they connect Little Green Light in your widget. You can also enter them yourself under Build → Integrations → Connectors → Little Green Light. After the connection works, you can call its actions in workflow code as `fastn.connector.littleGreenLight.<actionSlug>()`.
 
 ## Actions

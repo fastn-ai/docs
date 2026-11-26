@@ -1,5 +1,5 @@
 ---
-description: "Every REST endpoint you can call, generated from fastn's OpenAPI spec."
+description: "Every REST endpoint you can call, generated from Fastn's OpenAPI spec."
 ---
 
 # REST API reference
@@ -10,7 +10,7 @@ This reference lists the REST endpoints you can call with an API key. It is gene
 * [Installations and configs](installations.md): Each customer's setup of a widget, its triggers and its configuration values.
 * [Widgets and embedding](widgets.md): Widgets, embed tokens, share links and setup links.
 * [Triggers and events](triggers.md): Webhook, schedule and app event triggers, received events and the dead-letter queue.
-* [Event subscriptions](event-subscriptions.md): Endpoints of yours that fastn delivers events to.
+* [Event subscriptions](event-subscriptions.md): Endpoints of yours that Fastn delivers events to.
 * [Connectors](connectors.md): Connectors, actions, auth methods, webhook configs and mock stubs.
 * [Connections](connections.md): Connected accounts and how they are created.
 * [Sync jobs](sync.md): Jobs that sync records with a connected app, and their runs.
@@ -38,7 +38,7 @@ curl https://api.fastn.dev/v1/installations \
 
 A key can only do what its permissions allow, and a call can be limited further by your role, your plan or the customer it acts for. Some routes are meant for a person signed in to the dashboard or for an embed session, so they may refuse an API key with `401` or `403`.
 
-To act for one of your customers, send `x-org-id` with fastn's id for that customer or your own id for it. A key that requires identity verification also needs `x-user-id` and `x-identity-hmac`. See [Authentication and API keys](../../tutorials/developer/authentication-and-api-keys.md).
+To act for one of your customers, send `x-org-id` with Fastn's id for that customer or your own id for it. A key that requires identity verification also needs `x-user-id` and `x-identity-hmac`. See [Authentication and API keys](../../tutorials/developer/authentication-and-api-keys.md).
 
 ## Responses and errors
 
@@ -46,7 +46,7 @@ Most routes wrap their result as `{ "data": ... }` and report a failure as `{ "e
 
 ## Operation names
 
-Each endpoint lists its operation name. Where the endpoint is also a fastn MCP tool, the tool has the same name, so `listInstallations` here is `fastnPlatform__listInstallations` from your AI tool.
+Each endpoint lists its operation name. Where the endpoint is also a Fastn MCP tool, the tool has the same name, so `listInstallations` here is `fastnPlatform__listInstallations` from your AI tool.
 
 ## Download the spec
 

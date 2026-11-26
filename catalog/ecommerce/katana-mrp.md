@@ -15,14 +15,14 @@ hidden: true
 | **Slug** | `katanaMrp` |
 
 ## Setup guide
-This guide shows where to find the Katana API key that fastn needs, and how it is entered when you connect Katana.
+This guide shows where to find the Katana API key that Fastn needs, and how it is entered when you connect Katana.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn to set up the connector.
+- You need the Owner, Admin or Developer role in Fastn to set up the connector.
 - You need a Katana account where you can open **Settings > API** and create API keys.
 
 ### Get your Katana credentials
-fastn asks for one value, **token**: a Katana API key. fastn sends it to Katana as a bearer token in the `Authorization` header.
+Fastn asks for one value, **token**: a Katana API key. Fastn sends it to Katana as a bearer token in the `Authorization` header.
 
 1. Sign in to your Katana account.
 2. Go to **Settings > API**. The **API keys** section lists your existing keys.
@@ -37,11 +37,11 @@ fastn asks for one value, **token**: a Katana API key. fastn sends it to Katana 
 
 <figure><img src="../../.gitbook/assets/connector-guides/katanaMrp/api-key-description.png" alt="The Description field and the reminder that the key is shown only once"><figcaption><p>The Description field and the reminder that the key is shown only once</p></figcaption></figure>
 
-5. Copy the key before you click **Done**. Katana does not show it again after the window closes. Use it as the **token** value in fastn.
+5. Copy the key before you click **Done**. Katana does not show it again after the window closes. Use it as the **token** value in Fastn.
 
-Katana recommends that you limit who can see the key and rotate keys from time to time. If you rotate a key, update the connection in fastn with the new one.
+Katana recommends that you limit who can see the key and rotate keys from time to time. If you rotate a key, update the connection in Fastn with the new one.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter their Katana API key when they connect Katana in your widget. You can also enter it yourself under **Build → Integrations → Connectors → Katana MRP**. After the connection is saved, workflows can call Katana actions, for example `fastn.connector.katanaMrp.<actionSlug>()`.
 
 ## Actions

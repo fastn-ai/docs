@@ -15,12 +15,12 @@ hidden: true
 | **Slug** | `googleWorkspaceAdminSdk` |
 
 ## Setup guide
-This guide shows you how to create your own Google OAuth client for the Google Workspace Admin SDK and add it to fastn, so your customers sign in to Google through your app.
+This guide shows you how to create your own Google OAuth client for the Google Workspace Admin SDK and add it to Fastn, so your customers sign in to Google through your app.
 
 For Google Workspace Admin SDK's own setup steps, see [Create access credentials](https://developers.google.com/workspace/guides/create-credentials) in the Google Workspace Admin SDK documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a Google Cloud project where you can create OAuth clients.
 - The people who connect need a Google Workspace account with administrator privileges for the operations your workflows run. Google's Directory API supports delegated administrators as well.
 - Device actions need extra setup in the Google Admin console: ChromeOS devices need the ChromeOS service set up, and mobile devices need Mobile Management.
@@ -29,7 +29,7 @@ For Google Workspace Admin SDK's own setup steps, see [Create access credentials
 1. In the Google Cloud console, open **Menu > APIs & Services > Library > Google Workspace**, select **Admin SDK API**, and click **Enable**.
 2. Open **Menu > Google Auth platform > Branding**. If you see that the Google Auth platform is not configured yet, click **Get Started** and enter an app name, a user support email, your audience and a contact email, then accept the Google API Services User Data Policy.
 3. Under **Audience**, choose who can use the app. If you choose **External**, add your test accounts under **Test users > Add users** and click **Save**.
-4. Open **Data Access > Add or Remove Scopes** and add the scopes fastn requests, then click **Save**:
+4. Open **Data Access > Add or Remove Scopes** and add the scopes Fastn requests, then click **Save**:
    - `https://www.googleapis.com/auth/admin.directory.user`
    - `https://www.googleapis.com/auth/admin.directory.user.readonly`
    - `https://www.googleapis.com/auth/admin.directory.user.security`
@@ -73,8 +73,8 @@ For Google Workspace Admin SDK's own setup steps, see [Create access credentials
 
 Many of these scopes are sensitive or restricted. An **Internal** app, used only inside your own Google Workspace organization, does not need Google's review for them; an **External** app may.
 
-### Add your app to fastn
-1. In fastn, go to Build → Integrations → Connectors and open Google Workspace Admin SDK.
+### Add your app to Fastn
+1. In Fastn, go to Build → Integrations → Connectors and open Google Workspace Admin SDK.
 2. Open the **Auth** tab and select **Manage providers**.
 
 <figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
@@ -87,7 +87,7 @@ Many of these scopes are sensitive or restricted. An **Internal** app, used only
 5. Save the provider, then choose **Use this app** so it becomes the Preferred app.
 6. In your widget, set the connector's **Auth provider** to your app instead of **Use platform default**.
 
-In workflow code, call an action as `fastn.connector.googleWorkspaceAdminSdk.<actionSlug>()`. Customers who skip this setup sign in through fastn's shared app for Google Workspace Admin SDK.
+In workflow code, call an action as `fastn.connector.googleWorkspaceAdminSdk.<actionSlug>()`. Customers who skip this setup sign in through Fastn's shared app for Google Workspace Admin SDK.
 
 ## Actions
 

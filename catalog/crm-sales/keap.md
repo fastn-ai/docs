@@ -15,17 +15,17 @@ hidden: true
 | **Slug** | `keap` |
 
 ## Setup guide
-This guide shows how to get a Keap API key and use it to connect Keap to fastn.
+This guide shows how to get a Keap API key and use it to connect Keap to Fastn.
 
 For Keap's own setup steps, see [Getting started](https://developer.keap.com/docs/getting-started) in the Keap documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a Keap user account. Any Keap user can create a Personal Access Token (PAT), which acts with that user's permissions.
 - To create a Service Account Key (SAK), you must be a Keap admin. A SAK gives admin access to all the data in the Keap account.
 
 ### Get your Keap credentials
-fastn asks for one value, **apiKey**: a Keap Personal Access Token or Service Account Key.
+Fastn asks for one value, **apiKey**: a Keap Personal Access Token or Service Account Key.
 
 1. Sign in to Keap and open the **Settings** menu. In Keap Classic, open the **Profile** menu instead.
 2. Select **API Settings**. This page lists your existing keys and lets you create a new one.
@@ -34,7 +34,7 @@ fastn asks for one value, **apiKey**: a Keap Personal Access Token or Service Ac
 
 If you used Keap's Legacy API Key in the past, it no longer works. Create a Service Account Key instead.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter this key when they connect Keap in your widget, or you enter it under **Build → Integrations → Connectors → Keap**.
 
 ## Actions

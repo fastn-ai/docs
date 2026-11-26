@@ -16,7 +16,7 @@ hidden: true
 
 ## Setup
 
-Your customers sign in to Google Gmail through fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
+Your customers sign in to Google Gmail through Fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
 ## Use it
 
@@ -38,4 +38,4 @@ Add Google Gmail from **Build → Integrations → Connectors** and connect an a
 
 Start a workflow when one of these happens, with an [app event trigger](../../build/triggers/README.md).
 
-<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Mailbox changed (new or changed email)</td><td><code>mailboxChanged</code></td><td>Fires when the connected Gmail mailbox changes (by default only the INBOX label: new mail, label or read-state changes). Gmail push sends only the mailbox address and the new historyId, so call List History with startHistoryId = the historyId you stored last time to get the actual messages. Setup (fastn side, once): Gmail push goes through Google Cloud Pub/Sub. The topic must be in the same Google Cloud project as fastn's Gmail OAuth app (fastn-442814), grant roles/pubsub.publisher to gmail-api-push@system.gserviceaccount.com, and add a PUSH subscription to this connector's webhook URL with 'Enable payload unwrapping' turned on, so the body is the decoded JSON. Each trigger runs users.watch on subscribe and users.stop on unsubscribe. Google ends a watch after 7 days; it has to be renewed by running subscribe again.</td></tr></tbody></table>
+<table><thead><tr><th width="240">Event</th><th width="260">Id</th><th>When it fires</th></tr></thead><tbody><tr><td>Mailbox changed (new or changed email)</td><td><code>mailboxChanged</code></td><td>Fires when the connected Gmail mailbox changes (by default only the INBOX label: new mail, label or read-state changes). Gmail push sends only the mailbox address and the new historyId, so call List History with startHistoryId = the historyId you stored last time to get the actual messages. Setup (Fastn side, once): Gmail push goes through Google Cloud Pub/Sub. The topic must be in the same Google Cloud project as Fastn's Gmail OAuth app (fastn-442814), grant roles/pubsub.publisher to gmail-api-push@system.gserviceaccount.com, and add a PUSH subscription to this connector's webhook URL with 'Enable payload unwrapping' turned on, so the body is the decoded JSON. Each trigger runs users.watch on subscribe and users.stop on unsubscribe. Google ends a watch after 7 days; it has to be renewed by running subscribe again.</td></tr></tbody></table>

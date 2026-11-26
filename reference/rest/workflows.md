@@ -395,7 +395,7 @@ Operation: `runWorkflowCode`
 * `404`: workflowId was supplied but names no workflow in this org
 * `408`: The run exceeded the synchronous test budget (25s by default, so the answer fits the gateway's request budget). Code: WF-TEST-TIMEOUT. Carries the trace and step summary.
 * `413`: The workflow returned a result larger than WORKFLOW_MAX_RESULT_BYTES (default 8 MiB). Code: WF-RESULT-TOO-LARGE.
-* `422`: The workflow itself failed: a throw or syntax error in its code, a connector call it did not handle, a top-level declaration of a name the sandbox already defines (fastn, Fastn, FastnClient, module), or the sandbox memory limit. Code: WF-CODE-ERROR, or WF-MEMORY-LIMIT for the memory limit. Carries error, stack, errorCategory, fixSuggestion, the trace and step summary.
+* `422`: The workflow itself failed: a throw or syntax error in its code, a connector call it did not handle, a top-level declaration of a name the sandbox already defines (Fastn, Fastn, FastnClient, module), or the sandbox memory limit. Code: WF-CODE-ERROR, or WF-MEMORY-LIMIT for the memory limit. Carries error, stack, errorCategory, fixSuggestion, the trace and step summary.
 * `429`: The org has used its monthly runs (error quota_exceeded, dimension executions_per_month), or its instant concurrency slots or this pod's sandbox slots are all in use (RATE_LIMITED, Retry-After 5). Test runs pass the same gates as POST /{id}/execute; a platform service calling directly is not metered.
 * `500`: A platform fault, not the workflow. Code: WF-EXEC-FAILED, with the requestId to quote when reporting it.
 
@@ -1010,7 +1010,7 @@ Operation: `forkWorkflow`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes |  |
-| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId. |
+| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or Fastn's id. Replaces orgId. |
 
 **Request body**
 
@@ -1471,7 +1471,7 @@ Operation: `testSavedWorkflow`
 * `404`: Workflow not found
 * `408`: The run exceeded the synchronous test budget (25s by default, so the answer fits the gateway's request budget). Code: WF-TEST-TIMEOUT. Carries the trace and step summary.
 * `413`: The workflow returned a result larger than WORKFLOW_MAX_RESULT_BYTES (default 8 MiB). Code: WF-RESULT-TOO-LARGE.
-* `422`: The workflow itself failed: a throw or syntax error in its code, a connector call it did not handle, a top-level declaration of a name the sandbox already defines (fastn, Fastn, FastnClient, module), or the sandbox memory limit. Code: WF-CODE-ERROR, or WF-MEMORY-LIMIT for the memory limit. Carries error, stack, errorCategory, fixSuggestion, the trace and step summary.
+* `422`: The workflow itself failed: a throw or syntax error in its code, a connector call it did not handle, a top-level declaration of a name the sandbox already defines (Fastn, Fastn, FastnClient, module), or the sandbox memory limit. Code: WF-CODE-ERROR, or WF-MEMORY-LIMIT for the memory limit. Carries error, stack, errorCategory, fixSuggestion, the trace and step summary.
 * `429`: The org has used its monthly runs (error quota_exceeded, dimension executions_per_month), or its instant concurrency slots or this pod's sandbox slots are all in use (RATE_LIMITED, Retry-After 5). Test runs pass the same gates as POST /{id}/execute; a platform service calling directly is not metered.
 * `500`: A platform fault, not the workflow. Code: WF-EXEC-FAILED, with the requestId to quote when reporting it.
 
@@ -1648,7 +1648,7 @@ Operation: `listConnectorExecutions`
 | --- | --- | --- | --- | --- |
 | `actionId` | query | string | No |  |
 | `connectionId` | query | string | No |  |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 | `userId` | query | string | No |  |
 | `limit` | query | integer | No |  |
 | `offset` | query | integer | No |  |
@@ -1931,7 +1931,7 @@ Operation: `disconnectGithubIntegration`
 POST /v1/integrations/github/install
 ```
 
-Returns the GitHub URL that installs the fastn GitHub App for this org; GitHub redirects back to the callback. 503 when the deployment has no GitHub App configured. Requires settings.update.
+Returns the GitHub URL that installs the Fastn GitHub App for this org; GitHub redirects back to the callback. 503 when the deployment has no GitHub App configured. Requires settings.update.
 
 Operation: `startGithubInstallation`
 
@@ -2065,7 +2065,7 @@ Operation: `forkIntegration`
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
 | `id` | path | string | Yes | The parent's widget id |
-| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or fastn's id. Replaces orgId. |
+| `orgId` | query | string | No | The customer: the id you gave it at creation (orgId), or Fastn's id. Replaces orgId. |
 
 **Request body**
 

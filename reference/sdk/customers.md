@@ -15,12 +15,12 @@ You do not have to register a customer before you create a [setup link](connecti
 | Do this | SDK | Input | Answer |
 | ------- | --- | ----- | ------ |
 | Create | `customer.register({ name })` | `name` (required): display name. Optional: `slug` (made from the name when left out), `plan`, `tier`, `limits`, `domain`. | The customer. Calling it again for the same id returns the existing customer instead of a second one. |
-| Look up | `customer.find()` | None | The customer row, or `undefined` when fastn does not know this id. |
+| Look up | `customer.find()` | None | The customer row, or `undefined` when Fastn does not know this id. |
 | Read | `customer.get()` | None | `{ data: customer }` |
 | List all | `fastn.orgs.listOrgs({ parent_id })` | Optional: `parent_id` (your own org id, from `fastn.me()`), `type` (`end_org` for customers), `include_usage: "true"` (adds usage numbers per customer). | `{ data: [customer, …] }` |
 | Change | `customer.update({ name?, status? })` | `name`: a new display name. `status`: `active` or `suspended`. | The updated customer. |
 | Remove | `customer.remove()` | None | Nothing. See the warning below. |
-| Trace a request | `customer.callLog(correlationId)` | The `correlationId` you sent on a call. | One entry per app call fastn made for that request. |
+| Trace a request | `customer.callLog(correlationId)` | The `correlationId` you sent on a call. | One entry per app call Fastn made for that request. |
 
 ```typescript
 const customer = fastn.customer("acme_customer_42");
@@ -57,7 +57,7 @@ console.log(data.name, data.status);
 
 | Field | Meaning |
 | ----- | ------- |
-| `id` | fastn's own id for the customer; you can ignore it. Match the customer by your own id, in the next row. |
+| `id` | Fastn's own id for the customer; you can ignore it. Match the customer by your own id, in the next row. |
 | `orgId`, `externalRef` | Your id for the customer (the same value). Use it to match the customer. |
 | `parentId` | Your own org: the account the customer belongs to. |
 | `type` | `end_org` for a customer. |

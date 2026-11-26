@@ -16,28 +16,28 @@ hidden: true
 
 ## Setup guide
 
-This guide shows where to find the subdomain and API key that fastn needs to connect to Simla.com.
+This guide shows where to find the subdomain and API key that Fastn needs to connect to Simla.com.
 
 For Simla.com's own setup steps, see [Creating and editing an API key](https://docs.simla.com/users/integration/api-editing/) in the Simla.com documentation.
 
 ### Before you start
 
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a Simla.com account and a user who can open the Integration section and manage API access keys.
 
 ### Get your Simla.com credentials
 
-fastn asks for two values: `subdomain` and `accessKey`.
+Fastn asks for two values: `subdomain` and `accessKey`.
 
 1. Sign in to Simla.com in your browser.
 2. Look at the address bar. Your subdomain is the part before `.simla.com`. For example, if the address is `https://acme.simla.com`, your subdomain is `acme`. Enter it as **subdomain**.
 3. Go to Settings > Integration and open the **API access keys** tab. This tab lists every key in your account.
 4. Click **Add**. Simla.com fills in the **Key** token for you.
-5. Under **Access type**, choose **Access to all stores**, or choose **Access to individual stores** and select the stores fastn should read and write.
-6. Under **Allowed API Methods**, select the API methods for the data you want fastn to work with. Clicking a block's title selects or clears every method in that block. If a method is not allowed, fastn actions that use it fail.
+5. Under **Access type**, choose **Access to all stores**, or choose **Access to individual stores** and select the stores Fastn should read and write.
+6. Under **Allowed API Methods**, select the API methods for the data you want Fastn to work with. Clicking a block's title selects or clears every method in that block. If a method is not allowed, Fastn actions that use it fail.
 7. Save the key, then copy the **Key** token. Enter it as **accessKey**.
 
-### Connect in fastn
+### Connect in Fastn
 
 Your customers enter these values when they connect Simla.com in your widget. You can also enter them yourself under Build → Integrations → Connectors → Simla.com.
 

@@ -18,7 +18,7 @@ layout:
 
 **Operate → Health → Pending updates** · `/health?tab=updates`
 
-Vendors deprecate endpoints, change parameter names, and alter response shapes. Normally you find out when a sync starts failing. fastn watches for these changes, works out what the fix is, and files a proposal here. The page says:
+Vendors deprecate endpoints, change parameter names, and alter response shapes. Normally you find out when a sync starts failing. Fastn watches for these changes, works out what the fix is, and files a proposal here. The page says:
 
 > When an app you connect to changes something your workflows depend on, it lands here, with any patch the maintainer agent proposes. Nothing is applied until you accept it.
 
@@ -46,7 +46,7 @@ On an applied connector fix that your organization owns, **Notify affected organ
 
 ### Why nothing auto-applies
 
-A connector change can alter behavior your workflows depend on. A parameter rename is safe; a response shape that drops a field your mapping reads is not. fastn does the diagnosis and the drafting, and leaves the decision with you.
+A connector change can alter behavior your workflows depend on. A parameter rename is safe; a response shape that drops a field your mapping reads is not. Fastn does the diagnosis and the drafting, and leaves the decision with you.
 
 {% hint style="info" %}
 Version pins on a connector let you hold specific customers on the old version while you migrate the rest. A version set in code still wins over a pin. See [Connectors](connectors/README.md).

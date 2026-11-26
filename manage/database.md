@@ -37,16 +37,16 @@ Username, password and CA chain are not rendered for this role. That is delibera
 
 ### Two options
 
-| | **Shared** (fastn runs it) | **Your own** (you run it) |
+| | **Shared** (Fastn runs it) | **Your own** (you run it) |
 | --- | --- | --- |
-| **Backups** | fastn | You |
-| **Capacity** | fastn | You |
-| **Uptime** | fastn | You |
-| **Network setup** | None | Allow fastn's runners |
+| **Backups** | Fastn | You |
+| **Capacity** | Fastn | You |
+| **Uptime** | Fastn | You |
+| **Network setup** | None | Allow Fastn's runners |
 
-**Shared**: fastn runs it, and handles backups, patching, upgrades and capacity. Your organization sits in its own schema, isolated from everyone else.
+**Shared**: Fastn runs it, and handles backups, patching, upgrades and capacity. Your organization sits in its own schema, isolated from everyone else.
 
-**Your own**: you run it: workflows connect to a Postgres you operate. You keep full control of the data and full responsibility for it, and you must allow fastn's runners through your network.
+**Your own**: you run it: workflows connect to a Postgres you operate. You keep full control of the data and full responsibility for it, and you must allow Fastn's runners through your network.
 
 ### Reasons to bring your own
 
@@ -66,7 +66,7 @@ The same holds when you bring your own database: a customer that inherits your c
 
 ### Customer overrides
 
-Shown to Owners and Admins only. The **Customer overrides** card lists every customer in this organization with where its data actually lands: the **Database**, the **Schema in use**, **SSL** and a **Source** badge (**fastn-managed**, **Organization default** or **Override**). Customers use your selected database automatically; the ones marked **fastn-managed** are still on fastn's own database.
+Shown to Owners and Admins only. The **Customer overrides** card lists every customer in this organization with where its data actually lands: the **Database**, the **Schema in use**, **SSL** and a **Source** badge (**fastn-managed**, **Organization default** or **Override**). Customers use your selected database automatically; the ones marked **fastn-managed** are still on Fastn's own database.
 
 **Add override** points a single customer somewhere else. An override replaces the whole connection, not part of it. **Remove override** returns that customer to the organization default as runner pools recycle; rows already written to the override database stay there.
 

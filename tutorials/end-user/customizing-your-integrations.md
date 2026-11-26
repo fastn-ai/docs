@@ -130,7 +130,7 @@ Workflows live inside each integration. Click **Manage** on an integration to se
 * **My changes didn't take effect**\
   Changes apply on the next sync run, not immediately. Check the installation's **Triggers** row for the schedule, then use **Insights** (in the widget's **⋯** menu) to confirm the run after your change succeeded.
 * **I want to start over**\
-  Open the integration (**Manage**), click **View** on the installation, and use **Delete installation**; then set it up again. This clears the configuration, but rebuilding it with fastn's agent is your provider's to run. Ask them before you clear anything you still depend on.
+  Open the integration (**Manage**), click **View** on the installation, and use **Delete installation**; then set it up again. This clears the configuration, but rebuilding it with Fastn's agent is your provider's to run. Ask them before you clear anything you still depend on.
 
 ### What you've done
 

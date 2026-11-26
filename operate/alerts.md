@@ -82,7 +82,7 @@ A multi-select: leave it across everything, or pick the specific workflows this 
 
 | Channel     | Configure                       |
 | ----------- | --------------------------------- |
-| **Email**   | One or more addresses, sent through fastn email or one of your Gmail connections, with an optional **Subject**. |
+| **Email**   | One or more addresses, sent through Fastn email or one of your Gmail connections, with an optional **Subject**. |
 | **Slack**   | An incoming webhook URL, or a Slack connection and a channel. |
 | **Teams**   | A connected Microsoft Teams account: pick the team, then the channel. |
 | **Webhook** | An `http` or `https` endpoint of your own. |
@@ -118,7 +118,7 @@ An alert rule's `deliveries` is an array of up to 10 channels. Send it to `POST 
 
 | `type` | Fields | Notes |
 | --- | --- | --- |
-| `email` | `to` (required), `subject` | Sent through fastn email. `subject` is one line of at most 200 characters. |
+| `email` | `to` (required), `subject` | Sent through Fastn email. `subject` is one line of at most 200 characters. |
 | `webhook` | `url` (required) | An `http` or `https` URL. Receives the JSON below. |
 | `slack` | `url` (required) | A Slack incoming webhook URL. Receives `{ "text": "..." }`. |
 | `connection` | `connectionId` and `target` (required), `targetName`, `subject` | Sends through a connected account. `targetName` is a display name of at most 200 characters. `subject` applies to Gmail only. |
@@ -169,7 +169,7 @@ A `webhook` delivery receives this body:
 | --- | --- | --- |
 | `workflow_failure` | **a run fails** alerts | As in the sample above. |
 | `workflow_alert` | **workflow code raises it** alerts | `title`, `message`, `severity`, `key` and `data` from your `fastn.alerts.send` call, plus `count`, `summary`, `test`, `workflowId`, `workflowName`, `executionId`, `endOrgId`, `alertId`, and `alertIds` on a summary. |
-| `platform_outage` | A fastn outage affecting your events | `startedAt`, `triggers`, `workflows`, `total`. |
+| `platform_outage` | A Fastn outage affecting your events | `startedAt`, `triggers`, `workflows`, `total`. |
 | `platform_recovered` | The end of that outage | `startedAt` when known, `endedAt`. |
 
 Threshold alerts have no `event`. On a code alert, `alert.metric` and `alert.window` do not describe the rule, so read `event` instead.

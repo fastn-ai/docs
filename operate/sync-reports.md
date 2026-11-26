@@ -43,5 +43,5 @@ Each report shows its counts of records **unchanged**, **updated**, **created** 
 Until a workflow has run `fastn.diff.compare`, the page reads **No sync reports yet**.
 
 {% hint style="info" %}
-If you are building a data sync and this page stays empty, ask the fastn agent (or your AI tool) to add diff reporting with `fastn.diff.compare`. It is far easier than reconstructing what a run did from logs afterward.
+If you are building a data sync and this page stays empty, ask the Fastn agent (or your AI tool) to add diff reporting with `fastn.diff.compare`. It is far easier than reconstructing what a run did from logs afterward.
 {% endhint %}

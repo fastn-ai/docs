@@ -4,12 +4,12 @@ description: "Let a customer connect their apps with a setup link or the embedde
 
 # Connecting apps
 
-Before fastn can read or write a customer's data in an app, the customer has to connect that app (sign in to it). There are two ways:
+Before Fastn can read or write a customer's data in an app, the customer has to connect that app (sign in to it). There are two ways:
 
 | Way | What the customer sees | SDK |
 | --- | ---------------------- | --- |
-| **Setup link** | A hosted fastn page you send them a link to. | `customer.connect("hubspot")`, or `customer.setupLink(...)` with a widget id |
-| **Embedded widget** | The fastn widget inside your own app. | `customer.embedToken(...)`, then the widget package in the browser |
+| **Setup link** | A hosted Fastn page you send them a link to. | `customer.connect("hubspot")`, or `customer.setupLink(...)` with a widget id |
+| **Embedded widget** | The Fastn widget inside your own app. | `customer.embedToken(...)`, then the widget package in the browser |
 
 Either way, the result is a **connection**: one connected account, with its own `connectionId`.
 
@@ -59,7 +59,7 @@ Answer: `{ setupId, url, status, expiresAt, widgetId }`. Read or cancel the link
 
 ## Setup links
 
-A setup link is a one-time link to a hosted fastn page. The customer opens it, signs in to the app, and the connection is stored on that customer. `connect(app)` above makes one by app name; with `setupLink` you pass the widget id yourself:
+A setup link is a one-time link to a hosted Fastn page. The customer opens it, signs in to the app, and the connection is stored on that customer. `connect(app)` above makes one by app name; with `setupLink` you pass the widget id yourself:
 
 ```typescript
 const link = await customer.setupLink({
@@ -84,7 +84,7 @@ console.log(link.data?.setupUrl);   // send this link to the customer
 | `label` | No | A label for the link, for example the customer's name. |
 | `expiresInMinutes` | No | How long the link works, in minutes. Your org config carries a default link lifetime (`setupLinkDefaultTtlMinutes`, below). |
 | `redirectUrl` | No | Where the browser goes when setup ends. It must be on your list of registered redirect addresses (below), or the call is refused. |
-| `metadata` | No | Your own data, any JSON object. fastn does not use it. It comes back to you on the link and on the link's events, so you can tell which of your flows the new connection is for. |
+| `metadata` | No | Your own data, any JSON object. Fastn does not use it. It comes back to you on the link and on the link's events, so you can tell which of your flows the new connection is for. |
 | `allowAdditionalConnection` | No | `true` lets the customer add another account for the same app (for example a second calendar). The answer includes it only when it is `true`. |
 
 The SDK fills in the customer for you. If the customer does not exist yet, the link creates it.
@@ -152,7 +152,7 @@ A setup link with an address that is not on the list is refused with `400` and t
 
 ## Embedded widget: embed tokens
 
-To show the fastn widget inside your own app instead of sending a link, your backend creates a short-lived token for the customer and hands it to the page.
+To show the Fastn widget inside your own app instead of sending a link, your backend creates a short-lived token for the customer and hands it to the page.
 
 ```typescript
 const t = await customer.embedToken({
@@ -166,7 +166,7 @@ const t = await customer.embedToken({
 
 | Field | Required | Meaning |
 | ----- | -------- | ------- |
-| `userId` | No | Your own id for the person using the widget. Leave it out and fastn makes one. |
+| `userId` | No | Your own id for the person using the widget. Leave it out and Fastn makes one. |
 | `userEmail`, `userName` | No | The person's email and name. |
 | `metadata` | No | Your own data. |
 
@@ -194,7 +194,7 @@ Answer:
 
 ## Connections
 
-When the customer connects an app, fastn stores a connection on that customer. You receive its id on the `connection.connected` [event](events.md), and you can list connections at any time.
+When the customer connects an app, Fastn stores a connection on that customer. You receive its id on the `connection.connected` [event](events.md), and you can list connections at any time.
 
 ```typescript
 const list = await customer.connections();

@@ -1,5 +1,5 @@
 ---
-description: "Create a one-time URL from your backend that connects a customer's AI client to fastn."
+description: "Create a one-time URL from your backend that connects a customer's AI client to Fastn."
 layout:
   width: default
   title:
@@ -16,7 +16,7 @@ layout:
 
 # Customer MCP URL
 
-A customer MCP URL connects a customer's AI client, such as Claude or Cursor, to fastn as that customer, with no fastn account. Your customer can [generate one in the widget](../../tutorials/end-user/connecting-claude.md). You can also create one from your own product, for example behind a "Connect Claude" button in your settings.
+A customer MCP URL connects a customer's AI client, such as Claude or Cursor, to Fastn as that customer, with no Fastn account. Your customer can [generate one in the widget](../../tutorials/end-user/connecting-claude.md). You can also create one from your own product, for example behind a "Connect Claude" button in your settings.
 
 ## Create the URL
 
@@ -57,14 +57,14 @@ The customer and user come from the token, so a customer named in the body is ig
 ## What happens next
 
 1. Your customer pastes the URL into their AI client as a custom connector. [Connect Claude and other AI clients](../../tutorials/end-user/connecting-claude.md) has the steps for each client.
-2. The client connects with OAuth, and fastn approves it without a sign-in screen. The URL is what authorizes it.
+2. The client connects with OAuth, and Fastn approves it without a sign-in screen. The URL is what authorizes it.
 3. The connection stays until it is disconnected, even though the URL has expired.
 
 Your call has already returned `201` by the time the customer pastes the URL, so a failure at this point shows only in their AI client. A used or expired URL fails, and so does any URL for a customer that is not active. Either way, offer a new URL.
 
 ## What the client can reach
 
-The client connects to the fastn MCP server's workspace tools and acts as that customer and that user, with the `end_user` role.
+The client connects to the Fastn MCP server's workspace tools and acts as that customer and that user, with the `end_user` role.
 
 * It stays inside that customer, and it cannot see your other customers.
 * It acts as one person. It uses that user's connections, so a connection another person at the customer made for themselves is not available to it.

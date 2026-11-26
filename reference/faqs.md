@@ -8,9 +8,9 @@ description: Short answers to the questions that come up most.
 
 <details>
 
-<summary>Do my customers need a fastn account?</summary>
+<summary>Do my customers need a Fastn account?</summary>
 
-No. Your customers work through the [widget](../embed/README.md) embedded in your product, authorizing their own accounts there. They reach it with an embed token your backend mints, which carries the role `end_user`, not a fastn login of their own.
+No. Your customers work through the [widget](../embed/README.md) embedded in your product, authorizing their own accounts there. They reach it with an embed token your backend mints, which carries the role `end_user`, not a Fastn login of their own.
 
 </details>
 
@@ -18,7 +18,7 @@ No. Your customers work through the [widget](../embed/README.md) embedded in you
 
 <summary>Do I have to write workflow code?</summary>
 
-No. The [fastn agent](../build/agent/README.md) (on Scale or Enterprise) or your AI tool writes workflows from a plain description, and iterates on follow-up messages. Code editing is a per-organization setting that is off by default, so writing the code yourself is the exception rather than the norm. You can still test, wire connectors, edit the contract, publish, and deploy. If you want to write code yourself, ask fastn to turn it on for your organization.
+No. The [Fastn agent](../build/agent/README.md) (on Scale or Enterprise) or your AI tool writes workflows from a plain description, and iterates on follow-up messages. Code editing is a per-organization setting that is off by default, so writing the code yourself is the exception rather than the norm. You can still test, wire connectors, edit the contract, publish, and deploy. If you want to write code yourself, ask Fastn to turn it on for your organization.
 
 </details>
 
@@ -100,7 +100,7 @@ Yes. Pin them to a specific connector version under **Version pins** on the conn
 | **Standard** | Returns 202, runs in the background.             | **15 minutes** | 5s - 15min   |
 | **Long**     | Returns 202, runs in the background.             | **Up to 36 hours** | 30s - 36h |
 
-Instant's ceiling is 2 minutes only where fastn has turned on the longer Instant timeout for your organization. Use **Instant** only when something is waiting on the answer: 25 seconds is not much once you are calling two apps in sequence. Use **Standard** for almost everything else, and **Long** for batch imports and backfills.
+Instant's ceiling is 2 minutes only where Fastn has turned on the longer Instant timeout for your organization. Use **Instant** only when something is waiting on the answer: 25 seconds is not much once you are calling two apps in sequence. Use **Standard** for almost everything else, and **Long** for batch imports and backfills.
 
 </details>
 
@@ -196,7 +196,7 @@ Yes. Combine the action selection on the connector with a narrow API key: pick t
 
 <summary>Where does `fastn.db` data live?</summary>
 
-In fastn's shared managed Postgres by default, in a schema isolated to your workspace. You can point it at a Postgres you operate instead, under [Settings → Database](../manage/database.md). Rows are never copied between the two, so switching changes where new reads and writes go and nothing else.
+In Fastn's shared managed Postgres by default, in a schema isolated to your workspace. You can point it at a Postgres you operate instead, under [Settings → Database](../manage/database.md). Rows are never copied between the two, so switching changes where new reads and writes go and nothing else.
 
 </details>
 
@@ -212,7 +212,7 @@ Secret if exposure would be an incident (tokens, passwords, keys). Config if you
 
 <summary>What are AI credits used for?</summary>
 
-Every AI model call fastn makes for you: building with the fastn agent (most of it), investigating errors, fixing integrations after an API change, writing docs, and AI steps in workflows. Scale includes 1,000 a month and Enterprise has no cap. Launch has no monthly credits and uses the up to 50 it earns in onboarding. Building with the fastn agent and AI steps are on paid plans. See [Credits](../manage/billing.md#credits).
+Every AI model call Fastn makes for you: building with the Fastn agent (most of it), investigating errors, fixing integrations after an API change, writing docs, and AI steps in workflows. Scale includes 1,000 a month and Enterprise has no cap. Launch has no monthly credits and uses the up to 50 it earns in onboarding. Building with the Fastn agent and AI steps are on paid plans. See [Credits](../manage/billing.md#credits).
 
 </details>
 
@@ -220,7 +220,7 @@ Every AI model call fastn makes for you: building with the fastn agent (most of 
 
 <summary>Does building in my own AI tool use AI credits?</summary>
 
-No. Your AI tool's model does the work and fastn only runs the actions, so it is how you keep building when credits run low.
+No. Your AI tool's model does the work and Fastn only runs the actions, so it is how you keep building when credits run low.
 
 </details>
 
@@ -228,7 +228,7 @@ No. Your AI tool's model does the work and fastn only runs the actions, so it is
 
 <summary>What happens when I run out of AI credits?</summary>
 
-Workflows without AI steps keep running. An AI step fails until credits are back. The fastn agent and error diagnosis stop until credits are back: at the next monthly reset on Scale, or when you earn onboarding credits or upgrade on Launch. Your own AI tool still works.
+Workflows without AI steps keep running. An AI step fails until credits are back. The Fastn agent and error diagnosis stop until credits are back: at the next monthly reset on Scale, or when you earn onboarding credits or upgrade on Launch. Your own AI tool still works.
 
 </details>
 

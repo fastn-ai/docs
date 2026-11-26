@@ -15,12 +15,12 @@ hidden: true
 | **Slug** | `shopify` |
 
 ## Setup guide
-This guide shows how to connect Shopify to fastn, either with your own Shopify app on OAuth or with an Admin API access token that a merchant enters, and how to start workflows from Shopify events.
+This guide shows how to connect Shopify to Fastn, either with your own Shopify app on OAuth or with an Admin API access token that a merchant enters, and how to start workflows from Shopify events.
 
 For Shopify's own setup steps, see [Create apps using the Dev Dashboard](https://shopify.dev/docs/apps/build/dev-dashboard/create-apps-using-dev-dashboard) in the Shopify documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - For your own OAuth app, you need access to the Shopify Dev Dashboard. To install the app on stores outside your own organization, the app must belong to a Partner organization so that you can pick a distribution method.
 - For the access token method, the merchant needs a custom app that was created in the Shopify admin and has the Admin API scopes their workflows need. Shopify no longer allows new custom apps to be created in the admin.
 
@@ -36,8 +36,8 @@ For Shopify's own setup steps, see [Create apps using the Dev Dashboard](https:/
 5. To install the app on merchants' stores, open the app's **Home** page, find the **Distribution** card, and click **Select distribution method**. Choose **Public** (listed on the Shopify App Store) or **Custom** (a private install link for one store, or several stores in one Plus organization). You can't change this choice later.
 6. Click **Settings** in your app and copy the **Client ID** and **Client secret**.
 
-### Add your app to fastn
-1. In fastn, go to **Build** > **Integrations** > **Connectors** and open **Shopify**.
+### Add your app to Fastn
+1. In Fastn, go to **Build** > **Integrations** > **Connectors** and open **Shopify**.
 2. Open the **Auth** tab and click **Manage providers**.
 
 <figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
@@ -50,18 +50,18 @@ For Shopify's own setup steps, see [Create apps using the Dev Dashboard](https:/
 5. Save the provider, then choose **Use this app** so it becomes the preferred app.
 6. In your widget, set the Shopify connector's **Auth provider** setting to your app instead of **Use platform default**.
 
-Customers who skip this sign in through fastn's shared Shopify app.
+Customers who skip this sign in through Fastn's shared Shopify app.
 
 ### Get your Shopify credentials
 The access token method asks for two values:
 1. **shop**: the store subdomain, the part before `.myshopify.com`. For `acme-store.myshopify.com`, enter `acme-store`.
 2. **accessToken**: the Admin API access token of a custom app created in the Shopify admin. In the Shopify admin, go to **Settings** > **Apps and sales channels** > **Develop apps** and click the app. On the **Admin API access token** card (under the **API credentials** tab if the page has tabs), click **Reveal token once** and copy the token. Shopify shows it only once. If you lose it, uninstall and reinstall the app to get a new one.
 
-### Connect in fastn
+### Connect in Fastn
 Your customers enter these values when they connect Shopify in your widget. You can also enter them yourself under **Build** > **Integrations** > **Connectors** > **Shopify**.
 
 ### Events
-To run a workflow when something happens in a store, such as `orders/create`, `products/update` or `customers/create`, add an App event trigger: go to **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events** and pick the Shopify event. See [App events](../../build/triggers/app-events.md). Contact fastn support to set up events for Shopify.
+To run a workflow when something happens in a store, such as `orders/create`, `products/update` or `customers/create`, add an App event trigger: go to **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events** and pick the Shopify event. See [App events](../../build/triggers/app-events.md). Contact Fastn support to set up events for Shopify.
 
 ## Actions
 

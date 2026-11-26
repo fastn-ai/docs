@@ -1,6 +1,6 @@
 ---
 description: >-
-  What each failure state means, where fastn shows you the detail, and what to do
+  What each failure state means, where Fastn shows you the detail, and what to do
   about it.
 ---
 
@@ -169,7 +169,7 @@ The prefix tells you which service raised it: no prefix for the shared vocabular
 | `INTERNAL_ERROR` | 500 | Unhandled server error | Safe to retry once, then report |
 | `SERVICE_UNAVAILABLE` | 503 | Service temporarily unavailable | Retry with backoff |
 | `DB_POOL_EXHAUSTED` | 503 | Database busy | Retry after the `Retry-After` header's delay |
-| `UPSTREAM_ERROR` | 502 | A service fastn depends on failed | Retry with backoff; report it if it persists |
+| `UPSTREAM_ERROR` | 502 | A service Fastn depends on failed | Retry with backoff; report it if it persists |
 | `DB_ERROR` | 500 | Database operation failed | Retry once, then report |
 | `TIMEOUT` | 504 | Operation timed out | Retry; report it if it persists |
 
@@ -189,7 +189,7 @@ The prefix tells you which service raised it: no prefix for the shared vocabular
 | `WF-EXEC-FAILED` | 500 | The run threw | Read the run in [Executions](../operate/executions.md); the detail is there, not in this response |
 | `WF-TIMEOUT` | 504 | The run exceeded its tier's time budget | Check [Traces](../operate/traces.md), then see [Troubleshooting](../operate/troubleshooting.md) |
 | `WF-LABEL-LIMIT` | 400 | Too many labels for one workflow | Remove labels until it has 5 or fewer |
-| `WF-CODE-READONLY` | 403 | Your organization can read workflow code but not change it | Changes that send no code still work. To edit code, ask fastn support to turn on code editing for your organization |
+| `WF-CODE-READONLY` | 403 | Your organization can read workflow code but not change it | Changes that send no code still work. To edit code, ask Fastn support to turn on code editing for your organization |
 | `WF-CODE-ERROR` | 422 | A test run failed because of the workflow code itself | Fix the code, then test again |
 | `WF-TEST-TIMEOUT` | 408 | A test run timed out | Test with less data, or check [Traces](../operate/traces.md) for the slow call |
 | `WF-MEMORY-LIMIT` | 422 | The workflow exceeded the sandbox memory limit | See [Out of memory](#out-of-memory) |
@@ -215,7 +215,7 @@ The prefix tells you which service raised it: no prefix for the shared vocabular
 | `API-UNIFIED-CURSOR-INVALID` | 400 | The pagination cursor is malformed or expired | Start the listing again without a cursor |
 | `API-UNIFIED-VALIDATION-FAILED` | 400 | The record failed the unified schema | Fix the record to match the schema |
 | `API-UNIFIED-PROVIDER-AUTH-FAILED` | 401 | The underlying provider rejected the credential | The customer reconnects |
-| `API-UNIFIED-PROVIDER-RATE-LIMITED` | 429 | The provider throttled the call, not fastn | Retry later, with backoff |
+| `API-UNIFIED-PROVIDER-RATE-LIMITED` | 429 | The provider throttled the call, not Fastn | Retry later, with backoff |
 | `API-UNIFIED-PROVIDER-NOT-FOUND` | 404 | The provider could not find the requested record | Check the record id |
 | `API-UNIFIED-PROVIDER-REJECTED` | 400 | The provider rejected the request | Read the provider's message in the response, and fix the request |
 | `API-UNIFIED-PROVIDER-ERROR` | 502 | The provider request failed | Retry; report it if it persists |
@@ -253,13 +253,13 @@ Any status outside that list yields `HTTP_<status>`.
 
 ### App events: `Subscription: Failed`
 
-**What it means:** fastn could not register for events with the provider, so the trigger never fires. On the [App events](../build/triggers/app-events.md) list, `Subscription` is a separate column from `Status`, and it is the one that matters. **A trigger can read `Active` and still never fire**, because *Status* is whether you enabled it and *Subscription* is whether fastn managed to register for events with the provider.
+**What it means:** Fastn could not register for events with the provider, so the trigger never fires. On the [App events](../build/triggers/app-events.md) list, `Subscription` is a separate column from `Status`, and it is the one that matters. **A trigger can read `Active` and still never fire**, because *Status* is whether you enabled it and *Subscription* is whether Fastn managed to register for events with the provider.
 
 **How to fix it:** use **Retry Subscription** from the row menu. If it fails again the problem is upstream: check the connection is live and still carries the scopes the event needs.
 
 ### Schedules: auto-disabled
 
-**What it means:** fastn disables a schedule trigger that keeps failing. The `Failures` column counts *consecutive* failures and resets on a success; a climbing number is the warning. So a nightly job that stopped may have been switched off by the platform rather than by a colleague.
+**What it means:** Fastn disables a schedule trigger that keeps failing. The `Failures` column counts *consecutive* failures and resets on a success; a climbing number is the warning. So a nightly job that stopped may have been switched off by the platform rather than by a colleague.
 
 **How to fix it:** read the reason in **Status history** on the trigger's detail panel and fix the failing workflow. Once disabled, a re-enable cooldown applies. See [Triggers](../build/triggers/README.md#when-fastn-disables-a-trigger-for-you).
 
@@ -299,7 +299,7 @@ From [Connections](../build/connections/README.md). A connection that is not hea
 
 ## What is not covered here
 
-The failure states here are the ones reachable through the product's own screens. This is **not** a generated list of every error string the platform can emit: fastn does not publish one.
+The failure states here are the ones reachable through the product's own screens. This is **not** a generated list of every error string the platform can emit: Fastn does not publish one.
 
 If you hit an error that is not here:
 

@@ -1,5 +1,5 @@
 ---
-description: What changed in fastn, release by release, and known issues with their workarounds.
+description: What changed in Fastn, release by release, and known issues with their workarounds.
 ---
 
 # Changelog
@@ -52,7 +52,7 @@ None open. When there is one, it is listed here with the date it was found, its 
 
 **Customers**
 
-* API responses name each customer by your own id, never fastn's internal id. See [Core concepts](../getting-started/concepts.md).
+* API responses name each customer by your own id, never Fastn's internal id. See [Core concepts](../getting-started/concepts.md).
 
 **Triggers and events**
 

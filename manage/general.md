@@ -33,7 +33,7 @@ The timezone here is the default offered when creating a [schedule trigger](../b
 
 ### Your product
 
-If you have started connecting your own product, a **Your product** card shows it, badged **Connected** or **Not connected**. Once connected it reads *{product} is connected to fastn.* Until then it reads *Not connected yet. Required to go live.* (or *API docs found, not connected yet. Required to go live.* once fastn has found your API docs) and offers **Connect {product}**. See [Connect your product](saas-connectors.md).
+If you have started connecting your own product, a **Your product** card shows it, badged **Connected** or **Not connected**. Once connected it reads *{product} is connected to fastn.* Until then it reads *Not connected yet. Required to go live.* (or *API docs found, not connected yet. Required to go live.* once Fastn has found your API docs) and offers **Connect {product}**. See [Connect your product](saas-connectors.md).
 
 ### Joining by email domain
 
@@ -54,7 +54,7 @@ Never set a mailbox provider here. Auto-approve on a shared domain means anyone 
 This card explains where deletion lives, because it is not on this page:
 
 * To delete **a customer**, open it under [Customers](../operate/customers.md), suspend it, then delete it there. Deleting a customer removes its connections, workflows and stored credentials, and cannot be undone.
-* To delete **this organization**, contact fastn support. An organization has to be suspended before it can be deleted, and only fastn can suspend a top-level organization, so there is no self-serve path.
+* To delete **this organization**, contact Fastn support. An organization has to be suspended before it can be deleted, and only Fastn can suspend a top-level organization, so there is no self-serve path.
 
 ### Save your changes
 

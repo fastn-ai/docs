@@ -16,7 +16,7 @@ layout:
 
 # Generate embed tokens
 
-Embed tokens are short-lived credentials that scope the fastn widget to a specific customer. They are generated from your backend using your API key and passed to the iframe.
+Embed tokens are short-lived credentials that scope the Fastn widget to a specific customer. They are generated from your backend using your API key and passed to the iframe.
 
 For the same request in short, see [Set up and add the widget](../../getting-started/onboarding/embed-the-widget.md) and [Token API](../../embed/embedding/token-api.md).
 
@@ -24,7 +24,7 @@ For the same request in short, see [Set up and add the widget](../../getting-sta
 
 * **Who this is for:** the developer wiring the embed into your backend.
 * **An API key.** Creating one under **Embed → API keys** needs the Owner or Admin role. See [Authentication & API Keys](authentication-and-api-keys.md).
-* **The customer's identifier**, fastn's id or your own. See [Finding Your Org Identifier](finding-your-org-identifier.md).
+* **The customer's identifier**, Fastn's id or your own. See [Finding Your Org Identifier](finding-your-org-identifier.md).
 * **A backend** that can make an HTTP request with a secret key. Tokens are never minted in the browser.
 
 ### The token endpoint
@@ -54,7 +54,7 @@ A key set to **Enforce** refuses a request without identity headers, even when t
 
 | Header | Value |
 | ------ | ----- |
-| `x-org-id` | The customer: your own id for it (the `orgId` you sent to `POST /api/v1/orgs`), or fastn's id for it. It must be one of your customers: anything else is `404 IDENTITY_ORG_NOT_FOUND`, and your own organization's id names no customer (`400 EMBED_TOKEN_REQUIRES_END_ORG_ID`). |
+| `x-org-id` | The customer: your own id for it (the `orgId` you sent to `POST /api/v1/orgs`), or Fastn's id for it. It must be one of your customers: anything else is `404 IDENTITY_ORG_NOT_FOUND`, and your own organization's id names no customer (`400 EMBED_TOKEN_REQUIRES_END_ORG_ID`). |
 | `x-user-id` | Optional. Your id for the person using the widget. |
 | `x-identity-hmac` | The hex HMAC-SHA256 of `<x-org-id>`, a newline and `<x-user-id>`, signed with the key's identity secret. Use an empty string for a header you leave out. |
 
@@ -323,17 +323,17 @@ func main() {
 
 | Field             | Description |
 | ----------------- | ----------- |
-| `orgId`           | The customer the widget is for: your own id for it, or fastn's id for it. Required unless `x-org-id` names the customer or `allowOrgLevel` is `true`; without either, the call is `400 EMBED_TOKEN_REQUIRES_END_ORG_ID`. A value that matches none of your customers is `404 Tenant not found`, and another account's customer is `403`. See [Find your org identifier](finding-your-org-identifier.md). |
+| `orgId`           | The customer the widget is for: your own id for it, or Fastn's id for it. Required unless `x-org-id` names the customer or `allowOrgLevel` is `true`; without either, the call is `400 EMBED_TOKEN_REQUIRES_END_ORG_ID`. A value that matches none of your customers is `404 Tenant not found`, and another account's customer is `403`. See [Find your org identifier](finding-your-org-identifier.md). |
 | `userId`          | Optional. Your id for the person using the widget. Per-user isolation keys on this (or on an attested `x-user-id`). Left out, each token gets a random `embed_usr…` id, so nothing carries over between sessions (see [Customers and isolation](understanding-tenancy.md)). |
 | `userEmail`       | Optional. The person's email address. Display only. |
 | `userName`        | Optional. The person's display name, up to 200 characters. Display only. |
-| `createIfMissing` | Optional. `true` registers the customer named by `orgId` if your account does not have it yet, then mints the token. The value becomes the new customer's own id (its External ID), which the answer returns as `data.orgId`; fastn assigns its own id as well. The key needs the `customers.create` permission. |
+| `createIfMissing` | Optional. `true` registers the customer named by `orgId` if your account does not have it yet, then mints the token. The value becomes the new customer's own id (its External ID), which the answer returns as `data.orgId`; Fastn assigns its own id as well. The key needs the `customers.create` permission. |
 | `customerName`    | Optional, with `createIfMissing`. The new customer's display name. Defaults to `orgId`. |
 | `metadata`        | Optional. A JSON object of your own, at most 4 KB, handed back to you in the widget's lifecycle hooks for this session. |
 | `roleOverride`    | Optional, for a customer on a tier. The role whose permissions this token carries, in place of the tier's role. It can narrow what the session may do, never widen it beyond `end_user`. |
 | `allowOrgLevel`   | Optional. `true`, with no customer named, mints a token for your own organization instead of a customer, to preview the widget yourself. Never hand one to a customer. |
 
-A key limited to a single customer already acts as that customer, and cannot have identity verification turned on. Name the customer with `orgId` in the body, set to fastn's id for it: with such a key your own id for the customer is `404 Tenant not found`. An `x-org-id` that names any other customer is refused: `403 API_KEY_SCOPE_MISMATCH`, or `400 IDENTITY_HEADERS_CONFLICT` on a key pinned to that customer. Such a key cannot set `metadata` (`403 EMBED_PARTNER_ONLY_FIELD`). A key limited to several customers must name one in `x-org-id` (`400 API_KEY_SCOPE_AMBIGUOUS` otherwise), not in the body.
+A key limited to a single customer already acts as that customer, and cannot have identity verification turned on. Name the customer with `orgId` in the body, set to Fastn's id for it: with such a key your own id for the customer is `404 Tenant not found`. An `x-org-id` that names any other customer is refused: `403 API_KEY_SCOPE_MISMATCH`, or `400 IDENTITY_HEADERS_CONFLICT` on a key pinned to that customer. Such a key cannot set `metadata` (`403 EMBED_PARTNER_ONLY_FIELD`). A key limited to several customers must name one in `x-org-id` (`400 API_KEY_SCOPE_AMBIGUOUS` otherwise), not in the body.
 
 **Response:**
 
@@ -351,7 +351,7 @@ A key limited to a single customer already acts as that customer, and cannot hav
 }
 ```
 
-The token is nested under `data`: read `response.data.token`, not `response.token`. It is prefixed `emb_`. `orgId` is the customer, under your own id for it, even when you named it by fastn's id.
+The token is nested under `data`: read `response.data.token`, not `response.token`. It is prefixed `emb_`. `orgId` is the customer, under your own id for it, even when you named it by Fastn's id.
 
 `expiresIn` is `28800` seconds: eight hours.
 

@@ -18,11 +18,11 @@ layout:
 
 # Connect apps
 
-The product you use has an integrations section that runs on fastn. There you connect your other apps, such as your Slack workspace, your Shopify store, or your HubSpot account, so data can move between them and the product.
+The product you use has an integrations section that runs on Fastn. There you connect your other apps, such as your Slack workspace, your Shopify store, or your HubSpot account, so data can move between them and the product.
 
 ### Before you start
 
-* Access to a SaaS product that uses fastn for integrations.
+* Access to a SaaS product that uses Fastn for integrations.
 * An account on the app you want to connect (for example Slack, Shopify, or HubSpot).
 
 ### Find the integration widget
@@ -67,7 +67,7 @@ The line under each integration's name tells you where it stands:
 
 1. Open the integration widget in your product.
 2. Find the app you want, by scrolling or by typing in **Search integrations**.
-3. Click **Connect**. A setup wizard opens and walks you through each account the integration needs. For each account, a popup opens with the app's own sign-in page, not the product's and not fastn's.
+3. Click **Connect**. A setup wizard opens and walks you through each account the integration needs. For each account, a popup opens with the app's own sign-in page, not the product's and not Fastn's.
 4. Sign in with your account on that app.
 5. Review the permissions being requested and approve them. The button wording is the app's own, for example Authorize or Allow.
 

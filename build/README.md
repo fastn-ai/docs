@@ -1,7 +1,7 @@
 ---
 description: >-
   Describe an integration in plain words, from your AI tool or the dashboard,
-  and fastn builds, tests, and publishes it.
+  and Fastn builds, tests, and publishes it.
 layout:
   width: default
   title:
@@ -18,11 +18,11 @@ layout:
 
 # Build
 
-<figure><img src="../.gitbook/assets/lifecycle/fastn-lifecycle-1-build.svg" alt="Stage 1, Build: the integration builder describes the integration and fastn writes and tests it"><figcaption>Where Build fits in the integration lifecycle</figcaption></figure>
+<figure><img src="../.gitbook/assets/lifecycle/fastn-lifecycle-1-build.svg" alt="Stage 1, Build: the integration builder describes the integration and Fastn writes and tests it"><figcaption>Where Build fits in the integration lifecycle</figcaption></figure>
 
 ## What does it do?
 
-Build turns a plain-language description into a working integration. You say what should happen, for example *when a deal closes in HubSpot, create the customer in Stripe*, and fastn picks the connectors, writes the workflow, proposes the field mappings, and writes and runs test cases. You approve each step, then publish it so your customers can turn it on.
+Build turns a plain-language description into a working integration. You say what should happen, for example *when a deal closes in HubSpot, create the customer in Stripe*, and Fastn picks the connectors, writes the workflow, proposes the field mappings, and writes and runs test cases. You approve each step, then publish it so your customers can turn it on.
 
 ## Who is it for?
 
@@ -36,7 +36,7 @@ Build turns a plain-language description into a working integration. You say wha
 
 {% tabs %}
 {% tab title="Your AI tool" %}
-Add fastn to Claude, Cursor, Codex, or another MCP client, then ask for the integration in the chat. Your AI tool follows the same steps as the dashboard and asks you to approve each one. It uses no fastn AI credits.
+Add Fastn to Claude, Cursor, Codex, or another MCP client, then ask for the integration in the chat. Your AI tool follows the same steps as the dashboard and asks you to approve each one. It uses no Fastn AI credits.
 
 ```bash
 claude mcp add --transport http fastn https://mcp.fastn.dev/fastn-workspace
@@ -45,14 +45,14 @@ claude mcp add --transport http fastn https://mcp.fastn.dev/fastn-workspace
 [Connect your AI tool](mcp-gateway/README.md) · [What happens when you ask](building-from-your-ai-agent.md)
 {% endtab %}
 
-{% tab title="fastn agent" %}
-Open **Integrations → Create integration → Build with fastn agent** in the dashboard, or type into the prompt on Home, and describe the integration. The fastn agent runs in the browser. It needs a paid plan (Scale or Enterprise) and uses AI credits. On Launch, build from your AI tool instead.
+{% tab title="Fastn agent" %}
+Open **Integrations → Create integration → Build with fastn agent** in the dashboard, or type into the prompt on Home, and describe the integration. The Fastn agent runs in the browser. It needs a paid plan (Scale or Enterprise) and uses AI credits. On Launch, build from your AI tool instead.
 
-[Build with fastn agent](agent/README.md) · [Create a workflow with the fastn agent, step by step](../tutorials/saas-admin/creating-a-workflow-via-ai.md)
+[Build with fastn agent](agent/README.md) · [Create a workflow with the Fastn agent, step by step](../tutorials/saas-admin/creating-a-workflow-via-ai.md)
 {% endtab %}
 
 {% tab title="Code" %}
-Every workflow is a JavaScript module you can test with sample input and version. Reading the code in the workflow editor needs code view to be switched on for your organization (fastn turns it on), and editing it needs code editing as well. Where code view is off, the editor shows diagrams and docs only, and you change a workflow by describing the change to the fastn agent.
+Every workflow is a JavaScript module you can test with sample input and version. Reading the code in the workflow editor needs code view to be switched on for your organization (Fastn turns it on), and editing it needs code editing as well. Where code view is off, the editor shows diagrams and docs only, and you change a workflow by describing the change to the Fastn agent.
 
 [Workflows](workflows/README.md) · [Write a workflow in code](../tutorials/saas-admin/configuring-a-workflow-in-code.md)
 {% endtab %}
@@ -60,7 +60,7 @@ Every workflow is a JavaScript module you can test with sample input and version
 
 ## Example prompts
 
-Paste these into your AI tool or the fastn agent, and adjust the apps and fields.
+Paste these into your AI tool or the Fastn agent, and adjust the apps and fields.
 
 | Job | Prompt |
 | --- | --- |
@@ -96,13 +96,13 @@ Paste these into your AI tool or the fastn agent, and adjust the apps and fields
 
 Build is where integrations are made. The pages follow the **Build** section of the dashboard sidebar: **Connect your product** and **Integrations**.
 
-Four of them match a tab under **Build → Integrations**: Connectors, Unified APIs, Workflows, and Triggers. **Connections** lives under **Operate → Connections**, and **Pending updates** is a tab on **Operate → Health**. The fastn agent has no sidebar row: open it from **Integrations → Create integration → Build with fastn agent** or the *What should your customers be able to do?* prompt on Home. *Build from your AI tool*, the *fastn MCP server*, and *Common patterns* have no screen of their own; they cut across several. The **Widget** lives under Embed and is documented under [Embed](../embed/README.md).
+Four of them match a tab under **Build → Integrations**: Connectors, Unified APIs, Workflows, and Triggers. **Connections** lives under **Operate → Connections**, and **Pending updates** is a tab on **Operate → Health**. The Fastn agent has no sidebar row: open it from **Integrations → Create integration → Build with fastn agent** or the *What should your customers be able to do?* prompt on Home. *Build from your AI tool*, the *Fastn MCP server*, and *Common patterns* have no screen of their own; they cut across several. The **Widget** lives under Embed and is documented under [Embed](../embed/README.md).
 
 {% content-ref url="agent/README.md" %}[Build with fastn agent](agent/README.md){% endcontent-ref %}
 
 {% content-ref url="building-from-your-ai-agent.md" %}[Build from your AI tool](building-from-your-ai-agent.md){% endcontent-ref %}
 
-{% content-ref url="mcp-gateway/README.md" %}[fastn MCP server](mcp-gateway/README.md){% endcontent-ref %}
+{% content-ref url="mcp-gateway/README.md" %}[Fastn MCP server](mcp-gateway/README.md){% endcontent-ref %}
 
 {% content-ref url="../manage/saas-connectors.md" %}[Connect your product](../manage/saas-connectors.md){% endcontent-ref %}
 

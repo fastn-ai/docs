@@ -22,18 +22,18 @@ The top bar carries the same controls on every screen.
 
 | Element | What it does |
 | --- | --- |
-| **Search** (⌘K / Ctrl+K) | Finds connectors, workflows, and customers. Results are grouped by type. The action **Connect fastn to your AI tool** is here too. |
+| **Search** (⌘K / Ctrl+K) | Finds connectors, workflows, and customers. Results are grouped by type. The action **Connect Fastn to your AI tool** is here too. |
 | **Help** (?) | **Take a tour** of the current page, **Documentation** (these docs), and **Contact support**. Some accounts also see **Support tickets** and **Escalate to on-call support**. |
 | **Theme** | Switches the dashboard between light and dark. |
-| **Report a bug** | Sends a bug report to fastn. |
-| **Connect your AI tool** | Connects Claude, Cursor, ChatGPT, or any MCP client to fastn, from any page. Building from your AI tool uses no AI credits. |
+| **Report a bug** | Sends a bug report to Fastn. |
+| **Connect your AI tool** | Connects Claude, Cursor, ChatGPT, or any MCP client to Fastn, from any page. Building from your AI tool uses no AI credits. |
 | **Credits** | Owners and Admins only. Your AI credits left. Click it for a breakdown by agent and the org total. A paid plan's monthly credits reset on the 1st of each month, UTC. A Launch account with no monthly credits sees how many earned credits are left, with no reset date: onboarding credits do not reset. |
 
 The account card at the bottom-left switches organization and opens your profile.
 
 ### Where everything lives
 
-The sidebar starts with **Home**, then follows the three steps of putting fastn in your product: **Build**, **Embed**, and **Operate**. **Settings** sits in its own unlabeled group at the end. Every item in a step group is a page; the sections inside a page are its tabs. What you see depends on your [role](../manage/roles.md).
+The sidebar starts with **Home**, then follows the three steps of putting Fastn in your product: **Build**, **Embed**, and **Operate**. **Settings** sits in its own unlabeled group at the end. Every item in a step group is a page; the sections inside a page are its tabs. What you see depends on your [role](../manage/roles.md).
 
 | Group | Item | Route | Docs |
 | --- | --- | --- | --- |
@@ -45,7 +45,7 @@ The sidebar starts with **Home**, then follows the three steps of putting fastn 
 | | Integrations → Unified APIs | `/integrations?tab=unified` | [Unified APIs](../build/unified-apis/README.md) |
 | Embed | Widget | `/widgets` | [Widget](../embed/README.md) |
 | | API keys | `/api-keys` | [API keys](../manage/api-keys.md) |
-| | MCP server | `/mcp-server` | [fastn MCP server](../build/mcp-gateway/README.md) |
+| | MCP server | `/mcp-server` | [Fastn MCP server](../build/mcp-gateway/README.md) |
 | Operate | Health → Needs attention, Overview, Pending updates, Alerts | `/health` | [Health](../operate/health.md), [Pending connector updates](../build/connector-updates.md), [Alerts](../operate/alerts.md) |
 | | Customers | `/customers` | [Customers](../operate/customers.md) |
 | | Connections | `/connections` | [Connections](../build/connections/README.md) |
@@ -58,11 +58,11 @@ The sidebar starts with **Home**, then follows the three steps of putting fastn 
 
 ### Home
 
-Home asks one question: **What should your customers be able to do?** (with your product's name in it once fastn knows it). Under it, for roles that can use the builder, a prompt box reads *Describe an integration in plain words…*. Send it and the fastn agent opens at `/agent` with your request and starts building it, using AI credits. Building with the agent is on paid plans: on Launch the box is replaced by *Building with the fastn agent is on paid plans.*, with **Upgrade to build with the fastn agent**, **Build in your AI tool, 0 AI credits**, and **Ask the fastn agent a question**: on Launch the agent still answers questions and runs maintenance work.
+Home asks one question: **What should your customers be able to do?** (with your product's name in it once Fastn knows it). Under it, for roles that can use the builder, a prompt box reads *Describe an integration in plain words…*. Send it and the Fastn agent opens at `/agent` with your request and starts building it, using AI credits. Building with the agent is on paid plans: on Launch the box is replaced by *Building with the Fastn agent is on paid plans.*, with **Upgrade to build with the Fastn agent**, **Build in your AI tool, 0 AI credits**, and **Ask the Fastn agent a question**: on Launch the agent still answers questions and runs maintenance work.
 
-<figure><img src="../.gitbook/assets/screens/home-launch-plan.webp" alt="Home on the Launch plan: a banner reading Your setup isn't finished with Continue setup, the question What should Parkingpass's customers be able to do?, a box explaining that building with the fastn agent is on paid plans with buttons Upgrade to build with the fastn agent and Build in your AI tool, 0 AI credits, the link Ask the fastn agent a question, and Ideas for Parkingpass"><figcaption>Home on the Launch plan, for a product named Parkingpass.</figcaption></figure>
+<figure><img src="../.gitbook/assets/screens/home-launch-plan.webp" alt="Home on the Launch plan: a banner reading Your setup isn't finished with Continue setup, the question What should Parkingpass's customers be able to do?, a box explaining that building with the Fastn agent is on paid plans with buttons Upgrade to build with the Fastn agent and Build in your AI tool, 0 AI credits, the link Ask the Fastn agent a question, and Ideas for Parkingpass"><figcaption>Home on the Launch plan, for a product named Parkingpass.</figcaption></figure>
 
-Below the box, **Ideas** (or **Ideas for** your product) offers up to three suggestions, written for your product where fastn has researched it. Click one to send it to the builder. Roles that cannot use the builder, and Launch accounts, see links to pages instead: **Build a workflow** (Developer and above), **Browse connectors**, and **View logs**.
+Below the box, **Ideas** (or **Ideas for** your product) offers up to three suggestions, written for your product where Fastn has researched it. Click one to send it to the builder. Roles that cannot use the builder, and Launch accounts, see links to pages instead: **Build a workflow** (Developer and above), **Browse connectors**, and **View logs**.
 
 While setup is unfinished, Home also shows a banner, *Your setup isn't finished.*, offering 50 AI credits for finishing it, with **Continue setup**.
 
@@ -76,7 +76,7 @@ The checklist follows onboarding at `/onboarding`: three setup steps, then going
 
 | Item | Done when |
 | --- | --- |
-| **Check your product** | You confirmed your product's description, and fastn's research on it has run. |
+| **Check your product** | You confirmed your product's description, and Fastn's research on it has run. |
 | **Pick your integrations** | Your widget offers at least one app, or **Catalog connectors** is on. |
 | **Set up the widget** | The widget has loaded in your product, or a customer has connected through it. |
 | **Add the widget to** your product | The widget has loaded on a page of your own. |
@@ -98,7 +98,7 @@ Integrations is the third-party catalog and opens on **Connectors**: an integrat
 
 | Tab                   | Purpose                                                                                          |
 | --------------------- | ------------------------------------------------------------------------------------------------ |
-| **Connectors**        | Every app your customers can authorize. **Create connector** opens one menu: **From scratch**, **Build with fastn agent** (paid plans), **Build in your AI tool**, or **Import from file**. **Request connector** asks fastn to add one. |
+| **Connectors**        | Every app your customers can authorize. **Create connector** opens one menu: **From scratch**, **Build with fastn agent** (paid plans), **Build in your AI tool**, or **Import from file**. **Request connector** asks Fastn to add one. |
 | **Workflows**         | The JavaScript that runs, with editor, tests, executions, and API details.                        |
 | **Triggers**          | Webhooks, schedules, and app events that start workflows.                                         |
 | **Unified APIs**      | One canonical endpoint per business entity, backed by whichever providers you connect.           |
@@ -109,12 +109,12 @@ Integrations is the third-party catalog and opens on **Connectors**: an integrat
 The widget builder has four tabs (Layout, Style, Features, Embed) and a live preview that renders at mobile, tablet, and desktop widths. A sticky footer carries **Reset**, **Discard changes** (only while you have unsaved edits), and **Save and publish**. **Reset** publishes the defaults to every customer using the widget immediately, after you type `RESET` to confirm; **Widget actions** → **Reset to defaults** does the same. A **Live** badge appears once the widget is saved.
 
 {% hint style="warning" %}
-**Reset** replaces your widget's whole configuration (sections, integrations, templates, and theme) with the defaults. There is no draft step, and it cannot be undone. If a custom page is your widget, your customers keep seeing the custom page; the reset defaults reach them only after you use **Switch back to fastn's widget**.
+**Reset** replaces your widget's whole configuration (sections, integrations, templates, and theme) with the defaults. There is no draft step, and it cannot be undone. If a custom page is your widget, your customers keep seeing the custom page; the reset defaults reach them only after you use **Switch back to Fastn's widget**.
 {% endhint %}
 
 ### Embed → API keys and Embed → MCP server
 
-Two pages. **API keys** are what your backend uses to mint embed tokens and call the API. **MCP server** adds fastn's integrations to Claude, Cursor, Codex, or any MCP client. See [fastn MCP server](../build/mcp-gateway/README.md).
+Two pages. **API keys** are what your backend uses to mint embed tokens and call the API. **MCP server** adds Fastn's integrations to Claude, Cursor, Codex, or any MCP client. See [Fastn MCP server](../build/mcp-gateway/README.md).
 
 ### Operate → Customers
 
@@ -144,7 +144,7 @@ First under Operate. The maintainer agent watches the apps you connect to, your 
 | **Events**       | What arrived, from where, and was it delivered?                |
 | **Executions**   | Which runs happened, and how did they end?                      |
 | **Sync reports** | What actually changed, record by record?                        |
-| **Monitoring**   | Owners and Admins. Is each trigger healthy? Per-trigger health, the dead-letter queue (replay or delete), circuit-breaker state, and pause or resume. Shown locked until fastn turns it on for your organization. |
+| **Monitoring**   | Owners and Admins. Is each trigger healthy? Per-trigger health, the dead-letter queue (replay or delete), circuit-breaker state, and pause or resume. Shown locked until Fastn turns it on for your organization. |
 
 A **Traces** view (which connected apps a run called, and how slow they were) exists at `/activity/traces` but is not on the tab strip yet.
 
@@ -157,8 +157,8 @@ A **Traces** view (which connected apps a run called, and how slow they were) ex
 | **Admin** (and Owner) | People, General, Billing, Roles, Audit log |
 | **Developer** and above | Environments, Secrets, Configs, Database, Workflow tags, Trash |
 
-Some things depend only on your role and cannot be granted or taken away with a custom role, such as using the fastn agent and reading the audit log. See [Roles](../manage/roles.md). Each screen has its own page under [Settings](../manage/README.md).
+Some things depend only on your role and cannot be granted or taken away with a custom role, such as using the Fastn agent and reading the audit log. See [Roles](../manage/roles.md). Each screen has its own page under [Settings](../manage/README.md).
 
 ### The account card
 
-Bottom-left. It shows who you are and which organization you are in. The chevron opens [your profile](../manage/profile.md); the up-down arrows open **Switch organization**, which lists every organization you belong to with your role in each: Owner, Admin, Developer, Operator, or Viewer (fastn staff show as Platform Admin). Everything else in the dashboard is scoped to whichever organization is selected, so check this first when something you expected to find is missing.
+Bottom-left. It shows who you are and which organization you are in. The chevron opens [your profile](../manage/profile.md); the up-down arrows open **Switch organization**, which lists every organization you belong to with your role in each: Owner, Admin, Developer, Operator, or Viewer (Fastn staff show as Platform Admin). Everything else in the dashboard is scoped to whichever organization is selected, so check this first when something you expected to find is missing.

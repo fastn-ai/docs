@@ -41,7 +41,7 @@ Operation: `listOrgs`
 POST /v1/orgs
 ```
 
-Creates an org. Partner-API callers register a customer (customer) with just name + orgId + tier: orgId is the PARTNER'S identifier for the customer, stored as external_ref (fastn generates its own id), and tier (id or display name of an entry in the account's customer_tiers) is written to the org config. slug is derived from name when omitted.
+Creates an org. Partner-API callers register a customer (customer) with just name + orgId + tier: orgId is the PARTNER'S identifier for the customer, stored as external_ref (Fastn generates its own id), and tier (id or display name of an entry in the account's customer_tiers) is written to the org config. slug is derived from name when omitted.
 
 Operation: `createTenant`
 
@@ -65,7 +65,7 @@ Operation: `createTenant`
 
 **Responses**
 
-* `201`: Org created. Account-tier responses carry an `owner` object ({ userId, email, inviteStatus }, `inviteStatus` is `accepted` when the named owner already had a fastn account they had verified, so it is not a 'somebody must act' flag); `inviteSent: false` is added only when the invite email failed to send.
+* `201`: Org created. Account-tier responses carry an `owner` object ({ userId, email, inviteStatus }, `inviteStatus` is `accepted` when the named owner already had a Fastn account they had verified, so it is not a 'somebody must act' flag); `inviteSent: false` is added only when the invite email failed to send.
 * `400`: Validation error / slug already exists / orgId vs externalRef mismatch / ownerEmail missing on an account / PERSONAL_ORG_NOT_ALLOWED: a customer is created with type end_org
 * `403`: This caller cannot set a paid plan, or account cap reached
 * `500`: Owner assignment failed and the partial org could not be removed, its slug stays in use
@@ -85,7 +85,7 @@ Operation: `getTenant`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `id` | path | string | Yes | The customer: fastn's org id, or the id you gave the customer at creation (orgId / externalRef). |
+| `id` | path | string | Yes | The customer: Fastn's org id, or the id you gave the customer at creation (orgId / externalRef). |
 
 **Responses**
 
@@ -106,7 +106,7 @@ Operation: `updateTenant`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `id` | path | string | Yes | The customer: fastn's org id, or the id you gave the customer at creation (orgId / externalRef). |
+| `id` | path | string | Yes | The customer: Fastn's org id, or the id you gave the customer at creation (orgId / externalRef). |
 
 **Request body**
 
@@ -138,7 +138,7 @@ Operation: `deleteTenant`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `id` | path | string | Yes | The customer: fastn's org id, or the id you gave the customer at creation (orgId / externalRef). |
+| `id` | path | string | Yes | The customer: Fastn's org id, or the id you gave the customer at creation (orgId / externalRef). |
 
 **Responses**
 
@@ -586,7 +586,7 @@ Operation: `createApiKey`
 | `environment` | `string` | No | One of: `production`, `staging`, `development`. |
 | `workflowEnvId` | `string` | No |  |
 | `permissions` | `string[]` | No |  |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 | `orgScope` | `string[]` | No |  |
 | `ipWhitelist` | `string[]` | No |  |
 | `rateLimit` | `integer` | No |  |
@@ -815,7 +815,7 @@ Operation: `whoami`
 | `data.signupProfile.jobRole` | `string` | One of: `engineering_lead`, `product_manager`, `solutions_architect`, `cto_vp_engineering`, `developer`, `devops_sre`, `founder`, `other`. |
 | `data.signupProfile.useCase` | `string` | Their signup use case, in their words or as a category |
 | `data.signupProfile.hint` | `string` | How to use these answers |
-| `data.memories` | `object` | The index of durable facts saved about this person, shared with the fastn dashboard agent: titles only, never content. Null for an API key, embed token or share link. Read `hint` before using it |
+| `data.memories` | `object` | The index of durable facts saved about this person, shared with the Fastn dashboard agent: titles only, never content. Null for an API key, embed token or share link. Read `hint` before using it |
 | `data.memories.items` | `object[]` |  |
 | `data.memories.items[].slug` | `string` |  |
 | `data.memories.items[].title` | `string` | The memory’s first line: the fact as a sentence |
@@ -968,7 +968,7 @@ Operation: `inviteUser`
 | `firstName` | `string` | No | Must not contain &lt;, >, or invisible characters. |
 | `lastName` | `string` | No | Must not contain &lt;, >, or invisible characters. |
 | `role` | `string` | No | One of owner, admin, developer, operator, viewer, end_user, or a custom role id (cr_...) of the target org. Default: `"viewer"`. |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 | `expiresAt` | `string` | No | Time-limited access: when the membership stops being valid. Must be in the future and carry a UTC offset. Omit for permanent access. |
 
 **Responses**
@@ -1217,7 +1217,7 @@ Operation: `listPendingUsers`
 GET /v1/users/{userId}
 ```
 
-Returns one member of the caller's org with role, status and invite state. userId may be "me" for the calling person; an API key or embed session gets 400 for "me" because it has no fastn user.
+Returns one member of the caller's org with role, status and invite state. userId may be "me" for the calling person; an API key or embed session gets 400 for "me" because it has no Fastn user.
 
 Operation: `getUser`
 

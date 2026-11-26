@@ -49,7 +49,7 @@ Operation: `storeConnections`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
+| `x-org-id` | header | string | No | The customer the request acts for: the id you gave the customer when you created it (its external ref), or its Fastn id. API-key calls only; the customer must belong to the key's account. When the key's identity-verification mode is not off, must be proven with x-identity-hmac. |
 | `x-user-id` | header | string | No | User identifier the partner's backend authorized for this request. May accompany x-org-id or stand alone; covered by x-identity-hmac when the key enforces identity verification. |
 | `x-identity-hmac` | header | string | No | Hex HMAC-SHA256 of "{x-org-id}\n{x-user-id}" (the header values exactly as sent, newline-joined; an absent header is the empty string) signed with the API key's identity-verification secret. Required when the key's idv mode is 'required' (missing/invalid = 401); logged-only under 'optional'; ignored when 'off'. |
 
@@ -66,7 +66,7 @@ Operation: `storeConnections`
 | `userId` | `string` | No |  |
 | `userEmail` | `string` | No |  |
 | `userName` | `string` | No |  |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 | `authProvider` | `string` | No |  |
 | `environmentId` | `string` | No | Optional, wenv_*. The workflow environment to make this connection in. A sandbox environment makes a sandbox connection: held to the plan's sandbox_connections allowance (Launch 3, Scale 20) instead of customer_connections, never counted as a customer connection, deleted after 7 days. A production environment, or none, makes an ordinary connection. Not together with environment. |
 | `environment` | `string` | No | Optional. "sandbox" makes a sandbox connection in the workspace's first sandbox environment, creating one named "Sandbox" (slug sandbox, or sandbox-2 when that is taken) when it has none, held to the plan's sandbox_environments limit. A credential pinned to a production environment is refused with 403 ENV_NOT_PERMITTED. Not together with environmentId (400 ENVIRONMENT_AMBIGUOUS). One of: `sandbox`. |
@@ -118,7 +118,7 @@ Operation: `getSandboxConnectionAllowance`
 
 | Name | In | Type | Required | Description |
 | --- | --- | --- | --- | --- |
-| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | query | string | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 
@@ -254,7 +254,7 @@ Operation: `refreshConnection`
 POST /v1/connect-links
 ```
 
-Returns a dashboard URL where a user connects, reconnects or fixes the credentials of one connector without signing in; connectionName names an existing connection to show on the page, to reconnect or fix it; when no connection has that name it is only the suggested name for a new one, which the person may change, so omit it for a new connection. Lifetime defaults to CONNECT_LINK_DEFAULT_TTL_MINUTES (20) and can be set per link with expiresInMinutes up to CONNECT_LINK_MAX_TTL_MINUTES (default and ceiling 7 days = 10080; a deployment may set it lower, never higher); the response carries expiresAt. The connection is made at the caller's own workspace and customer. The page always offers Production and Sandbox (testing) for a new connection, with Sandbox selected, which creates the workspace's sandbox environment on connect when it has none; environment: "sandbox" is the same as leaving it out. A customer whose tier has no sandbox gets a page that offers Production only, and asking for Sandbox is refused (403 SANDBOX_NOT_IN_TIER). A link minted by a credential pinned to an environment connects there and offers no choice. In a client that shows MCP App panels the page opens inline; the [fastn panel] note in the result says whether to give the user the link. Requires connections.create.
+Returns a dashboard URL where a user connects, reconnects or fixes the credentials of one connector without signing in; connectionName names an existing connection to show on the page, to reconnect or fix it; when no connection has that name it is only the suggested name for a new one, which the person may change, so omit it for a new connection. Lifetime defaults to CONNECT_LINK_DEFAULT_TTL_MINUTES (20) and can be set per link with expiresInMinutes up to CONNECT_LINK_MAX_TTL_MINUTES (default and ceiling 7 days = 10080; a deployment may set it lower, never higher); the response carries expiresAt. The connection is made at the caller's own workspace and customer. The page always offers Production and Sandbox (testing) for a new connection, with Sandbox selected, which creates the workspace's sandbox environment on connect when it has none; environment: "sandbox" is the same as leaving it out. A customer whose tier has no sandbox gets a page that offers Production only, and asking for Sandbox is refused (403 SANDBOX_NOT_IN_TIER). A link minted by a credential pinned to an environment connects there and offers no choice. In a client that shows MCP App panels the page opens inline; the [Fastn panel] note in the result says whether to give the user the link. Requires connections.create.
 
 Operation: `createConnectLink`
 
@@ -304,7 +304,7 @@ Operation: `initiateOauthConnection`
 | `oauthVariables` | `object` | No |  |
 | `source` | `string` | No |  |
 | `connectionScope` | `string` | No |  |
-| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its fastn id. |
+| `orgId` | `string` | No | The customer: the id you gave it (its external ref), or its Fastn id. |
 
 **Responses**
 

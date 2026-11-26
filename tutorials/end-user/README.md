@@ -20,10 +20,10 @@ layout:
 
 <figure><img src="../../.gitbook/assets/lifecycle/fastn-lifecycle-4-customize.svg" alt="Stage 4, Customize: the customer's admin connects accounts and adapts integrations in the widget"><figcaption><p>Where this fits: stage 4 of the integration lifecycle</p></figcaption></figure>
 
-These tutorials are for the people at your customer who use integrations through the widget embedded in a SaaS product. You don't need a fastn account or dashboard access. Everything happens inside the product you already use.
+These tutorials are for the people at your customer who use integrations through the widget embedded in a SaaS product. You don't need a Fastn account or dashboard access. Everything happens inside the product you already use.
 
 {% hint style="info" %}
-**Note for SaaS companies:** Share this section with your customers when they ask how to use the integrations you've embedded. These tutorials describe the customer experience in the widget, not the fastn dashboard.
+**Note for SaaS companies:** Share this section with your customers when they ask how to use the integrations you've embedded. These tutorials describe the customer experience in the widget, not the Fastn dashboard.
 {% endhint %}
 
 ### Tutorials in this section
@@ -36,6 +36,6 @@ These tutorials are for the people at your customer who use integrations through
 
 [**Get alerted**](getting-alerted.md) - Set up your own alerts so you hear when an integration fails or stops syncing.
 
-[**Connect Claude and other AI clients**](connecting-claude.md) - Generate a one-time MCP URL from the widget's **⋯** menu and drive your integrations from Claude, with no fastn account.
+[**Connect Claude and other AI clients**](connecting-claude.md) - Generate a one-time MCP URL from the widget's **⋯** menu and drive your integrations from Claude, with no Fastn account.
 
 [**View sync status and history**](viewing-sync-status-and-history.md) - Check what's syncing, view run history, and troubleshoot when something fails.

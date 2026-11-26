@@ -31,11 +31,11 @@ Each company using your product is a customer. Each customer gets an isolated sp
 3. Enter a **Customer Name**. **Slug** is generated from the name, and **Admin Email** (invite an admin at the customer) and **Tier** (the tier the customer is billed under) are optional. Optionally, put your own ID for this customer (for example `customer_12345`) in **External ID**; if you leave it empty, it defaults to the slug.
 4. Click **Create Customer** at the bottom of the form.
 
-**You should see:** the new customer in the **Customers** list. Note fastn's **customer id** or the External ID: API calls and widget embedding use one of them.
+**You should see:** the new customer in the **Customers** list. Note Fastn's **customer id** or the External ID: API calls and widget embedding use one of them.
 
 #### Which identifier to use
 
-API calls and widget configuration identify a customer. Use fastn's customer id, or the External ID shown on the customer (your own id if you set one when creating the customer; otherwise it defaults to the slug). An identifier that matches neither returns 404 "Tenant not found".
+API calls and widget configuration identify a customer. Use Fastn's customer id, or the External ID shown on the customer (your own id if you set one when creating the customer; otherwise it defaults to the slug). An identifier that matches neither returns 404 "Tenant not found".
 
 {% hint style="info" %}
 Pick one convention early. Changing identifiers later means updating every API call.

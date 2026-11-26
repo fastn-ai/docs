@@ -15,12 +15,12 @@ hidden: true
 | **Slug** | `microsoftIntune` |
 
 ## Setup guide
-This guide shows how to register your own Microsoft Entra app for Microsoft Intune and add it to fastn, so your customers sign in to Intune through your app.
+This guide shows how to register your own Microsoft Entra app for Microsoft Intune and add it to Fastn, so your customers sign in to Intune through your app.
 
 For Microsoft Intune's own setup steps, see [Register an application with the Microsoft identity platform](https://learn.microsoft.com/en-us/graph/auth-register-app-v2) in the Microsoft Intune documentation.
 
 ### Before you start
-- You need the Owner, Admin or Developer role in fastn.
+- You need the Owner, Admin or Developer role in Fastn.
 - You need a Microsoft Entra ID tenant where you can register apps. Microsoft lists Cloud Application Administrator as the least privileged role that can register an app.
 - The customers who connect need Microsoft Intune to be correctly licensed in their tenant. Microsoft states that using the Graph API to configure Intune still requires a licensed Intune service.
 
@@ -48,10 +48,10 @@ For Microsoft Intune's own setup steps, see [Register an application with the Mi
    - `DeviceManagementApps.Read.All`
 9. If any of these permissions require admin consent in your tenant, an admin can select **Grant admin consent for <your tenant>** on the **API permissions** page. Admins in your customers' tenants may also need to consent before their users can connect.
 10. Select **Certificates & secrets** > **Client secrets** > **New client secret**. Add a description, pick an expiration (24 months or less), and select **Add**.
-11. Copy the secret's **Value** right away. Microsoft does not show it again after you leave the page. Note the expiration date, because you need to create a new secret and update fastn before it expires.
+11. Copy the secret's **Value** right away. Microsoft does not show it again after you leave the page. Note the expiration date, because you need to create a new secret and update Fastn before it expires.
 
-### Add your app to fastn
-1. In fastn, go to Build → Integrations → Connectors and open **Microsoft Intune**.
+### Add your app to Fastn
+1. In Fastn, go to Build → Integrations → Connectors and open **Microsoft Intune**.
 2. Open the **Auth** tab and select **Manage providers**.
 
 <figure><img src="../../.gitbook/assets/connector-guides/auth-tab.png" alt="The connector's Auth tab with Manage providers"><figcaption><p>Open the connector's Auth tab, then Manage providers.</p></figcaption></figure>
@@ -66,7 +66,7 @@ For Microsoft Intune's own setup steps, see [Register an application with the Mi
 7. Save the provider, then choose **Use this app** so it becomes the Preferred app.
 8. In your widget, set the Microsoft Intune connector's **Auth provider** setting to your app instead of **Use platform default**.
 
-Customers who skip this setup sign in through fastn's shared app for Microsoft Intune.
+Customers who skip this setup sign in through Fastn's shared app for Microsoft Intune.
 
 After connecting, call actions from workflow code as `fastn.connector.microsoftIntune.<actionSlug>()`.
 

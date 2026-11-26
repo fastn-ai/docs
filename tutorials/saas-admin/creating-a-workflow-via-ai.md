@@ -1,5 +1,5 @@
 ---
-description: Build a workflow by describing it in plain words to the fastn agent.
+description: Build a workflow by describing it in plain words to the Fastn agent.
 layout:
   width: default
   title:
@@ -14,14 +14,14 @@ layout:
     visible: true
 ---
 
-# Create a workflow with the fastn agent
+# Create a workflow with the Fastn agent
 
-The **fastn agent** is fastn's own builder. You describe the workflow, what data to sync and between which apps, and it sets up the connectors, handles authentication, maps the fields, writes test cases, and then produces the workflow code and a diagram of it.
+The **Fastn agent** is Fastn's own builder. You describe the workflow, what data to sync and between which apps, and it sets up the connectors, handles authentication, maps the fields, writes test cases, and then produces the workflow code and a diagram of it.
 
 ### Before you start
 
 * The **Operator** role or above.
-* A paid plan (Scale or Enterprise), unless fastn has turned building on for your organization. On Launch you can still ask the agent questions, and you can build from your own AI tool through the [fastn MCP server](../../build/mcp-gateway/README.md). See [Build with fastn agent](../../build/agent/README.md).
+* A paid plan (Scale or Enterprise), unless Fastn has turned building on for your organization. On Launch you can still ask the agent questions, and you can build from your own AI tool through the [Fastn MCP server](../../build/mcp-gateway/README.md). See [Build with fastn agent](../../build/agent/README.md).
 * The [Quickstart: your first integration](../../getting-started/quickstart.md), so you know what workflows and triggers are.
 
 ### Where to start
@@ -167,7 +167,7 @@ The editor also holds the workflow's configuration (its name, description, and e
 
 ### What you've learned
 
-* How to open the fastn agent from Create integration or the Home prompt
+* How to open the Fastn agent from Create integration or the Home prompt
 * How to describe a workflow in plain language so the agent can build it
 * How the agent handles the full cycle: connector setup, inline auth, field mapping, and test cases
 * How to view the workflow the agent built, end to end
