@@ -22,6 +22,10 @@ At the end, you have a trigger that starts one of your workflows on its own: whe
 
 A trigger lives separately from the workflows it runs. You create it under **Build → Integrations → Triggers**, then route it to one or more workflows. For what triggers are and how routes work, see [Triggers](../../build/triggers/README.md).
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../../build/mcp-gateway/README.md) and using its tools to create and test triggers. For example, ask it: *"Create a webhook trigger for the sync-new-contacts workflow and test it."* To connect your AI agent, see [Connect your AI tool](../../build/mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../../build/mcp-gateway/claude.md), [Claude Code](../../build/mcp-gateway/claude-code.md), [Cursor](../../build/mcp-gateway/cursor.md), [VS Code](../../build/mcp-gateway/vscode.md) or [any other MCP client](../../build/mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### Before you start
 
 * **Who this is for:** An Owner, Admin or Developer. Operators can pause, resume and replay triggers, but can't create them.

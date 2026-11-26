@@ -22,6 +22,10 @@ A **webhook trigger** gives you a URL. When another app sends an HTTP POST to th
 
 This page covers creating and configuring a webhook trigger. To call one from your backend, see [Call a webhook trigger](../../operate/triggers/using-a-webhook-trigger.md). To have your AI tool create one for you, see [Build a trigger with AI](README.md#build-a-trigger-with-ai).
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to create and test webhook triggers. For example, ask it: *"Create a webhook trigger that runs the sync-new-contacts workflow."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### The Webhooks list
 
 The list has these columns: `Name`, `Type`, `Status`, `Auth`, `Routes`, `Created`, then the row actions.

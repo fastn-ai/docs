@@ -24,6 +24,10 @@ The trade is one extra thing to check. Because Fastn manages the subscription wi
 
 This page covers creating and configuring an app event trigger. To watch the events it receives, see [Operate → Triggers](../../operate/triggers/README.md).
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to create app event triggers. For example, ask it: *"Run the sync-new-contacts workflow whenever a contact is created in HubSpot."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### The App events list
 
 The list has these columns: `Name`, `Connector`, `Type`, `Events`, `Status`, `Subscription`, `Routes`, `Created`, `Actions`.

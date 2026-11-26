@@ -22,6 +22,10 @@ A **schedule trigger** runs your workflows on a clock you set. Use it for anythi
 
 This page covers creating and configuring a schedule trigger. To check its runs, see [Operate → Triggers](../../operate/triggers/README.md).
 
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to create and update schedule triggers. For example, ask it: *"Run the sync-new-contacts workflow every weekday at 9am."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
+
 ### The Schedulers list
 
 The list has these columns: `Name`, `Schedule`, `Next run`, `Last run`, `Status`, `Failures`, `Timezone`, `Routes`, `Created`, `Actions`. Two are worth knowing before you scan it:
