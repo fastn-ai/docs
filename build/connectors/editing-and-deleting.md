@@ -15,26 +15,35 @@ layout:
 ---
 
 # Edit, publish, and delete
-Everything on this page applies to connectors your workspace **owns**: ones you created from the **Create connector** menu or brought in with **Import from file**. Their card is badged `Custom` and reads *Managed by* followed by your organization's name. Managed connectors (badged `managed`, *Managed by Fastn*) are read-only in your workspace; to change one of their actions, use [Propose an update](action-detail.md#platform-owned-actions-and-propose-an-update).
+
+**Build → Integrations → Connectors** → open a connector · [Open in Fastn](https://app.fastn.dev/integrations)
+
+A connector your workspace owns is yours to change: you can edit its settings, add actions, publish new versions to your customers, and delete it. Changes go to a **Test** version first, so customers keep running the **Live** version until you publish.
+
+This page applies only to connectors your workspace **owns**: ones you created from the **Create connector** menu or brought in with **Import from file**. Their card is badged `Custom` and reads *Managed by* followed by your organization's name. Managed connectors (badged `managed`, *Managed by Fastn*) are read-only in your workspace; to change one of their actions, use [Propose an update](action-detail.md#platform-owned-actions-and-propose-an-update).
+
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to update connectors and add actions to them. For example, ask it: *"Add a List Invoices action to the Acme CRM connector."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
 
 ### Where the controls are
 
 On an owned connector:
 
-* the header's **⋯** menu holds **Edit** and **Delete**;
-* the connector's row in the rail has **+** (Add action) and a **⋯** menu with **New Folder**, **Import**, **Export All**, **Connect**, **Edit**, and **Delete**;
-* the catalog card's **⋯** menu holds **Select**, **Edit**, **Export**, and **Delete** (see [Import and export](importing-and-exporting.md#export-connectors));
-* each test version under **Overview → Versions** has **Publish to live**.
+* **Header:** the **⋯** menu holds **Edit** and **Delete**.
+* **Rail:** the connector's row has **+** (Add action) and a **⋯** menu with **New Folder**, **Import**, **Export All**, **Connect**, **Edit**, and **Delete**.
+* **Catalog card:** the **⋯** menu holds **Select**, **Edit**, **Export**, and **Delete** (see [Import and export](importing-and-exporting.md#export-connectors)).
+* **Overview → Versions:** each test version has **Publish to live**.
 
 ### Edit a connector
 
-**⋯ → Edit** opens **Edit connector**. It has the same Identity, Connection, and Authentication sections as [Create a connector](creating-a-connector.md), plus **Credential verification**:
+**⋯ → Edit** opens **Edit connector**. It has the same Identity, Connection, and Authentication sections as [Create a connector](creating-a-connector.md), plus **Credential verification**.
 
-> Runs when someone connects, so a wrong API key is caught immediately instead of failing later in a workflow. Required before this connector can go live.
+**Credential verification** checks a credential each time someone connects to the connector. A wrong API key is caught at that moment, instead of failing later in a workflow. It doesn't affect publishing.
 
 | Field | Meaning |
 | --- | --- |
-| **Verification action** | An action fastn runs right after someone connects, to prove the credential works. *Only read-only actions with no required inputs can be used.* The default, **None - connections stay unverified**, skips the check. |
+| **Verification action** | An action Fastn runs right after someone connects, to prove the credential works. *Only read-only actions with no required inputs can be used.* The default, **None - connections stay unverified**, skips the check. |
 | **Success path** | Optional. *A field that must be present in the response. Use this when the provider answers bad credentials with 200 and a login page.* For example `$.id`. |
 
 **Save changes** saves. The footer explains where the change goes: *Changes apply to the test version until you publish.*
@@ -60,7 +69,7 @@ Every saved change goes to the connector's **Test** version. Customers keep runn
 2. Click **Publish to live** on the version.
 3. In **Publish to live?**, click **Publish**. The version becomes the one your customers run; anyone not pinned moves to it immediately.
 
-Customers pinned to another version (see [Version pins](inside-a-connector.md#version-pins)) stay on it. The Edit dialog also says [credential verification](#edit-a-connector) is *required before this connector can go live*. Publishing a test version without it is not blocked, so add a verification action before customers rely on the connector.
+Customers pinned to another version (see [Version pins](inside-a-connector.md#version-pins)) stay on it. Add a [verification action](#edit-a-connector) before customers rely on the connector, so a bad credential is caught when they connect.
 
 ### Restore a version
 
@@ -72,13 +81,13 @@ Each save adds a version with a note of what changed, for example *Updated descr
 
 ### Delete a connector
 
-{% hint style="danger" %}
-Either way, every workflow and trigger that uses the connector's connections stops working. Check who uses it on the **Connections** tab before deleting.
+{% hint style="warning" %}
+Whether you soft delete or permanently delete a connector, every workflow and trigger that uses its connections stops working. Check who uses it on the **Connections** tab before deleting.
 {% endhint %}
 
 **⋯ → Delete** opens **Delete Connector**:
 
-* **Soft delete** (the default): the connector disappears from the catalog. The dialog says it *can be restored*. Every connection on it is disconnected and its credentials are deleted; restoring brings back the connector, not the credentials.
-* **Permanently delete (cannot be undone)**: tick this box to remove the connector permanently.
+* **Soft delete:** the default. The connector disappears from the catalog. The dialog says it *can be restored*. Every connection on it is disconnected and its credentials are deleted; restoring brings back the connector, not the credentials.
+* **Permanently delete (cannot be undone):** tick this box to remove the connector permanently.
 
 After **Delete**, you return to the catalog.

@@ -1,5 +1,5 @@
 ---
-description: "The Webhook config tab: how fastn subscribes to an app's events for each customer, the config table, and every field of the config form."
+description: "The Webhook config tab: how Fastn subscribes to an app's events for each customer, the config table, and every field of the config form."
 layout:
   width: default
   title:
@@ -16,17 +16,25 @@ layout:
 
 # Webhook config
 
-A **webhook config** tells fastn how to subscribe to an app's events on behalf of each customer, so that an [app event trigger](../triggers/app-events.md) can start a workflow when something happens in the app. You set it up once per connector; every customer who connects then gets the subscription automatically.
+**Build → Integrations → Connectors** → open a connector → **Webhook config** · [Open in Fastn](https://app.fastn.dev/integrations)
+
+A **webhook config** tells Fastn how to subscribe to an app's events on behalf of each customer, so that an [app event trigger](../triggers/app-events.md) can start a workflow when something happens in the app. You set it up once per connector; every customer who connects then gets the subscription automatically.
+
+For example, with a webhook config on a billing app, a workflow can run each time an `invoice.created` event arrives from any customer's account, without each customer setting up a webhook by hand.
 
 > Tell fastn how to subscribe to HubSpot's events on behalf of each customer, so a trigger can fire when something happens there.
+
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to set up a connector's webhook config. For example, ask it: *"Set up the webhook config on the Acme CRM connector so it receives new-order events."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
 
 ### How it works
 
 1. A customer connects to the connector.
-2. fastn runs the config's **Subscribe** code with that customer's connection. The code registers the subscription with the app. With the **App** type, every customer's events arrive at one shared fastn URL; with **Event Webhook**, a separate webhook is registered for each event.
-3. The app sends events to fastn. fastn checks the request (see [Webhook verification](#webhook-verification)), works out which customer and which event it is, and fires the matching app event triggers.
-4. When the customer disconnects, fastn runs the **Unsubscribe** code to remove the webhook.
-5. For apps whose subscriptions expire, fastn runs the **Renew** code before they do.
+2. Fastn runs the config's **Subscribe** code with that customer's connection. The code registers the subscription with the app. With the **App** type, every customer's events arrive at one shared Fastn URL; with **Event Webhook**, a separate webhook is registered for each event.
+3. The app sends events to Fastn. Fastn checks the request (see [Webhook verification](#webhook-verification)), works out which customer and which event it is, and fires the matching app event triggers.
+4. When the customer disconnects, Fastn runs the **Unsubscribe** code to remove the webhook.
+5. For apps whose subscriptions expire, Fastn runs the **Renew** code before they do.
 
 ### The config table
 
@@ -39,16 +47,16 @@ A **webhook config** tells fastn how to subscribe to an app's events on behalf o
 | **Created** | When the config was created. |
 | **Actions** | **Edit**, **Execute**, and **Delete**, on connectors your workspace owns. Empty on managed connectors. |
 
-* **Edit** opens **Edit webhook config** below the table, the same form as **New config** with **Update** instead of **Create**.
-* **Execute** runs the **Subscribe** snippet once with empty input and reports *Subscription executed successfully* when it works. It is disabled if the config has no Subscribe code.
-* **Delete** asks *Delete this webhook config?* in a browser confirmation, then removes it. The tab returns to *No webhook config yet* if it was the only one.
+* **Edit:** opens **Edit webhook config** below the table, the same form as **New config** with **Update** instead of **Create**.
+* **Execute:** runs the **Subscribe** snippet once with empty input and reports *Subscription executed successfully* when it works. It is disabled if the config has no Subscribe code.
+* **Delete:** asks *Delete this webhook config?* in a browser confirmation, then removes it. The tab returns to *No webhook config yet* if it was the only one.
 
 Until a connector has a config, the tab reads:
 
 > No webhook config yet · Until one exists, customers of this connector can be polled but cannot be notified. Most providers support one webhook for the whole app.
 
 {% hint style="info" %}
-Webhook configs on **managed** connectors are maintained by fastn and are read-only in your workspace: **New config** is shown there but does not open a form. On a connector your workspace owns, it opens the form below.
+Webhook configs on **managed** connectors are maintained by Fastn and are read-only in your workspace: **New config** is shown there but does not open a form. On a connector your workspace owns, it opens the form below.
 {% endhint %}
 
 ### The config form
@@ -62,10 +70,10 @@ Webhook configs on **managed** connectors are maintained by fastn and are read-o
 | **Available as a trigger source** | On: the connector appears in the list of connectors you can pick for an app event trigger. Off: it is hidden there, but inbound webhooks and existing triggers keep working. |
 | **Type** | **One webhook for the whole app**: *The provider sends every customer event to one URL and fastn routes it.* **One webhook per event**: *The provider registers a separate webhook for each event you subscribe to.* |
 | **Auth provider** | *(App type only.)* *Which credential fastn uses to register the subscription.* |
-| **Webhook URL** | *(App type only, once an auth provider is chosen.)* The fastn URL to give the app. *This URL is shared across all events for this connector.* |
+| **Webhook URL** | *(App type only, once an auth provider is chosen.)* The Fastn URL to give the app. *This URL is shared across all events for this connector.* |
 | **Event key** | *(App type only.)* *The field in the incoming payload that says what happened. fastn reads it to decide which trigger to fire.* For example `event_type`. |
 | **Route deliveries to customers by** | *(App type only.)* **Account on the customer's connection (Get User Account Action)** matches each event to a customer through the [Get User Account Action](#get-user-account-action). **Customer named in the call (no connection)** routes by the customer named in the incoming call instead, and hides Get User Account Action. |
-| **Require API key** | *(App type only.)* On: every call to the connector's webhook URL must carry your fastn API key in `x-api-key`, and calls without it are refused. Off: the provider can post to the URL without one. |
+| **Require API key** | *(App type only.)* On: every call to the connector's webhook URL must carry your Fastn API key in `x-api-key`, and calls without it are refused. Off: the provider can post to the URL without one. |
 
 #### Code: Subscribe, Unsubscribe, Renew
 
@@ -103,7 +111,7 @@ Each input has a **Key**, a **Default value**, and a **Hidden** checkbox. **+ Ad
 
 #### Get User Account Action
 
-Tells fastn how to match an incoming event to the right customer. It is shown for the **Event Webhook** type and for the **App** type when **Route deliveries to customers by** is set to **Account on the customer's connection (Get User Account Action)**. **+ Add Required Action** adds one:
+Tells Fastn how to match an incoming event to the right customer. It is shown for the **Event Webhook** type and for the **App** type when **Route deliveries to customers by** is set to **Account on the customer's connection (Get User Account Action)**. **+ Add Required Action** adds one:
 
 * **Select an action**: an action that returns the customer's account, run against their connection when they set up an app trigger.
 * **Label path** and **Value path**: dotted paths into that action's response, for example `data.response.user` and `data.response.user_id`. The value becomes the trigger's account ID.
@@ -117,13 +125,13 @@ Tells fastn how to match an incoming event to the right customer. It is shown fo
 | --- | --- |
 | **None - accept all requests** | The app does not sign its webhooks. |
 | **HMAC signature** | The app signs each request with a shared secret. Set **Signature Header** (for example `x-slack-signature`), **Algorithm** (for example `sha256`), **Signature Prefix** (for example `v0=` or `sha256=`), **Signature Format**, **Signing Payload**, and optionally **Timestamp Header** and **Max Timestamp Age (ms)** (for example `300000`) to reject replayed requests. |
-| **Verification token (Notion-style)** | The app sends a one-time token when the subscription is created. fastn answers it, stores the token as **Captured Token**, and uses it to verify later events. For Notion, paste the captured token into Notion under **Webhooks → Verify** to activate the subscription. |
-| **Header token (echoed subscription token, Google push)** | The app echoes back, in a header, a token fastn chose when it subscribed. Set **Token Header** (for example `x-goog-channel-token`) and **Token**. No body is signed, so this is the only check. |
+| **Verification token (Notion-style)** | The app sends a one-time token when the subscription is created. Fastn answers it, stores the token as **Captured Token**, and uses it to verify later events. For Notion, paste the captured token into Notion under **Webhooks → Verify** to activate the subscription. |
+| **Header token (echoed subscription token, Google push)** | The app echoes back, in a header, a token Fastn chose when it subscribed. Set **Token Header** (for example `x-goog-channel-token`) and **Token**. No body is signed, so this is the only check. |
 | **Challenge-response only** | The app checks the URL with a challenge request and does not sign events. |
 
 For HMAC, enter the provider's webhook signing secret in **Signing Secret**. The form's help text also notes that the shared secret is read from the `client_secret` of the connector's auth provider.
 
-A separate checkbox, **Enable URL-verification challenge handshake (Slack-style)**, answers the app's URL-verification request. When it is ticked, set **Trigger Field** and **Trigger Value** (for example `type` = `url_verification`), and **Response Field** (for example `challenge`), the field fastn echoes back.
+A separate checkbox, **Enable URL-verification challenge handshake (Slack-style)**, answers the app's URL-verification request. When it is ticked, set **Trigger Field** and **Trigger Value** (for example `type` = `url_verification`), and **Response Field** (for example `challenge`), the field Fastn echoes back.
 
 ### Save the config
 

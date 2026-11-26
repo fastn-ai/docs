@@ -16,7 +16,9 @@ layout:
 
 # Inside a connector
 
-`/integrations/connectors/<slug>`. Click a connector's name in the catalog to open it.
+**Build → Integrations → Connectors** → select a connector's name · [Open in Fastn](https://app.fastn.dev/integrations)
+
+A connector's detail page shows everything about one connector in one place: its actions, how people sign in to it, who has connected, and which version customers run. Open it to test the connector, check its connections, or change a connector your workspace owns. Its address is `/integrations/connectors/<slug>`.
 
 <figure><img src="../../.gitbook/assets/screens/connector-detail-overview.webp" alt="The HubSpot connector page: the action rail on the left listing 300 actions, the header with v1.0 Test and a Connect button, tabs Overview, Auth, Connections, Version pins and Webhook config, tiles for 0 connections, 1 auth method (OAuth 2.0, set as default) and current version v1.0, and a Details table with slug hubspot and visibility Public"><figcaption>A catalog connector's Overview tab.</figcaption></figure>
 
@@ -56,7 +58,7 @@ Then a **Details** table:
 | Field | Meaning |
 | --- | --- |
 | **Slug** | *Used in the API path and in code.* |
-| **Visibility** | **Private**: *Only your organization can see it.* **Public**: *Customers under your organization can use it when Catalog connectors is on. Other organizations never see it.* |
+| **Visibility** | **Private**: *Only your organization can see it.* **Public**: *Customers under your organization can use it when Catalog connectors is on.* A public connector is part of the shared catalog, so other organizations can see it too. **Catalog connectors** is a widget setting; see [Widget features](../../embed/widget-builder/features.md). New connectors are always `Private`, and only a platform admin can make one `Public`. |
 | **Auth methods** | *What your customers authorize with.* |
 | **Created** | When the connector was added. |
 
@@ -64,8 +66,8 @@ Then a **Details** table:
 
 Every saved change to a connector creates a version. The **Versions** section lists the five most recent, newest first, with a note such as *Initial version* or *Auto-versioned on update* and the date.
 
-* **Test** lists versions that are still being tested. Customers do not run them.
-* **Live** lists published versions, the ones customers run.
+* **Test:** versions that are still being tested. Customers do not run them.
+* **Live:** published versions, the ones customers run.
 
 If a list is empty it reads *No test versions yet.* (or the live equivalent). On a connector your workspace owns, each test version also has a **Publish to live** button; see [Edit, publish, and delete](editing-and-deleting.md#publish-a-version).
 
