@@ -33,6 +33,12 @@ fastn lets your product offer integrations with the apps your customers use, suc
 **Try it in five minutes, on the free plan.** Sign up at [app.fastn.dev](https://app.fastn.dev), click **Connect your AI tool** in the top bar, and ask Claude or Cursor: *"Using fastn, when a new contact is created in HubSpot, post their name and email in our #sales Slack channel."* Then run its test, fully mocked, so no real data is touched. Step by step: [Quickstart](getting-started/quickstart.md).
 {% endhint %}
 
+**Want to know if fastn fits your use case?** Ask your AI agent. [Find out if fastn fits your use case](getting-started/plan-your-integration.md) shows how, in four steps. Or copy this line into your AI tool and it sets itself up for fastn:
+
+```
+Fetch and execute the instructions to set me up for fastn from https://raw.githubusercontent.com/fastn-ai/fastn-claude-plugins/main/agent-setup/prompt.md
+```
+
 ## The parts
 
 fastn has four parts:

@@ -4,6 +4,7 @@
 
 * [Welcome to fastn](README.md)
 * [Quickstart: your first integration](getting-started/quickstart.md)
+* [Find out if fastn fits your use case](getting-started/plan-your-integration.md)
 * [Authentication](tutorials/developer/authentication-and-api-keys.md)
 * [Core concepts](getting-started/concepts.md)
   * [Platform tour](getting-started/platform-tour.md)

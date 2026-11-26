@@ -43,6 +43,8 @@ Onboarding can earn up to 50 AI credits: 15, 10, and 5 for the setup steps, and 
 
 To build a first integration outside onboarding, see [Quickstart: your first integration](../quickstart.md).
 
+To find out if fastn fits your use case before you build, see [Find out if fastn fits your use case](../plan-your-integration.md).
+
 **Get help:** ask the fastn agent questions at `/agent`, on every plan (on Launch, Home links to it as **Ask the fastn agent a question**), or contact the fastn team from the help menu in fastn.
 
 ### In this section
