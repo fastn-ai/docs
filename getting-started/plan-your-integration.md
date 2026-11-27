@@ -72,8 +72,12 @@ An answer looks like this (the details depend on your apps):
 
 When the agent can't confirm something, it says so. It never asks for a password or API key in the chat.
 
-### When something doesn't fit
+### Need more details
 
-The agent says so, offers a workaround if there is one, and helps you write a request to Fastn. Send it from the Fastn dashboard: **Help (?)** → **Contact support**. To talk it through with a person, use the same place and include the agent's summary.
+If Fastn doesn't cover part of your use case, the agent tells you and suggests a workaround if there is one. To ask the Fastn team about it:
+
+1. Ask your agent to summarize your use case and what's missing.
+2. In the Fastn dashboard, click **Help (?)** → **Contact support**.
+3. Paste the summary and send it.
 
 To learn what each part of Fastn does, read [Core concepts](concepts.md).
