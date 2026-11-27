@@ -1,8 +1,7 @@
 ---
 description: >-
-  Fastn lets your product offer integrations with the apps your customers use.
-  You build each integration once, embed it in your product, and Fastn runs it
-  for every customer.
+  Fastn is an embedded integration platform for B2B SaaS. Build each
+  integration once, and offer it to your end users inside your product.
 layout:
   width: default
   title:
@@ -19,9 +18,13 @@ layout:
 
 # Welcome to Fastn
 
-Fastn lets your product offer integrations with the apps your customers already use, such as HubSpot, Salesforce and Slack.
+Fastn is an embedded integration platform for B2B SaaS products. It lets your end users connect the apps they already use, such as their CRM, ERP or support desk, from inside your product.
 
-You build each integration once. Your customers then connect their own accounts from inside your product, and Fastn runs the integration for each of them, with that customer's own data and settings. For example, a project management tool can let each customer connect their own Slack workspace and post new tasks to a Slack channel, without building a Slack integration per customer.
+Build integrations with your preferred AI agent using Fastn's MCP tools, and embed them in your product in minutes. Fastn includes:
+
+* **Fine-tuning for each end user:** every end user can adjust an integration to fit their own use case.
+* **Insights and alerts:** end users can review logs and metrics for their integrations and set their own alerts.
+* **A maintainer agent:** it tells you when a third-party app changes its API, and helps you deploy the update your integrations need.
 
 ## Get started
 
