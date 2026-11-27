@@ -3,6 +3,7 @@
 ## Get started
 
 * [Welcome to Fastn](README.md)
+* [Features](getting-started/features.md)
 * [Quickstart: your first integration](getting-started/quickstart.md)
 * [Find out if Fastn fits your use case](getting-started/plan-your-integration.md)
 * [Authentication](tutorials/developer/authentication-and-api-keys.md)

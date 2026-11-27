@@ -20,11 +20,7 @@ layout:
 
 Fastn is an embedded integration platform for B2B SaaS products. It lets your customers connect the apps they already use, such as their CRM, ERP or support desk, from inside your product.
 
-Build integrations with your preferred AI agent using Fastn's MCP tools, and embed them in your product in minutes. Fastn includes:
-
-* **Fine-tuning for each customer:** every customer can adjust an integration to fit their own use case.
-* **Insights and alerts:** customers can review logs and metrics for their integrations and set their own alerts.
-* **A maintainer agent:** it tells you when a third-party app changes its API, and helps you deploy the update your integrations need.
+Build integrations with your preferred AI agent using Fastn's MCP tools, and embed them in your product in minutes. Fastn also handles customizability, monitoring and maintenance for every integration. See [Features](getting-started/features.md).
 
 ## Get started
 
@@ -56,22 +52,6 @@ Build integrations with your preferred AI agent using Fastn's MCP tools, and emb
 
 To learn the building blocks, such as connectors, connections and workflows, see [Core concepts](getting-started/concepts.md).
 
-## What Fastn handles for you
-
-Each row is something you would otherwise build and run yourself.
-
-| Area | What Fastn does | What you don't have to build |
-| --- | --- | --- |
-| **Sign-in and credentials** | The widget runs each app's own OAuth or API-key sign-in. Fastn stores every credential encrypted, scoped to one customer, and renews OAuth tokens. | An OAuth flow per app, a credential store, and token refresh. |
-| **Customer isolation** | Your backend mints a short-lived token for one customer. The widget, API calls and runs see only that customer's connections and data. | Customer separation in every integration, and the risk of one customer's data reaching another. |
-| **Connector catalog** | Over 1,000 connectors, each with its actions, auth methods and webhooks, plus unified APIs that work the same way across every app of a kind, such as every CRM. | A client for each app's API, and a separate code path per CRM or helpdesk. |
-| **Building from a description** | Describe an integration to your AI tool through the Fastn MCP server (every plan), or to the Fastn agent (Scale or Enterprise). It picks the connectors, writes the workflow and tests it. | Hand-written workflows, and developer time for every new integration request. |
-| **Per-customer changes** | Customers change field mappings, filters and sync direction in the widget, or ask the widget assistant. Changes apply only to that customer. | Custom builds and forks for individual customers. |
-| **Running workflows** | Workflows run on a webhook, a schedule or an app event, synchronously for up to 25 seconds or in the background for long jobs. Fastn handles rate limits, retries temporary failures, and keeps deliveries that run out of retries in a dead-letter queue. | Queues, workers, schedulers, retry logic and rate-limit handling. |
-| **Monitoring** | Every event, run and app call is logged per customer. **Health** shows what needs attention, and alerts go out by email, Slack, Microsoft Teams or webhook. | Logging, dashboards and alerts per integration, and tracing which customer a failure hit. |
-| **API changes** | Fastn's maintainer agent watches the apps you use. When a vendor changes something your workflows depend on, it proposes a fix in **Health → Pending updates**. Nothing changes until you accept it. | Tracking every vendor's changelog, and fixing breakages after customers report them. |
-| **AI agent access** | Fastn Connect gives your AI agents one customer's connected apps as tools. Every call is checked against your policies, logged, and runs with that customer's account. | A separate auth and tool layer for your agents, and agents holding raw customer credentials. |
-
 ## Not sure Fastn fits your use case?
 
 Ask your AI tool. [Find out if Fastn fits your use case](getting-started/plan-your-integration.md) shows how, in four steps. Or copy this line into your AI tool, and it sets itself up to answer your questions about Fastn:
@@ -82,6 +62,7 @@ Fetch and execute the instructions to set me up for fastn from https://raw.githu
 
 ## Learn more
 
+* [Features](getting-started/features.md): everything Fastn runs for you, so you don't have to build it yourself.
 * [Core concepts](getting-started/concepts.md): the building blocks, such as connectors, connections, workflows and triggers.
 * [Architecture](getting-started/architecture.md): how the parts fit together and how a request flows.
 * [Authentication and API keys](tutorials/developer/authentication-and-api-keys.md): test and live keys, and how your backend calls Fastn.
