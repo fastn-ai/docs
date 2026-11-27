@@ -38,7 +38,20 @@ Fastn asks for one value, **token**: the Easyship API access token, which Fastn 
 
 ### Connect in Fastn
 
-Your customers paste their token into the **token** field when they connect Easyship in your widget, or you enter it under **Build** > **Integrations** > **Connectors** > **Easyship**. After you connect, call actions from workflow code as `fastn.connector.easyship.<actionSlug>()`.
+Your customers connect Easyship from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Easyship**.
+2. Select **Connect** on the Easyship card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Easyship's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ## Actions
 
@@ -52,6 +65,3 @@ Your customers paste their token into the **token** field when they connect Easy
 
 </details>
 
-## Events
-
-Easyship has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

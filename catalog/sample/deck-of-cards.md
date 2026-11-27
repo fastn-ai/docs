@@ -18,9 +18,20 @@ hidden: true
 
 Deck of Cards needs no sign-in, so there is nothing to set up. Add it and use its actions.
 
-## Use it
+## Connect in Fastn
 
-Add Deck of Cards from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.deckOfCards.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+Your customers connect Deck of Cards from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Deck of Cards**.
+2. Select **Connect** on the Deck of Cards card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Deck of Cards needs no credentials. Select **Connect** in the dialog that opens.
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Deck of Cards's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ## Actions
 
@@ -34,6 +45,3 @@ Add Deck of Cards from **Build → Integrations → Connectors** and connect an 
 
 </details>
 
-## Events
-
-Deck of Cards has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

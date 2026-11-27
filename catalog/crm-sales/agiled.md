@@ -36,7 +36,21 @@ Fastn asks for one value, **accessToken**: an Agiled Public API token.
 Agiled tokens expire after 90 days. Before that, create a new token, update the connection with it, and revoke the old one.
 
 ### Connect in Fastn
-Your customers enter the token when they connect Agiled in your widget, or you enter it under Build → Integrations → Connectors → Agiled.
+
+Your customers connect Agiled from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Agiled**.
+2. Select **Connect** on the Agiled card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Agiled's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ### Events
 To run a workflow when something happens in Agiled, such as `contact.created`, `deal.status_changed` or `invoice.paid`, add an [App event trigger](../../build/triggers/app-events.md) (Build → Integrations → Triggers → Add trigger → App events) and pick the Agiled event. Contact Fastn support to set up events for Agiled.

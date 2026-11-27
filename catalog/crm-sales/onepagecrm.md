@@ -38,7 +38,21 @@ This guide shows you where to find the OnePageCRM user ID and API key that Fastn
 Keep the API key private. Anyone who has it can call the OnePageCRM API as you.
 
 ### Connect in Fastn
-Your customers enter these values when they connect OnePageCRM in your widget, or you enter them under **Build → Integrations → Connectors → OnePageCRM**. After the connection is saved, you can call OnePageCRM actions in workflow code as `fastn.connector.onepagecrm.<actionSlug>()`.
+
+Your customers connect OnePageCRM from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **OnePageCRM**.
+2. Select **Connect** on the OnePageCRM card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use OnePageCRM's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ### Events
 Fastn supports OnePageCRM events for contacts, companies, deals, actions, notes, calls and meetings. To start a workflow when one of these happens, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events**. See [App events](../../build/triggers/app-events.md).

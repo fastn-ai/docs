@@ -52,6 +52,23 @@ For Google Merchant Center's own setup steps, see [Create access credentials](ht
 
 Customers who skip this sign in through Fastn's shared app for Google Merchant Center.
 
+### Connect in Fastn
+
+Your customers connect Google Merchant Center from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Google Merchant Center**.
+2. Select **Connect** on the Google Merchant Center card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Google Merchant Center and approve access in the window that opens.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Google Merchant Center's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
+
 ## Actions
 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Acknowledge Order</td><td><code>acknowledgeOrder</code></td><td>Marks an order as acknowledged.</td></tr><tr><td>Acknowledge Order Return</td><td><code>acknowledgeOrderReturn</code></td><td>Acks an order return in the specified Merchant Center account.</td></tr><tr><td>Advance Test Order</td><td><code>advanceTestOrder</code></td><td>Sandbox only. Moves a test order from the "inProgress" state to the "pendingShipment" state.</td></tr><tr><td>Batch Account Statuses</td><td><code>custombatchAccountStatuses</code></td><td>Retrieves multiple Merchant Center account statuses in a single request.</td></tr><tr><td>Batch Account Tax</td><td><code>custombatchAccountTax</code></td><td>Retrieves and updates tax settings of multiple accounts in a single request.</td></tr><tr><td>Batch Accounts</td><td><code>custombatchAccounts</code></td><td>Retrieves, inserts, updates, links, claims, and deletes multiple Merchant Center (sub-)accounts in a single request.</td></tr><tr><td>Batch Datafeed Statuses</td><td><code>custombatchDatafeedStatuses</code></td><td>Gets multiple Merchant Center datafeed statuses in a single request.</td></tr><tr><td>Batch Datafeeds</td><td><code>custombatchDatafeeds</code></td><td>Deletes, fetches, gets, inserts, and updates multiple datafeeds in a single request.</td></tr><tr><td>Batch LIA Settings</td><td><code>custombatchLiaSettings</code></td><td>Retrieves and/or updates the LIA settings of multiple accounts in a single request.</td></tr><tr><td>Batch Local Inventory</td><td><code>custombatchLocalInventory</code></td><td>Updates local inventory for multiple products or stores in a single request.</td></tr></tbody></table>
@@ -64,6 +81,3 @@ Customers who skip this sign in through Fastn's shared app for Google Merchant C
 
 </details>
 
-## Events
-
-Google Merchant Center has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

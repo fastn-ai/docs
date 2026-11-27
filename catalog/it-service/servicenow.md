@@ -17,7 +17,7 @@ hidden: true
 ## Setup guide
 This guide explains which ServiceNow values Fastn asks for when you connect, and where to find each one in your ServiceNow instance.
 
-For ServiceNow's own setup steps, see [REST API](https://www.servicenow.com/docs/r/api-reference/rest-apis/c_RESTAPI.html) in the ServiceNow documentation.
+For ServiceNow's own setup steps, see [Table API](https://www.servicenow.com/docs/r/zurich/api-reference/rest-apis/c_TableAPI.html) in the ServiceNow documentation.
 
 ### Before you start
 - You need the Owner, Admin or Developer role in Fastn.
@@ -31,7 +31,21 @@ For ServiceNow's own setup steps, see [REST API](https://www.servicenow.com/docs
 4. Note the **password** for that same ServiceNow account. If your company signs in to ServiceNow through single sign-on, the account needs its own local ServiceNow password; ask your ServiceNow administrator to set one or to create a dedicated integration user for Fastn.
 
 ### Connect in Fastn
-Your customers enter the instance, username and password when they connect ServiceNow in your widget. You can also enter them yourself under Build → Integrations → Connectors → ServiceNow.
+
+Your customers connect ServiceNow from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **ServiceNow**.
+2. Select **Connect** on the ServiceNow card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use ServiceNow's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ### Events
 Fastn can start a workflow when ServiceNow records change, for example when an incident is created, updated or resolved, or when a knowledge article is published. To use one of these events, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events and pick the ServiceNow event. See [App events](../../build/triggers/app-events.md). Contact Fastn support to set up events for ServiceNow.

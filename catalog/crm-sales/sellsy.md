@@ -35,7 +35,21 @@ Fastn connects to Sellsy with a Personal API access, which is meant for server-t
 You can find your existing accesses later under **Settings → Developer portal → API v2**.
 
 ### Connect in Fastn
-Your customers enter these values when they connect Sellsy in your widget. You can also enter them yourself under **Build → Integrations → Connectors → Sellsy**.
+
+Your customers connect Sellsy from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Sellsy**.
+2. Select **Connect** on the Sellsy card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Sellsy and approve access in the window that opens.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Sellsy's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ### Events
 To start a workflow when something changes in Sellsy, such as a new client, an updated opportunity or a new invoice, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events** and pick the Sellsy event. See [App event triggers](../../build/triggers/app-events.md). Contact Fastn support to set up events for Sellsy.

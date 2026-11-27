@@ -44,7 +44,21 @@ Fastn asks for three values: **storeUrl**, **username** (the consumer key) and *
 <figure><img src="../../.gitbook/assets/connector-guides/woocommerce/key-generated.png" alt="WooCommerce confirms the key was generated; copy both values before leaving the page"><figcaption><p>WooCommerce confirms the key was generated; copy both values before leaving the page</p></figcaption></figure>
 
 ### Connect in Fastn
-Your customers enter the store URL, consumer key and consumer secret when they connect WooCommerce in your widget. You can also enter them yourself under Build → Integrations → Connectors → WooCommerce. In workflow code, call an action as `fastn.connector.woocommerce.<actionSlug>()`.
+
+Your customers connect WooCommerce from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **WooCommerce**.
+2. Select **Connect** on the WooCommerce card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use WooCommerce's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ### Events
 Fastn supports WooCommerce order, product, customer and coupon events, such as `order.created`, `product.updated` and `customer.deleted`. To start a workflow from one of them, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events; see [App events](../../build/triggers/app-events.md). Contact Fastn support to set up events for WooCommerce.

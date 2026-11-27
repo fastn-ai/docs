@@ -32,7 +32,21 @@ For SAP Incentive Management (CallidusCloud Commissions)'s own setup steps, see 
 3. If your administrator has set the API user to sign in through single sign-on, ask them to allow password sign-in for that user, since API calls with basic credentials depend on it.
 
 ### Connect in Fastn
-Your customers enter the base URL and their credentials when they connect SAP Incentive Management in your widget. You can also enter them yourself under Build → Integrations → Connectors → SAP Incentive Management. Workflow code calls its actions as `fastn.connector.sapCallidusCloud.<actionSlug>()`.
+
+Your customers connect SAP Incentive Management (CallidusCloud Commissions) from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **SAP Incentive Management (CallidusCloud Commissions)**.
+2. Select **Connect** on the SAP Incentive Management (CallidusCloud Commissions) card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use SAP Incentive Management (CallidusCloud Commissions)'s actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ## Actions
 
@@ -46,6 +60,3 @@ Your customers enter the base URL and their credentials when they connect SAP In
 
 </details>
 
-## Events
-
-SAP Incentive Management (CallidusCloud Commissions) has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

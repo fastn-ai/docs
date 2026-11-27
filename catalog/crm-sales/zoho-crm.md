@@ -66,6 +66,23 @@ This guide shows you how to register your own Zoho CRM OAuth client in the Zoho 
 
 Customers who connect without your own app sign in through Fastn's shared Zoho CRM app.
 
+### Connect in Fastn
+
+Your customers connect Zoho CRM from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Zoho CRM**.
+2. Select **Connect** on the Zoho CRM card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Zoho CRM and approve access in the window that opens.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Zoho CRM's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
+
 ## Actions
 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Account</td><td><code>createAccount</code></td><td>Create an Account record. Account_Name is required; all other fields optional and omitted from the request when not supplied.</td></tr><tr><td>Create Contact</td><td><code>createContact</code></td><td>Create a Contact record. Last_Name is required; all other fields optional and omitted when not supplied.</td></tr><tr><td>Create Deal</td><td><code>createDeal</code></td><td>Create a Deal record. Deal_Name and Stage are required; all other fields optional and omitted when not supplied.</td></tr><tr><td>Create Lead</td><td><code>createLead</code></td><td>Create a Lead record. Last_Name and Company are required; all other fields optional and omitted when not supplied.</td></tr><tr><td>Create Note</td><td><code>createNote</code></td><td>Create a Note record. Pass a 'record' object (Note_Title, Note_Content, Parent_Id, se_module). To attach to a record set Parent_Id + se_module (Leads/Accounts/Contacts/Deals).</td></tr><tr><td>Create Task</td><td><code>createTask</code></td><td>Create a Task record. Subject is required; all other fields optional and omitted when not supplied.</td></tr><tr><td>Delete Account</td><td><code>deleteAccount</code></td><td>Delete an Account by ID.</td></tr><tr><td>Delete Contact</td><td><code>deleteContact</code></td><td>Delete a Contact by ID.</td></tr><tr><td>Delete Deal</td><td><code>deleteDeal</code></td><td>Delete a Deal by ID.</td></tr><tr><td>Delete Lead</td><td><code>deleteLead</code></td><td>Delete a Lead by ID.</td></tr></tbody></table>
@@ -78,6 +95,3 @@ Customers who connect without your own app sign in through Fastn's shared Zoho C
 
 </details>
 
-## Events
-
-Zoho CRM has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

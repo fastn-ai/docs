@@ -35,7 +35,21 @@ Fastn asks for one value, **apiKey**: a Keap Personal Access Token or Service Ac
 If you used Keap's Legacy API Key in the past, it no longer works. Create a Service Account Key instead.
 
 ### Connect in Fastn
-Your customers enter this key when they connect Keap in your widget, or you enter it under **Build → Integrations → Connectors → Keap**.
+
+Your customers connect Keap from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Keap**.
+2. Select **Connect** on the Keap card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Keap's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ## Actions
 
@@ -49,6 +63,3 @@ Your customers enter this key when they connect Keap in your widget, or you ente
 
 </details>
 
-## Events
-
-Keap has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

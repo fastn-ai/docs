@@ -64,6 +64,23 @@ When you or your customers connect Commerce Layer, enter the **organization slug
 ### Events
 To run a workflow when something happens in Commerce Layer, such as `orders.place`, `shipments.ship` or `returns.approve`, add an App event trigger. Go to **Build → Integrations → Triggers → Add trigger → App events** and choose Commerce Layer. See [App events](../../build/triggers/app-events.md). Contact Fastn support to set up events for Commerce Layer.
 
+### Connect in Fastn
+
+Your customers connect Commerce Layer from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Commerce Layer**.
+2. Select **Connect** on the Commerce Layer card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Commerce Layer and approve access in the window that opens.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Commerce Layer's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
+
 ## Actions
 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Create Address</td><td><code>createAddress</code></td><td>Create a new Address. Send a JSON:API resource object with type "addresses" plus its attributes and relationships.</td></tr><tr><td>Create Customer</td><td><code>createCustomer</code></td><td>Create a new Customer. Requires an email address.</td></tr><tr><td>Create Customer Address</td><td><code>createCustomerAddress</code></td><td>Add an existing address to a customer's address book. Requires customer and address relationships; Commerce Layer clones the address so the original stays unchanged.</td></tr><tr><td>Create Customer Group</td><td><code>createCustomerGroup</code></td><td>Create a new Customer Group. Requires a name.</td></tr><tr><td>Create Inventory Model</td><td><code>createInventoryModel</code></td><td>Create a new Inventory Model. Requires a name; the shipping strategy defaults to no_split.</td></tr><tr><td>Create Line Item</td><td><code>createLineItem</code></td><td>Add a line item to an order. Requires a quantity and an order relationship; identify the item with sku_code, bundle_code or the item relationship.</td></tr><tr><td>Create Market</td><td><code>createMarket</code></td><td>Create a new Market. Requires a name plus merchant, price_list and inventory_model relationships.</td></tr><tr><td>Create Merchant</td><td><code>createMerchant</code></td><td>Create a new Merchant. Requires a name and an existing address relationship.</td></tr><tr><td>Create Order</td><td><code>createOrder</code></td><td>Create a new Order (a draft cart). A market relationship is normally required; the order is created in draft status and no money moves until it is placed.</td></tr><tr><td>Create Package</td><td><code>createPackage</code></td><td>Create a new Package at a stock location. Requires a name, its three dimensions, a unit of length and a stock_location relationship.</td></tr></tbody></table>

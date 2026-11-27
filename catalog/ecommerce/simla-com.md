@@ -39,7 +39,20 @@ Fastn asks for two values: `subdomain` and `accessKey`.
 
 ### Connect in Fastn
 
-Your customers enter these values when they connect Simla.com in your widget. You can also enter them yourself under Build → Integrations → Connectors → Simla.com.
+Your customers connect Simla.com from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Simla.com**.
+2. Select **Connect** on the Simla.com card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Simla.com's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ## Actions
 
@@ -53,6 +66,3 @@ Your customers enter these values when they connect Simla.com in your widget. Yo
 
 </details>
 
-## Events
-
-Simla.com has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

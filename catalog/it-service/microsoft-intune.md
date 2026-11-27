@@ -68,7 +68,22 @@ For Microsoft Intune's own setup steps, see [Register an application with the Mi
 
 Customers who skip this setup sign in through Fastn's shared app for Microsoft Intune.
 
-After connecting, call actions from workflow code as `fastn.connector.microsoftIntune.<actionSlug>()`.
+### Connect in Fastn
+
+Your customers connect Microsoft Intune from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Microsoft Intune**.
+2. Select **Connect** on the Microsoft Intune card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Microsoft Intune and approve access in the window that opens.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Microsoft Intune's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ## Actions
 
@@ -82,6 +97,3 @@ After connecting, call actions from workflow code as `fastn.connector.microsoftI
 
 </details>
 
-## Events
-
-Microsoft Intune has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

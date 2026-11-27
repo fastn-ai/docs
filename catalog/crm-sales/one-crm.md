@@ -35,7 +35,21 @@ Fastn asks for three values.
 Use a user whose access rights cover the modules and records your integration needs, since 1CRM applies the same rules to API calls as to its web interface.
 
 ### Connect in Fastn
-Your customers enter these values when they connect 1CRM in your widget, or you enter them under Build → Integrations → Connectors → 1CRM.
+
+Your customers connect 1CRM from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **1CRM**.
+2. Select **Connect** on the 1CRM card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use 1CRM's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ### Events
 Fastn supports the 1CRM events `create`, `update` and `create_update`, which match 1CRM's webhook types for a new record, an updated record, or both. To run a workflow when one of them happens, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events. See [App events](../../build/triggers/app-events.md).

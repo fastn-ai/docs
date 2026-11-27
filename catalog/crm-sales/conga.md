@@ -49,7 +49,27 @@ Conga also lets you get a client ID and secret from an Integration User, and its
 If you use **Conga Bearer Token (manual)**, enter **baseUrl** and **userId** as described above. In **accessToken**, enter a token that you already requested from your region's token endpoint (`<authUrl>/api/v1/auth/connect/token`). Conga access tokens are short-lived, so this method suits short tests only.
 
 ### Connect in Fastn
-Your customers enter these values when they connect Conga Advantage Platform in your widget. You can also enter them yourself under Build → Integrations → Connectors → Conga Advantage Platform. After the connection works, you can call its actions in workflow code as `fastn.connector.conga.<actionSlug>()`.
+
+Your customers connect Conga Advantage Platform from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Conga Advantage Platform**.
+2. Select **Connect** on the Conga Advantage Platform card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Conga Advantage Platform offers more than one sign-in method. Choose one in **Auth Method**, then:
+
+   * For a key or credential method, fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+     <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+   * For OAuth 2.0, keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Conga Advantage Platform and approve access in the window that opens.
+
+     <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Conga Advantage Platform's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ## Actions
 
@@ -63,6 +83,3 @@ Your customers enter these values when they connect Conga Advantage Platform in 
 
 </details>
 
-## Events
-
-Conga Advantage Platform has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

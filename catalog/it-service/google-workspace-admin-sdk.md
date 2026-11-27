@@ -87,7 +87,24 @@ Many of these scopes are sensitive or restricted. An **Internal** app, used only
 5. Save the provider, then choose **Use this app** so it becomes the Preferred app.
 6. In your widget, set the connector's **Auth provider** to your app instead of **Use platform default**.
 
-In workflow code, call an action as `fastn.connector.googleWorkspaceAdminSdk.<actionSlug>()`. Customers who skip this setup sign in through Fastn's shared app for Google Workspace Admin SDK.
+Customers who skip this setup sign in through Fastn's shared app for Google Workspace Admin SDK.
+
+### Connect in Fastn
+
+Your customers connect Google Workspace Admin SDK from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Google Workspace Admin SDK**.
+2. Select **Connect** on the Google Workspace Admin SDK card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Google Workspace Admin SDK and approve access in the window that opens.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Google Workspace Admin SDK's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ## Actions
 
@@ -101,6 +118,3 @@ In workflow code, call an action as `fastn.connector.googleWorkspaceAdminSdk.<ac
 
 </details>
 
-## Events
-
-Google Workspace Admin SDK has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.
