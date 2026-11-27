@@ -39,12 +39,7 @@ Build integrations with your preferred AI agent using Fastn's MCP tools, and emb
 * **Use it everywhere:** the same integration runs in your product, through the widget and the API, and for your AI agents, through Fastn Connect.
 * **Fastn runs and maintains it:** Fastn runs every call with the right customer's account, logs it, and proposes a fix when an app changes its API.
 
-## The parts of Fastn
-
-* **Dashboard:** the web app at [app.fastn.dev](https://app.fastn.dev) where your team builds integrations, sets up the widget and watches every run. Used by your team.
-* **Widget:** the panel inside your product where each customer connects their apps and turns integrations on. Used by your customers.
-* **API and SDK:** let your backend register customers, start the widget for a customer, run workflows and read data. Used by your developers.
-* **Fastn Connect:** an MCP server that gives AI agents a customer's connected apps as tools. Used by your AI agents, including agents that act for your customers.
+To learn more about the different parts of Fastn, and how they are used, see [Architecture](getting-started/architecture.md#the-parts).
 
 ## Not sure Fastn fits your use case?
 
