@@ -43,7 +43,7 @@ To learn more about the different parts of Fastn, and how they are used, see [Ar
 
 ## Not sure Fastn fits your use case?
 
-Ask your AI tool. [Find out if Fastn fits your use case](getting-started/plan-your-integration.md) shows how, in four steps. Or copy this line into your AI tool, and it sets itself up to answer your questions about Fastn:
+Ask your AI tool. [Find out if Fastn fits your use case](getting-started/plan-your-integration.md) shows two ways to start, with or without a Fastn account. Or copy this line into your AI tool, and it sets itself up to answer your questions about Fastn:
 
 ```
 Fetch and execute the instructions to set me up for fastn from https://raw.githubusercontent.com/fastn-ai/fastn-claude-plugins/main/agent-setup/prompt.md
