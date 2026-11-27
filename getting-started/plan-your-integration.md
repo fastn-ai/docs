@@ -18,19 +18,14 @@ layout:
 
 Your AI agent can tell you whether Fastn fits your use case, and how you'd build it. You don't need a sales call.
 
-First, give your agent access to Fastn in one of three ways:
+There are two ways to start:
 
-| Way | Works in | Fastn account | What your agent can do |
-| --- | --- | --- | --- |
-| [Paste a setup line](#paste-a-setup-line) | Any AI tool | Not needed | Answer from Fastn's docs |
-| [Install the Fastn plugin](#install-the-fastn-plugin-for-claude) | Claude and Claude Code | Not needed | Answer from Fastn's docs, and check your workspace once you sign in |
-| [Connect to the Fastn MCP server](#connect-your-ai-tool-to-fastn) | Any AI tool that supports MCP | Needed (free plan) | Check your own workspace, and help you build |
+* **[Without a Fastn account](#without-a-fastn-account):** paste one line into any AI tool. Your agent designs a solution for your use case, based on what Fastn can do.
+* **[With a Fastn account](#with-a-fastn-account):** connect your AI tool to Fastn. Your agent also reviews your workspace and anything you've already set up, builds that into the solution, and helps you build it.
 
 Then [ask your agent about your use case](#ask-your-agent-about-your-use-case).
 
-### Paste a setup line
-
-The quickest way. It works in any AI tool.
+### Without a Fastn account
 
 1. Open a new chat in your AI tool.
 2. Paste this line and send it:
@@ -39,36 +34,13 @@ The quickest way. It works in any AI tool.
    Fetch and execute the instructions to set me up for fastn from https://raw.githubusercontent.com/fastn-ai/fastn-claude-plugins/main/agent-setup/prompt.md
    ```
 
-Your agent loads Fastn's setup instructions. If your AI tool isn't connected to Fastn, the agent answers from Fastn's docs. If it is connected, it checks your workspace. It brings up accounts only when you want to build. You can [read the instructions](https://github.com/fastn-ai/fastn-claude-plugins/blob/main/agent-setup/prompt.md) before you paste the line.
+Your agent loads Fastn's setup instructions and asks about your use case. You can [read the instructions](https://github.com/fastn-ai/fastn-claude-plugins/blob/main/agent-setup/prompt.md) before you paste the line. When you're ready to build, create an account and connect, as described in the next section.
 
 **You should see:** the agent asks what your product does, and what it should do with your customers' apps.
 
-### Install the Fastn plugin for Claude
+### With a Fastn account
 
-The Fastn plugin adds Fastn's skills and connection to Claude in one go. It comes from the [Fastn Claude plugins](https://github.com/fastn-ai/fastn-claude-plugins) repository.
-
-**In the Claude desktop app or claude.ai:**
-
-1. Go to **Settings** → **Customize** → **Plugins**.
-2. Select **Add** → **Add marketplace**, paste `fastn-ai/fastn-claude-plugins`, and select **Sync**.
-3. Turn on **Fastn Connect**.
-4. Open a new chat.
-
-**In Claude Code:**
-
-1. Run these two commands:
-
-   ```
-   /plugin marketplace add fastn-ai/fastn-claude-plugins
-   /plugin install connect@fastn
-   ```
-2. Start a new session.
-
-**You should see:** the Fastn plugin listed among your plugins.
-
-### Connect your AI tool to Fastn
-
-The full setup. Your agent can then check your own workspace, such as the connectors and connections you have, and help you build once you're ready.
+Connect your AI tool to Fastn, so your agent can review your workspace, such as the connectors and connections you already have, and help you build the solution.
 
 1. **Create a Fastn account.** Sign up at [app.fastn.dev](https://app.fastn.dev/?signup=1). The Launch plan is free, with no card needed. See [pricing](https://fastn.ai/pricing) for the other plans.
 2. **Add the Fastn MCP server to your AI tool.** MCP is a standard way to give an AI tool access to an app. Use this server URL:
@@ -92,7 +64,7 @@ The full setup. Your agent can then check your own workspace, such as the connec
 
    > We sell an invoicing tool. When a deal closes in our customer's CRM, we want to create an invoice in our product. Can Fastn do this?
 2. Answer the agent's questions. It asks one short question at a time: which apps, read or write, right away or on a schedule, and who connects the account.
-3. Read the answer. The agent checks whether Fastn has a connector for each app, which actions and events it has, and which unified APIs cover your apps. Then it tells you what fits, what doesn't, and the setup steps in order.
+3. Read the answer. The agent checks whether Fastn has a connector for each app, which actions and events it has, and which unified APIs cover your apps. Then it designs a solution: what fits, what doesn't, and the setup steps in order.
 
 An answer looks like this (the details depend on your apps):
 
