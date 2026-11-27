@@ -38,8 +38,6 @@ A connector is the definition. When one of your customers signs in to the app th
 
 ## Browse by category
 
-Every other connector is in its category, popular ones first, then A to Z. Your workspace may also have connectors of your own, which are not listed here.
-
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>
 <tr><td><strong>AI and ML</strong></td><td>OpenAI, Anthropic (Claude), ChatBotKit</td><td><a href="ai-ml/README.md">ai-ml/README.md</a></td></tr>
 <tr><td><strong>Developer tools</strong></td><td>GitHub, GitLab, LaunchDarkly</td><td><a href="developer-tools/README.md">developer-tools/README.md</a></td></tr>
@@ -67,5 +65,5 @@ Every other connector is in its category, popular ones first, then A to Z. Your 
 
 ## Can't find one?
 
-Search the docs with **Ctrl+K** (**Cmd+K** on a Mac). Missing a connector or an action? Describe it to **Build with AI**, which can create it for you: see [Create a connector](../build/connectors/creating-a-connector.md).
+Missing a connector or an action? Create it yourself by following [Create a connector](create-a-connector.md), or describe it to the Fastn agent or your AI tool and let it build the connector for you.
 

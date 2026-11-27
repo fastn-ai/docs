@@ -154,6 +154,7 @@
 ## Connectors
 
 * [Connector catalog](catalog/README.md)
+  * [Create a connector](catalog/create-a-connector.md)
   * [AI and ML](catalog/ai-ml/README.md)
     * [OpenAI](catalog/ai-ml/openai.md)
     * [AI/ML API](catalog/ai-ml/aimlapi.md)
