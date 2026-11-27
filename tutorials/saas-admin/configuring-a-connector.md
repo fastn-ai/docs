@@ -1,7 +1,7 @@
 ---
 description: >-
-  Set up a connector with OAuth or API key auth, configure its capabilities,
-  test actions, and manage each customer's connections.
+  Create a connector, set up OAuth or API key auth, connect your own account,
+  and run one of its actions.
 layout:
   width: default
   title:
@@ -18,118 +18,52 @@ layout:
 
 # Configure a connector
 
-Create a connector for an app, choose its auth methods, and add a connection to try it.
+**Build → Integrations → Connectors** · [Open in Fastn](https://app.fastn.dev/integrations)
+
+Create a connector for an app, set up how people sign in to it, connect your own account and run one of its actions.
+
+A [connector](../../build/connectors/README.md) is the definition of one app's API. Build one when the app you need isn't in the [catalog](../../build/connectors/the-catalogue.md). If it is, skip to step 4 and connect to it.
+
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../../build/mcp-gateway/README.md) and using its tools to create and set up connectors. For example, ask it: *"Create a connector for the Acme CRM API and set up its OAuth 2.0 authentication."* To connect your AI agent, see [Connect your AI tool](../../build/mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../../build/mcp-gateway/claude.md), [Claude Code](../../build/mcp-gateway/claude-code.md), [Cursor](../../build/mcp-gateway/cursor.md), [VS Code](../../build/mcp-gateway/vscode.md) or [any other MCP client](../../build/mcp-gateway/README.md#how-your-ai-tool-connects).
+{% endhint %}
 
 ### Before you start
 
-* The [Quickstart: your first integration](../../getting-started/quickstart.md), so you know what connectors and connections are.
+* **Who this is for:** an Owner, Admin, Developer or Operator. Viewers cannot create connectors.
+* **What you need:** the app's API docs, and an account on the app you can sign in with or an API key for it. For an OAuth app of your own, its client ID and client secret.
+* **What to know:** what connectors and connections are. The [Quickstart: your first integration](../../getting-started/quickstart.md) covers both.
 
-### Ways to create a connector
+### Steps
 
-Go to **Build → Integrations → Connectors** and open the **Create connector** menu (top right). It offers **From scratch**, **Build with fastn agent**, **Build in your AI tool**, and **Import from file**. This tutorial covers the first two. **Build with fastn agent** and **Build in your AI tool** show only to roles that can use them.
+1. **Open the Create connector menu.** Go to **Build → Integrations → Connectors** · [Open in Fastn](https://app.fastn.dev/integrations), and select **Create connector** at the top right.
 
-#### From scratch
+   **You should see:** **From scratch**, **Build in your AI tool**, **Build with fastn agent** and **Import from file**. **Build in your AI tool** and **Build with fastn agent** show only to roles that can use them.
+2. **Create the connector.** Pick one way:
+   * **Build in your AI tool (recommended):** connect your AI tool to the [Fastn MCP server](../../build/mcp-gateway/README.md), then describe the app (for example, "HubSpot CRM") and give it the vendor's API docs. It works on every plan and uses no Fastn AI credits.
+   * **Build with fastn agent:** opens the [Fastn agent](../../build/agent/README.md). Describe the app and give it the API docs. It is on paid plans (Scale or Enterprise); on Launch the item reads *On paid plans. Upgrade to use it.*
+   * **From scratch:** fill in the **Create a connector** dialog: **Name**, **Slug** and **Description** under **Identity**; **Protocol** (REST by default) and the app's **Domain** under **Connection**; and one block per auth method under **Authentication** (**Add method** adds another, and **Set as default** picks the one the connect dialog opens with). Then select **Create connector**. Every field, protocol and auth type is in [Create a connector](../../build/connectors/creating-a-connector.md).
 
-1. Choose **Create connector → From scratch**.
-2. Fill in the **Create a connector** dialog. It has three sections:
+   With either AI option, the AI researches the API, builds the actions and auth method, and tests them.
 
-| Section | Fields |
-| ------- | ------ |
-| **Identity** | **Name** (display name, for example "Salesforce"), **Slug** (derived from the name; you can edit it), **Description** (what the connector does) |
-| **Connection** | **Protocol** (REST by default), **Visibility**, **Domain** (the app's domain, for example "salesforce.com"), **Icon URL** (URL to the app's icon) |
-| **Authentication** | One block per auth method. Click **Add method** to offer more than one. |
+   **You should see:** the new connector in the catalog, badged `Custom`, with version `v1.0` in **Test**.
+3. **Add your OAuth app (OAuth only).** Open the connector, go to the **Auth** tab and select **Manage providers**, then **+ Create Provider**. Add your app's client ID, client secret, scopes and endpoints, and make it the preferred app. Follow [Use your own OAuth app](../../build/connectors/auth-methods.md#use-your-own-oauth-app) for each field.
 
-**Visibility** is `Private` when you create a connector: *Only your organization can see it.* Publishing a connector to the customer catalog is done by a platform admin.
+   A Fastn-managed connector already ships with a community app, so you can skip this step for one, unless you want your own app name on the consent screen.
 
-3. Click **Create connector**.
+   **You should see:** your provider on the **Auth Providers** page, marked **Preferred app**.
+4. **Add a connection.** On the connector's card, select **Connect** (or **Add another connection** if it is already connected), then complete the sign-in:
+   * **OAuth 2.0:** a window opens with the app's sign-in screen. Authorize, and you return to Fastn.
+   * **API Key, Bearer Token or Basic Auth:** enter the key, token, or username and password, and select **Connect**.
 
-For every field and protocol, see [Create a connector](../../build/connectors/creating-a-connector.md).
+   This connects your own account. Your customers connect theirs through the widget. See [Connect an app](../../build/connectors/connect-an-app.md).
 
-#### Build with fastn agent
+   **You should see:** the connection under **Operate → Connections** · [Open in Fastn](https://app.fastn.dev/connections), with the status `Active`.
+5. **Run an action.** Open the connector, select an action in the rail, then select **Run**. Leave **Mock** off, pick your connection under **Connection**, fill in the **Input**, and select **Run Action**. A connector created from scratch has no actions yet: [add one](../../build/connectors/editing-and-deleting.md#add-an-action) first.
 
-1. Choose **Create connector → Build with fastn agent**. This opens the [fastn agent](../../build/agent/README.md). It is on paid plans (Scale or Enterprise); on Launch the item reads *On paid plans. Upgrade to use it.*, and you can use **Build in your AI tool** instead, which uses no AI credits.
-2. Describe what you want (for example, "HubSpot CRM"), and give it the vendor's API docs if you have them.
+   **You should see:** the HTTP status, the time taken, and the response. The action is marked **Live tested**. See [Run an action](../../build/connectors/action-detail.md#run-an-action).
 
-The fastn agent researches the API, builds the actions and auth method, and tests them.
-
-### Authentication methods
-
-Seven auth methods are available when creating a connector:
-
-| Method           | How it works                                                             | Example apps                          |
-| ---------------- | ------------------------------------------------------------------------ | ------------------------------------- |
-| **No Auth**      | No authentication required. For public APIs.                             | Public data feeds                     |
-| **Basic Auth**   | Username and password sent as Base64 in Authorization header.            | Legacy APIs, internal apps         |
-| **Digest Auth**  | Username and password, using HTTP digest authentication.                 | APIs that require digest auth         |
-| **Bearer Token** | Token sent in Authorization header as `Bearer {token}`.                  | Many modern APIs                      |
-| **API Key**      | Key sent in a custom header (for example, `X-API-Key`).                         | Stripe, SendGrid, OpenAI              |
-| **OAuth 2.0**    | User authorizes via the app's login screen. fastn manages token refresh. | Slack, Shopify, HubSpot, Xero, Google |
-| **Custom**       | Starts with an empty Configuration: you define every field the user enters when connecting, for example an account subdomain plus a token. | Internal tools, custom APIs |
-
-You can add multiple auth methods to one connector (click **Add method** in the Authentication section). One method is set as default.
-
-#### Use fastn-managed OAuth apps
-
-For supported platforms, fastn provides the OAuth app on your behalf. You can see it on the connector's **Auth** tab under **View providers** (or **Manage providers**). You can then authenticate without creating your own OAuth application in the third-party's developer portal.
-
-If the connector has no OAuth app you can use:
-
-1. Create an OAuth application in the third-party's developer portal.
-2. Copy the Client ID and Client Secret.
-3. Add them as a provider on the connector's **Auth** tab (**Add provider** or **Manage providers**). See [Auth methods and providers](../../build/connectors/auth-methods.md).
-
-### Add a connection
-
-A connector defines the integration. A **connection** is an authenticated instance: your credentials or your customer's credentials.
-
-1. On the Connectors page, find your connector card.
-2. Click **Connect** (first connection) or **Add another connection** (additional connections).
-3. Complete the auth flow:
-   * **OAuth 2.0:** A popup opens with the app's sign-in screen. Authorize, and you return to fastn.
-   * **API Key or Bearer Token:** Paste the key or token and save.
-   * **Basic Auth:** Enter the username and password.
-
-**You should see:** the connection under **Operate → Connections**.
-
-#### Connections vs connectors
-
-|                   | Connector                                                 | Connection                                        |
-| ----------------- | --------------------------------------------------------- | ------------------------------------------------- |
-| **What it is**    | The integration definition (auth config, actions, events) | An authenticated instance with stored credentials |
-| **How many**      | One per app                                               | Many: one per customer or user who connects       |
-| **Where managed** | Build → Integrations → Connectors                         | Operate → Connections                             |
-| **Created by**    | You (manual or AI)                                        | You (for testing) or your customers (via widget)  |
-
-#### Connector card states
-
-On the Connectors page, each connector card shows:
-
-| Element                     | Meaning                                    |
-| --------------------------- | ------------------------------------------ |
-| **managed** or **Custom** badge | Maintained by fastn, or created in your workspace. Once the connector has an active connection the badge reads **Connected**; if it has connections but none is active, **Inactive**. |
-| **OAuth 2.0** chip          | The connector offers an OAuth 2.0 method   |
-| **Managed by** ...          | Who maintains it: *Managed by Fastn*, or *Managed by* your organization's name |
-| **Connect** button          | No connection yet. Click it to authenticate. |
-| **Add another connection** button | Already connected. Adds another connection. |
-
-### Connector visibility
-
-| Visibility  | Who can see it                                   |
-| ----------- | ------------------------------------------------ |
-| **Private** | Only your organization can see it.               |
-| **Public**  | Customers under your organization can use it when Catalog connectors is on. Other organizations never see it. Only a platform admin can make a connector public. |
-
-New connectors are always created as `Private`.
-
-### What you've learned
-
-* Ways to create connectors: **From scratch** and **Build with fastn agent**, both from the **Create connector** menu
-* All 7 auth methods and when to use each
-* When fastn provides the OAuth app for you
-* The difference between connectors and connections
-* Connector card states and visibility settings
-
-### Next steps
+### What's next
 
 * Use the connector in a workflow: [Write a workflow in code](configuring-a-workflow-in-code.md).
 * Start the workflow on events: [Set up triggers](setting-up-triggers.md).

@@ -1,5 +1,5 @@
 ---
-description: "Every tool tab in the editor: Test, Connectors, Contract, Diagram, Compare, Test cases, Executions, Sync reports, and API."
+description: "Every tool tab in the workflow editor: Test, Connectors, Contract, Diagram, Compare, Test cases, Executions, Sync reports and API."
 layout:
   width: default
   title:
@@ -14,84 +14,66 @@ layout:
     visible: true
 ---
 
-# Test a workflow
+# Editor tabs
 
-A new workflow shows three tabs: **Test**, **Connectors**, and **Contract**. Once it is saved, the rest appear: **Diagram**, **Compare** (when there is code to compare), **Test cases**, **Executions**, **Sync reports**, and **API**. If there is not room for all of them, the overflow collapses into a **More** menu.
+**Build → Integrations → Workflows** → open a workflow · [Open in Fastn](https://app.fastn.dev/integrations?tab=workflows)
 
-#### Test
+The tool tabs on the right of the [workflow editor](the-editor.md) are where you test a workflow, check what it calls and returns, and see its runs. This page covers each tab. For a step-by-step guide to testing, see [Test a workflow](testing.md).
 
-The tab has two JSON editors, `ctx.input` and `ctx.headers`. **Use contract** fills the input from the declared contract. The mode select beside the run button chooses what the run actually calls:
+A new workflow shows three tabs: **Test**, **Connectors** and **Contract**. Once you save it, the rest appear: **Diagram**, **Compare** (when there is code to compare), **Test cases**, **Executions**, **Sync reports** and **API**. If they don't all fit, the extra tabs move into a **More** menu.
 
-| Mode             | What runs                            |
-| ---------------- | -------------------------------------- |
-| **Live**         | Real calls to the connected apps.  |
-| **Partial Mock** | Live where the connector has an active connection, a stored mock stub where it does not. |
-| **Fully Mock**   | Stubs only.                           |
-
-The run button follows the mode: **Run Live**, **Run Partial Mock**, or **Run Fully Mock**.
-
-#### Connectors
-
-This list is **auto-extracted from the `fastn.connector.<slug>.<action>(…)` calls in your code every time you save**. It is a readout of the code, not a separate configuration. **Add** exists for anything you need to wire manually. Each row shows a **Per customer** badge where it applies, plus the connector slug, the owning org, the action, and its version.
-
-{% hint style="warning" %}
-Pinned action versions stop an upstream change from silently breaking your workflow. When fastn proposes a newer action, it arrives through [Pending updates](../connector-updates.md) for you to accept.
+{% hint style="info" %}
+**Do this from your AI tool.** Fastn recommends connecting your preferred AI agent, such as Claude, Cursor or VS Code, to the [Fastn MCP server](../mcp-gateway/README.md) and using its tools to test a workflow and check what it calls. For example, ask it: *"Test the sync-new-contacts workflow and show me the result."* To connect your AI agent, see [Connect your AI tool](../mcp-gateway/README.md#open-the-connect-dialog), or the setup guide for [Claude](../mcp-gateway/claude.md), [Claude Code](../mcp-gateway/claude-code.md), [Cursor](../mcp-gateway/cursor.md), [VS Code](../mcp-gateway/vscode.md) or [any other MCP client](../mcp-gateway/README.md#how-your-ai-tool-connects).
 {% endhint %}
 
-#### Contract
+### Test
 
-The tab holds **Input contract** and **Output contract**, each viewable as **JSON** or **Schema**. Write an example payload in the JSON view and the schema is generated live. The schema is the contract, and is also hand-editable.
+Runs the workflow once with an input you type, in **Live**, **Partial Mock** or **Fully Mock** mode, without saving it. See [Run a quick test](testing.md#run-a-quick-test).
 
-#### Diagram
+### Connectors
 
-Three sub-tabs.
+Lists the connectors and actions the workflow calls. Fastn reads them from the workflow's code every time you save, so the list always matches what the workflow does. Use **Add** for a connector the code calls in a way Fastn can't detect.
 
-**Flow**: a read-only React Flow rendering, generated from your code. Node kinds are `TRIGGER`, `READ`, `PROCESS`, `WRITE`, `DECISION`, and `DONE`; the controls are Zoom In, Zoom Out, and Fit View. You cannot edit the graph. Edit the code and the graph follows.
+Each row shows the connector, the organization that owns it, the action and its version, plus a **Per customer** badge when the workflow uses each customer's own connection. See [Per-customer versus platform-wide connectors](../connectors/README.md#per-customer-versus-platform-wide-connectors).
 
-**Sequence**: the same logic as an ordered list of phases.
+{% hint style="info" %}
+Each action is pinned to a version, so a change to the app's API can't silently break your workflow. When Fastn proposes a newer version of an action, it arrives in [Pending updates](../connector-updates.md) for you to accept.
+{% endhint %}
 
-**Docs**: generated documentation, with an **End user** / **Technical** toggle, an **Out of date** badge when the code has moved on, and **Regenerate** / **Generate**. Docs are generated when you first open them, not on every save. You can **Edit** and **Save** either document; your version is kept separately, shows an **Edited** badge, survives regeneration, and **Reset to generated** discards it.
+### Contract
+
+Defines the shape of the data the workflow accepts and returns:
+
+* **Input contract:** the fields a caller must send.
+* **Output contract:** the fields the workflow returns.
+
+You can view each as **JSON** or **Schema**. Paste an example in the JSON view and Fastn generates the schema from it. The schema is the contract, and you can edit it by hand.
+
+### Diagram
+
+Explains what the workflow does, generated from its code. You can't edit the workflow here: change the workflow, and the diagram follows. It has three sub-tabs:
+
+* **Flow:** a read-only diagram of the workflow's steps. Step types are `TRIGGER`, `READ`, `PROCESS`, `WRITE`, `DECISION` and `DONE`. Use Zoom In, Zoom Out and Fit View to move around it.
+* **Sequence:** the same logic as an ordered list of phases.
+* **Docs:** generated documentation, with an **End user** / **Technical** toggle, an **Out of date** badge when the code has moved on, and **Regenerate** / **Generate**. Docs are generated when you first open them, not on every save. You can **Edit** and **Save** either document; your version is kept separately, shows an **Edited** badge, survives regeneration, and **Reset to generated** discards it.
 
 The customer-facing document has nine sections: *What this integration does*, *Before you start*, *Connected apps*, *How it works*, *Field mapping*, *Smart features*, *When it runs*, *Troubleshooting*, and *Related links*.
 
-#### Test cases
+### Test cases
 
-The editor's **Test cases** tab shows the suite itself: a header with the case count, **+ New group**, and **Refresh**, then the cases. On the workflow detail view (it opens when you select **Run** on a workflow's row) the same suite sits under two tabs, and the difference between them is the part worth understanding: **Test Cases** is the specification, **Validation** is the result of running it.
+The workflow's saved test scenarios, which Fastn's validator agent runs against the whole workflow. See [Check the test cases](testing.md#check-the-test-cases).
 
-**Who writes them.** The fastn agent (or your AI tool) generates a suite while it builds the workflow, grouped into `happy-path`, `pagination`, `fields`, `edge-cases`, and `error-handling`. After that the list is yours to maintain: each group has an add control, and every case can be edited or deleted.
+### Executions
 
-A case is three fields and a mode:
+Shows this workflow's run history. Filter it with the HTTP status pills: **All**, **200**, **201**, **400**, **404**, **422**, **500**. The organization-wide view is [Operate → Logs → Executions](../../operate/executions.md).
 
-| Field | Notes |
-| ----- | ------- |
-| **Group** | Free text, with existing groups suggested. Left blank it becomes `Ungrouped`. |
-| **Scenario** | What is being exercised. |
-| **Pass criteria** | What has to be true for the case to pass. Required. |
-| **Mode** | `MOCK` (the default) or `LIVE`. This is the badge on the row. |
+### Sync reports
 
-**Who runs them.** The workflow validator agent does, not you and not the Run button. Until it has run, the **Validation** tab on the detail view reads *Not validated yet. The workflow validator agent will populate this tab after it runs against the test cases.* Once it has, that tab carries the status, the mode it ran in, when it ran, and a result for each case against the total.
+Shows what a sync changed, record by record. It stays empty until the workflow's code calls `fastn.diff.compare` to compare records between runs. See [Sync reports](../../operate/sync-reports.md).
 
-The pass, fail, and untested counters above the list reflect that last validation run. **Untested** means the validator has not reached that case, not that the case failed.
+### API
 
-{% hint style="info" %}
-**`LIVE` and `MOCK` are set per case, and `MOCK` is the default.** A `MOCK` case is served from stored mock stubs and never reaches the third-party API; a `LIVE` case makes real calls. A suite that is entirely `MOCK` proves your logic, not your connections, so promote the few cases that actually matter to `LIVE` before you trust a green run.
-{% endhint %}
-
-None of this is the [Test](#test) tab above. **Test** runs one payload you type, once, right now. **Test cases** are a saved suite the validator agent runs against the whole workflow.
-
-#### Executions
-
-This tab shows the workflow's run history, filtered by status pills: **All**, **200**, **201**, **400**, **404**, **422**, **500**. The organization-wide view is [Operate → Logs → Executions](../../operate/executions.md).
-
-#### Sync reports
-
-> A report appears the first time a workflow runs fastn.diff.compare.
-
-See [Sync reports](../../operate/sync-reports.md).
-
-#### API
-
-How to call this workflow over HTTP, with a copyable curl:
+Shows how to call this workflow from your backend, with a curl command you can copy:
 
 ```http
 POST https://api.fastn.dev/api/v1/workflows/<wfId>/execute
@@ -99,7 +81,7 @@ POST https://api.fastn.dev/api/v1/workflows/<wfId>/execute
 
 Two headers steer it (`X-fastn-Test-Mode` and `x-fastn-env`) and you authenticate with an API key. The copied curl uses a test key (`fsk_test_<your-key>`) with `X-fastn-Test-Mode: true` and `x-fastn-env: test`; with a live key (`fsk_live_<your-key>`), drop the test-mode header. The [HTTP API reference](../../reference/api.md) covers it in full.
 
-#### Where the runtime reference lives
+### Where the runtime reference lives
 
 There is no separate runtime reference tab (the **Docs** view under **Diagram** documents this workflow, not the runtime). What `ctx` and `fastn.*` expose inside the function shows up in the code editor's autocomplete, and is documented in full in [Workflow runtime API](../../reference/workflow-runtime.md). In short:
 
