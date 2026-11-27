@@ -1,63 +1,83 @@
 ---
-description: "Find out if Fastn fits your use case: create a free account, connect your AI agent to Fastn, and ask it. The agent will be able to guide you on how your integration can be implemented using Fastn's capabilities."
+description: Ask your AI agent whether Fastn fits your use case, and how you'd build it. No sales call needed, and you can start before you have an account.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
 # Find out if Fastn fits your use case
 
-Your AI agent can tell you whether Fastn fits what your product needs to do with your customers' apps. The agent will be able to guide you on how your integration can be implemented using Fastn's capabilities. It takes four steps and no call with Fastn.
+Your AI agent can tell you whether Fastn fits your use case, and how you'd build it. You don't need a sales call.
 
-**Quickest way:** copy this line into your AI tool. Your agent sets itself up for Fastn and then asks what you want to build.
+There are two ways to start:
 
-```
-Fetch and execute the instructions to set me up for fastn from https://raw.githubusercontent.com/fastn-ai/fastn-claude-plugins/main/agent-setup/prompt.md
-```
+* **[Without a Fastn account](#without-a-fastn-account):** paste one line into any AI tool. Your agent designs a solution for your use case, based on what Fastn can do.
+* **[With a Fastn account](#with-a-fastn-account):** connect your AI tool to Fastn. Your agent also reviews your workspace and anything you've already set up, builds that into the solution, and helps you build it.
 
-**No account yet? You can still ask.** With the [Fastn plugin](#optional-the-fastn-plugin-for-claude), your agent can tell you whether Fastn fits your use case and how it would work, based on what Fastn offers. Create an account and connect it (steps 1 and 2) when you want the agent to look at your own setup and help you build it.
+Then [ask your agent about your use case](#ask-your-agent-about-your-use-case).
 
-### Step 1: Create a Fastn account
+### Without a Fastn account
 
-Sign up at [app.fastn.dev](https://app.fastn.dev/?signup=1). The Launch plan is free: no card and no sales call. See [pricing](https://fastn.ai/pricing) for the other plans.
+1. Open a new chat in your AI tool.
+2. Paste this line and send it:
 
-### Step 2: Connect your AI agent to Fastn
+   ```
+   Fetch and execute the instructions to set me up for fastn from https://raw.githubusercontent.com/fastn-ai/fastn-claude-plugins/main/agent-setup/prompt.md
+   ```
 
-AI tools connect to other services through MCP, a standard way to give an AI tool access to an app. Add Fastn to your AI tool as an MCP server at `https://mcp.fastn.dev/fastn-workspace`, then sign in with your Fastn account. No API key is needed.
+Your agent loads Fastn's setup instructions and asks about your use case. You can [read the instructions](https://github.com/fastn-ai/fastn-claude-plugins/blob/main/agent-setup/prompt.md) before you paste the line. When you're ready to build, create an account and connect, as described in the next section.
 
-Your Fastn user needs the **Developer** role or higher. If it has a lower one, an Owner or Admin of your Fastn account can change it in **Settings → People**: see [Changing a role](../manage/people.md#changing-a-role). [Roles](../manage/roles.md) lists what each role can do.
+**You should see:** the agent asks what your product does, and what it should do with your customers' apps.
 
-The steps for each AI tool: [Claude](../build/mcp-gateway/claude.md), [Claude Code](../build/mcp-gateway/claude-code.md), [ChatGPT](../build/mcp-gateway/chatgpt.md), [Cursor](../build/mcp-gateway/cursor.md), [VS Code](../build/mcp-gateway/vscode.md), [Codex](../build/mcp-gateway/codex.md), and others in [Connect your AI tool (MCP)](../build/mcp-gateway/README.md).
+### With a Fastn account
 
-Once connected, your agent gets Fastn's tools and skills through that connection. There is nothing else to install.
+Connect your AI tool to Fastn, so your agent can review your workspace, such as the connectors and connections you already have, and help you build the solution.
 
-### Step 3: Ask your agent about Fastn
+1. **Create a Fastn account.** Sign up at [app.fastn.dev](https://app.fastn.dev/?signup=1). The Launch plan is free, with no card needed. See [pricing](https://fastn.ai/pricing) for the other plans.
+2. **Add the Fastn MCP server to your AI tool.** MCP is a standard way to give an AI tool access to an app. Use this server URL:
 
-Describe your product and what it should do with your customers' apps. For example:
+   ```
+   https://mcp.fastn.dev/fastn-workspace
+   ```
 
-> We sell an invoicing tool. When a deal closes in our customer's CRM, we want to create an invoice in our product. Can fastn do this?
+   The steps for each AI tool: [Claude](../build/mcp-gateway/claude.md), [Claude Code](../build/mcp-gateway/claude-code.md), [ChatGPT](../build/mcp-gateway/chatgpt.md), [Cursor](../build/mcp-gateway/cursor.md), [VS Code](../build/mcp-gateway/vscode.md), [Codex](../build/mcp-gateway/codex.md), and [others](../build/mcp-gateway/README.md).
+3. **Sign in with your Fastn account** when your AI tool asks. No API key is needed, and there is nothing else to install.
 
-The agent asks what it still needs, one short question at a time: which apps, read or write, right away or on a schedule, and who connects the account.
+**You should see:** Fastn's tools listed in your AI tool.
 
-### Step 4: Read the answer
+{% hint style="info" %}
+**If you joined an existing Fastn account:** your Fastn user needs the **Developer** role or higher. An Owner or Admin of the account can change your role in **Settings → People**. See [Change a role](../manage/people.md#change-a-role), and [Roles](../manage/roles.md) for what each role can do.
+{% endhint %}
 
-The agent checks whether a connector exists for each app, which actions and events it has, and which unified APIs cover your apps. Then it answers what fits, what does not, and the setup steps in order. An answer looks like this (the details depend on your apps):
+### Ask your agent about your use case
 
-> **Fits, with one gap.** Two of your three CRMs can tell fastn when a deal closes. Each customer connects their own CRM inside your product, and fastn then creates the invoice in your product. The third CRM cannot send that signal, so fastn checks it every 15 minutes instead. Setup: 1. Connect your product to fastn. 2. Build the integration. 3. Add the fastn widget to your product.
+1. Describe your product and what it should do with your customers' apps. For example:
 
-When the agent cannot confirm something, it says so. It never asks for a password or API key in the chat.
+   > We sell an invoicing tool. When a deal closes in our customer's CRM, we want to create an invoice in our product. Can Fastn do this?
+2. Answer the agent's questions. It asks one short question at a time: which apps, read or write, right away or on a schedule, and who connects the account.
+3. Read the answer. The agent checks whether Fastn has a connector for each app, which actions and events it has, and which unified APIs cover your apps. Then it designs a solution: what fits, what doesn't, and the setup steps in order.
 
-### When something does not fit
+An answer looks like this (the details depend on your apps):
 
-The agent says so, offers a workaround if there is one, and helps you write a request to Fastn. Send it from the Fastn dashboard: **Help (?)** → **Contact support**. To talk it through with a person, use the same place and include the agent's summary.
+> **Fits, with one gap.** Two of your three CRMs can tell Fastn when a deal closes. Each customer connects their own CRM inside your product, and Fastn then creates the invoice in your product. The third CRM cannot send that signal, so Fastn checks it every 15 minutes instead. Setup: 1. Connect your product to Fastn. 2. Build the integration. 3. Add the Fastn widget to your product.
 
-### Optional: the Fastn plugin for Claude
+When the agent can't confirm something, it says so. It never asks for a password or API key in the chat.
 
-The Fastn plugin (`connect`, from the [Fastn Claude plugins](https://github.com/fastn-ai/fastn-claude-plugins) repository) adds the Fastn skills and the Fastn connection in one go. It works before you have an account.
+### Need more details
 
-* **Claude desktop app or claude.ai:** go to **Settings** → **Customize** → **Plugins** → **Add** → **Add marketplace**, paste `fastn-ai/fastn-claude-plugins`, select **Sync**, then turn on **Fastn Connect**.
-* **Claude Code:** run these two commands, then start a new session.
+If Fastn doesn't cover part of your use case, the agent tells you and suggests a workaround if there is one. To ask the Fastn team about it:
 
-  ```
-  /plugin marketplace add fastn-ai/fastn-claude-plugins
-  /plugin install connect@fastn
-  ```
+1. Ask your agent to summarize your use case and what's missing.
+2. In the Fastn dashboard, click **Help (?)** → **Contact support**.
+3. Paste the summary and send it.
 
-To learn what each part of Fastn does, read [Concepts](concepts.md).
+To learn what each part of Fastn does, read [Core concepts](concepts.md).
