@@ -1,5 +1,5 @@
 ---
-description: Describe an integration, let an AI agent build it, and run its test. About five minutes.
+description: Build and test your first integration from your AI tool. About five minutes, no code.
 layout:
   width: default
   title:
@@ -14,80 +14,82 @@ layout:
     visible: true
 ---
 
-# Quickstart: your first integration
+# Quickstart: build your first integration
 
-In this quickstart, you describe an integration in plain words, an AI agent builds it, and you test it without touching real data. It takes about five minutes and needs no code.
+### Overview
 
-By the end, you'll have a workflow that posts each new HubSpot contact to a Slack channel, tested and ready to publish.
+In this quickstart, your AI tool builds an integration that posts each new HubSpot contact to a Slack channel. Then you test it without touching real data. It takes about five minutes and needs no code.
+
+You will:
+
+1. [Connect your AI tool to Fastn](#step-1-connect-your-ai-tool-to-fastn).
+2. [Describe the integration](#step-2-describe-the-integration).
+3. [Sign in to HubSpot and Slack](#step-3-sign-in-to-hubspot-and-slack).
+4. [Find the workflow the agent built](#step-4-find-the-workflow-the-agent-built).
+5. [Run a test without touching real data](#step-5-run-a-test-without-touching-real-data).
+
+This quickstart is for anyone on your team who builds integrations. It helps to know what [connectors and workflows](concepts.md) are, but you don't need to.
 
 ### Before you start
 
-* **A Fastn account.** Sign up at [app.fastn.dev](https://app.fastn.dev). The free Launch plan is enough.
-* **An account in each app you name,** for example HubSpot and Slack. You sign in to them during step 2.
-* **An AI agent to build with.** Fastn recommends your own AI tool, such as Claude or Cursor, connected to the [Fastn MCP server](../build/mcp-gateway/README.md). It works on every plan and uses no Fastn AI credits. On a paid plan (Scale or Enterprise), you can use the Fastn agent in the dashboard instead. It uses Fastn AI credits.
+* **A Fastn account.** Sign up at [app.fastn.dev](https://app.fastn.dev/?signup=1). The free Launch plan is enough.
+* **An AI tool that supports MCP,** such as Claude, Cursor or VS Code.
+* **A HubSpot account and a Slack workspace** you can sign in to.
 
-### 1. Describe the integration
+### Step 1: Connect your AI tool to Fastn
 
-{% tabs %}
-{% tab title="Your AI tool (every plan)" %}
-Connect your AI tool once: in the Fastn dashboard, click **Connect your AI tool** in the top bar and follow the steps for your tool. For details, see [Fastn MCP server](../build/mcp-gateway/README.md).
+Your AI tool builds the integration through the Fastn MCP server, a connection that gives it Fastn's tools.
 
-<figure><img src="../.gitbook/assets/screens/connect-your-ai-tool.webp" alt="The Connect your AI tool dialog: Claude recommended with Add to Claude, tiles for other AI tools, the MCP server URL https://mcp.fastn.dev/fastn-workspace with Copy, and OAuth 2.0 sign-in with no API key"><figcaption>Click <strong>Connect your AI tool</strong> in the top bar to open this dialog.</figcaption></figure>
+1. In the Fastn dashboard, click **Connect your AI tool** in the top bar.
+2. Choose your AI tool and follow the steps shown for it.
+3. Sign in with your Fastn account when your AI tool asks. No API key is needed.
 
-Then, in a new chat, describe what should happen, naming the apps and what starts it:
+<figure><img src="../.gitbook/assets/screens/connect-your-ai-tool.webp" alt="The Connect your AI tool dialog: Claude recommended with Add to Claude, tiles for other AI tools, the MCP server URL https://mcp.fastn.dev/fastn-workspace with Copy, and OAuth 2.0 sign-in with no API key"><figcaption>The <strong>Connect your AI tool</strong> dialog.</figcaption></figure>
+
+**You should see:** Fastn's tools listed in your AI tool.
+
+### Step 2: Describe the integration
+
+Open a new chat in your AI tool and send this message:
 
 > Using Fastn, when a new contact is created in HubSpot, post their name and email in our #sales Slack channel.
-{% endtab %}
 
-{% tab title="Fastn agent (paid plans)" %}
-Type into the **What should your customers be able to do?** box on **Home**, or open **Integrations → Create integration → Build with fastn agent**. Describe what should happen, naming the apps and what starts it:
+**You should see:** the agent replies with a plan: the connectors it will use and the workflow it will write.
 
-> When a new contact is created in HubSpot, post their name and email in our #sales Slack channel.
+### Step 3: Sign in to HubSpot and Slack
 
-Leave the **Approval mode** chip on **Auto**. The agent then works without stopping to ask before each step.
-{% endtab %}
-{% endtabs %}
+The agent needs your permission to use each app. For each app, it gives you a sign-in link.
 
-**You should see:** the agent replies with a plan: the connectors to use and the workflow to write.
+1. Open the link.
+2. Sign in to the app in your browser, and approve access.
 
-### 2. Sign in to the apps
+Never paste passwords or API keys into the chat.
 
-The agent checks that Fastn has a connector for each app, then asks you to sign in to any account it needs:
+**You should see:** the agent confirms that each app is connected, and starts building.
 
-* **Your AI tool** gives you a link. Open it and sign in to the app in your browser. Never paste passwords or API keys into the chat.
-* **The Fastn agent** asks you to sign in from the chat.
+### Step 4: Find the workflow the agent built
 
-**You should see:** each app marked as connected, and the agent moving on to build.
+The agent writes the workflow, creates test cases for it and runs them. If your AI tool asks you to approve the field mappings or test cases, approve them.
 
-### 3. Let the agent build and test
+When the agent says it's done, open **Build → Integrations → Workflows** ([Open in Fastn](https://app.fastn.dev/integrations?tab=workflows)) and click the new workflow.
 
-The agent writes the workflow, creates test cases for it, and runs them. Your AI tool may first ask you to approve the field mappings and test cases on a review page.
+**You should see:** the workflow's code, with its test cases listed.
 
-**You should see:** the workflow in **Build → Integrations → Workflows** ([Open in Fastn](https://app.fastn.dev/integrations?tab=workflows)), with its test cases listed.
+### Step 5: Run a test without touching real data
 
-### 4. Run it without touching real data
+A **Fully Mock** run uses stored sample responses instead of calling HubSpot and Slack, so nothing is written to either app.
 
-Open the workflow, then:
-
-1. On the **Test** tab, click **Use contract** to fill in a sample input.
-2. Set the mode beside the run button to **Fully Mock**.
-3. Click **Run Fully Mock**.
-
-A fully mocked run uses stored sample responses instead of calling the apps, so nothing is written to HubSpot or Slack.
+1. Click the **Test** tab.
+2. Click **Use contract** to fill in a sample input.
+3. In the list next to the run button, select **Fully Mock**.
+4. Click **Run Fully Mock**.
 
 **You should see:** the run's output, with each step and its result.
 
-{% hint style="warning" %}
-Only **Fully Mock** keeps every call away from the apps. The other modes can write to your real HubSpot and Slack. See [Test a workflow](../build/workflows/testing.md#run-a-quick-test).
-{% endhint %}
+You've built and tested your first integration. It doesn't run on real events until you publish it and add a trigger.
 
-If something is wrong, tell the agent in the chat, for example *"Only post contacts that have an email"*. It updates the workflow and its tests together.
+### Next steps
 
-**You've built and tested your first integration.** Nothing runs for real until you publish it and attach a trigger.
-
-### What's next
-
-* **Publish and deploy it:** ask your AI tool to publish the workflow. Deploying to `live` from your AI tool needs your approval in the browser. See [Test and release](../build/workflows/lifecycle.md).
-* **Run it on real events:** attach a webhook, schedule or app event trigger. See [Triggers](../build/triggers/README.md).
-* **Offer it to your customers:** add it to your widget and put the widget in your product. See [Build your widget](../tutorials/saas-admin/building-your-widget.md) and the [Embedding quickstart](../tutorials/developer/embedding-quickstart.md).
-* **Get told when it fails:** in **Operate → Health → Alerts** ([Open in Fastn](https://app.fastn.dev/health?tab=alerts)), click **Turn on failure alerts**. See [Alerts](../operate/alerts.md).
+* [Test and release](../build/workflows/lifecycle.md): publish the workflow and deploy it to live.
+* [Triggers](../build/triggers/README.md): run it when a contact is created in HubSpot.
+* [Embedding quickstart](../tutorials/developer/embedding-quickstart.md): offer the integration to your customers inside your product.
