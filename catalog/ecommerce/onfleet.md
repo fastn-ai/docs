@@ -33,7 +33,21 @@ For Onfleet's own setup steps, see [Authentication](https://docs.onfleet.com/ref
 Onfleet limits each organization to 20 requests per second across all of its API keys.
 
 ### Connect in Fastn
-Your customers enter these values when they connect Onfleet in your widget. You can also enter them yourself under **Build → Integrations → Connectors → Onfleet**. Once Onfleet is connected, a workflow can call its actions as `fastn.connector.onfleet.<actionSlug>()`.
+
+Your customers connect Onfleet from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Onfleet**.
+2. Select **Connect** on the Onfleet card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Onfleet's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ### Events
 The Onfleet connector supports task, worker, route plan and job events, for example `taskCreated`, `taskCompleted`, `taskFailed`, `workerDuty` and `routePlanCompleted`. To start a workflow from one of them, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events**. See [App events](../../build/triggers/app-events.md). Contact Fastn support to set up events for Onfleet.

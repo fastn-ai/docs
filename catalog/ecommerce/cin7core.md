@@ -42,7 +42,21 @@ This guide shows where you and your customers find the Cin7 Core values Fastn as
 Treat the Account ID and Application Key like a username and password. If a key is exposed, remove that API application in Cin7 Core and create a new one.
 
 ### Connect in Fastn
-Your customers enter these values when they connect Cin7 Core in your widget, or you enter them yourself under **Build** → **Integrations** → **Connectors** → **Cin7 Core**. After connecting, you can call actions from workflow code, for example `fastn.connector.cin7core.<actionSlug>()`.
+
+Your customers connect Cin7 Core from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Cin7 Core**.
+2. Select **Connect** on the Cin7 Core card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Cin7 Core's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ### Events
 To run a workflow when something happens in Cin7 Core, such as a sale being created or a product being updated, add an App event trigger under **Build** → **Integrations** → **Triggers** → **Add trigger** → **App events** (see [App events](../../build/triggers/app-events.md)). Cin7 Core sends webhooks only when the Automation module is part of the Cin7 Core subscription; contact Cin7 support to add it. Contact Fastn support to set up events for Cin7 Core.

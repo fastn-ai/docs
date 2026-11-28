@@ -69,6 +69,23 @@ For Microsoft Entra ID's own setup steps, see [Register an application with the 
 
 If you skip these steps, your customers sign in through Fastn's shared app for Microsoft Entra ID.
 
+### Connect in Fastn
+
+Your customers connect Microsoft Entra ID from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Microsoft Entra ID**.
+2. Select **Connect** on the Microsoft Entra ID card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Microsoft Entra ID and approve access in the window that opens.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Microsoft Entra ID's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
+
 ## Actions
 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Activate Directory Role</td><td><code>activateDirectoryRole</code></td><td>Activates a directory role in the tenant from its role template, making it available for member assignment. Role Template ID is the only property the API accepts. The Company Administrator and implicit user roles are activated by default.</td></tr><tr><td>Add Administrative Unit Member</td><td><code>addAdministrativeUnitMember</code></td><td>Adds an existing user, group or device to a Microsoft Entra ID administrative unit, bringing it into that unit's administrative scope.</td></tr><tr><td>Add Application Password</td><td><code>addApplicationPassword</code></td><td>Generates a new client secret for a Microsoft Entra ID application registration. The secretText value is returned only in this response and cannot be read again, so capture it immediately.</td></tr><tr><td>Add Directory Role Member</td><td><code>addDirectoryRoleMember</code></td><td>Assigns a user, group or service principal to an activated directory role, granting them that administrative role in the tenant.</td></tr><tr><td>Add Group Member</td><td><code>addGroupMember</code></td><td>Adds a directory object to a Microsoft Entra ID group. Microsoft 365 groups accept only users; security groups also accept groups, devices, service principals and organizational contacts.</td></tr><tr><td>Add Group Owner</td><td><code>addGroupOwner</code></td><td>Adds a user or service principal as an owner of a Microsoft Entra ID group.</td></tr><tr><td>Add Service Principal App Role Assigned To</td><td><code>addServicePrincipalAppRoleAssignedTo</code></td><td>Grants a user, group or service principal one of the application roles a service principal exposes, giving them access to that enterprise application.</td></tr><tr><td>Add User App Role Assignment</td><td><code>addUserAppRoleAssignment</code></td><td>Grants a Microsoft Entra ID user an application role, which is how an application is assigned to a user. Use the app role's default GUID of all zeros when the application exposes no roles.</td></tr><tr><td>Add User Sponsor</td><td><code>addUserSponsor</code></td><td>Assigns a user or group as a sponsor of a Microsoft Entra ID user, typically to attribute a guest account to an internal owner.</td></tr><tr><td>Assign Group Licence</td><td><code>assignGroupLicense</code></td><td>Adds or removes subscription licences on a Microsoft Entra ID group, so that every member inherits them. Remove Licences is required and may be an empty array.</td></tr></tbody></table>
@@ -81,6 +98,3 @@ If you skip these steps, your customers sign in through Fastn's shared app for M
 
 </details>
 
-## Events
-
-Microsoft Entra ID has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

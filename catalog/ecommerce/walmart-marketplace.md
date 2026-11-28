@@ -57,7 +57,27 @@ If you use the Custom method instead of OAuth, the seller enters three values:
 3. **sellerId**: the seller's WM Partner ID. It is shown on the Walmart authorization screen and on the credentials page.
 
 ### Connect in Fastn
-Your customers enter these values when they connect Walmart Marketplace in your widget, or you enter them under **Build → Integrations → Connectors → Walmart Marketplace**.
+
+Your customers connect Walmart Marketplace from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Walmart Marketplace**.
+2. Select **Connect** on the Walmart Marketplace card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Walmart Marketplace offers more than one sign-in method. Choose one in **Auth Method**, then:
+
+   * For a key or credential method, fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+     <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+   * For OAuth 2.0, keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Walmart Marketplace and approve access in the window that opens.
+
+     <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Walmart Marketplace's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ### Events
 Fastn supports these Walmart Marketplace events: PO_CREATED, PO_LINE_AUTOCANCELLED, BUY_BOX_CHANGED, OFFER_UNPUBLISHED and REPORT_STATUS. To start a workflow from one, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events** (see [App events](../../build/triggers/app-events.md)). Contact Fastn support to set up events for Walmart Marketplace.

@@ -69,6 +69,23 @@ For HubSpot's own setup steps, see [Create a new app](https://developers.hubspot
 
 Customers who skip this setup connect through Fastn's shared HubSpot app.
 
+### Connect in Fastn
+
+Your customers connect HubSpot from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **HubSpot**.
+2. Select **Connect** on the HubSpot card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to HubSpot and approve access in the window that opens.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use HubSpot's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
+
 ## Actions
 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add List Members</td><td><code>addListMembers</code></td><td>Add records to a MANUAL list. Pass 'recordIds' as an array of record ID strings.</td></tr><tr><td>Archive Appointment</td><td><code>archiveAppointment</code></td><td>Archive (soft-delete) an appointment by record ID. Requires the crm.objects.appointments.write scope.</td></tr><tr><td>Archive Call</td><td><code>archiveCall</code></td><td>Archive (soft-delete) a call by record ID.</td></tr><tr><td>Archive Cart</td><td><code>archiveCart</code></td><td>Archive (soft-delete) a cart by record ID. Requires the crm.objects.carts.write scope.</td></tr><tr><td>Archive Commerce Payment</td><td><code>archiveCommercePayment</code></td><td>Archive a commerce payment record by ID (only payments recorded via the API or manually). Requires the crm.objects.commercepayments.write scope.</td></tr><tr><td>Archive Company</td><td><code>archiveCompany</code></td><td>Archive (soft-delete) a company by record ID.</td></tr><tr><td>Archive Contact</td><td><code>archiveContact</code></td><td>Archive (soft-delete) a contact by record ID.</td></tr><tr><td>Archive Course</td><td><code>archiveCourse</code></td><td>Archive (soft-delete) a course by record ID. Requires the crm.objects.courses.write scope.</td></tr><tr><td>Archive Deal</td><td><code>archiveDeal</code></td><td>Archive (soft-delete) a deal by record ID.</td></tr><tr><td>Archive Email</td><td><code>archiveEmail</code></td><td>Archive (soft-delete) an email engagement by record ID.</td></tr></tbody></table>

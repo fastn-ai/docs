@@ -74,10 +74,25 @@ This guide shows how to create your own Atlassian OAuth 2.0 app for Jira and add
 
 If you skip this section, your customers sign in to Jira through Fastn's shared app.
 
-After a customer connects, you can call actions from workflow code, for example `fastn.connector.jira.<actionSlug>()`.
-
 ### Events
 To run a workflow when an issue or comment is created, updated or deleted in Jira, add an App event trigger under **Build** → **Integrations** → **Triggers** → **Add trigger** → **App events** (see [App events](../../build/triggers/app-events.md)). Contact Fastn support to set up events for Jira.
+
+### Connect in Fastn
+
+Your customers connect Jira from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Jira**.
+2. Select **Connect** on the Jira card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Jira and approve access in the window that opens.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Jira's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ## Actions
 

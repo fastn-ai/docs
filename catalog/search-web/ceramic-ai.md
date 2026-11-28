@@ -18,14 +18,24 @@ hidden: true
 
 Your customers enter their access token for Ceramic AI when they connect. Nothing else needs setting up.
 
-## Use it
+## Connect in Fastn
 
-Add Ceramic AI from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.ceramicAi.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+Your customers connect Ceramic AI from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Ceramic AI**.
+2. Select **Connect** on the Ceramic AI card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from [Setup](#setup) above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Ceramic AI's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ## Actions
 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Search Web</td><td><code>searchWeb</code></td><td>Searches the web with Ceramic Search and returns ranked results, each with a page title, URL and a content snippet. The query should be in keyword form and contain between 1 and 50 words. Each call consumes one search credit.</td></tr></tbody></table>
 
-## Events
-
-Ceramic AI has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

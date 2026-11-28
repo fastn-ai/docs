@@ -18,9 +18,28 @@ hidden: true
 
 Your customers sign in to Easy-Peasy.AI through Fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
-## Use it
+## Connect in Fastn
 
-Add Easy-Peasy.AI from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.easyPeasyAi.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+Your customers connect Easy-Peasy.AI from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Easy-Peasy.AI**.
+2. Select **Connect** on the Easy-Peasy.AI card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Easy-Peasy.AI offers more than one sign-in method. Choose one in **Auth Method**, then:
+
+   * For a key or credential method, fill in the fields the form asks for, using the values from [Setup](#setup) above. Then select **Connect**.
+
+     <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+   * For OAuth 2.0, keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Easy-Peasy.AI and approve access in the window that opens.
+
+     <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Easy-Peasy.AI's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ## Actions
 
@@ -34,6 +53,3 @@ Add Easy-Peasy.AI from **Build → Integrations → Connectors** and connect an 
 
 </details>
 
-## Events
-
-Easy-Peasy.AI has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

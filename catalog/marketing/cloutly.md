@@ -18,14 +18,24 @@ hidden: true
 
 Your customers enter their API key for Cloutly when they connect. Nothing else needs setting up.
 
-## Use it
+## Connect in Fastn
 
-Add Cloutly from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.cloutly.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+Your customers connect Cloutly from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Cloutly**.
+2. Select **Connect** on the Cloutly card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from [Setup](#setup) above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Cloutly's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ## Actions
 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Check API Health</td><td><code>checkApiHealth</code></td><td>Health check for the Cloutly REST API v1. Sends with your API key and returns the plain-text body "OK" when the key authenticates and the API is reachable. Use this to verify a newly created Cloutly connection before running any other action. Takes no input.</td></tr><tr><td>Get API Key Scopes</td><td><code>getApiKeyScopes</code></td><td>Returns the API versions your Cloutly API key is entitled to, e.g. {"scopes":["v1","v2"]}. This is the v2 health endpoint and doubles as a scope-introspection call: if "v2" is absent from the list, the v2 endpoints of this connector will be refused. Takes no input.</td></tr><tr><td>List Businesses</td><td><code>listBusinesses</code></td><td>Lists every business (location) connected to your Cloutly account, with its connected review sources, aggregate star rating and total review count. Use this first to obtain the businessId required by List Reviews and Send Review Invite. Returns a JSON array under "items"; an empty array means no business has been connected in the Cloutly console yet. Takes no input.</td></tr><tr><td>List Businesses (API v2)</td><td><code>listBusinessesV2</code></td><td>Lists the businesses connected to your Cloutly account using the v2 API surface Requires the "v2" scope on your API key - check it with Get API Key Scopes. Returns the same business records as List Businesses under "items"; kept as a separate action because v2 may add fields that v1 does not return. Takes no input.</td></tr><tr><td>List Reviews</td><td><code>listReviews</code></td><td>Lists reviews aggregated by Cloutly from every connected source (Google, Facebook, Trustpilot and others), newest first by default. Supports filtering by source, by business and by widget visibility, plus limit/offset paging and sort direction. Returns the total match count and the review records, including author, rating, text, status, the business reply if any, and whether the review can still be replied to. PRIVACY: review records contain reviewer names, email addresses and phone numbers - real end-customer personal data.</td></tr><tr><td>Send Review Invite</td><td><code>sendReviewInvite</code></td><td>Creates a contact in a Cloutly business campaign and sends that person a review invite. WARNING - THIS CONTACTS A REAL CUSTOMER AND CONSUMES ACCOUNT CREDIT: the invite is delivered by email and/or SMS, immediately when inviteDelayDays is omitted. Supply at least one of email or phoneNumber. businessId comes from List Businesses; campaignId is optional and falls back to the business default campaign. Returns the created contact and the account's remaining SMS allowance.</td></tr></tbody></table>
 
-## Events
-
-Cloutly has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

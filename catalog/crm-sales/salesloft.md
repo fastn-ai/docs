@@ -81,6 +81,29 @@ Customers who connect without your own app sign in through Fastn's shared Salesl
 ### Events
 To start a workflow when something happens in Salesloft, such as a person being created or a task being completed, add an App event trigger under **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events** and pick the Salesloft event. See [App events](../../build/triggers/app-events.md). Contact Fastn support to set up events for Salesloft.
 
+### Connect in Fastn
+
+Your customers connect Salesloft from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Salesloft**.
+2. Select **Connect** on the Salesloft card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Salesloft offers more than one sign-in method. Choose one in **Auth Method**, then:
+
+   * For a key or credential method, fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+     <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+   * For OAuth 2.0, keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Salesloft and approve access in the window that opens.
+
+     <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Salesloft's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
+
 ## Actions
 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Activate Cadence</td><td><code>activateCadence</code></td><td>Transition a draft cadence to active. Returns an error if the team has the cadence approval flow setting enabled — in that case the cadence must go through review instead. Scope: cadences:write.</td></tr><tr><td>Bulk Reschedule Tasks</td><td><code>bulkRescheduleTasks</code></td><td>Reschedule many Salesloft tasks to a new due date in one call. Scope: tasks:write.</td></tr><tr><td>Cancel Bulk Job</td><td><code>cancelBulkJob</code></td><td>Cancel a bulk job and mark all pending records cancelled. Jobs that have already completed cannot be cancelled.</td></tr><tr><td>Check Email Missing Tags</td><td><code>checkEmailMissingTags</code></td><td>Check an email subject and body against a person for unfilled merge tags. Returns the list of tags that could not be resolved. Scope: emails:read.</td></tr><tr><td>Create Account</td><td><code>createAccount</code></td><td>Create a Salesloft account (company). "domain" must be unique on the current team. Scope: accounts:write.</td></tr><tr><td>Create Activity</td><td><code>createActivity</code></td><td>Create an activity, which marks the associated cadence action or task as completed. Only certain action types support an explicitly created activity. Scope: activities:write.</td></tr><tr><td>Create Audit Report</td><td><code>createAuditReport</code></td><td>Request a new audit report over a record type and set of record ids. The report is generated asynchronously; poll Get Audit Report for status and download_url. Scope: audit_reports:write.</td></tr><tr><td>Create Bulk Job</td><td><code>createBulkJob</code></td><td>Create a bulk job. The type fixes what the job does (for example bulk person upsert). Flow: create the job, POST job data in batches of up to 5,000, then mark it ready_to_execute, then poll results.</td></tr><tr><td>Create Bulk Job Data</td><td><code>createBulkJobData</code></td><td>Upload job data to a bulk job. data is an array of objects, each holding the parameters for one individual call. Up to 5,000 records per request; call repeatedly to load more.</td></tr><tr><td>Create Cadence Bulk Membership</td><td><code>createCadenceBulkMembership</code></td><td>Add many people to a cadence at once. The people are selected by a listing filter (people_filter uses the same parameter shape as List People). Person records that may not be added to the cadence are ignored. Returns the filter that was applied, the number of people found, and the cadence and user. Scope: cadences:write.</td></tr></tbody></table>

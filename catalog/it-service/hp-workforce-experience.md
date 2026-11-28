@@ -63,6 +63,23 @@ Customers who are unsure of their region's URLs can get them from their HP repre
 ### Events
 Fastn supports HP Workforce Experience `critical`, `warn` and `info` events. To start a workflow from one, add an App event trigger under **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events** (see [App events](../../build/triggers/app-events.md)). Contact Fastn support to set up events for HP Workforce Experience.
 
+### Connect in Fastn
+
+Your customers connect HP Workforce Experience from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **HP Workforce Experience**.
+2. Select **Connect** on the HP Workforce Experience card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to HP Workforce Experience and approve access in the window that opens.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use HP Workforce Experience's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
+
 ## Actions
 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Add Incident Comment</td><td><code>addIncidentComment</code></td><td>Post a comment on an existing incident. The comment is attributed to the connected user and appears in the incident's comment thread in the Workforce Experience portal.</td></tr><tr><td>Bulk Update Incidents</td><td><code>bulkUpdateIncidents</code></td><td>Apply the same status, priority or assignee change to several incidents of a tenant in one call. System-generated incidents accept status, priority and assignee changes only.</td></tr><tr><td>Check Alerts Service Health</td><td><code>checkAlertsServiceHealth</code></td><td>Check that the Workforce Experience alerts service is reachable for the configured environment. Useful for verifying connectivity and the configured host before running other calls.</td></tr><tr><td>Create Incident</td><td><code>createIncident</code></td><td>Create a new incident. Title and description are required. Source type USER_GENERATED is used for third-party created incidents.</td></tr><tr><td>Delete Incident</td><td><code>deleteIncident</code></td><td>Soft-delete an incident. The incident is hidden from APIs but kept for GDPR/historical purposes. Note: incidentId is a numeric integer, not a UUID.</td></tr><tr><td>Get Application Errors Report</td><td><code>getApplicationErrorsReport</code></td><td>Retrieve application crash and error counts per device and application (swerrorsV2/details), including the failing module, Windows event id and provider, for troubleshooting unstable software.</td></tr><tr><td>Get Asset Count By Type</td><td><code>getAssetCountByType</code></td><td>Retrieve how many assets of each type a tenant has, from the Workforce Experience asset management query service. Useful as a headline count for dashboards.</td></tr><tr><td>Get Asset Service Status</td><td><code>getAssetServiceStatus</code></td><td>Check the status of the TechPulse asset management query service for the configured environment, to confirm connectivity and credentials before running asset searches.</td></tr><tr><td>Get Battery Replacement Report</td><td><code>getBatteryReplacementReport</code></td><td>Retrieve batteries due for replacement (batteryrep/details), with battery health, serial number, replacement timeframe and reason, plus the device's warranty status.</td></tr><tr><td>Get Battery Status And Risk Factors Report</td><td><code>getBatteryRiskFactorsReport</code></td><td>Retrieve battery status with its risk factors (batteryStatRiskFact/batteryRepAndRiskFact), combining battery health, HP Battery Health Manager settings, installed versus recommended BIOS version and the replacement reason per device.</td></tr></tbody></table>

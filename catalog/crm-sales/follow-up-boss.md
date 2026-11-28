@@ -33,7 +33,21 @@ For Follow Up Boss's own setup steps, see [Authentication and authorization](htt
 5. Enter the system key issued with the registration as **xSystemKey**. It is sent as the `X-System-Key` header, gives you the higher rate limit, and is the secret Follow Up Boss uses to sign webhook requests. Keep it private.
 
 ### Connect in Fastn
-Your customers enter these four values when they connect Follow Up Boss in your widget. You can also enter them yourself under Build → Integrations → Connectors → Follow Up Boss. Workflow code calls Follow Up Boss actions as `fastn.connector.followUpBoss.<actionSlug>()`.
+
+Your customers connect Follow Up Boss from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Follow Up Boss**.
+2. Select **Connect** on the Follow Up Boss card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Follow Up Boss's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ### Events
 To run a workflow when something changes in Follow Up Boss, such as `peopleCreated`, `dealsUpdated` or `tasksCreated`, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events and pick the event. See [App events](../../build/triggers/app-events.md). On the Follow Up Boss side, webhooks can only be managed with the account owner's API key and a registered system, and each system can register two webhooks per event. Contact Fastn support to set up events for Follow Up Boss.

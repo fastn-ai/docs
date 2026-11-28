@@ -18,9 +18,22 @@ hidden: true
 
 Your customers sign in to Azure DevOps through Fastn's own OAuth app, so nothing needs setting up first. To show your own app on the consent screen instead, add your OAuth app on the connector's **Auth** tab under **Manage providers**.
 
-## Use it
+## Connect in Fastn
 
-Add Azure DevOps from **Build → Integrations → Connectors** and connect an account, as in [Connect a system](../../build/connectors/connect-a-system.md). In workflow code, call an action as `fastn.connector.azureDevOps.<action>()`, with the action's slug from the table below. See [Workflow runtime API](../../reference/workflow-runtime.md).
+Your customers connect Azure DevOps from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Azure DevOps**.
+2. Select **Connect** on the Azure DevOps card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Azure DevOps and approve access in the window that opens.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Azure DevOps's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ## Actions
 
@@ -34,6 +47,3 @@ Add Azure DevOps from **Build → Integrations → Connectors** and connect an a
 
 </details>
 
-## Events
-
-Azure DevOps has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

@@ -43,7 +43,21 @@ Fastn asks for one value, **API Key** (`apiKey`).
 <figure><img src="../../.gitbook/assets/connector-guides/sureContact/key-created.png" alt="SureContact shows the new key only once"><figcaption><p>SureContact shows the new key only once</p></figcaption></figure>
 
 ### Connect in Fastn
-Your customers enter their API key when they connect SureContact in your widget. You can also enter it yourself under Build → Integrations → Connectors → SureContact. After the connection is set up, call the connector's actions from workflow code as `fastn.connector.sureContact.<actionSlug>()`, for example `fastn.connector.sureContact.createContactTool()`.
+
+Your customers connect SureContact from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **SureContact**.
+2. Select **Connect** on the SureContact card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use SureContact's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ## Actions
 
@@ -57,6 +71,3 @@ Your customers enter their API key when they connect SureContact in your widget.
 
 </details>
 
-## Events
-
-SureContact has no events, so it can't start a workflow by itself. Use its actions in a workflow that another [trigger](../../build/triggers/README.md) starts, such as a schedule or a webhook.

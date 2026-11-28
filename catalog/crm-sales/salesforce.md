@@ -58,6 +58,23 @@ Customers who skip this setup sign in through Fastn's shared Salesforce app.
 ### Events
 Fastn can start a workflow when Salesforce records change, for example when an account, contact, lead, opportunity or case is created, updated or deleted. To use one of these events, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events and pick the Salesforce event. See [App events](../../build/triggers/app-events.md). Contact Fastn support to set up events for Salesforce.
 
+### Connect in Fastn
+
+Your customers connect Salesforce from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Salesforce**.
+2. Select **Connect** on the Salesforce card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Salesforce and approve access in the window that opens.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Salesforce's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
+
 ## Actions
 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Abort Bulk Ingest Job</td><td><code>abortBulkIngestJob</code></td><td>Abort a Bulk API 2.0 ingest job (set state to Aborted) to stop processing. Returns the updated job info.</td></tr><tr><td>Abort Bulk Query Job</td><td><code>abortBulkQueryJob</code></td><td>Abort a Bulk API 2.0 query job (set state to Aborted) to stop processing. Returns the updated job info.</td></tr><tr><td>Close Bulk Ingest Job</td><td><code>closeBulkIngestJob</code></td><td>Close a Bulk API 2.0 ingest job (set state to UploadComplete) so Salesforce begins processing the uploaded data. Returns the updated job info.</td></tr><tr><td>Composite Batch</td><td><code>compositeBatch</code></td><td>Execute up to 25 independent subrequests in a single batch call. Unlike composite, subrequests cannot reference each other. Returns a results array.</td></tr><tr><td>Composite Graph</td><td><code>compositeGraph</code></td><td>Execute one or more graphs of dependent operations in a single request. Each graph is committed independently. Returns per-graph responses.</td></tr><tr><td>Composite Request</td><td><code>compositeRequest</code></td><td>Execute a series of REST API subrequests in a single composite call. Subrequests can reference each other's results. Returns a compositeResponse array of subrequest results.</td></tr><tr><td>Composite Tree (SObject Tree)</td><td><code>compositeTree</code></td><td>Create one or more sObject trees (parent records with nested child records) in a single request for the given sObject type. Each record needs attributes.type and a referenceId.</td></tr><tr><td>Create Account</td><td><code>createAccount</code></td><td>Create a new Salesforce Account. Every provided field is sent as the JSON body. The org's duplicate rules can reject a near-duplicate Name with DUPLICATES_DETECTED. Returns {id, success, errors} with HTTP 201.</td></tr><tr><td>Create Apex Class</td><td><code>createApexClass</code></td><td>Create an Apex class in the org via the Tooling API. Pass the full class source as Body; Salesforce extracts the class name from the declaration. Use to provision a webhook-emitting Apex helper before binding it to a trigger.</td></tr><tr><td>Create Apex Trigger</td><td><code>createApexTrigger</code></td><td>Create an Apex trigger via the Tooling API. Provide the trigger Name, the sObject it targets (TableEnumOrId), and the full trigger source (Body). Used to wire a webhook-emitting Apex class to record insert/update/delete events.</td></tr></tbody></table>

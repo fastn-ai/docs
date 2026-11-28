@@ -59,7 +59,21 @@ Fastn connects to WildApricot with an API key from an authorized server applicat
    - **clientSecret**: the API key you copied in step 7.
 
 ### Connect in Fastn
-Your customers enter these values when they connect WildApricot in your widget, or you enter them under **Build** > **Integrations** > **Connectors** > **WildApricot**. Fastn exchanges the API key for an access token with WildApricot, so there is no redirect or sign-in screen.
+
+Your customers connect WildApricot from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **WildApricot**.
+2. Select **Connect** on the WildApricot card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to WildApricot and approve access in the window that opens.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use WildApricot's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ### Events
 Fastn supports these WildApricot events: Contact, Membership, MembershipLevel, MembershipRenewed, Event, EventRegistration, Invoice, Payment, Refund and LoggedEmail. To start a workflow from one, add an App event trigger under **Build** > **Integrations** > **Triggers** > **Add trigger** > **App events**. See [App events](../../build/triggers/app-events.md).

@@ -76,7 +76,27 @@ To connect with a Private Integration Token instead of OAuth, Fastn asks for one
 You can change the token's scopes later by editing the integration, without creating a new token.
 
 ### Connect in Fastn
-Your customers enter the token when they connect GoHighLevel in your widget, or you enter it under **Build → Integrations → Connectors → GoHighLevel**.
+
+Your customers connect GoHighLevel from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **GoHighLevel**.
+2. Select **Connect** on the GoHighLevel card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. GoHighLevel offers more than one sign-in method. Choose one in **Auth Method**, then:
+
+   * For a key or credential method, fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+     <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+   * For OAuth 2.0, keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to GoHighLevel and approve access in the window that opens.
+
+     <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use GoHighLevel's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ### Events
 Fastn supports GoHighLevel events such as contact, opportunity, appointment, task, note, message and order changes. To run a workflow when one happens, add an [App event trigger](../../build/triggers/app-events.md) under **Build → Integrations → Triggers → Add trigger → App events**. Contact Fastn support to set up events for GoHighLevel.

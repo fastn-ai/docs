@@ -40,7 +40,20 @@ Production and sandbox keys look the same, so check that the key and the base UR
 
 ### Connect in Fastn
 
-Your customers enter the API key and base URL when they connect Whop in your widget, or you enter them yourself under **Build → Integrations → Connectors → Whop**. Fastn sends the key as a bearer token on every request, and workflows then call Whop actions as `fastn.connector.whop.<actionSlug>()`.
+Your customers connect Whop from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Whop**.
+2. Select **Connect** on the Whop card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Whop's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ### Events
 

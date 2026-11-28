@@ -37,7 +37,21 @@ Fastn connects to HelpDesk.com with HTTP Basic authentication: your account ID i
 6. Store the token somewhere safe. Treat it like a password and do not share it in public scripts or tickets.
 
 ### Connect in Fastn
-Your customers enter the account ID as **username** and the personal access token as **password** when they connect HelpDesk.com in your widget. You can also enter them yourself under Build → Integrations → Connectors → HelpDesk.com. In workflow code, call an action as `fastn.connector.helpdeskCom.<actionSlug>()`.
+
+Your customers connect HelpDesk.com from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **HelpDesk.com**.
+2. Select **Connect** on the HelpDesk.com card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use HelpDesk.com's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ### Events
 Fastn supports these HelpDesk.com events: `tickets.create`, `tickets.update`, `tickets.statusChange`, `tickets.events.status`, `tickets.events.priority`, `tickets.events.message`, `tickets.events.tags`, `tickets.events.followers`, `tickets.events.assignment` and `tickets.events.customFields`. To run a workflow when one of them happens, add an App event trigger under Build → Integrations → Triggers → Add trigger → App events. See [App events](../../build/triggers/app-events.md).

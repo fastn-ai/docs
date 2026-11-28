@@ -55,7 +55,27 @@ If you connect with an API key instead of OAuth, Fastn asks for one value, **tok
 4. Copy the key.
 
 ### Connect in Fastn
-Your customers enter this key when they connect Rootly in your widget, or you enter it under **Build → Integrations → Connectors → Rootly**.
+
+Your customers connect Rootly from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Rootly**.
+2. Select **Connect** on the Rootly card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Rootly offers more than one sign-in method. Choose one in **Auth Method**, then:
+
+   * For a key or credential method, fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+     <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+   * For OAuth 2.0, keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Rootly and approve access in the window that opens.
+
+     <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Rootly's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
 
 ### Events
 Fastn supports Rootly events such as `incident.created`, `incident.resolved`, `alert.created`, `shift.started` and `audit_log.created`. To start a workflow from one, add an App event trigger under **Build → Integrations → Triggers → Add trigger → App events** (see [App events](../../build/triggers/app-events.md)). Contact Fastn support to set up events for Rootly.

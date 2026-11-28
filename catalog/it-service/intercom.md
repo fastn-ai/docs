@@ -71,6 +71,29 @@ Fastn can start a workflow when something happens in Intercom, such as a new con
 
 Intercom sends events to the endpoint set on an app's **Configure → Webhooks** page, and each topic needs the matching permission on the app's **Authentication** page. Contact Fastn support to set up events for Intercom when customers connect through your own app.
 
+### Connect in Fastn
+
+Your customers connect Intercom from your widget. To connect an account yourself:
+
+1. Go to **Build → Integrations → Connectors** and search for **Intercom**.
+2. Select **Connect** on the Intercom card.
+
+   <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-search.png" alt="The Connectors page in Fastn with ServiceNow typed in the search box and the ServiceNow card showing a Connect button"><figcaption><p>Search for the connector, then select Connect on its card. ServiceNow is shown here.</p></figcaption></figure>
+
+3. Intercom offers more than one sign-in method. Choose one in **Auth Method**, then:
+
+   * For a key or credential method, fill in the fields the form asks for, using the values from the setup steps above. Then select **Connect**.
+
+     <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-credentials.png" alt="The Connect ServiceNow dialog with an optional account name and the Instance, Username and Password fields, and Cancel and Connect buttons"><figcaption><p>A connect form that asks for credentials. Each connector asks for its own fields.</p></figcaption></figure>
+
+   * For OAuth 2.0, keep the **Default** auth provider, or choose your own OAuth app if you added one. Pick the **Scopes** you need, select **Authorize**, then sign in to Intercom and approve access in the window that opens.
+
+     <figure><img src="../../.gitbook/assets/connector-guides/fastn/connect-oauth.png" alt="The Connect Salesforce dialog for OAuth 2.0 with the Default auth provider, an optional account name, the Scopes selector and an Authorize button"><figcaption><p>A connect form for OAuth 2.0. Salesforce is shown here.</p></figcaption></figure>
+
+4. Check that the connection appears under **Operate → Connections** with the status `Active`. Your workflows can now use Intercom's actions.
+
+For more detail, see [Connect an app](../../build/connectors/connect-an-app.md).
+
 ## Actions
 
 <table><thead><tr><th width="240">Action</th><th width="260">Slug</th><th>What it does</th></tr></thead><tbody><tr><td>Archive Contact</td><td><code>archiveContact</code></td><td>Archive a contact by id.</td></tr><tr><td>Assign Conversation</td><td><code>assignConversation</code></td><td>Assign a conversation to an admin and/or team via the parts endpoint.</td></tr><tr><td>Attach Contact to Company</td><td><code>attachContactToCompany</code></td><td>Attach a contact to a company.</td></tr><tr><td>Attach Contact to Conversation</td><td><code>attachContactToConversation</code></td><td>Add a contact participant to a conversation.</td></tr><tr><td>Close Conversation</td><td><code>closeConversation</code></td><td>Close a conversation via the parts endpoint.</td></tr><tr><td>Convert Conversation to Ticket</td><td><code>convertConversationToTicket</code></td><td>Convert a conversation into a ticket of a given ticket type.</td></tr><tr><td>Create Article</td><td><code>createArticle</code></td><td>Create a help center article.</td></tr><tr><td>Create Contact</td><td><code>createContact</code></td><td>Create a new contact (user or lead) in Intercom.</td></tr><tr><td>Create Conversation</td><td><code>createConversation</code></td><td>Create a conversation initiated by a contact.</td></tr><tr><td>Create Data Attribute</td><td><code>createDataAttribute</code></td><td>Create a custom data attribute.</td></tr></tbody></table>
