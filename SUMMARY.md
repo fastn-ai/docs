@@ -7,6 +7,8 @@
 * [Quickstart: your first integration](getting-started/quickstart.md)
 * [Find out if Fastn fits your use case](getting-started/plan-your-integration.md)
 * [Authentication](tutorials/developer/authentication-and-api-keys.md)
+  * [How authentication works](tutorials/developer/how-authentication-works.md)
+  * [Set up authentication](tutorials/developer/set-up-authentication.md)
 * [Core concepts](getting-started/concepts.md)
   * [Platform tour](getting-started/platform-tour.md)
 * [Architecture](getting-started/architecture.md)
