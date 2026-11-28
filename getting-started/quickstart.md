@@ -73,6 +73,8 @@ The agent writes the workflow, creates test cases for it and runs them. If your 
 
 When the agent says it's done, open **Build → Integrations → Workflows** ([Open in Fastn](https://app.fastn.dev/integrations?tab=workflows)) and click the new workflow.
 
+<figure><img src="../.gitbook/assets/screens/workflow-code-and-test-cases.png" alt="A workflow open in the editor: its JavaScript code in the middle, and the Test cases tab on the right listing 9 test cases, all passing, grouped as happy-path, edge-cases, failure, idempotency, ambiguity-review and trigger-fire"><figcaption>The workflow's code, with its test cases on the <strong>Test cases</strong> tab.</figcaption></figure>
+
 **You should see:** the workflow's code, with its test cases listed.
 
 ### Step 5: Run a test without touching real data
@@ -83,6 +85,8 @@ A **Fully Mock** run uses stored sample responses instead of calling HubSpot and
 2. Click **Use contract** to fill in a sample input.
 3. In the list next to the run button, select **Fully Mock**.
 4. Click **Run Fully Mock**.
+
+<figure><img src="../.gitbook/assets/screens/workflow-test-fully-mock.png" alt="The Test tab with Use contract, the mode set to Fully Mock and the Run Fully Mock button. Below, a sample ctx.input, then the run summary (1 step, 1 OK, 0 errors) and the Output tab marked FULLY MOCK and OK"><figcaption>A <strong>Fully Mock</strong> run: the sample input at the top, the result below.</figcaption></figure>
 
 **You should see:** the run's output, with each step and its result.
 

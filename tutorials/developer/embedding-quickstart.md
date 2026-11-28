@@ -49,6 +49,8 @@ Your backend uses the API key to ask Fastn for a widget token.
 2. Give the key a name, and leave the other settings as they are. A new key is a **Test** key.
 3. Click **Create key**, and copy the key. It's shown only once.
 
+<figure><img src="../../.gitbook/assets/screens/create-api-key-dialog.png" alt="The Create an API key dialog: a Name field filled in with My product backend, Mode with Test selected and Live beside it, and Cancel and Create key buttons"><figcaption>The <strong>Create an API key</strong> dialog. <strong>Test</strong> is selected by default.</figcaption></figure>
+
 **You should see:** a key that starts with `fsk_test_`.
 
 #### Step 1.2: Create a test customer
@@ -57,7 +59,9 @@ The widget always runs for one customer, so you need one to test with.
 
 1. Go to **Operate → Customers** ([Open in Fastn](https://app.fastn.dev/customers)) and click **Create customer**.
 2. Enter a name, and an **External ID** such as `acme-test`.
-3. Click **Create customer**.
+3. Click **Create Customer**.
+
+<figure><img src="../../.gitbook/assets/screens/create-customer-form.png" alt="The Create customer form: Customer Name Acme Test, Slug acme-test generated from the name, an optional Admin Email, Tier set to No tier, External ID acme-test, and Cancel and Create Customer buttons"><figcaption>The <strong>Create customer</strong> form, with an example name and External ID.</figcaption></figure>
 
 **You should see:** the new customer in the list. Note its External ID.
 
@@ -66,9 +70,17 @@ The widget always runs for one customer, so you need one to test with.
 The widget shows your customers the integrations you add to it.
 
 1. Go to **Embed → Widget** ([Open in Fastn](https://app.fastn.dev/widgets)).
-2. Add one integration for the app you'll connect, such as Slack. For details, see [Build your widget](../saas-admin/building-your-widget.md).
+2. Next to **INTEGRATIONS**, click **+ Add**.
+3. Search for the app you'll connect, such as Slack, and select it.
+4. Click **Add Integration**. The integration goes live for your customers right away.
 
-**You should see:** the integration listed in your widget.
+<figure><img src="../../.gitbook/assets/screens/widget-add-integration.png" alt="The Add Integrations dialog: Apps and Unified tabs, Slack found by searching and selected, the note Goes live for your customers immediately, and Cancel and Add Integration buttons"><figcaption>Pick the app in <strong>Add Integrations</strong>.</figcaption></figure>
+
+**You should see:** the integration listed under **INTEGRATIONS**, and in the live preview.
+
+<figure><img src="../../.gitbook/assets/screens/widget-builder-integrations.png" alt="The Widget builder: Cin7 Core and Slack Messages listed under INTEGRATIONS on the left, and the live preview on the right showing both integrations with Connect buttons"><figcaption>The widget builder, with the live preview of what your customers see.</figcaption></figure>
+
+For more options, see [Build your widget](../saas-admin/building-your-widget.md).
 
 ### Part 2: Embed the widget
 
@@ -151,6 +163,8 @@ document.getElementById("integrations").appendChild(iframe);
 ```
 
 **You should see:** the Fastn widget in your page, listing your integration with a **Connect** button.
+
+<figure><img src="../../.gitbook/assets/screens/widget-preview-connect.png" alt="The Fastn widget: an Integrations header, a search box, and two integrations, Cin7 Core and Slack Messages, each marked Not connected with a Connect button"><figcaption>The widget as your customers see it.</figcaption></figure>
 
 #### Step 2.5: Connect an app
 
