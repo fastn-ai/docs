@@ -1,5 +1,5 @@
 ---
-description: "The shortest path to a working embed: mint a token on your backend, render the widget, and connect an app."
+description: "Put the Fastn widget in your product and connect an app as a customer would. About ten minutes."
 layout:
   width: default
   title:
@@ -16,25 +16,67 @@ layout:
 
 # Embedding quickstart
 
-In this quickstart you mint an embed token from your backend, render the widget in your page, and connect an app as a customer would. It takes about ten minutes, and you can do all of it from a fresh account.
+### Overview
+
+In this quickstart, you put the Fastn widget in a page of your product, then connect an app through it as a customer would. It takes about ten minutes, and you can do all of it from a new Fastn account.
+
+You will:
+
+1. [Set up Fastn](#part-1-set-up-fastn): create an API key, a test customer and a widget.
+2. [Embed the widget](#part-2-embed-the-widget): get a token on your backend, show the widget on your page, and connect an app.
+
+This quickstart is for developers. It assumes you know how to add an HTTP endpoint to your backend and run JavaScript on your frontend.
 
 <figure><img src="../../.gitbook/assets/diagrams/auth-flow.svg" alt="How authentication works: your backend mints an embed token from Fastn with your API key, passes only the token to your frontend, which opens the widget; the customer signs in to their app and Fastn saves the credential."><figcaption><p>Your API key stays on your backend. Only the short-lived token reaches the browser.</p></figcaption></figure>
 
-The finished code is in the runnable [embed-node](https://github.com/fastn-ai/docs/tree/main/examples/embed-node) example, with a Python backend in [token-server-python](https://github.com/fastn-ai/docs/tree/main/examples/token-server-python).
+The finished code is in the [embed-node](https://github.com/fastn-ai/docs/tree/main/examples/embed-node) example. For a Python backend, see [token-server-python](https://github.com/fastn-ai/docs/tree/main/examples/token-server-python).
 
 ### Before you start
 
-Set up three things in the dashboard. Each takes a minute.
+* **A Fastn account with the Owner or Admin role.** You need it to create an API key. Sign up at [app.fastn.dev](https://app.fastn.dev/?signup=1).
+* **A backend that can keep a secret,** such as a Node.js 18+ server with Express. The code below uses Express.
+* **An account in one app,** such as Slack or HubSpot, to connect in the last step.
 
-1. **An API key.** In **Embed → API keys**, click **Create key** and choose **Test** mode (creating a key needs the Owner or Admin role). Copy the key: it is shown once. This quickstart uses a key without identity verification. A key with **Verify caller identity (HMAC)** set to Enforce also needs a signed `x-identity-hmac` header: see [Generate embed tokens](generating-embed-tokens.md).
-2. **A test customer.** In **Operate → Customers**, click **Create customer**, and note its id or the External ID you gave it. See [Manage customers](../saas-admin/managing-customers.md).
-3. **A widget with one integration.** In **Embed → Widget**, click **Add** under INTEGRATIONS and pick any integration. See [Build your widget](../saas-admin/building-your-widget.md).
+### Part 1: Set up Fastn
 
-You also need a backend: any server where you can make an HTTP request with a secret API key.
+In this part, you create the three things the widget needs: an API key for your backend, a customer to show the widget to, and a widget with one integration in it.
 
-### Step 0: Check the token with curl
+#### Step 1.1: Create an API key
 
-Before writing code, mint a token from your terminal. Replace the key and the customer id:
+Your backend uses the API key to ask Fastn for a widget token.
+
+1. Go to **Embed → API keys** ([Open in Fastn](https://app.fastn.dev/api-keys)) and click **Create key**.
+2. Give the key a name, and leave the other settings as they are. A new key is a **Test** key.
+3. Click **Create key**, and copy the key. It's shown only once.
+
+**You should see:** a key that starts with `fsk_test_`.
+
+#### Step 1.2: Create a test customer
+
+The widget always runs for one customer, so you need one to test with.
+
+1. Go to **Operate → Customers** ([Open in Fastn](https://app.fastn.dev/customers)) and click **Create customer**.
+2. Enter a name, and an **External ID** such as `acme-test`.
+3. Click **Create customer**.
+
+**You should see:** the new customer in the list. Note its External ID.
+
+#### Step 1.3: Add an integration to your widget
+
+The widget shows your customers the integrations you add to it.
+
+1. Go to **Embed → Widget** ([Open in Fastn](https://app.fastn.dev/widgets)).
+2. Add one integration for the app you'll connect, such as Slack. For details, see [Build your widget](../saas-admin/building-your-widget.md).
+
+**You should see:** the integration listed in your widget.
+
+### Part 2: Embed the widget
+
+In this part, your backend gets a short-lived token from Fastn, and your frontend uses it to show the widget.
+
+#### Step 2.1: Get a token with curl
+
+Check that your key works before you write code. Replace `<your-key>` with your API key, and `<your-customer-id>` with the External ID from step 1.2:
 
 ```bash
 curl -X POST https://api.fastn.dev/api/v1/embed/token \
@@ -45,45 +87,39 @@ curl -X POST https://api.fastn.dev/api/v1/embed/token \
   -d '{"userId": "test-user"}'
 ```
 
-**You should see:** a JSON response with the token at `data.token`. A `403` with *Test API keys require X-fastn-Test-Mode: true header* means the test-mode header is missing.
+**You should see:** a JSON response with the token at `data.token`, starting with `emb_`.
 
-### Step 1: Generate a token from your backend
+#### Step 2.2: Get a token from your backend
 
-Create a server-side function that calls the Fastn token endpoint. Keep the API key in an environment variable, never in client code.
+Add a function to your backend that does the same request. Keep the API key in an environment variable, never in frontend code.
 
 ```javascript
-// Server-side only
+// Server-side only. Uses the fetch built into Node.js 18+.
 async function getFastnToken({ customerId, userId, userEmail, userName }) {
   const res = await fetch("https://api.fastn.dev/api/v1/embed/token", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${process.env.FASTN_API_KEY}`,
       "Content-Type": "application/json",
-      // Required only for fsk_test_ keys:
-      "X-fastn-Test-Mode": "true",
-      "x-org-id": customerId, // fastn id or your external reference
+      "X-fastn-Test-Mode": "true", // needed for fsk_test_ keys only
+      "x-org-id": customerId,      // the customer's External ID or Fastn ID
     },
-    body: JSON.stringify({
-      userId,               // the signed-in person; keys per-user isolation
-      userEmail,
-      userName,
-    }),
+    body: JSON.stringify({ userId, userEmail, userName }), // the signed-in person
   });
 
   const json = await res.json();
-  // The token is nested under `data`
-  return json.data.token;
+  return json.data.token; // the token is under `data`
 }
 ```
 
-> Note: the response nests the token under `data`. Read `json.data.token`, not `json.token`.
+**You should see:** the function returns a token that starts with `emb_`.
 
-### Step 2: Expose the token to your frontend
+#### Step 2.3: Send the token to your frontend
 
-Create an endpoint your frontend can call to get a fresh token. Return only the token, as `{ "token": "emb_..." }`, never the API key.
+Add an endpoint that your frontend calls to get a fresh token. Return only the token, never the API key.
 
 ```javascript
-// Example route
+// Express route. req.user is your signed-in user.
 app.get("/api/fastn-token", async (req, res) => {
   const token = await getFastnToken({
     customerId: req.user.companyId, // however your app knows the customer
@@ -97,15 +133,16 @@ app.get("/api/fastn-token", async (req, res) => {
 
 **You should see:** a request to `/api/fastn-token` returns `{ "token": "emb_..." }`.
 
-### Step 3: Render the iframe
+#### Step 2.4: Show the widget on your page
 
-On your frontend, fetch a token and render the Fastn iframe with it.
+On your frontend, get a token and load the widget in an iframe. Your page needs an element with the id `integrations` to hold it.
 
 ```javascript
-const { token } = await fetch("/api/fastn-token").then(r => r.json());
+// Get a fresh token each time the page loads.
+const { token } = await fetch("/api/fastn-token").then((r) => r.json());
 
+// The token names the customer and user, so the URL needs nothing else.
 const iframe = document.createElement("iframe");
-// The token carries the customer and user, so the URL needs nothing else
 iframe.src = `https://api.fastn.dev/api/v1/embed/iframe?token=${token}`;
 iframe.style.width = "100%";
 iframe.style.height = "100%";
@@ -113,19 +150,19 @@ iframe.style.border = "none";
 document.getElementById("integrations").appendChild(iframe);
 ```
 
-### Step 4: Verify
+**You should see:** the Fastn widget in your page, listing your integration with a **Connect** button.
 
-**You should see:** the Fastn widget inside your page, listing the integration you added with a **Connect** button.
+#### Step 2.5: Connect an app
 
-Click **Connect** on one, complete the authentication popup, and confirm the app shows as **Connected**.
+1. In the widget, click **Connect** on your integration.
+2. Sign in to the app in the window that opens, and approve access.
 
-You now have the widget running in your page, scoped to one customer, with a working connection.
+**You should see:** the app marked as **Connected**.
 
-### If the iframe is blank
-
-The most common cause is an expired or hardcoded token. Confirm your frontend fetches a fresh token on each load rather than reusing one. See [Troubleshooting](troubleshooting.md).
+You now have the widget running in your product, for one customer, with a working connection.
 
 ### Next steps
 
-* Turn on identity verification and sign each token request: [Generate embed tokens](generating-embed-tokens.md).
-* Prepare for production: [Deployment checklist](deployment.md) and [Go-live checklist](../../embed/embedding/production-checklist.md).
+* [Generate embed tokens](generating-embed-tokens.md): sign each token request, so a caller can't act as another customer.
+* [Deployment checklist](deployment.md): switch to a live key and prepare for production.
+* [Troubleshooting](troubleshooting.md): fix a blank widget or a failed connection.
